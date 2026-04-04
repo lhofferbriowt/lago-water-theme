@@ -1,0 +1,467 @@
+    <style>
+        /* Dummy sections for testing */
+        .dummy-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .dummy-section:nth-child(odd) {
+            background-color: #E0E0E0;
+            color: #333;
+        }
+        .dummy-section:nth-child(even) {
+            background-color: #D0D0D0;
+            color: #555;
+        }
+        /* Main animation section styles */
+        .cst_text_animation {
+            background-color: #FFFFFF;
+            padding: 0 !important;
+        }
+        .containers {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .cst_text_animation .tt-text-reveal {
+            font-size: 40px;
+            line-height: 65px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            font-family: "CentraNo Book", sans-serif;
+            color:#000;
+        }
+        .cst_text_animation .tt-text-reveal span {
+            position: relative;
+            display: inline;
+            background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
+            background-size: 0% 100%;
+            background-repeat: no-repeat;
+            -webkit-background-clip: text;
+            color: #212121;
+            -webkit-text-fill-color: rgb(0 0 0 / 20%);
+            {% comment %} will-change: background-size; {% endcomment %}
+        }
+        .cst_text_animation .tt-text-reveal .lag-anim span {
+            background-image: linear-gradient(#034EA2, #034EA2) !important;
+            color: #034EA2 !important;
+            -webkit-text-fill-color: rgb(28 28 159 / 43%) !important;
+            {% comment %} will-change: background-size !important; {% endcomment %}
+        }
+
+        .cst_text_animation .tt-text-reveal {
+            font-size: 40px;
+            line-height: 65px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            font-family: "CentraNo Book", sans-serif;
+            {% comment %} will-change: transform;
+            transform-origin: top center; {% endcomment %}
+        }
+        .cst_text_animation .tt-text-reveal span {
+            position: relative;
+            display: inline;
+            background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
+            background-size: 0% 100%;
+            background-repeat: no-repeat;
+            -webkit-background-clip: text;
+            color: #212121;
+            -webkit-text-fill-color: rgb(0 0 0 / 20%);
+            {% comment %} will-change: background-size; {% endcomment %}
+        }
+        .cst_text_animation .tt-text-reveal .lag-anim span {
+            background-image: linear-gradient(#034EA2, #034EA2) !important;
+            color: #034EA2 !important;
+            -webkit-text-fill-color: rgb(28 28 159 / 43%) !important;
+            {% comment %} will-change: background-size !important; {% endcomment %}
+        }
+
+
+
+        /* Responsive adjustments */
+
+        @media (min-width: 2400px) {
+            .containers {
+                max-width: 1640px;
+            }
+            .cst_text_animation .tt-text-reveal {
+                font-size: 60px !important;
+                line-height: 74px;
+            }
+        }
+
+        @media(min-width: 1920px) {
+         .containers {
+            max-width: 1440px;
+          }
+         .cst_text_animation .tt-text-reveal {
+            font-size: 54px;
+          }
+        }
+
+        @media (max-width: 1550px) {
+            .cst_text_animation .tt-text-reveal {
+                font-size: 32px;
+                line-height: 48px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cst_text_animation .tt-text-reveal {
+                font-size: 22px !important;
+                line-height: 35px !important;
+                margin-top: 20px;
+            }
+            .cst_text_animation .tt-text-reveal .spacer 
+            {
+                display: block;
+                height: 8px !important;
+            } 
+            .sticky-top {
+                height: 105vh !important;
+                padding-top: 30px !important;
+            }
+        }
+        @media (max-width: 480px) {
+            .cst_text_animation .tt-text-reveal {
+                font-size: 22px;
+                line-height: 35px;
+            }
+        }
+    </style>
+
+    <!-- Main text reveal section -->
+    <style>
+        #text-sec
+        {   
+            padding-top: 100px !important;
+            {% comment %} min-height:300dvh; {% endcomment %}
+        }
+
+        .sticky-top
+        {
+            {% comment %} position:sticky; {% endcomment %}
+            top:0;
+            height:100dvh;
+            padding-top: 100px;
+            {% comment %} display:flex;
+            align-items:center; {% endcomment %}
+        }
+
+        .cst_text_animation .tt-text-reveal .spacer 
+        {
+            display: block;
+            height: 30px;
+            border: none;
+        } 
+
+        .cst_text_animation .tt-text-reveal span.lago-span 
+        {
+            background-image: linear-gradient(#034ea2, #034ea2);
+            background-size: 0% 100%;
+            background-repeat: no-repeat;
+            -webkit-background-clip: text;
+            color: #034ea2;
+            -webkit-text-fill-color: rgb(28 28 159); 
+        }    
+
+    </style>
+    
+    <section class="cst_text_animation" id="text-sec">
+        <div class="containers">
+            <div class="tt-text-reveal" data-highlight-text  data-highlight-scroll-end="bottom 20%" data-highlight-scroll-start="top 50%" data-highlight-stagger="0.5">
+                Have you ever felt you have no other option?<span class="spacer"></span>
+                Lago was founded with a vision to empower entrepreneurs entering the water industry by providing the essential tools and solutions they need to achieve true financial freedom.<span class="spacer"></span>
+                Our mission is to help every consumer hydrate happier, healthier and contribute to building a better planet.<span class="spacer"></span>
+                Together we're building a community of changemakers - people who believe in creating a brighter, cleaner future. With every sip, you are supporting a more sustainable world.<span class="spacer"></span>
+                <span class="lago-span">Lago is the leader in innovative pure water solutions.</span>
+            </div>
+        </div>
+    </section>
+   
+    
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
+   
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.registerPlugin(ScrollTrigger, SplitText);
+            initHighlightText();
+        })
+        
+        function initHighlightText(){
+
+            let splitHeadingTargets = document.querySelectorAll("[data-highlight-text]")
+            
+            splitHeadingTargets.forEach((heading) => {
+
+                const scrollStart = heading.getAttribute("data-highlight-scroll-start") || "top 90%"
+                const scrollEnd = heading.getAttribute("data-highlight-scroll-end") || "center 40%"
+                const fadedValue = heading.getAttribute("data-highlight-fade") || 0.2 // Opacity of letter
+                const staggerValue =  heading.getAttribute("data-highlight-stagger") || 0.1 // Smoother reveal
+
+                new SplitText(heading, {
+                    type: "words, chars",
+                    autoSplit: true,
+                    onSplit(self) {
+                    let ctx = gsap.context(() => {
+                        let tl = gsap.timeline({
+                        scrollTrigger: {
+                            scrub: true,
+                            trigger: heading, 
+                            start: scrollStart,
+                            end: scrollEnd,
+                            markers: false
+                        }
+                        })
+                        tl.from(self.words,{
+                            autoAlpha: fadedValue,
+                            stagger: staggerValue,
+                            ease: "linear"
+                        })
+                    });
+                        return ctx; // return our animations so GSAP can clean them up when onSplit fires
+                }
+                });    
+            });
+        }
+
+    </script>
+
+    <!--new<script>
+        document.addEventListener("DOMContentLoaded", () => {
+        gsap.registerPlugin(ScrollTrigger, SplitText);
+        initHighlightText();
+        initMainAnim(); // define but keep its trigger disabled until text reveal finishes
+        });
+
+        let enableMainAnim; // we'll assign a function that enables the second trigger
+
+        function initHighlightText() {
+        const targets = document.querySelectorAll("[data-highlight-text]");
+
+        targets.forEach((heading) => {
+            const scrollStart   = heading.getAttribute("data-highlight-scroll-start") || "top 90%";
+            const scrollEnd     = heading.getAttribute("data-highlight-scroll-end")   || "center 40%";
+            const fadedValue    = +heading.getAttribute("data-highlight-fade")        || 0.2;
+            const staggerValue  = +heading.getAttribute("data-highlight-stagger")     || 0.1;
+
+            // ADD near the top (global)
+            window.__lagoMainAnimUnlocked = false;
+            window.__unlockMainAnim = function () 
+            {
+                if (!window.__lagoMainAnimUnlocked) 
+                {
+                    window.__lagoMainAnimUnlocked = true;
+                    // if you also use ScrollTrigger elsewhere:
+                    if (window.ScrollTrigger) ScrollTrigger.refresh();
+                }
+            };
+
+
+
+            new SplitText(heading, {
+            type: "words, chars",
+            autoSplit: true,
+            onSplit(self) {
+                const tl = gsap.timeline({
+                scrollTrigger: {
+                    scrub: true,
+                    trigger: heading,
+                    start: scrollStart,
+                    end: scrollEnd,
+                    markers: false,
+                    onUpdate: (st) => {
+                    // When the text reveal has fully completed (progress === 1),
+                    // enable the main animation's ScrollTrigger (one-time).
+                    //console.log("progress=="+st.progress);
+                    //if (st.progress === 1 && typeof enableMainAnim === "function") {
+                    //    enableMainAnim();
+                    //    enableMainAnim = null; // prevent multiple calls
+                    //}
+                        if (st.progress === 1) {
+                            window.__unlockMainAnim(); 
+                        }
+                    }
+
+                }
+                });
+                tl.from(self.words, {
+                autoAlpha: fadedValue,
+                stagger: staggerValue,
+                ease: "linear"
+                });
+            }
+            });
+        });
+        }
+
+        function initMainAnim() {
+        const spacer = document.querySelector(".anim-trigger-spacer");
+        if (!spacer) return;
+
+        // Build the main animation (paused). Attach a disabled ScrollTrigger.
+        const mainTl = gsap.timeline({ paused: true });
+        // TODO: add your real animations here:
+        mainTl.to(spacer, { opacity: 1, y: 0, duration: 1, ease: "power2.out" });
+
+        // Create its ScrollTrigger but disabled initially
+        const mainST = ScrollTrigger.create({
+            trigger: spacer,
+            start: "top 70%",     // adjust as needed
+            end: "bottom top",
+            once: true,           // fire only once
+            onEnter: () => mainTl.play(),
+            onEnterBack: () => mainTl.play(),
+            enabled: false        // <- critical: starts disabled
+        });
+
+        // This function will be called when text reveal completes
+        enableMainAnim = () => {
+            mainST.enable();      // now it can respond to scroll position
+            ScrollTrigger.refresh();
+
+            // If user already scrolled past and spacer is currently in view, fire immediately
+            if (isElementInViewport(spacer)) {
+            mainTl.play();
+            }
+        };
+        }
+
+        // tiny helper to cover the "fast scroll past" case
+        function isElementInViewport(el) {
+        const r = el.getBoundingClientRect();
+        return r.top < window.innerHeight && r.bottom > 0;
+        }
+
+    </script>-->
+
+
+
+
+
+  <!-- <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            if (!window.gsap || !window.ScrollTrigger) return;
+            gsap.registerPlugin(ScrollTrigger);
+            // --- ANIMATION SETTINGS ---
+            const GROUPS          = 5;          // reveal the text in 5 scroll phases
+            const PX_PER_GROUP    = 1200;       // back to your original working value
+            const STAGGER_IN_GROUP= 0.12;       // slight stagger inside each group
+            const SCRUB_SMOOTH    = 0.12;       // back to your original value
+            const START_OFFSET    = "top top";
+            const ANTICIPATE      = 1;
+            // Text wrapping logic
+            document.querySelectorAll('.tt-text-reveal').forEach(block => {
+                if (block.dataset.wrapped) return;
+                // Find paragraphs; if none exist, synthesize from <br><br>
+                let paras = Array.from(block.querySelectorAll('p'));
+                if (!paras.length) {
+                    const parts = block.innerHTML.split(/<br\s*\/?>\s*<br\s*\/?>/gi).map(s => s.trim()).filter(Boolean);
+                    block.innerHTML = '';
+                    parts.forEach(txt => {
+                        const p = document.createElement('p');
+                        p.innerHTML = txt;
+                        block.appendChild(p);
+                    });
+                    paras = Array.from(block.querySelectorAll('p'));
+                }
+                // Wrap each paragraph's inline content with a paintable span
+                paras.forEach(p => {
+                    const wrapper = document.createElement('span');
+                    wrapper.className = 'tt-reveal-span';
+                    wrapper.innerHTML = p.innerHTML;
+                    p.innerHTML = '';
+                    p.appendChild(wrapper);
+                });
+                block.dataset.wrapped = 'true';
+            });
+            // For each reveal block, create its scroll timeline
+            document.querySelectorAll(".tt-text-reveal").forEach(ttTextReveal => {
+                const spans = ttTextReveal.querySelectorAll(".tt-reveal-span");
+                if (!spans.length) return;
+                // Initial state
+                gsap.set(spans, { backgroundSize: "0% 100%" });
+                // Pin the outer section for the whole sequence
+                const parentSection = ttTextReveal.closest(".cst_text_animation") || ttTextReveal;
+                const groups = GROUPS;
+                const spansPerGroup = Math.ceil(spans.length / groups);
+                // Your EXACT original calculation that was working
+                const contentHeight = ttTextReveal.offsetHeight;
+                const windowHeight = window.innerHeight;
+                const contentOverflow = Math.max(0, contentHeight - windowHeight);
+                const baseDistance = groups * PX_PER_GROUP;
+                const endDistance = baseDistance + Math.min(contentOverflow * 0.3, 150);
+                const tl = gsap.timeline({
+                    defaults: { ease: "power1.out" },
+                    scrollTrigger: {
+                        trigger: parentSection,
+                        start: START_OFFSET,
+                        end: "+=" + endDistance,
+                        scrub: SCRUB_SMOOTH,
+                        pin: true,
+                        anticipatePin: ANTICIPATE,
+                        pinSpacing: true,
+                        markers: false
+                    }
+                });
+                // Build animation phases - each phase animates its chunk of paragraphs
+                for (let g = 0; g < groups; g++) {
+                    const startIdx = g * spansPerGroup;
+                    const endIdx   = Math.min(startIdx + spansPerGroup, spans.length);
+                    const chunk    = Array.from(spans).slice(startIdx, endIdx);
+                    if (!chunk.length) continue;
+                    tl.to(chunk, {
+                        backgroundSize: "100% 100%",
+                        stagger: STAGGER_IN_GROUP
+                    }, g === 0 ? 0 : "+=0.1"); // back to your original timing
+                }
+                // Use transform3d for better performance and space handling
+                if (contentOverflow > 50) {
+                    gsap.to(ttTextReveal, {
+                        y: -Math.min(contentOverflow * 0.5, 100),
+                        force3D: true,
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: parentSection,
+                            start: START_OFFSET,
+                            end: "+=" + endDistance,
+                            scrub: SCRUB_SMOOTH,
+                            markers: false
+                        }
+                    });
+                }
+            });
+        });
+    </script> -->
+
+
+
+
+
+
+
+    {% schema %}
+    {
+    "name": "t:sections.textaniamtion",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+        "groups": ["header", "footer"]
+    },
+    "presets": [
+        {
+        "name": "text animation"
+        }
+    ]
+    }
+{% endschema %}

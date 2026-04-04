@@ -1,0 +1,668 @@
+<style>
+    .mobile-cond-app
+    {
+      display:none;
+    }
+
+    @media(max-width:980px)
+    {
+
+      .desktop-cond-app
+      {
+        display:none;
+      }
+
+      .mobile-cond-app
+      {
+        display:block;
+      }
+
+      .mobile-cond-app img 
+      {
+          width: 100%;
+      }
+
+      #text-sec {
+          padding-top: 15px !important;
+      }
+    }
+
+    .cst_wrap_css 
+    {
+    flex-direction: column;
+    }
+
+    .cst_wrap_css .cst_card_para {
+    width: 100%;
+    }
+
+    .cst_wrap_css .cst_card_img {
+    width: 200px;
+    }
+
+    .cst_card {
+    max-width: fit-content;
+    background: #d2d1d1;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    transition: none;
+    display: block;
+    transition: opacity 0.3s ease, height 0.3s linear, margin 0.3s ease;
+    will-change: transform, opacity, height;
+    }
+
+    .cst_top_wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 10px;
+    }
+
+    .cst_icon,
+    .cst_card_heading {
+    width: fit-content;
+    }
+
+    .cst_bottom_wrapper {
+    display: flex;
+    gap: 20px;
+    }
+
+    .cst_card_img {
+    width: 125px;
+    }
+
+    .cst_card_para {
+    width: 175px;
+    text-align: left;
+    }
+
+    .spacer {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    color: #5b6b7c;
+    background: linear-gradient(180deg, #fff, var(--bg));
+    border-bottom: 1px solid #000;
+    }
+
+    .spacer.alt {
+    background: linear-gradient(180deg, var(--bg), #fff);
+    }
+
+    /* Pinned / animated section */
+    .condenser-wrap {
+    position: relative;
+    background: var(--bg);
+    padding: 8vh 5vw;
+    height:800vh;
+    }
+
+    .condenser-stage {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: sticky;
+    top:0;
+    display: grid;
+    grid-template-columns: 1fr minmax(360px, 520px) 1fr;
+    gap: 32px;
+    align-items: center;
+    min-height: 70vh;
+    
+    }
+
+    /* Columns */
+    .col {
+    display: grid;
+    gap: 18px;
+    }
+
+    .col.left {
+    justify-items: end;
+    }
+    .col.right {
+    justify-items: start;
+    }
+
+    /* Feature cards */
+    .feature-card {
+    width: min(360px, 90%);
+    padding: 18px 18px 18px 18px;
+    box-shadow: var(--shadow);
+    gap: 12px;
+    opacity: 0;
+    transform: translateX(40px);
+    width: 360px;
+    max-width: fit-content;
+    background: #d2d1d1;
+    padding: 20px;
+    opacity: 0;
+    transform: translateX(40px);
+    pointer-events: auto;
+    transition: none;
+    display: block;
+    will-change: transform, opacity, height;
+    }
+    .col.left .feature-card {
+    transform: translateX(-40px);
+    }
+
+    .icon {
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    }
+    .feature-card h3 {
+    margin: 2px 0 4px 0;
+    font-size: 18px;
+    color: #50585b;
+    }
+    .feature-card p {
+    margin: 0;
+    font-size: 15px;
+    color: #50585b;
+    }
+
+    .center {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 560px;
+    border-radius: 22px;
+    overflow: hidden;
+    }
+    .condenser {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/6;
+    opacity: 0.3;
+    transform: scale(0.94);
+    }
+
+    .pin {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    background: rgba(53, 113, 181, 0.85);
+    box-shadow: 0 0 0 0 var(--pin-shadow);
+    transform: scale(0.6);
+    opacity: 0;
+    pointer-events: none;
+    }
+
+    /* Demo pin positions (tweak as needed for your real asset) */
+    .pin.p1 {
+    top: 3.5%;
+    left: 41%;
+    }
+    .pin.p2 {
+    top: 15%;
+    left: 92%;
+    }
+    .pin.p3 {
+    top: 24%;
+    left: 74%;
+    }
+    .pin.p4 {
+    top: 36%;
+    left: 74%;
+    }
+    .pin.p5 {
+    top: 62%;
+    left: 34%;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 980px) {
+    .condenser-stage {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+    .col.left,
+    .col.right {
+        justify-items: stretch;
+    }
+    .feature-card {
+        width: 100%;
+    }
+    }
+
+</style>
+
+
+<section id="condenser" class="condenser-wrap desktop-cond-app">
+
+  <div class="condenser-stage">
+    <!-- LEFT (2 cards) -->
+    <div class="col left">
+
+      <article class="feature-card" data-step="p4">
+
+        <div class="cst_card" data-point="point-4">
+
+          <div class="cst_top_wrapper">
+
+            <div class="cst_icon">
+              <img src="https://cdn.shopify.com/s/files/1/0553/5304/9148/files/icon-4.svg?v=1754509298" alt="" width="60px" height="60">
+            </div>
+
+            <div class="cst_card_heading">
+              <h3>Tall Dispense Height</h3>
+            </div>
+
+          </div>
+
+          <div class="cst_bottom_wrapper">
+
+            <div class="cst_card_img">
+              <img src="https://cdn.shopify.com/s/files/1/0553/5304/9148/files/Lago_Dealer_Exploded_Insets_1.png?v=1755033848" alt="" height="60" width="60" style="width:100%;">
+            </div>
+
+            <div class="cst_card_para">
+              <p>Tall 14" dispense height makes filling large bottles &amp; pitchers effortless.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="feature-card" data-step="p5">
+
+        <div class="cst_card left" data-point="point-5">
+          <div class="cst_top_wrapper">
+            <div class="cst_icon">
+              <img src="https://cdn.shopify.com/s/files/1/0553/5304/9148/files/icon-5.svg?v=1754509298" alt="" width="60" height="60">
+            </div>
+            <div class="cst_card_heading">
+              <h3>5-Stage RO w/Mineralization</h3>
+            </div>
+          </div>
+
+          <div class="cst_bottom_wrapper cst_wrap_css">
+
+            <div class="cst_card_img">
+              <img src="https://cdn.shopify.com/s/files/1/0553/5304/9148/files/asdxascas.png?v=1755033849" alt="" height="60" width="60" width style="width:90%;">
+            </div>
+
+            <div class="cst_card_para">
+              <div>
+                <strong>Stage 1: Sediment Filter</strong>
+                <p>Filters dust, rust, and particles.</p>
+              </div>
+              <div>
+                <strong>Stage 2: Pre Carbon Filter</strong>
+                <p>Filters chlorine, VOCs, &amp; other chemicals.</p>
+              </div>
+              <div>
+                <strong>Stage 3: RO Membrane</strong>
+                <p>Blocks leads, arsenic, PFAS, and more.</p>
+              </div>
+              <div>
+                <strong>Stage 4: Post Carbon Filter</strong>
+                <p>Filters residual bad tastes and impurities.</p>
+              </div>
+              <div>
+                <strong>Stage 5: Mineralizing Filter</strong>
+                <p>Adds beneficial minerals like calcium,
+                  magnesium and potassium to water.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </article>
+    </div>
+
+    <!-- CENTER (condenser + pins) -->
+    <div class="center">
+
+      <div class="condenser" aria-label="Condenser Image Placeholder">
+        <img src="https://cdn.shopify.com/s/files/1/0553/5304/9148/files/filter.png?v=1754327494" alt="" height="60" width="60" style="width: 100%;height:auto;">
+      </div>
+
+      <!-- Pins correspond to cards: p1..p5 -->
+      <span class="pin p1" data-pin="p1"></span>
+      <span class="pin p2" data-pin="p2"></span>
+      <span class="pin p3" data-pin="p3"></span>
+      <span class="pin p4" data-pin="p4"></span>
+      <span class="pin p5" data-pin="p5"></span>
+
+    </div>
+
+    <!-- RIGHT (3 cards) -->
+    <div class="col right">
+
+      <article class="feature-card" data-step="p1">
+
+        <div class="cst_card" data-point="point-1">
+          <div class="cst_top_wrapper">
+            <div class="icon">
+              <img src="https://cdn.shopify.com/s/files/1/0553/5304/9148/files/icon-1.svg?v=1754509298" height="60" width="60" alt="">
+            </div>
+            <div class="cst_card_heading">
+              <h3>UV Self-Cleaning</h3>
+            </div>
+          </div>
+
+          <div class="cst_bottom_wrapper">
+            <div class="cst_card_img">
+              <img src="https://cdn.shopify.com/s/files/1/0553/5304/9148/files/Group_63.png?v=1755033848" alt="" height="60" width="60" style="width:100%;">
+            </div>
+            <div class="cst_card_para">
+              <p>Sanitizes cold water tank eliminating contaminants &amp; protecting against biofilms.</p>
+            </div>
+          </div>
+        </div>
+
+      </article>
+
+      <article class="feature-card" data-step="p2">
+
+        <div class="cst_card" data-point="point-2">
+
+          <div class="cst_top_wrapper">
+
+            <div class="cst_icon">
+              <img src="https://cdn.shopify.com/s/files/1/0553/5304/9148/files/icon-2.svg?v=1754509298" alt="" height="60" width="60">
+            </div>
+
+            <div class="cst_card_heading">
+              <h3>Touchless Dispense Technology</h3>
+            </div>
+
+          </div>
+
+          <div class="cst_bottom_wrapper">
+
+            <div class="cst_card_img">
+              <img src="https://cdn.shopify.com/s/files/1/0553/5304/9148/files/Frame_561.png?v=1755033848" alt="" height="60" width="60" style="width:100%;">
+            </div>
+
+            <div class="cst_card_para">
+              <p>Conveniently dispenses water with a simple wave, completely touchless.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="feature-card" data-step="p3">
+
+        <div class="cst_card" data-point="point-3">
+
+          <div class="cst_top_wrapper">
+
+            <div class="cst_icon">
+              <img src="https://cdn.shopify.com/s/files/1/0553/5304/9148/files/icon-3.svg?v=1754509298" alt="" height="60" width="60">
+            </div>
+
+            <div class="cst_card_heading">
+              <h3>2X Fast Dispensing</h3>
+            </div>
+
+          </div>
+
+          <div class="cst_bottom_wrapper">
+
+            <div class="cst_card_img">
+              <img src="https://cdn.shopify.com/s/files/1/0553/5304/9148/files/Lago_Dealer_Exploded_Insets_1_xasxsa.png?v=1755033847" height="60" width="60" alt="" style="width:100%;">
+            </div>
+
+            <div class="cst_card_para">
+              <p>Delivers a fast 0.9 GPM flow rate, twice as fast as the industry standard</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="mobile-cond-app">
+
+    <img 
+      class="desktop-img desktop-img-hide" 
+      height="auto" src="//lagowater.com/cdn/shop/files/About_Us_Product_7_-_Copy.png?v=1756501205" 
+      loading="eager" 
+      fetchpriority="high" 
+      width="2000"
+    >
+
+</section>
+
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    
+  gsap.registerPlugin(ScrollTrigger);
+
+const section = document.querySelector("#condenser");
+const centerImage = section.querySelector(".condenser");
+const pins = section.querySelectorAll(".pin");
+const cards = section.querySelectorAll(".feature-card");
+
+let tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: section,
+    start: "top top",
+    end: "bottom bottom",
+    scrub: true,
+    markers: false
+  },
+  onComplete: () => {
+    gsap.to(cards, {
+      opacity: 1,
+      x: 0,
+      ease: "power1.inOut",
+      duration: 0.6
+    });
+    gsap.to(
+      pins,
+      {
+        opacity: 1,
+        scale: 1,
+        stagger: 0.1,
+        duration: 0.6
+      },
+      "<"
+    );
+  }
+});
+
+tl.to(centerImage, {
+  opacity: 1,
+  scale: 1,
+  ease: "none"
+})
+  .to(cards[2], {
+    opacity: 1,
+    x: 0,
+    ease: "none"
+  })
+  .to(
+    pins[0],
+    {
+      opacity: 1,
+      scale: 1,
+      ease: "none"
+    },
+    "<"
+  )
+  .to(cards[2], {
+    delay: 0.3,
+    opacity: 0,
+    x: 40,
+    ease: "none"
+  })
+  .to(
+    pins[0],
+    {
+      opacity: 0,
+      scale: 0.6,
+      ease: "none"
+    },
+    "<"
+  )
+  .to(cards[3], {
+    opacity: 1,
+    x: 0,
+    ease: "none"
+  })
+  .to(
+    pins[1],
+    {
+      opacity: 1,
+      scale: 1,
+      ease: "none"
+    },
+    "<"
+  )
+  .to(cards[3], {
+    delay: 0.3,
+    opacity: 0,
+    x: 40,
+    ease: "none"
+  })
+  .to(
+    pins[1],
+    {
+      opacity: 0,
+      scale: 0.6,
+      ease: "none"
+    },
+    "<"
+  )
+  .to(cards[4], {
+    opacity: 1,
+    x: 0,
+    ease: "none"
+  })
+  .to(
+    pins[2],
+    {
+      opacity: 1,
+      scale: 1,
+      ease: "none"
+    },
+    "<"
+  )
+  .to(cards[4], {
+    delay: 0.3,
+    opacity: 0,
+    x: 40,
+    ease: "none"
+  })
+  .to(
+    pins[2],
+    {
+      opacity: 0,
+      scale: 0.6,
+      ease: "none"
+    },
+    "<"
+  )
+  .to(cards[0], {
+    opacity: 1,
+    x: 0,
+    ease: "none"
+  })
+  .to(
+    pins[3],
+    {
+      opacity: 1,
+      scale: 1,
+      ease: "none"
+    },
+    "<"
+  )
+  .to(cards[0], {
+    delay: 0.3,
+    opacity: 0,
+    x: 40,
+    ease: "none"
+  })
+  .to(
+    pins[3],
+    {
+      opacity: 0,
+      scale: 0.6,
+      ease: "none"
+    },
+    "<"
+  )
+  .to(cards[1], {
+    opacity: 1,
+    x: 0,
+    ease: "none"
+  })
+  .to(
+    pins[4],
+    {
+      opacity: 1,
+      scale: 1,
+      ease: "none"
+    },
+    "<"
+  )
+  .to(cards[1], {
+    delay: 0.3,
+    opacity: 0,
+    x: 40,
+    ease: "none"
+  })
+  .to(
+    pins[4],
+    {
+      opacity: 0,
+      scale: 0.6,
+      ease: "none"
+    },
+    "<"
+  );
+
+});
+
+</script>
+
+
+
+
+
+
+
+
+{% schema %}
+    {
+    "name": "t:sections.pwscardanimation",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+        "groups": ["header", "footer"]
+    },
+    "presets": [
+        {
+        "name": "pws card animation"
+        }
+    ]
+    }
+{% endschema %}
