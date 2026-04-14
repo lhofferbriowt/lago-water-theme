@@ -4,10 +4,6 @@
   assign product_blocks = section.blocks | where: 'type', 'product_path'
   assign value_blocks = section.blocks | where: 'type', 'dealer_value'
   assign category_blocks = section.blocks | where: 'type', 'dealer_category'
-  assign l15_has_hero_banner = false
-  if section.settings.hero_image_desktop_banner != blank
-    assign l15_has_hero_banner = true
-  endif
   assign l15_use_setting_strips = false
   if section.settings.settings_strip_1 != blank and section.settings.settings_strip_2 != blank and section.settings.settings_strip_3 != blank and section.settings.settings_strip_4 != blank and section.settings.settings_strip_5 != blank and section.settings.settings_strip_6 != blank
     assign l15_use_setting_strips = true
@@ -16,59 +12,44 @@
 
 <div class="lago-home-1-5">
   <div class="lago-home-1-5__inner">
-    {%- comment -%} Hero — mobile: single image; desktop: optional left BG + right banner (Figma Desktop_homepage) {%- endcomment -%}
-    <section
-      class="l15-hero{% if l15_has_hero_banner %} l15-hero--has-banner{% endif %}"
-      aria-labelledby="l15-hero-heading"
-    >
-      <div class="l15-hero__split">
-        <div class="l15-hero__left">
-          <div class="l15-hero__media">
-            {%- if section.settings.hero_image != blank or section.settings.hero_bg_desktop != blank -%}
-              <picture>
-                {%- if section.settings.hero_bg_desktop != blank -%}
-                  <source
-                    media="(min-width: 990px)"
-                    srcset="{{ section.settings.hero_bg_desktop | image_url: width: 2000 }}"
-                  >
-                {%- endif -%}
-                {%- if section.settings.hero_image != blank -%}
-                  {%- assign l15_hero_alt = section.settings.hero_image.alt | default: shop.name -%}
-                  {{
-                    section.settings.hero_image
-                    | image_url: width: 1600
-                    | image_tag: loading: 'eager', class: 'l15-hero__photo', sizes: '100vw', widths: '375, 550, 750, 1100, 1500, 1600', alt: l15_hero_alt
-                  }}
-                {%- elsif section.settings.hero_bg_desktop != blank -%}
-                  {%- assign l15_hero_alt = section.settings.hero_bg_desktop.alt | default: shop.name -%}
-                  {{
-                    section.settings.hero_bg_desktop
-                    | image_url: width: 1600
-                    | image_tag: loading: 'eager', class: 'l15-hero__photo', sizes: '100vw', widths: '375, 550, 750, 1100, 1500, 1600', alt: l15_hero_alt
-                  }}
-                {%- endif -%}
-              </picture>
-            {%- else -%}
-              <div class="l15-hero__placeholder" aria-hidden="true"></div>
-            {%- endif -%}
-          </div>
-          <div class="l15-hero__content">
-            <h1 id="l15-hero-heading" class="l15-hero__text">{{ section.settings.hero_heading | escape }}</h1>
-            {%- if section.settings.hero_button_label != blank -%}
-              <a class="l15-btn" href="{{ section.settings.hero_button_link | default: '#' }}">{{ section.settings.hero_button_label | escape }}</a>
-            {%- endif -%}
-          </div>
+    {%- comment -%} Hero — `<picture>`: mobile background + optional desktop background (max 1400px wide on large screens) {%- endcomment -%}
+    <section class="l15-hero" aria-labelledby="l15-hero-heading">
+      <div class="l15-hero__wrap">
+        <div class="l15-hero__media">
+          {%- if section.settings.hero_image != blank or section.settings.hero_bg_desktop != blank -%}
+            <picture>
+              {%- if section.settings.hero_bg_desktop != blank -%}
+                <source
+                  media="(min-width: 990px)"
+                  srcset="{{ section.settings.hero_bg_desktop | image_url: width: 2800 }}"
+                >
+              {%- endif -%}
+              {%- if section.settings.hero_image != blank -%}
+                {%- assign l15_hero_alt = section.settings.hero_image.alt | default: shop.name -%}
+                {{
+                  section.settings.hero_image
+                  | image_url: width: 1600
+                  | image_tag: loading: 'eager', class: 'l15-hero__photo', sizes: '(max-width: 989px) 100vw, 1400px', widths: '375, 550, 750, 1100, 1400, 1600', alt: l15_hero_alt
+                }}
+              {%- elsif section.settings.hero_bg_desktop != blank -%}
+                {%- assign l15_hero_alt = section.settings.hero_bg_desktop.alt | default: shop.name -%}
+                {{
+                  section.settings.hero_bg_desktop
+                  | image_url: width: 2000
+                  | image_tag: loading: 'eager', class: 'l15-hero__photo', sizes: '(max-width: 989px) 100vw, 1400px', widths: '750, 1100, 1400, 2000', alt: l15_hero_alt
+                }}
+              {%- endif -%}
+            </picture>
+          {%- else -%}
+            <div class="l15-hero__placeholder" aria-hidden="true"></div>
+          {%- endif -%}
         </div>
-        {%- if l15_has_hero_banner -%}
-          <div class="l15-hero__right">
-            {%- assign l15_banner_alt = section.settings.hero_image_desktop_banner.alt | default: shop.name -%}
-            {{
-              section.settings.hero_image_desktop_banner
-              | image_url: width: 1400
-              | image_tag: loading: 'eager', class: 'l15-hero__banner-img', sizes: '(min-width: 990px) 630px, 0', widths: '400, 630, 900, 1200, 1400', alt: l15_banner_alt
-            }}
-          </div>
-        {%- endif -%}
+        <div class="l15-hero__content">
+          <h1 id="l15-hero-heading" class="l15-hero__text">{{ section.settings.hero_heading | escape }}</h1>
+          {%- if section.settings.hero_button_label != blank -%}
+            <a class="l15-btn" href="{{ section.settings.hero_button_link | default: '#' }}">{{ section.settings.hero_button_label | escape }}</a>
+          {%- endif -%}
+        </div>
       </div>
     </section>
 
@@ -342,19 +323,13 @@
     {
       "type": "image_picker",
       "id": "hero_image",
-      "label": "Hero image (mobile + fallback)"
+      "label": "Hero background — mobile"
     },
     {
       "type": "image_picker",
       "id": "hero_bg_desktop",
-      "label": "Hero background — desktop left (optional)",
-      "info": "Wide mood image for the left pane from 990px up. Falls back to hero image if empty."
-    },
-    {
-      "type": "image_picker",
-      "id": "hero_image_desktop_banner",
-      "label": "Hero product image — desktop right (optional)",
-      "info": "When set, desktop shows a split hero (≈1024px) like the Figma desktop frame."
+      "label": "Hero background — desktop",
+      "info": "Shown from 990px up. If empty, the mobile background is used at all breakpoints."
     },
     {
       "type": "textarea",

@@ -34,29 +34,40 @@
   }
 }
 
-/* Hero — mobile: stacked; desktop +banner: split ~1024px (Figma Desktop_homepage) */
+/* Hero — `<picture>` mobile vs desktop BG; wrap max 1400px on desktop */
 .l15-hero {
   position: relative;
   overflow: hidden;
   background: #fff;
 }
 
-.l15-hero__split {
-  display: flex;
-  flex-direction: column;
+.l15-hero__wrap {
+  position: relative;
+  width: 100%;
   min-height: 22rem;
+  margin: 0 auto;
 }
 
-.l15-hero__left {
-  position: relative;
-  flex: 1;
-  min-height: 22rem;
-  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+@media screen and (min-width: 990px) {
+  .l15-hero__wrap {
+    max-width: 1400px;
+    min-height: 25rem;
+  }
 }
 
 .l15-hero__media {
   position: absolute;
   inset: 0;
+  z-index: 0;
+}
+
+.l15-hero__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .l15-hero__media picture,
@@ -67,6 +78,8 @@
 }
 
 .l15-hero__media img.l15-hero__photo {
+  max-width: none;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -77,21 +90,9 @@
   background: linear-gradient(135deg, #cfd9e8, #e8eef5);
 }
 
-.l15-hero__right {
-  display: none;
-}
-
-.l15-hero__banner-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 16rem;
-  object-fit: cover;
-}
-
 .l15-hero__content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   padding: 2.75rem 1.75rem 2.5rem;
   min-height: 22rem;
   display: flex;
@@ -512,11 +513,7 @@
 
 /* Desktop */
 @media screen and (min-width: 750px) {
-  .l15-hero__split {
-    min-height: 25rem;
-  }
-
-  .l15-hero__left {
+  .l15-hero__wrap {
     min-height: 25rem;
   }
 
@@ -571,31 +568,6 @@
 }
 
 @media screen and (min-width: 990px) {
-  .l15-hero--has-banner .l15-hero__split {
-    flex-direction: row;
-    align-items: stretch;
-    min-height: 25.125rem;
-    max-width: 64rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .l15-hero--has-banner .l15-hero__left {
-    flex: 1 1 42%;
-    min-height: 25.125rem;
-  }
-
-  .l15-hero--has-banner .l15-hero__right {
-    display: block;
-    flex: 1 1 50%;
-    max-width: 39.375rem;
-    min-height: 25.125rem;
-  }
-
-  .l15-hero--has-banner .l15-hero__banner-img {
-    min-height: 25.125rem;
-  }
-
   .l15-hero__content {
     padding: 2.875rem 2.875rem 2rem;
   }
