@@ -1,0 +1,809 @@
+{{ 'section-lago-home-1-5.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign product_blocks = section.blocks | where: 'type', 'product_path'
+  assign value_blocks = section.blocks | where: 'type', 'dealer_value'
+  assign category_blocks = section.blocks | where: 'type', 'dealer_category'
+  assign l15_has_hero_banner = false
+  if section.settings.hero_image_desktop_banner != blank
+    assign l15_has_hero_banner = true
+  endif
+  assign l15_use_setting_strips = false
+  if section.settings.settings_strip_1 != blank and section.settings.settings_strip_2 != blank and section.settings.settings_strip_3 != blank and section.settings.settings_strip_4 != blank and section.settings.settings_strip_5 != blank and section.settings.settings_strip_6 != blank
+    assign l15_use_setting_strips = true
+  endif
+-%}
+
+<div class="lago-home-1-5">
+  <div class="lago-home-1-5__inner">
+    {%- comment -%} Hero — mobile: single image; desktop: optional left BG + right banner (Figma Desktop_homepage) {%- endcomment -%}
+    <section
+      class="l15-hero{% if l15_has_hero_banner %} l15-hero--has-banner{% endif %}"
+      aria-labelledby="l15-hero-heading"
+    >
+      <div class="l15-hero__split">
+        <div class="l15-hero__left">
+          <div class="l15-hero__media">
+            {%- if section.settings.hero_image != blank or section.settings.hero_bg_desktop != blank -%}
+              <picture>
+                {%- if section.settings.hero_bg_desktop != blank -%}
+                  <source
+                    media="(min-width: 990px)"
+                    srcset="{{ section.settings.hero_bg_desktop | image_url: width: 2000 }}"
+                  >
+                {%- endif -%}
+                {%- if section.settings.hero_image != blank -%}
+                  {%- assign l15_hero_alt = section.settings.hero_image.alt | default: shop.name -%}
+                  {{
+                    section.settings.hero_image
+                    | image_url: width: 1600
+                    | image_tag: loading: 'eager', class: 'l15-hero__photo', sizes: '100vw', widths: '375, 550, 750, 1100, 1500, 1600', alt: l15_hero_alt
+                  }}
+                {%- elsif section.settings.hero_bg_desktop != blank -%}
+                  {%- assign l15_hero_alt = section.settings.hero_bg_desktop.alt | default: shop.name -%}
+                  {{
+                    section.settings.hero_bg_desktop
+                    | image_url: width: 1600
+                    | image_tag: loading: 'eager', class: 'l15-hero__photo', sizes: '100vw', widths: '375, 550, 750, 1100, 1500, 1600', alt: l15_hero_alt
+                  }}
+                {%- endif -%}
+              </picture>
+            {%- else -%}
+              <div class="l15-hero__placeholder" aria-hidden="true"></div>
+            {%- endif -%}
+          </div>
+          <div class="l15-hero__content">
+            <h1 id="l15-hero-heading" class="l15-hero__text">{{ section.settings.hero_heading | escape }}</h1>
+            {%- if section.settings.hero_button_label != blank -%}
+              <a class="l15-btn" href="{{ section.settings.hero_button_link | default: '#' }}">{{ section.settings.hero_button_label | escape }}</a>
+            {%- endif -%}
+          </div>
+        </div>
+        {%- if l15_has_hero_banner -%}
+          <div class="l15-hero__right">
+            {%- assign l15_banner_alt = section.settings.hero_image_desktop_banner.alt | default: shop.name -%}
+            {{
+              section.settings.hero_image_desktop_banner
+              | image_url: width: 1400
+              | image_tag: loading: 'eager', class: 'l15-hero__banner-img', sizes: '(min-width: 990px) 630px, 0', widths: '400, 630, 900, 1200, 1400', alt: l15_banner_alt
+            }}
+          </div>
+        {%- endif -%}
+      </div>
+    </section>
+
+    {%- comment -%} Explore solutions {%- endcomment -%}
+    <section class="l15-solutions" aria-labelledby="l15-solutions-heading">
+      <h2 id="l15-solutions-heading" class="l15-section-title">{{ section.settings.solutions_heading | escape }}</h2>
+      <div class="l15-path-grid">
+        {%- for block in product_blocks -%}
+          <a
+            class="l15-path-card"
+            href="{{ block.settings.link | default: '#' }}"
+            {{ block.shopify_attributes }}
+          >
+            <div class="l15-path-card__img">
+              {%- if block.settings.image != blank -%}
+                {%- assign l15_path_alt = block.settings.image.alt | default: block.settings.title -%}
+                {{
+                  block.settings.image
+                  | image_url: width: 400
+                  | image_tag: loading: 'lazy', sizes: '(max-width: 749px) 45vw, 22vw', widths: '200, 300, 400', alt: l15_path_alt
+                }}
+              {%- else -%}
+                <span class="l15-path-card__placeholder" aria-hidden="true"></span>
+              {%- endif -%}
+            </div>
+            <span class="l15-path-card__label">{{ block.settings.title | escape }}</span>
+            <span class="l15-path-card__arrow" aria-hidden="true"></span>
+          </a>
+        {%- endfor -%}
+      </div>
+    </section>
+
+    {%- comment -%} Venues / settings — mobile: two images + label grid; desktop: optional 6 vertical strips (Figma) {%- endcomment -%}
+    <section class="l15-settings" aria-labelledby="l15-settings-heading">
+      <h2 id="l15-settings-heading" class="l15-settings__title">{{ section.settings.settings_heading | escape }}</h2>
+      <div class="l15-settings__collage{% if l15_use_setting_strips %} l15-settings__collage--hide-desktop{% endif %}">
+        {%- if section.settings.settings_image_top != blank -%}
+          {%- assign l15_set_top_alt = section.settings.settings_image_top.alt | default: section.settings.settings_heading -%}
+          <div class="l15-settings__img">
+            {{
+              section.settings.settings_image_top
+              | image_url: width: 1200
+              | image_tag: loading: 'lazy', sizes: '100vw', widths: '375, 550, 750, 1000, 1200', alt: l15_set_top_alt
+            }}
+          </div>
+        {%- endif -%}
+        <div class="l15-settings__labels{% if l15_use_setting_strips %} l15-settings__labels--hide-desktop{% endif %}">
+          <span>{{ section.settings.label_hotels | escape }}</span>
+          <span>{{ section.settings.label_cafe | escape }}</span>
+          <span>{{ section.settings.label_restaurants | escape }}</span>
+          <span>{{ section.settings.label_fitness | escape }}</span>
+          <span>{{ section.settings.label_laundromat | escape }}</span>
+          <span>{{ section.settings.label_spa | escape }}</span>
+        </div>
+        {%- if section.settings.settings_image_bottom != blank -%}
+          {%- assign l15_set_bot_alt = section.settings.settings_image_bottom.alt | default: section.settings.settings_heading -%}
+          <div class="l15-settings__img">
+            {{
+              section.settings.settings_image_bottom
+              | image_url: width: 1200
+              | image_tag: loading: 'lazy', sizes: '100vw', widths: '375, 550, 750, 1000, 1200', alt: l15_set_bot_alt
+            }}
+          </div>
+        {%- endif -%}
+      </div>
+      {%- if l15_use_setting_strips -%}
+        <div class="l15-settings__strips">
+          <div class="l15-settings__strip">
+            <div class="l15-settings__strip-visual">
+              {%- assign l15_s1_alt = section.settings.settings_strip_1.alt | default: section.settings.label_hotels -%}
+              {{
+                section.settings.settings_strip_1
+                | image_url: width: 400
+                | image_tag: loading: 'lazy', widths: '200, 300, 400', alt: l15_s1_alt
+              }}
+            </div>
+            <span class="l15-settings__strip-caption">{{ section.settings.label_hotels | escape }}</span>
+          </div>
+          <div class="l15-settings__strip">
+            <div class="l15-settings__strip-visual">
+              {%- assign l15_s2_alt = section.settings.settings_strip_2.alt | default: section.settings.label_restaurants -%}
+              {{
+                section.settings.settings_strip_2
+                | image_url: width: 400
+                | image_tag: loading: 'lazy', widths: '200, 300, 400', alt: l15_s2_alt
+              }}
+            </div>
+            <span class="l15-settings__strip-caption">{{ section.settings.label_restaurants | escape }}</span>
+          </div>
+          <div class="l15-settings__strip">
+            <div class="l15-settings__strip-visual">
+              {%- assign l15_s3_alt = section.settings.settings_strip_3.alt | default: section.settings.label_cafe -%}
+              {{
+                section.settings.settings_strip_3
+                | image_url: width: 400
+                | image_tag: loading: 'lazy', widths: '200, 300, 400', alt: l15_s3_alt
+              }}
+            </div>
+            <span class="l15-settings__strip-caption">{{ section.settings.label_cafe | escape }}</span>
+          </div>
+          <div class="l15-settings__strip">
+            <div class="l15-settings__strip-visual">
+              {%- assign l15_s4_alt = section.settings.settings_strip_4.alt | default: section.settings.label_fitness -%}
+              {{
+                section.settings.settings_strip_4
+                | image_url: width: 400
+                | image_tag: loading: 'lazy', widths: '200, 300, 400', alt: l15_s4_alt
+              }}
+            </div>
+            <span class="l15-settings__strip-caption">{{ section.settings.label_fitness | escape }}</span>
+          </div>
+          <div class="l15-settings__strip">
+            <div class="l15-settings__strip-visual">
+              {%- assign l15_s5_alt = section.settings.settings_strip_5.alt | default: section.settings.label_laundromat -%}
+              {{
+                section.settings.settings_strip_5
+                | image_url: width: 400
+                | image_tag: loading: 'lazy', widths: '200, 300, 400', alt: l15_s5_alt
+              }}
+            </div>
+            <span class="l15-settings__strip-caption">{{ section.settings.label_laundromat | escape }}</span>
+          </div>
+          <div class="l15-settings__strip">
+            <div class="l15-settings__strip-visual">
+              {%- assign l15_s6_alt = section.settings.settings_strip_6.alt | default: section.settings.label_spa -%}
+              {{
+                section.settings.settings_strip_6
+                | image_url: width: 400
+                | image_tag: loading: 'lazy', widths: '200, 300, 400', alt: l15_s6_alt
+              }}
+            </div>
+            <span class="l15-settings__strip-caption">{{ section.settings.label_spa | escape }}</span>
+          </div>
+        </div>
+      {%- endif -%}
+    </section>
+
+    {%- comment -%} Dealer value props {%- endcomment -%}
+    <section class="l15-dealer-values" aria-labelledby="l15-dealer-heading">
+      <h2 id="l15-dealer-heading" class="l15-dealer-values__title">{{ section.settings.dealer_section_heading | escape }}</h2>
+      <div class="l15-dealer-values__grid">
+        {%- for block in value_blocks -%}
+          <div class="l15-value-row" {{ block.shopify_attributes }}>
+            <div class="l15-value-row__icon">
+              {%- if block.settings.icon != blank -%}
+                {%- assign l15_icon_alt = block.settings.icon.alt | default: block.settings.title -%}
+                {{
+                  block.settings.icon
+                  | image_url: width: 120
+                  | image_tag: loading: 'lazy', widths: '60, 120', alt: l15_icon_alt
+                }}
+              {%- endif -%}
+            </div>
+            <div>
+              <h3 class="l15-value-row__title">{{ block.settings.title | escape }}</h3>
+              <p class="l15-value-row__text">{{ block.settings.text | escape }}</p>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+      {%- if section.settings.dealer_cta_label != blank -%}
+        <div class="l15-dealer-values__cta">
+          <a class="l15-btn" href="{{ section.settings.dealer_cta_link | default: '#' }}">{{ section.settings.dealer_cta_label | escape }}</a>
+        </div>
+      {%- endif -%}
+    </section>
+
+    {%- comment -%} Hydration / category grid {%- endcomment -%}
+    <section class="l15-innovation" aria-labelledby="l15-innovation-heading">
+      <h2 id="l15-innovation-heading" class="l15-innovation__title">{{ section.settings.innovation_heading | escape }}</h2>
+      <p class="l15-innovation__lead">{{ section.settings.innovation_lead | escape }}</p>
+      <div class="l15-cat-grid">
+        {%- for block in category_blocks -%}
+          <div class="l15-cat" {{ block.shopify_attributes }}>
+            <div class="l15-cat__img">
+              {%- if block.settings.image != blank -%}
+                {%- assign l15_cat_alt = block.settings.image.alt | default: block.settings.title -%}
+                {{
+                  block.settings.image
+                  | image_url: width: 300
+                  | image_tag: loading: 'lazy', sizes: '120px', widths: '150, 300', alt: l15_cat_alt
+                }}
+              {%- endif -%}
+            </div>
+            <p class="l15-cat__label">{{ block.settings.title | newline_to_br }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+      {%- if section.settings.innovation_cta_label != blank -%}
+        <div class="l15-innovation__cta">
+          <a class="l15-btn" href="{{ section.settings.innovation_cta_link | default: '#' }}">{{ section.settings.innovation_cta_label | escape }}</a>
+        </div>
+      {%- endif -%}
+    </section>
+
+    {%- comment -%} Footer band (homepage only; rest of site uses theme footer) {%- endcomment -%}
+    <footer class="l15-foot">
+      <div class="l15-foot__layout">
+        <div class="l15-foot__brand">
+          {%- if section.settings.footer_logo != blank -%}
+            <div class="l15-foot__logo">
+              <a href="{{ routes.root_url }}">
+                {{
+                  section.settings.footer_logo
+                  | image_url: width: 200
+                  | image_tag: loading: 'lazy', widths: '100, 200', alt: shop.name
+                }}
+              </a>
+            </div>
+          {%- endif -%}
+          <p class="l15-foot__intro">{{ section.settings.footer_intro | escape }}</p>
+        </div>
+        <div class="l15-foot__resources">
+          <p class="l15-foot__col-title">{{ section.settings.footer_resources_heading | escape }}</p>
+          <nav class="l15-foot__nav" aria-label="Resources">
+            {%- if section.settings.link_home != blank -%}
+              <a href="{{ section.settings.link_home }}">{{ section.settings.label_home | escape }}</a>
+            {%- endif -%}
+            {%- if section.settings.link_dispensers != blank -%}
+              <a href="{{ section.settings.link_dispensers }}">{{ section.settings.label_dispensers | escape }}</a>
+            {%- endif -%}
+            {%- if section.settings.link_filtration != blank -%}
+              <a href="{{ section.settings.link_filtration }}">{{ section.settings.label_filtration | escape }}</a>
+            {%- endif -%}
+            {%- if section.settings.link_why_lago != blank -%}
+              <a href="{{ section.settings.link_why_lago }}">{{ section.settings.label_why_lago | escape }}</a>
+            {%- endif -%}
+            {%- if section.settings.link_dealer != blank -%}
+              <a href="{{ section.settings.link_dealer }}">{{ section.settings.label_dealer | escape }}</a>
+            {%- endif -%}
+          </nav>
+        </div>
+        <div class="l15-foot__contact-col">
+          <p class="l15-foot__col-title">{{ section.settings.footer_contact_heading | escape }}</p>
+          <div class="l15-foot__contact">
+            {%- if section.settings.footer_phone != blank -%}
+              <a class="l15-foot__pill" href="tel:{{ section.settings.footer_phone | replace: ' ', '' | replace: '(', '' | replace: ')', '' | replace: '-', '' }}">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M6.6 10.8c1.4 2.8 3.6 5 6.4 6.4l2.1-2.1c.3-.3.7-.4 1.1-.2 1.1.4 2.3.6 3.6.6.6 0 1.1.5 1.1 1.1V21c0 .6-.5 1.1-1.1 1.1C9.4 22.2 2 14.8 2 5.7 2 5.1 2.5 4.6 3.1 4.6H6.5c.6 0 1.1.5 1.1 1.1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6 10.8z" fill="currentColor"/>
+                </svg>
+                <span>{{ section.settings.footer_phone | escape }}</span>
+              </a>
+            {%- endif -%}
+            {%- if section.settings.footer_email != blank -%}
+              <a class="l15-foot__pill l15-foot__pill--email" href="mailto:{{ section.settings.footer_email }}">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 6h16v12H4V6zm0 0l8 6 8-6" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                </svg>
+                <span>{{ section.settings.footer_email | escape }}</span>
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+      <hr class="l15-foot__rule">
+      <p class="l15-foot__copy">{{ section.settings.footer_copyright | escape }}</p>
+    </footer>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lago 1.5 homepage",
+  "tag": "section",
+  "class": "section section-lago-home-1-5",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image (mobile + fallback)"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_bg_desktop",
+      "label": "Hero background — desktop left (optional)",
+      "info": "Wide mood image for the left pane from 990px up. Falls back to hero image if empty."
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_desktop_banner",
+      "label": "Hero product image — desktop right (optional)",
+      "info": "When set, desktop shows a split hero (≈1024px) like the Figma desktop frame."
+    },
+    {
+      "type": "textarea",
+      "id": "hero_heading",
+      "label": "Hero heading",
+      "default": "Your water solution partner for residential and commercial settings."
+    },
+    {
+      "type": "text",
+      "id": "hero_button_label",
+      "label": "Hero button label",
+      "default": "Become a Dealer"
+    },
+    {
+      "type": "url",
+      "id": "hero_button_link",
+      "label": "Hero button link"
+    },
+    {
+      "type": "header",
+      "content": "Explore solutions"
+    },
+    {
+      "type": "text",
+      "id": "solutions_heading",
+      "label": "Heading",
+      "default": "Explore Our Solutions"
+    },
+    {
+      "type": "header",
+      "content": "Solutions for every setting"
+    },
+    {
+      "type": "text",
+      "id": "settings_heading",
+      "label": "Heading",
+      "default": "Lago Solutions For Every Setting"
+    },
+    {
+      "type": "image_picker",
+      "id": "settings_image_top",
+      "label": "Top collage image"
+    },
+    {
+      "type": "image_picker",
+      "id": "settings_image_bottom",
+      "label": "Bottom collage image"
+    },
+    {
+      "type": "paragraph",
+      "content": "Desktop strips: upload all 6 portrait crops to replace the two collage images on large screens (matches Figma). Order: Hotels, Restaurants, Café, Fitness, Laundromats, Spas."
+    },
+    {
+      "type": "image_picker",
+      "id": "settings_strip_1",
+      "label": "Strip 1 — Hotels"
+    },
+    {
+      "type": "image_picker",
+      "id": "settings_strip_2",
+      "label": "Strip 2 — Restaurants"
+    },
+    {
+      "type": "image_picker",
+      "id": "settings_strip_3",
+      "label": "Strip 3 — Café"
+    },
+    {
+      "type": "image_picker",
+      "id": "settings_strip_4",
+      "label": "Strip 4 — Fitness"
+    },
+    {
+      "type": "image_picker",
+      "id": "settings_strip_5",
+      "label": "Strip 5 — Laundromats"
+    },
+    {
+      "type": "image_picker",
+      "id": "settings_strip_6",
+      "label": "Strip 6 — Spas"
+    },
+    {
+      "type": "text",
+      "id": "label_hotels",
+      "label": "Caption — column 1",
+      "default": "Hotels & Apartments"
+    },
+    {
+      "type": "text",
+      "id": "label_cafe",
+      "label": "Caption — column 2",
+      "default": "Café Coffee Shops"
+    },
+    {
+      "type": "text",
+      "id": "label_restaurants",
+      "label": "Caption — column 3",
+      "default": "Restaurants & Food Services"
+    },
+    {
+      "type": "text",
+      "id": "label_fitness",
+      "label": "Caption — row 2 col 1",
+      "default": "Fitness Gyms"
+    },
+    {
+      "type": "text",
+      "id": "label_laundromat",
+      "label": "Caption — row 2 col 2",
+      "default": "Laundromats & Car Washes"
+    },
+    {
+      "type": "text",
+      "id": "label_spa",
+      "label": "Caption — row 2 col 3",
+      "default": "Spas & Beauty Salons"
+    },
+    {
+      "type": "header",
+      "content": "Dealer network"
+    },
+    {
+      "type": "text",
+      "id": "dealer_section_heading",
+      "label": "Heading",
+      "default": "Join the Lago Dealer Network"
+    },
+    {
+      "type": "text",
+      "id": "dealer_cta_label",
+      "label": "Button label",
+      "default": "Become a Dealer"
+    },
+    {
+      "type": "url",
+      "id": "dealer_cta_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Hydration / categories"
+    },
+    {
+      "type": "text",
+      "id": "innovation_heading",
+      "label": "Heading",
+      "default": "Hydration innovation is what we do."
+    },
+    {
+      "type": "textarea",
+      "id": "innovation_lead",
+      "label": "Supporting text",
+      "default": "We provide our dealers the largest product offering in the industry with the most advanced technology."
+    },
+    {
+      "type": "text",
+      "id": "innovation_cta_label",
+      "label": "Button label",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "innovation_cta_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Homepage footer band"
+    },
+    {
+      "type": "image_picker",
+      "id": "footer_logo",
+      "label": "Logo"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_intro",
+      "label": "Intro text",
+      "default": "At Lago we understand our dealers and their customers which enables us to provide the best filtration products to fit your needs. Our goal is that with every sip you take you feel the passion we put into all of our products."
+    },
+    {
+      "type": "text",
+      "id": "footer_resources_heading",
+      "label": "Resources column heading",
+      "default": "Resources"
+    },
+    {
+      "type": "text",
+      "id": "label_home",
+      "label": "Nav — Home label",
+      "default": "Home"
+    },
+    {
+      "type": "url",
+      "id": "link_home",
+      "label": "Nav — Home link"
+    },
+    {
+      "type": "text",
+      "id": "label_dispensers",
+      "label": "Nav — Water dispensers label",
+      "default": "Water Dispensers"
+    },
+    {
+      "type": "url",
+      "id": "link_dispensers",
+      "label": "Nav — Water dispensers link"
+    },
+    {
+      "type": "text",
+      "id": "label_filtration",
+      "label": "Nav — Filtration label",
+      "default": "Filtration Systems"
+    },
+    {
+      "type": "text",
+      "id": "label_why_lago",
+      "label": "Nav — Why Lago label",
+      "default": "Why Lago"
+    },
+    {
+      "type": "url",
+      "id": "link_why_lago",
+      "label": "Nav — Why Lago link"
+    },
+    {
+      "type": "url",
+      "id": "link_filtration",
+      "label": "Nav — Filtration link"
+    },
+    {
+      "type": "text",
+      "id": "label_dealer",
+      "label": "Nav — Become a dealer label",
+      "default": "Become a Dealer"
+    },
+    {
+      "type": "url",
+      "id": "link_dealer",
+      "label": "Nav — Become a dealer link"
+    },
+    {
+      "type": "text",
+      "id": "footer_contact_heading",
+      "label": "Contact column heading",
+      "default": "Contact Us"
+    },
+    {
+      "type": "text",
+      "id": "footer_phone",
+      "label": "Phone (display)",
+      "default": "(800) 555-0123"
+    },
+    {
+      "type": "text",
+      "id": "footer_email",
+      "label": "Email",
+      "default": "info@lagowater.com"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_copyright",
+      "label": "Copyright line",
+      "default": "©2025 Brio Water Technology. Inc. All rights reserved. Lago is a registered trademark of Brio Water Tech., INC."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_path",
+      "name": "Solution card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Countertop dispensers"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "type": "dealer_value",
+      "name": "Dealer benefit",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Factory direct partner"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Dealers get access to the largest selection of water dispensers and filtration systems."
+        }
+      ]
+    },
+    {
+      "type": "dealer_category",
+      "name": "Category tile",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Title (line breaks allowed)",
+          "default": "POU RO+\nDispensers"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lago 1.5 homepage",
+      "blocks": [
+        {
+          "type": "product_path",
+          "settings": {
+            "title": "Countertop Dispensers"
+          }
+        },
+        {
+          "type": "product_path",
+          "settings": {
+            "title": "Sparkling Dispensers"
+          }
+        },
+        {
+          "type": "product_path",
+          "settings": {
+            "title": "Stand Up Dispensers"
+          }
+        },
+        {
+          "type": "product_path",
+          "settings": {
+            "title": "Ice Makers"
+          }
+        },
+        {
+          "type": "product_path",
+          "settings": {
+            "title": "Undersink Filtration Systems"
+          }
+        },
+        {
+          "type": "product_path",
+          "settings": {
+            "title": "Light Commercial RO Systems"
+          }
+        },
+        {
+          "type": "product_path",
+          "settings": {
+            "title": "Point-of-Entry Filtration Systems"
+          }
+        },
+        {
+          "type": "product_path",
+          "settings": {
+            "title": "Industrial RO Systems"
+          }
+        },
+        {
+          "type": "dealer_value",
+          "settings": {
+            "title": "Factory Direct Partner",
+            "text": "Dealers get access to the largest selection of water dispensers and filtration systems."
+          }
+        },
+        {
+          "type": "dealer_value",
+          "settings": {
+            "title": "Dedicated Representative",
+            "text": "Lago customer service representatives are ready to help and act as an extension of your team."
+          }
+        },
+        {
+          "type": "dealer_value",
+          "settings": {
+            "title": "Expedited Shipping",
+            "text": "Our Lago distribution centers are located nationwide."
+          }
+        },
+        {
+          "type": "dealer_value",
+          "settings": {
+            "title": "Exclusive Dealer Pricing",
+            "text": "Lago dealers get exclusive access to our full catalog of products at the lowest prices."
+          }
+        },
+        {
+          "type": "dealer_category",
+          "settings": {
+            "title": "POU RO+\nDispensers"
+          }
+        },
+        {
+          "type": "dealer_category",
+          "settings": {
+            "title": "Sparkling Dispensers"
+          }
+        },
+        {
+          "type": "dealer_category",
+          "settings": {
+            "title": "Undersink Systems"
+          }
+        },
+        {
+          "type": "dealer_category",
+          "settings": {
+            "title": "High-Capacity Filtration Systems"
+          }
+        },
+        {
+          "type": "dealer_category",
+          "settings": {
+            "title": "Industrial RO Systems"
+          }
+        },
+        {
+          "type": "dealer_category",
+          "settings": {
+            "title": "Ice Machines"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
