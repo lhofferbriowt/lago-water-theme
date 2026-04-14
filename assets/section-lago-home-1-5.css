@@ -34,31 +34,30 @@
   }
 }
 
-/* Hero — `<picture>` mobile vs desktop BG; wrap max 1440px from 990px up */
+/* Hero — `<picture>` mobile vs desktop BG; wrap max 1440px from 990px up.
+   Image is in-flow (height: auto) so full frame shows; text overlays bottom. */
 .l15-hero {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   background: #fff;
 }
 
 .l15-hero__wrap {
   position: relative;
   width: 100%;
-  min-height: 22rem;
   margin: 0 auto;
 }
 
 @media screen and (min-width: 990px) {
   .l15-hero__wrap {
     max-width: 1440px;
-    min-height: 25rem;
   }
 }
 
 .l15-hero__media {
-  position: absolute;
-  inset: 0;
+  position: relative;
   z-index: 0;
+  line-height: 0;
 }
 
 .l15-hero__media::after {
@@ -74,13 +73,13 @@
 .l15-hero__media img.l15-hero__photo {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .l15-hero__media img.l15-hero__photo {
   max-width: none;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  vertical-align: middle;
 }
 
 .l15-hero__placeholder {
@@ -91,10 +90,10 @@
 }
 
 .l15-hero__content {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 2;
   padding: 2.75rem 1.75rem 2.5rem;
-  min-height: 22rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -526,12 +525,7 @@
 
 /* Desktop */
 @media screen and (min-width: 750px) {
-  .l15-hero__wrap {
-    min-height: 25rem;
-  }
-
   .l15-hero__content {
-    min-height: 25rem;
     padding: 3rem 2.875rem 2.5rem;
   }
 
