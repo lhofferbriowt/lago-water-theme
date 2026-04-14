@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "lago_home_1_5": {
@@ -145,9 +154,46 @@
         "dc6"
       ],
       "settings": {
-        "innovation_cta_label": "Learn More"
+        "hero_image": "shopify://shop_images/mobile_hero.png",
+        "hero_bg_desktop": "shopify://shop_images/desktop_hero_1440w.png",
+        "hero_heading": "Your water solution partner for residential and commercial settings.",
+        "hero_button_label": "Become a Dealer",
+        "hero_button_link": "",
+        "solutions_heading": "Explore Our Solutions",
+        "settings_heading": "Lago Solutions For Every Setting",
+        "label_hotels": "Hotels & Apartments",
+        "label_cafe": "Café Coffee Shops",
+        "label_restaurants": "Restaurants & Food Services",
+        "label_fitness": "Fitness Gyms",
+        "label_laundromat": "Laundromats & Car Washes",
+        "label_spa": "Spas & Beauty Salons",
+        "dealer_section_heading": "Join the Lago Dealer Network",
+        "dealer_cta_label": "Become a Dealer",
+        "dealer_cta_link": "",
+        "innovation_heading": "Hydration innovation is what we do.",
+        "innovation_lead": "We provide our dealers the largest product offering in the industry with the most advanced technology.",
+        "innovation_cta_label": "Learn More",
+        "innovation_cta_link": "",
+        "footer_intro": "At Lago we understand our dealers and their customers which enables us to provide the best filtration products to fit your needs. Our goal is that with every sip you take you feel the passion we put into all of our products.",
+        "footer_resources_heading": "Resources",
+        "label_home": "Home",
+        "link_home": "",
+        "label_dispensers": "Water Dispensers",
+        "link_dispensers": "",
+        "label_filtration": "Filtration Systems",
+        "label_why_lago": "Why Lago",
+        "link_why_lago": "",
+        "link_filtration": "",
+        "label_dealer": "Become a Dealer",
+        "link_dealer": "",
+        "footer_contact_heading": "Contact Us",
+        "footer_phone": "(800) 555-0123",
+        "footer_email": "info@lagowater.com",
+        "footer_copyright": "©2025 Brio Water Technology. Inc. All rights reserved. Lago is a registered trademark of Brio Water Tech., INC."
       }
     }
   },
-  "order": ["lago_home_1_5"]
+  "order": [
+    "lago_home_1_5"
+  ]
 }
