@@ -34,7 +34,7 @@
   }
 }
 
-/* Hero — `<picture>` mobile vs desktop BG; wrap max 1400px on desktop */
+/* Hero — `<picture>` mobile vs desktop BG; wrap max 1440px from 990px up */
 .l15-hero {
   position: relative;
   overflow: hidden;

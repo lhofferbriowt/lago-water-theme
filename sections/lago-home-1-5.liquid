@@ -12,7 +12,7 @@
 
 <div class="lago-home-1-5">
   <div class="lago-home-1-5__inner">
-    {%- comment -%} Hero — `<picture>`: mobile background + optional desktop background (max 1400px wide on large screens) {%- endcomment -%}
+    {%- comment -%} Hero — `<picture>`: mobile + desktop BG; wrap max 1440px. Desktop `<source>` must use `w` descriptors so `sizes` on `<img>` applies (avoids ~900px picks). {%- endcomment -%}
     <section class="l15-hero" aria-labelledby="l15-hero-heading">
       <div class="l15-hero__wrap">
         <div class="l15-hero__media">
@@ -21,7 +21,7 @@
               {%- if section.settings.hero_bg_desktop != blank -%}
                 <source
                   media="(min-width: 990px)"
-                  srcset="{{ section.settings.hero_bg_desktop | image_url: width: 2800 }}"
+                  srcset="{{ section.settings.hero_bg_desktop | image_url: width: 1100 }} 1100w, {{ section.settings.hero_bg_desktop | image_url: width: 1440 }} 1440w, {{ section.settings.hero_bg_desktop | image_url: width: 1920 }} 1920w, {{ section.settings.hero_bg_desktop | image_url: width: 2400 }} 2400w, {{ section.settings.hero_bg_desktop | image_url: width: 2880 }} 2880w"
                 >
               {%- endif -%}
               {%- if section.settings.hero_image != blank -%}
@@ -29,14 +29,14 @@
                 {{
                   section.settings.hero_image
                   | image_url: width: 1600
-                  | image_tag: loading: 'eager', class: 'l15-hero__photo', sizes: '(max-width: 989px) 100vw, 1400px', widths: '375, 550, 750, 1100, 1400, 1600', alt: l15_hero_alt
+                  | image_tag: loading: 'eager', class: 'l15-hero__photo', sizes: '(max-width: 989px) 100vw, 1440px', widths: '375, 550, 750, 900, 1100, 1280, 1440, 1600, 1920, 2400', alt: l15_hero_alt
                 }}
               {%- elsif section.settings.hero_bg_desktop != blank -%}
                 {%- assign l15_hero_alt = section.settings.hero_bg_desktop.alt | default: shop.name -%}
                 {{
                   section.settings.hero_bg_desktop
                   | image_url: width: 2000
-                  | image_tag: loading: 'eager', class: 'l15-hero__photo', sizes: '(max-width: 989px) 100vw, 1400px', widths: '750, 1100, 1400, 2000', alt: l15_hero_alt
+                  | image_tag: loading: 'eager', class: 'l15-hero__photo', sizes: '(max-width: 989px) 100vw, 1440px', widths: '750, 900, 1100, 1280, 1440, 1600, 1920, 2400', alt: l15_hero_alt
                 }}
               {%- endif -%}
             </picture>
