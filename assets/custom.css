@@ -90,6 +90,9 @@ a#cart-icon-bubble {
     display: none;
 }
 
+.header.page-width {
+  max-width: 1200px;
+}
 
 /* media query */
 
