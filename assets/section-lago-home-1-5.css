@@ -407,11 +407,24 @@
   justify-content: center;
 }
 
-/* Footer band */
+/* Footer band — full viewport width; content lives in .l15-foot__inner */
 .l15-foot {
   background: var(--l15-blue);
   color: #fff;
+  padding: 0;
+  width: 100vw;
+  max-width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+}
+
+.l15-foot__inner {
+  max-width: min(90rem, 100%);
+  margin: 0 auto;
   padding: 1.25rem 1.75rem 2rem;
+  box-sizing: border-box;
 }
 
 .l15-foot__layout {
@@ -639,15 +652,45 @@
 
   .l15-foot__layout {
     display: grid;
-    grid-template-columns: minmax(12rem, 18rem) 1fr 1fr;
+    grid-template-columns: minmax(12rem, 18rem) minmax(14rem, 1fr) minmax(14rem, 18rem);
     gap: 2rem 3rem;
     align-items: start;
+    width: 100%;
     max-width: 75rem;
     margin: 0 auto;
+    justify-items: stretch;
+  }
+
+  .l15-foot__brand {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .l15-foot__resources {
+    justify-self: center;
+    text-align: center;
+  }
+
+  .l15-foot__resources .l15-foot__col-title {
+    text-align: center;
+  }
+
+  .l15-foot__contact-col {
+    justify-self: end;
+    text-align: right;
+  }
+
+  .l15-foot__contact-col .l15-foot__col-title {
+    text-align: right;
+  }
+
+  .l15-foot__contact {
+    align-items: flex-end;
   }
 
   .l15-foot__nav {
     flex-direction: column;
+    align-items: center;
     gap: 0.5rem;
   }
 

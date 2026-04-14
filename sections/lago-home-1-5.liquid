@@ -244,9 +244,11 @@
         </div>
       {%- endif -%}
     </section>
+  </div>
 
-    {%- comment -%} Footer band (homepage only; rest of site uses theme footer) {%- endcomment -%}
-    <footer class="l15-foot">
+  {%- comment -%} Footer band — full viewport width; inner constrains content (homepage only) {%- endcomment -%}
+  <footer class="l15-foot">
+    <div class="l15-foot__inner">
       <div class="l15-foot__layout">
         <div class="l15-foot__brand">
           {%- if section.settings.footer_logo != blank -%}
@@ -306,8 +308,8 @@
       </div>
       <hr class="l15-foot__rule">
       <p class="l15-foot__copy">{{ section.settings.footer_copyright | escape }}</p>
-    </footer>
-  </div>
+    </div>
+  </footer>
 </div>
 
 {% schema %}
