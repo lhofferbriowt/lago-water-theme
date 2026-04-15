@@ -126,12 +126,12 @@
   min-height: 3rem;
   min-width: 12.5rem;
   padding: 0 1.75rem;
-  margin: 0;
+  margin: 1.25rem 0 0;
   background: #4a71aa;
   color: #fff !important;
   text-decoration: none !important;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
   border: none;
   border-radius: 9999px;
   cursor: pointer;
