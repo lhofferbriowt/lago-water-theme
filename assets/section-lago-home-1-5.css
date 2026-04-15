@@ -220,8 +220,7 @@
   font-size: var(--l15-path-label-font-size, 12px);
   font-weight: var(--l15-path-label-font-weight, 400);
   color: var(--l15-blue-text);
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  text-decoration: none;
   line-height: 1.35;
   padding-top: 0.15rem;
 }
