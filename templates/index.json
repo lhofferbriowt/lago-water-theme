@@ -15,6 +15,7 @@
         "pp1": {
           "type": "product_path",
           "settings": {
+            "image": "shopify://shop_images/counter_top_water_dispenser_2.png",
             "title": "Countertop Dispensers",
             "link": ""
           }
