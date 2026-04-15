@@ -7,10 +7,28 @@
   --l15-card: #f5f5f5;
   --l15-radius-card: 11px;
   --l15-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: 'CentraNo Book', sans-serif;
+  --l15-font-display: 'Centra No2', 'CentraNo Book', Arial, sans-serif;
+  font-family: var(--l15-font-display);
   color: #000;
   background: #fff;
   box-shadow: var(--l15-shadow);
+}
+
+/* Headings: stack + book weight (theme loads CentraNo Book as normal/400) */
+.lago-home-1-5 h1,
+.lago-home-1-5 h2,
+.lago-home-1-5 h3,
+.lago-home-1-5 .l15-foot__col-title {
+  font-family: var(--l15-font-display) !important;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+}
+
+.lago-home-1-5 .l15-innovation__lead,
+.lago-home-1-5 .l15-value-row__text,
+.lago-home-1-5 .l15-foot__intro {
+  font-family: var(--l15-font-display) !important;
+  font-weight: 400;
 }
 
 .lago-home-1-5 * {
@@ -114,7 +132,8 @@
 .l15-hero__text {
   margin: 0 0 1.25rem;
   font-size: 1.5rem;
-  line-height: 1.25;
+  line-height: 1.2;
+  font-weight: 400;
   color: #fff;
   max-width: min(100%, 34rem);
 }
@@ -159,8 +178,9 @@
 .l15-section-title {
   margin: 1.5rem 0 1.75rem;
   font-size: var(--l15-section-title-font-size, 15px);
-  font-weight: 600;
-  color: #000;
+  line-height: 1.2;
+  font-weight: 400;
+  color: #333;
 }
 
 .l15-path-grid {
@@ -244,7 +264,9 @@
 .l15-settings__title {
   margin: 1.75rem 1rem 1.5rem;
   font-size: var(--l15-settings-title-font-size, 15px);
-  font-weight: 600;
+  line-height: 1.2;
+  font-weight: 400;
+  color: #333;
 }
 
 /* 6-strip layout */
@@ -310,7 +332,8 @@
 .l15-dealer-values__title {
   margin: 0 0 1.5rem;
   font-size: var(--l15-dealer-heading-font-size, 16px);
-  font-weight: 600;
+  line-height: 1.2;
+  font-weight: 400;
   color: var(--l15-blue-text);
   text-align: center;
 }
@@ -342,7 +365,8 @@
 .l15-value-row__title {
   margin: 0 0 0.25rem;
   font-size: var(--l15-value-row-title-font-size, 16px);
-  font-weight: 600;
+  line-height: 1.2;
+  font-weight: 400;
 }
 
 .l15-value-row__text {
@@ -372,14 +396,17 @@
 .l15-innovation__title {
   margin: 0 0 0.75rem;
   font-size: var(--l15-innovation-heading-font-size, 16px);
-  font-weight: 600;
+  line-height: 1.2;
+  font-weight: 400;
   color: var(--l15-blue-text);
 }
 
 .l15-innovation__lead {
   margin: 0 0 1.5rem;
   font-size: var(--l15-innovation-lead-font-size, 16px);
-  line-height: 1.4;
+  line-height: 1.45;
+  font-weight: 400;
+  color: #555;
   max-width: 900px;
 }
 
@@ -447,6 +474,7 @@
 .l15-foot__col-title {
   margin: 0 0 0.75rem;
   font-size: 1.125rem;
+  line-height: 1.2;
   font-weight: 400;
 }
 
@@ -542,7 +570,8 @@
   }
 
   .l15-hero__text {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    line-height: 1.2;
     max-width: min(100%, 36rem);
   }
 
@@ -585,6 +614,15 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0.75rem;
+  }
+}
+
+/* Display-sized hero line (theme html uses ~62.5% rem ⇒ 4.8rem ≈ 48px) */
+@media screen and (min-width: 1024px) {
+  .l15-hero__text {
+    font-size: 4.8rem;
+    line-height: 1.2;
+    max-width: min(100%, 52rem);
   }
 }
 
