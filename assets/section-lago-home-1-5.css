@@ -243,7 +243,7 @@
 /* 6-strip layout */
 .l15-settings__strips {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem 0.9rem;
   padding: 0 0.5rem 0.5rem;
 }
