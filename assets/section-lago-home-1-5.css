@@ -216,7 +216,7 @@
   transform: translateX(-50%);
   width: calc(100% - 1rem);
   text-align: center;
-  font-size: 0.75rem;
+  font-size: var(--l15-path-label-font-size, 12px);
   color: var(--l15-blue-text);
   text-decoration: underline;
   text-underline-offset: 2px;

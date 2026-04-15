@@ -10,7 +10,10 @@
   endif
 -%}
 
-<div class="lago-home-1-5">
+<div
+  class="lago-home-1-5"
+  style="--l15-path-label-font-size: {{ section.settings.path_card_label_font_size }}px;"
+>
   <div class="lago-home-1-5__inner">
     {%- comment -%} Hero — `<picture>`: mobile + desktop BG; wrap max 1440px. Desktop `<source>` must use `w` descriptors so `sizes` on `<img>` applies (avoids ~900px picks). {%- endcomment -%}
     <section class="l15-hero" aria-labelledby="l15-hero-heading">
@@ -361,6 +364,17 @@
       "id": "solutions_heading",
       "label": "Heading",
       "default": "Explore Our Solutions"
+    },
+    {
+      "type": "range",
+      "id": "path_card_label_font_size",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Solution card label font size",
+      "info": "Text size for the link label under each solution card (Explore solutions).",
+      "default": 12
     },
     {
       "type": "header",
