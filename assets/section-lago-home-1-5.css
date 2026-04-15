@@ -123,22 +123,27 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 2.1875rem;
-  min-width: 10.2rem;
-  padding: 0 0.75rem;
-  margin: 20px;
-  background: var(--l15-blue-text);
+  min-height: 3rem;
+  min-width: 12.5rem;
+  padding: 0 1.75rem;
+  margin: 0;
+  background: #4a71aa;
   color: #fff !important;
   text-decoration: none !important;
   font-size: 16px;
   font-weight: 600;
   border: none;
+  border-radius: 9999px;
   cursor: pointer;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.15s ease;
 }
 
 .l15-btn:hover {
   opacity: 0.92;
+}
+
+.l15-btn:active {
+  transform: translateY(1px);
 }
 
 /* Explore solutions */
