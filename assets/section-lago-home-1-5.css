@@ -304,6 +304,7 @@
   font-size: var(--l15-dealer-heading-font-size, 16px);
   font-weight: 600;
   color: var(--l15-blue-text);
+  text-align: center;
 }
 
 .l15-value-row {
@@ -610,6 +611,7 @@
   .l15-dealer-values__title {
     text-align: center;
     width: 100%;
+    margin-bottom: 2.25rem;
   }
 
   .l15-dealer-values__grid {
