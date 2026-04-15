@@ -324,8 +324,9 @@
 }
 
 .l15-value-row__icon img {
-  max-width: 2.5rem;
-  max-height: 2rem;
+  max-width: 100px;
+  width: 100%;
+  height: auto;
   object-fit: contain;
 }
 
