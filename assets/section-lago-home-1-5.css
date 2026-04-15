@@ -258,10 +258,30 @@
 
 /* Settings / venues */
 .l15-settings {
+  position: relative;
   max-width: 1200px;
   margin-inline: auto;
   box-sizing: border-box;
   padding: 2.5rem 0.5rem 2rem;
+}
+
+/* Full-bleed band behind this section only (parent is max-width constrained) */
+.l15-settings::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  top: 0;
+  bottom: 0;
+  background: #f9f9f9;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.l15-settings > * {
+  position: relative;
+  z-index: 1;
 }
 
 .l15-settings__title {
