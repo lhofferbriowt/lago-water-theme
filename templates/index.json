@@ -180,7 +180,7 @@
         "solutions_heading": "Explore Our Solutions",
         "section_title_font_size": 30,
         "path_card_label_font_size": 16,
-        "path_card_label_bold": true,
+        "path_card_label_bold": false,
         "settings_heading": "Lago Solutions For Every Setting",
         "settings_title_font_size": 28,
         "settings_strip_caption_font_size": 16,
