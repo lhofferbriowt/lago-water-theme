@@ -142,6 +142,9 @@
 
 /* Explore solutions */
 .l15-solutions {
+  max-width: 1200px;
+  margin-inline: auto;
+  box-sizing: border-box;
   padding: 1rem 1.25rem 2.5rem;
 }
 
