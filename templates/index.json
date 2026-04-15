@@ -171,6 +171,7 @@
         "path_card_label_font_size": 16,
         "path_card_label_bold": true,
         "settings_heading": "Lago Solutions For Every Setting",
+        "settings_strip_caption_font_size": 16,
         "settings_strip_1": "shopify://shop_images/hotels.png",
         "settings_strip_2": "shopify://shop_images/restaurants_2x_c87b52eb-acfa-4eb1-a0e1-5c7af7e016ea.png",
         "label_hotels": "Hotels & Apartments",
