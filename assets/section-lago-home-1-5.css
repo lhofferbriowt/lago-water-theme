@@ -228,6 +228,9 @@
 
 /* Settings / venues */
 .l15-settings {
+  max-width: 1200px;
+  margin-inline: auto;
+  box-sizing: border-box;
   padding: 2rem 0.5rem 2.5rem;
 }
 
