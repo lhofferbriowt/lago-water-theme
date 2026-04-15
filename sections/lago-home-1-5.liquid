@@ -8,7 +8,7 @@
 
 <div
   class="lago-home-1-5"
-  style="--l15-path-label-font-size: {{ section.settings.path_card_label_font_size }}px; --l15-path-label-font-weight: {% if section.settings.path_card_label_bold %}600{% else %}400{% endif %};"
+  style="--l15-path-label-font-size: {{ section.settings.path_card_label_font_size }}px; --l15-path-label-font-weight: {% if section.settings.path_card_label_bold %}600{% else %}400{% endif %}; --l15-settings-strip-caption-font-size: {{ section.settings.settings_strip_caption_font_size }}px;"
 >
   <div class="lago-home-1-5__inner">
     {%- comment -%} Hero — `<picture>`: mobile + desktop BG; wrap max 1440px. Desktop `<source>` must use `w` descriptors so `sizes` on `<img>` applies (avoids ~900px picks). {%- endcomment -%}
@@ -382,6 +382,16 @@
     {
       "type": "paragraph",
       "content": "Upload 6 portrait crops (one per strip). Order: Hotels, Restaurants, Café, Fitness, Laundromats, Spas."
+    },
+    {
+      "type": "range",
+      "id": "settings_strip_caption_font_size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Strip label font size",
+      "default": 16
     },
     {
       "type": "image_picker",
