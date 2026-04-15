@@ -198,9 +198,9 @@
   flex-direction: column;
   align-items: center;
   min-width: 0;
-  min-height: 21.25rem;
+  min-height: 23.5rem;
   /* Extra bottom padding reserves space below the image so larger labels don’t crowd the photo */
-  padding: 0.75rem 0.5rem 4.25rem;
+  padding: 0.75rem 0.5rem 5rem;
   background: var(--l15-card);
   border-radius: var(--l15-radius-card);
   text-decoration: none;
@@ -221,7 +221,7 @@
   justify-content: center;
   width: 100%;
   min-height: 8.4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.75rem;
 }
 
 .l15-path-card__img img {
@@ -240,7 +240,7 @@
 
 .l15-path-card__label {
   position: absolute;
-  bottom: 2.65rem;
+  bottom: 2.85rem;
   left: 0;
   right: 0;
   width: auto;
