@@ -286,7 +286,13 @@
   font-size: var(--l15-settings-strip-caption-font-size, 16px);
   text-align: center;
   line-height: 1.2;
-  max-width: 6rem;
+  width: 100%;
+  max-width: 12.5rem;
+  margin: 0 auto;
+  text-wrap: balance;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
 }
 
 /* Dealer value props */
