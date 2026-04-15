@@ -363,14 +363,14 @@
 
 .l15-innovation__title {
   margin: 0 0 0.75rem;
-  font-size: 1.5rem;
+  font-size: var(--l15-innovation-heading-font-size, 16px);
   font-weight: 600;
   color: var(--l15-blue-text);
 }
 
 .l15-innovation__lead {
   margin: 0 0 1.5rem;
-  font-size: 1rem;
+  font-size: var(--l15-innovation-lead-font-size, 16px);
   line-height: 1.4;
   max-width: 36rem;
 }
