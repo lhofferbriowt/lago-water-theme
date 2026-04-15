@@ -449,7 +449,7 @@
 
 /* Footer band — full viewport width; content lives in .l15-foot__inner */
 .l15-foot {
-  background: var(--l15-blue);
+  background: #4b71aa;
   color: #fff;
   padding: 0;
   /* Avoid 100vw overflow (includes scrollbar width) */
@@ -473,8 +473,8 @@
 
 .l15-foot__col-title {
   margin: 0 0 0.75rem;
-  font-size: 1.125rem;
-  line-height: 1.2;
+  font-size: 1.25rem;
+  line-height: 1.25;
   font-weight: 400;
 }
 
@@ -517,9 +517,10 @@
 .l15-foot__nav a {
   color: #fff !important;
   text-decoration: none;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+  font-size: 1rem;
+  line-height: 1.45;
+  text-transform: none;
+  letter-spacing: 0.01em;
 }
 
 .l15-foot__nav a:hover {
@@ -690,15 +691,26 @@
     height: 6.25rem;
   }
 
+  /* Footer — desktop spacing aligned with multi-column footer reference */
+  .l15-foot__inner {
+    max-width: min(1440px, 100%);
+    padding: 3.75rem clamp(2.5rem, 5vw, 4.5rem) 2.75rem;
+  }
+
   .l15-foot__layout {
     display: grid;
-    grid-template-columns: minmax(12rem, 18rem) minmax(14rem, 1fr) minmax(14rem, 18rem);
-    gap: 2rem 3rem;
+    grid-template-columns: minmax(0, 30%) minmax(0, 1fr) minmax(0, min(22rem, 28%));
+    column-gap: clamp(2rem, 3.5vw, 3.5rem);
+    row-gap: 2.5rem;
     align-items: start;
     width: 100%;
     max-width: 75rem;
     margin: 0 auto;
     justify-items: stretch;
+  }
+
+  .l15-foot__col-title {
+    margin-bottom: 1rem;
   }
 
   .l15-foot__brand {
@@ -707,37 +719,41 @@
   }
 
   .l15-foot__resources {
-    justify-self: center;
-    text-align: center;
+    justify-self: start;
+    text-align: left;
   }
 
   .l15-foot__resources .l15-foot__col-title {
-    text-align: center;
+    text-align: left;
   }
 
   .l15-foot__contact-col {
     justify-self: end;
-    text-align: right;
+    text-align: left;
   }
 
   .l15-foot__contact-col .l15-foot__col-title {
-    text-align: right;
+    text-align: left;
   }
 
   .l15-foot__contact {
-    align-items: flex-end;
+    align-items: flex-start;
   }
 
   .l15-foot__nav {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.5rem;
+  }
+
+  .l15-foot__rule {
+    margin: 2.75rem 0 1.5rem;
   }
 
   .l15-foot__copy {
     text-align: center;
     max-width: 40rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    padding-bottom: 0.25rem;
   }
 }
