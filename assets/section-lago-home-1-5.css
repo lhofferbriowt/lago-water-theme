@@ -308,7 +308,7 @@
 
 .l15-value-row {
   display: grid;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: 80px 1fr;
   gap: 0.75rem 1rem;
   align-items: start;
   margin-bottom: 1.25rem;
@@ -324,7 +324,7 @@
 }
 
 .l15-value-row__icon img {
-  max-width: 100px;
+  max-width: 80px;
   width: 100%;
   height: auto;
   object-fit: contain;
