@@ -23,6 +23,7 @@
         "pp2": {
           "type": "product_path",
           "settings": {
+            "image": "shopify://shop_images/sparkling_water_dispenser_2x_e8f3d36b-0e80-4179-ac95-9fa131341ad6.png",
             "title": "Sparkling Dispensers",
             "link": ""
           }
@@ -30,6 +31,7 @@
         "pp3": {
           "type": "product_path",
           "settings": {
+            "image": "shopify://shop_images/10k_standup_2x_5afdd607-ec97-4862-b641-9b92cbb473c0.png",
             "title": "Stand Up Dispensers",
             "link": ""
           }
@@ -37,6 +39,7 @@
         "pp4": {
           "type": "product_path",
           "settings": {
+            "image": "shopify://shop_images/ice_machines_under_counter_2x_7e54d399-df71-432b-8e66-7412f4071f89.png",
             "title": "Ice Makers",
             "link": ""
           }
@@ -44,6 +47,7 @@
         "pp5": {
           "type": "product_path",
           "settings": {
+            "image": "shopify://shop_images/undersink_filtration_systems_2x_c493e92d-83f5-4fa7-bd8c-47bf92a745d0.png",
             "title": "Undersink Filtration Systems",
             "link": ""
           }
@@ -51,6 +55,7 @@
         "pp6": {
           "type": "product_path",
           "settings": {
+            "image": "shopify://shop_images/light_commercial_ro_systems_2x_18e79cd6-93f3-4009-a063-2a2cd38992ad.png",
             "title": "Light Commercial RO Systems",
             "link": ""
           }
@@ -58,6 +63,7 @@
         "pp7": {
           "type": "product_path",
           "settings": {
+            "image": "shopify://shop_images/poe_filtration_systems_2x_c84af0d4-bf29-4170-aec3-91b3b3eaa0ce.png",
             "title": "Point-of-Entry Filtration Systems",
             "link": ""
           }
@@ -65,6 +71,7 @@
         "pp8": {
           "type": "product_path",
           "settings": {
+            "image": "shopify://shop_images/skid_mounted_ro_water_treatment_solutions_2x_86bfe469-7bef-405e-b2b3-6367cd658574.png",
             "title": "Industrial RO Systems",
             "link": ""
           }
@@ -162,7 +169,9 @@
         "hero_button_link": "",
         "solutions_heading": "Explore Our Solutions",
         "path_card_label_font_size": 16,
+        "path_card_label_bold": true,
         "settings_heading": "Lago Solutions For Every Setting",
+        "settings_strip_1": "shopify://shop_images/hotels.png",
         "label_hotels": "Hotels & Apartments",
         "label_cafe": "Café Coffee Shops",
         "label_restaurants": "Restaurants & Food Services",
