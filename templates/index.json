@@ -79,6 +79,7 @@
         "dv1": {
           "type": "dealer_value",
           "settings": {
+            "icon": "shopify://shop_images/factory_direct_partner_svg.png",
             "title": "Factory Direct Partner",
             "text": "Dealers get access to the largest selection of water dispensers and filtration systems."
           }
@@ -86,6 +87,7 @@
         "dv2": {
           "type": "dealer_value",
           "settings": {
+            "icon": "shopify://shop_images/Dedicated_partner_2x_4150a315-a7ee-4718-8f1c-249325bb90a5.png",
             "title": "Dedicated Representative",
             "text": "Lago customer service representatives are ready to help and act as an extension of your team."
           }
@@ -93,6 +95,7 @@
         "dv3": {
           "type": "dealer_value",
           "settings": {
+            "icon": "shopify://shop_images/Shipping_svg_2x_0f39c0b1-3800-4710-8608-9355ee6e5ed9.png",
             "title": "Expedited Shipping",
             "text": "Our Lago distribution centers are located nationwide."
           }
@@ -100,6 +103,7 @@
         "dv4": {
           "type": "dealer_value",
           "settings": {
+            "icon": "shopify://shop_images/dealer_pricing_2x_8a7f2481-8f5f-4e65-a9f1-fae80287dc3f.png",
             "title": "Exclusive Dealer Pricing",
             "text": "Lago dealers get exclusive access to our full catalog of products at the lowest prices."
           }
@@ -107,36 +111,42 @@
         "dc1": {
           "type": "dealer_category",
           "settings": {
+            "image": "shopify://shop_images/pou_ro_dispensers_1.png",
             "title": "POU RO+\nDispensers"
           }
         },
         "dc2": {
           "type": "dealer_category",
           "settings": {
+            "image": "shopify://shop_images/sparkling_dispensers_1.png",
             "title": "Sparkling Dispensers"
           }
         },
         "dc3": {
           "type": "dealer_category",
           "settings": {
+            "image": "shopify://shop_images/undersink_systems_1.png",
             "title": "Undersink Systems"
           }
         },
         "dc4": {
           "type": "dealer_category",
           "settings": {
+            "image": "shopify://shop_images/high_capacity_filtration_system_1.png",
             "title": "High-Capacity Filtration Systems"
           }
         },
         "dc5": {
           "type": "dealer_category",
           "settings": {
+            "image": "shopify://shop_images/industrial_ro_systems_1.png",
             "title": "Industrial RO Systems"
           }
         },
         "dc6": {
           "type": "dealer_category",
           "settings": {
+            "image": "shopify://shop_images/ice_machines_1.png",
             "title": "Ice Machines"
           }
         }
