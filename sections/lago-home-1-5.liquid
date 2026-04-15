@@ -45,10 +45,12 @@
           {%- endif -%}
         </div>
         <div class="l15-hero__content">
-          <h1 id="l15-hero-heading" class="l15-hero__text">{{ section.settings.hero_heading | escape }}</h1>
-          {%- if section.settings.hero_button_label != blank -%}
-            <a class="l15-btn" href="{{ section.settings.hero_button_link | default: '#' }}">{{ section.settings.hero_button_label | escape }}</a>
-          {%- endif -%}
+          <div class="l15-hero__heading-wrap">
+            <h1 id="l15-hero-heading" class="l15-hero__text">{{ section.settings.hero_heading | escape }}</h1>
+            {%- if section.settings.hero_button_label != blank -%}
+              <a class="l15-btn" href="{{ section.settings.hero_button_link | default: '#' }}">{{ section.settings.hero_button_label | escape }}</a>
+            {%- endif -%}
+          </div>
         </div>
       </div>
     </section>
