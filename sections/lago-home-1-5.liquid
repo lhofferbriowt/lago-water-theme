@@ -4,10 +4,6 @@
   assign product_blocks = section.blocks | where: 'type', 'product_path'
   assign value_blocks = section.blocks | where: 'type', 'dealer_value'
   assign category_blocks = section.blocks | where: 'type', 'dealer_category'
-  assign l15_use_setting_strips = false
-  if section.settings.settings_strip_1 != blank and section.settings.settings_strip_2 != blank and section.settings.settings_strip_3 != blank and section.settings.settings_strip_4 != blank and section.settings.settings_strip_5 != blank and section.settings.settings_strip_6 != blank
-    assign l15_use_setting_strips = true
-  endif
 -%}
 
 <div
@@ -86,109 +82,101 @@
       </div>
     </section>
 
-    {%- comment -%} Venues / settings — mobile: two images + label grid; desktop: optional 6 vertical strips (Figma) {%- endcomment -%}
+    {%- comment -%} Venues / settings — 6 strips (one image per strip) {%- endcomment -%}
     <section class="l15-settings" aria-labelledby="l15-settings-heading">
       <h2 id="l15-settings-heading" class="l15-settings__title">{{ section.settings.settings_heading | escape }}</h2>
-      <div class="l15-settings__collage{% if l15_use_setting_strips %} l15-settings__collage--hide-desktop{% endif %}">
-        {%- if section.settings.settings_image_top != blank -%}
-          {%- assign l15_set_top_alt = section.settings.settings_image_top.alt | default: section.settings.settings_heading -%}
-          <div class="l15-settings__img">
-            {{
-              section.settings.settings_image_top
-              | image_url: width: 1200
-              | image_tag: loading: 'lazy', sizes: '100vw', widths: '375, 550, 750, 1000, 1200', alt: l15_set_top_alt
-            }}
-          </div>
-        {%- endif -%}
-        <div class="l15-settings__labels{% if l15_use_setting_strips %} l15-settings__labels--hide-desktop{% endif %}">
-          <span>{{ section.settings.label_hotels | escape }}</span>
-          <span>{{ section.settings.label_cafe | escape }}</span>
-          <span>{{ section.settings.label_restaurants | escape }}</span>
-          <span>{{ section.settings.label_fitness | escape }}</span>
-          <span>{{ section.settings.label_laundromat | escape }}</span>
-          <span>{{ section.settings.label_spa | escape }}</span>
-        </div>
-        {%- if section.settings.settings_image_bottom != blank -%}
-          {%- assign l15_set_bot_alt = section.settings.settings_image_bottom.alt | default: section.settings.settings_heading -%}
-          <div class="l15-settings__img">
-            {{
-              section.settings.settings_image_bottom
-              | image_url: width: 1200
-              | image_tag: loading: 'lazy', sizes: '100vw', widths: '375, 550, 750, 1000, 1200', alt: l15_set_bot_alt
-            }}
-          </div>
-        {%- endif -%}
-      </div>
-      {%- if l15_use_setting_strips -%}
-        <div class="l15-settings__strips">
-          <div class="l15-settings__strip">
-            <div class="l15-settings__strip-visual">
+      <div class="l15-settings__strips" role="list">
+        <div class="l15-settings__strip" role="listitem">
+          <div class="l15-settings__strip-visual">
+            {%- if section.settings.settings_strip_1 != blank -%}
               {%- assign l15_s1_alt = section.settings.settings_strip_1.alt | default: section.settings.label_hotels -%}
               {{
                 section.settings.settings_strip_1
-                | image_url: width: 400
-                | image_tag: loading: 'lazy', widths: '200, 300, 400', alt: l15_s1_alt
+                | image_url: width: 520
+                | image_tag: loading: 'lazy', widths: '260, 390, 520', sizes: '(max-width: 749px) 48vw, (max-width: 989px) 30vw, 180px', alt: l15_s1_alt
               }}
-            </div>
-            <span class="l15-settings__strip-caption">{{ section.settings.label_hotels | escape }}</span>
+            {%- else -%}
+              <span class="l15-settings__strip-placeholder" aria-hidden="true"></span>
+            {%- endif -%}
           </div>
-          <div class="l15-settings__strip">
-            <div class="l15-settings__strip-visual">
+          <span class="l15-settings__strip-caption">{{ section.settings.label_hotels | escape }}</span>
+        </div>
+        <div class="l15-settings__strip" role="listitem">
+          <div class="l15-settings__strip-visual">
+            {%- if section.settings.settings_strip_2 != blank -%}
               {%- assign l15_s2_alt = section.settings.settings_strip_2.alt | default: section.settings.label_restaurants -%}
               {{
                 section.settings.settings_strip_2
-                | image_url: width: 400
-                | image_tag: loading: 'lazy', widths: '200, 300, 400', alt: l15_s2_alt
+                | image_url: width: 520
+                | image_tag: loading: 'lazy', widths: '260, 390, 520', sizes: '(max-width: 749px) 48vw, (max-width: 989px) 30vw, 180px', alt: l15_s2_alt
               }}
-            </div>
-            <span class="l15-settings__strip-caption">{{ section.settings.label_restaurants | escape }}</span>
+            {%- else -%}
+              <span class="l15-settings__strip-placeholder" aria-hidden="true"></span>
+            {%- endif -%}
           </div>
-          <div class="l15-settings__strip">
-            <div class="l15-settings__strip-visual">
+          <span class="l15-settings__strip-caption">{{ section.settings.label_restaurants | escape }}</span>
+        </div>
+        <div class="l15-settings__strip" role="listitem">
+          <div class="l15-settings__strip-visual">
+            {%- if section.settings.settings_strip_3 != blank -%}
               {%- assign l15_s3_alt = section.settings.settings_strip_3.alt | default: section.settings.label_cafe -%}
               {{
                 section.settings.settings_strip_3
-                | image_url: width: 400
-                | image_tag: loading: 'lazy', widths: '200, 300, 400', alt: l15_s3_alt
+                | image_url: width: 520
+                | image_tag: loading: 'lazy', widths: '260, 390, 520', sizes: '(max-width: 749px) 48vw, (max-width: 989px) 30vw, 180px', alt: l15_s3_alt
               }}
-            </div>
-            <span class="l15-settings__strip-caption">{{ section.settings.label_cafe | escape }}</span>
+            {%- else -%}
+              <span class="l15-settings__strip-placeholder" aria-hidden="true"></span>
+            {%- endif -%}
           </div>
-          <div class="l15-settings__strip">
-            <div class="l15-settings__strip-visual">
+          <span class="l15-settings__strip-caption">{{ section.settings.label_cafe | escape }}</span>
+        </div>
+        <div class="l15-settings__strip" role="listitem">
+          <div class="l15-settings__strip-visual">
+            {%- if section.settings.settings_strip_4 != blank -%}
               {%- assign l15_s4_alt = section.settings.settings_strip_4.alt | default: section.settings.label_fitness -%}
               {{
                 section.settings.settings_strip_4
-                | image_url: width: 400
-                | image_tag: loading: 'lazy', widths: '200, 300, 400', alt: l15_s4_alt
+                | image_url: width: 520
+                | image_tag: loading: 'lazy', widths: '260, 390, 520', sizes: '(max-width: 749px) 48vw, (max-width: 989px) 30vw, 180px', alt: l15_s4_alt
               }}
-            </div>
-            <span class="l15-settings__strip-caption">{{ section.settings.label_fitness | escape }}</span>
+            {%- else -%}
+              <span class="l15-settings__strip-placeholder" aria-hidden="true"></span>
+            {%- endif -%}
           </div>
-          <div class="l15-settings__strip">
-            <div class="l15-settings__strip-visual">
+          <span class="l15-settings__strip-caption">{{ section.settings.label_fitness | escape }}</span>
+        </div>
+        <div class="l15-settings__strip" role="listitem">
+          <div class="l15-settings__strip-visual">
+            {%- if section.settings.settings_strip_5 != blank -%}
               {%- assign l15_s5_alt = section.settings.settings_strip_5.alt | default: section.settings.label_laundromat -%}
               {{
                 section.settings.settings_strip_5
-                | image_url: width: 400
-                | image_tag: loading: 'lazy', widths: '200, 300, 400', alt: l15_s5_alt
+                | image_url: width: 520
+                | image_tag: loading: 'lazy', widths: '260, 390, 520', sizes: '(max-width: 749px) 48vw, (max-width: 989px) 30vw, 180px', alt: l15_s5_alt
               }}
-            </div>
-            <span class="l15-settings__strip-caption">{{ section.settings.label_laundromat | escape }}</span>
+            {%- else -%}
+              <span class="l15-settings__strip-placeholder" aria-hidden="true"></span>
+            {%- endif -%}
           </div>
-          <div class="l15-settings__strip">
-            <div class="l15-settings__strip-visual">
+          <span class="l15-settings__strip-caption">{{ section.settings.label_laundromat | escape }}</span>
+        </div>
+        <div class="l15-settings__strip" role="listitem">
+          <div class="l15-settings__strip-visual">
+            {%- if section.settings.settings_strip_6 != blank -%}
               {%- assign l15_s6_alt = section.settings.settings_strip_6.alt | default: section.settings.label_spa -%}
               {{
                 section.settings.settings_strip_6
-                | image_url: width: 400
-                | image_tag: loading: 'lazy', widths: '200, 300, 400', alt: l15_s6_alt
+                | image_url: width: 520
+                | image_tag: loading: 'lazy', widths: '260, 390, 520', sizes: '(max-width: 749px) 48vw, (max-width: 989px) 30vw, 180px', alt: l15_s6_alt
               }}
-            </div>
-            <span class="l15-settings__strip-caption">{{ section.settings.label_spa | escape }}</span>
+            {%- else -%}
+              <span class="l15-settings__strip-placeholder" aria-hidden="true"></span>
+            {%- endif -%}
           </div>
+          <span class="l15-settings__strip-caption">{{ section.settings.label_spa | escape }}</span>
         </div>
-      {%- endif -%}
+      </div>
     </section>
 
     {%- comment -%} Dealer value props {%- endcomment -%}
@@ -392,18 +380,8 @@
       "default": "Lago Solutions For Every Setting"
     },
     {
-      "type": "image_picker",
-      "id": "settings_image_top",
-      "label": "Top collage image"
-    },
-    {
-      "type": "image_picker",
-      "id": "settings_image_bottom",
-      "label": "Bottom collage image"
-    },
-    {
       "type": "paragraph",
-      "content": "Desktop strips: upload all 6 portrait crops to replace the two collage images on large screens (matches Figma). Order: Hotels, Restaurants, Café, Fitness, Laundromats, Spas."
+      "content": "Upload 6 portrait crops (one per strip). Order: Hotels, Restaurants, Café, Fitness, Laundromats, Spas."
     },
     {
       "type": "image_picker",

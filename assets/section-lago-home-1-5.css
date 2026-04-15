@@ -237,38 +237,12 @@
   font-weight: 600;
 }
 
-.l15-settings__collage {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.l15-settings__img {
-  width: 100%;
-  border-radius: 0.25rem;
-  overflow: hidden;
-}
-
-.l15-settings__img img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-  max-height: 14rem;
-}
-
-.l15-settings__labels {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem 0.5rem;
-  padding: 0 0.5rem;
-  text-align: center;
-  font-size: 0.75rem;
-  line-height: 1.2;
-}
-
-/* Desktop 6-strip row (hidden on small screens) */
+/* 6-strip layout */
 .l15-settings__strips {
-  display: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 0.9rem;
+  padding: 0 0.5rem 0.5rem;
 }
 
 .l15-settings__strip {
@@ -282,10 +256,11 @@
 
 .l15-settings__strip-visual {
   width: 100%;
-  max-width: 7.5rem;
-  height: 11.5rem;
+  max-width: 10rem;
+  aspect-ratio: 3 / 5;
   overflow: hidden;
   border-radius: 0.25rem;
+  background: #e0e0e0;
 }
 
 .l15-settings__strip-visual img {
@@ -293,6 +268,13 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.l15-settings__strip-placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #d8dbe2, #f1f3f6);
 }
 
 .l15-settings__strip-caption {
@@ -565,8 +547,11 @@
     margin-right: auto;
   }
 
-  .l15-settings__labels {
-    grid-template-columns: repeat(3, 1fr);
+  .l15-settings__strips {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.1rem 1rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .l15-cat-grid {
@@ -604,23 +589,12 @@
     margin-right: auto;
   }
 
-  .l15-settings__collage--hide-desktop {
-    display: none;
-  }
-
-  .l15-settings__labels--hide-desktop {
-    display: none;
-  }
-
   .l15-settings__strips {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: clamp(0.75rem, 2vw, 1.75rem);
-    max-width: 52rem;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem 1rem;
+    padding: 0 0 1rem;
   }
 
   .l15-dealer-values__title {
