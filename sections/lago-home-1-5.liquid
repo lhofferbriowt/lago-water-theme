@@ -8,7 +8,7 @@
 
 <div
   class="lago-home-1-5"
-  style="--l15-path-label-font-size: {{ section.settings.path_card_label_font_size }}px; --l15-path-label-font-weight: {% if section.settings.path_card_label_bold %}600{% else %}400{% endif %}; --l15-section-title-font-size: {{ section.settings.section_title_font_size }}px; --l15-settings-title-font-size: {{ section.settings.settings_title_font_size }}px; --l15-settings-strip-caption-font-size: {{ section.settings.settings_strip_caption_font_size }}px; --l15-dealer-heading-font-size: {{ section.settings.dealer_heading_font_size }}px; --l15-value-row-text-font-size: {{ section.settings.value_row_text_font_size }}px;"
+  style="--l15-path-label-font-size: {{ section.settings.path_card_label_font_size }}px; --l15-path-label-font-weight: {% if section.settings.path_card_label_bold %}600{% else %}400{% endif %}; --l15-section-title-font-size: {{ section.settings.section_title_font_size }}px; --l15-settings-title-font-size: {{ section.settings.settings_title_font_size }}px; --l15-settings-strip-caption-font-size: {{ section.settings.settings_strip_caption_font_size }}px; --l15-dealer-heading-font-size: {{ section.settings.dealer_heading_font_size }}px; --l15-value-row-title-font-size: {{ section.settings.value_row_title_font_size }}px; --l15-value-row-text-font-size: {{ section.settings.value_row_text_font_size }}px;"
 >
   <div class="lago-home-1-5__inner">
     {%- comment -%} Hero — `<picture>`: mobile + desktop BG; wrap max 1440px. Desktop `<source>` must use `w` descriptors so `sizes` on `<img>` applies (avoids ~900px picks). {%- endcomment -%}
@@ -508,6 +508,16 @@
       "unit": "px",
       "label": "Dealer value description font size",
       "info": "Controls the smaller description text under each dealer value title.",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "value_row_title_font_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Dealer value title font size",
       "default": 16
     },
     {
