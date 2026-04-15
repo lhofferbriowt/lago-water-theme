@@ -111,30 +111,35 @@
         "dc1": {
           "type": "dealer_category",
           "settings": {
+            "image": "shopify://shop_images/pou_ro_dispensers_1_d2f9b1b7-9cd1-4d8f-992f-dd07a0b2fd67.png",
             "title": "POU RO+\nDispensers"
           }
         },
         "dc2": {
           "type": "dealer_category",
           "settings": {
+            "image": "shopify://shop_images/sparkling_dispensers_1_bdf3a480-323c-49fb-b9ff-a356671d6741.png",
             "title": "Sparkling Dispensers"
           }
         },
         "dc3": {
           "type": "dealer_category",
           "settings": {
+            "image": "shopify://shop_images/undersink_systems_1_4b66aef2-71cc-4d43-a107-13152a3b2e9a.png",
             "title": "Undersink Systems"
           }
         },
         "dc4": {
           "type": "dealer_category",
           "settings": {
+            "image": "shopify://shop_images/high_capacity_filtration_system_1_65986be0-9afc-4039-8a36-1503dabf46ab.png",
             "title": "High-Capacity Filtration Systems"
           }
         },
         "dc5": {
           "type": "dealer_category",
           "settings": {
+            "image": "shopify://shop_images/industrial_ro_systems_1_f9644bb7-d516-4dc1-93bf-0a29b1982b0e.png",
             "title": "Industrial RO Systems"
           }
         },
