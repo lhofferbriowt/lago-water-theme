@@ -414,11 +414,9 @@
   background: var(--l15-blue);
   color: #fff;
   padding: 0;
-  width: 100vw;
-  max-width: 100vw;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  /* Avoid 100vw overflow (includes scrollbar width) */
+  width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
 }
 
