@@ -150,7 +150,7 @@
 
 .l15-section-title {
   margin: 0 0 1.25rem;
-  font-size: 1.5rem;
+  font-size: var(--l15-section-title-font-size, 15px);
   font-weight: 600;
   color: #000;
 }
@@ -235,7 +235,7 @@
 
 .l15-settings__title {
   margin: 0 1rem 1rem;
-  font-size: 1.5rem;
+  font-size: var(--l15-settings-title-font-size, 15px);
   font-weight: 600;
 }
 
