@@ -123,7 +123,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 3rem;
   min-width: 12.5rem;
   padding: 16px 32px;
   margin: 1.25rem 0 0;
@@ -136,6 +135,8 @@
   border: none;
   border-radius: 9999px;
   cursor: pointer;
+  /* Optical centering: caps can sit high in the box at line-height: 1 */
+  transform: translateY(1px);
   transition: opacity 0.2s ease, transform 0.15s ease;
 }
 
@@ -144,7 +145,7 @@
 }
 
 .l15-btn:active {
-  transform: translateY(1px);
+  transform: translateY(2px);
 }
 
 /* Explore solutions */
