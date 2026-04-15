@@ -366,7 +366,7 @@
 }
 
 .l15-value-row__title {
-  margin: 0 0 0.25rem;
+  margin: 0 0 0.75rem;
   font-size: var(--l15-value-row-title-font-size, 16px);
   line-height: 1.2;
   font-weight: 400;
