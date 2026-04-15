@@ -301,7 +301,7 @@
 
 .l15-dealer-values__title {
   margin: 0 0 1.5rem;
-  font-size: 1.5rem;
+  font-size: var(--l15-dealer-heading-font-size, 24px);
   font-weight: 600;
   color: var(--l15-blue-text);
 }
