@@ -163,7 +163,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 16.125rem;
+  min-height: 19.35rem;
   padding: 0.75rem 0.5rem 2.75rem;
   background: var(--l15-card);
   border-radius: var(--l15-radius-card);
@@ -184,20 +184,20 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 7rem;
+  min-height: 8.4rem;
   margin-bottom: 0.5rem;
 }
 
 .l15-path-card__img img {
-  max-height: 11rem;
+  max-height: 13.2rem;
   width: auto;
   max-width: 100%;
   object-fit: contain;
 }
 
 .l15-path-card__placeholder {
-  width: 5rem;
-  height: 5rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 0.5rem;
   background: #e0e0e0;
 }
@@ -559,10 +559,10 @@
   }
 
   .l15-path-grid {
-    grid-template-columns: repeat(4, minmax(0, 10.5rem));
+    grid-template-columns: repeat(4, minmax(0, 12.6rem));
     justify-content: center;
     gap: 1.35rem 1.25rem;
-    max-width: 56rem;
+    max-width: 67.2rem;
     margin-left: auto;
     margin-right: auto;
   }
@@ -592,8 +592,8 @@
   }
 
   .l15-path-grid {
-    grid-template-columns: repeat(4, minmax(0, 10.5rem));
-    max-width: 56rem;
+    grid-template-columns: repeat(4, minmax(0, 12.6rem));
+    max-width: 67.2rem;
   }
 
   .l15-settings__title {

@@ -70,8 +70,8 @@
                 {%- assign l15_path_alt = block.settings.image.alt | default: block.settings.title -%}
                 {{
                   block.settings.image
-                  | image_url: width: 400
-                  | image_tag: loading: 'lazy', sizes: '(max-width: 749px) 45vw, 22vw', widths: '200, 300, 400', alt: l15_path_alt
+                  | image_url: width: 480
+                  | image_tag: loading: 'lazy', sizes: '(max-width: 749px) 45vw, 28vw', widths: '240, 360, 480', alt: l15_path_alt
                 }}
               {%- else -%}
                 <span class="l15-path-card__placeholder" aria-hidden="true"></span>
