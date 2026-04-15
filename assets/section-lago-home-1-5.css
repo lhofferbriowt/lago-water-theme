@@ -392,7 +392,7 @@
   margin: 0 auto 0.5rem;
   border-radius: 0.25rem;
   overflow: hidden;
-  background: #eee;
+  background: transparent;
 }
 
 .l15-cat__img img {
@@ -403,7 +403,7 @@
 
 .l15-cat__label {
   margin: 0;
-  font-size: 0.75rem;
+  font-size: var(--l15-cat-label-font-size, 16px);
   line-height: 1.25;
 }
 
