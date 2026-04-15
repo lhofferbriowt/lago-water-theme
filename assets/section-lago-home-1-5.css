@@ -218,22 +218,12 @@
   width: calc(100% - 1rem);
   text-align: center;
   font-size: var(--l15-path-label-font-size, 12px);
+  font-weight: var(--l15-path-label-font-weight, 400);
   color: var(--l15-blue-text);
   text-decoration: underline;
   text-underline-offset: 2px;
   line-height: 1.35;
   padding-top: 0.15rem;
-}
-
-.l15-path-card__arrow {
-  position: absolute;
-  bottom: 1rem;
-  right: 0.85rem;
-  width: 0.55rem;
-  height: 0.55rem;
-  border-right: 2px solid var(--l15-blue-text);
-  border-bottom: 2px solid var(--l15-blue-text);
-  transform: rotate(-45deg);
 }
 
 /* Settings / venues */

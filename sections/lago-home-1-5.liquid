@@ -12,7 +12,7 @@
 
 <div
   class="lago-home-1-5"
-  style="--l15-path-label-font-size: {{ section.settings.path_card_label_font_size }}px;"
+  style="--l15-path-label-font-size: {{ section.settings.path_card_label_font_size }}px; --l15-path-label-font-weight: {% if section.settings.path_card_label_bold %}600{% else %}400{% endif %};"
 >
   <div class="lago-home-1-5__inner">
     {%- comment -%} Hero — `<picture>`: mobile + desktop BG; wrap max 1440px. Desktop `<source>` must use `w` descriptors so `sizes` on `<img>` applies (avoids ~900px picks). {%- endcomment -%}
@@ -81,7 +81,6 @@
               {%- endif -%}
             </div>
             <span class="l15-path-card__label">{{ block.settings.title | escape }}</span>
-            <span class="l15-path-card__arrow" aria-hidden="true"></span>
           </a>
         {%- endfor -%}
       </div>
@@ -375,6 +374,12 @@
       "label": "Solution card label font size",
       "info": "Text size for the link label under each solution card (Explore solutions).",
       "default": 12
+    },
+    {
+      "type": "checkbox",
+      "id": "path_card_label_bold",
+      "label": "Bold solution card labels",
+      "default": false
     },
     {
       "type": "header",
