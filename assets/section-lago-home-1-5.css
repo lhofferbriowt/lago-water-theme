@@ -241,9 +241,11 @@
 .l15-path-card__label {
   position: absolute;
   bottom: 2.65rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 1rem);
+  left: 0;
+  right: 0;
+  width: auto;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
   text-align: center;
   font-size: var(--l15-path-label-font-size, 12px);
   font-weight: var(--l15-path-label-font-weight, 400);
