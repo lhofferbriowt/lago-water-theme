@@ -1,7 +1,7 @@
 {{ 'section-lago-home-1-5.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
-  assign product_blocks = section.blocks | where: 'type', 'product_path'
+  assign product_blocks = section.blocks | where: 'type', 'product_paths'
   assign value_blocks = section.blocks | where: 'type', 'dealer_value'
 -%}
 
