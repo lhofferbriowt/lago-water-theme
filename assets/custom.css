@@ -170,6 +170,11 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
   color: #000;
 }
 
+/* Space between product title and bullet strip (% resolves to card content width) */
+.card__information > .card__heading + .lago-product-bullets {
+  margin-top: 10%;
+}
+
 /* heading spacing handled by card layout to keep alignment consistent */
 
 .lago-product-bullets__item::before {
