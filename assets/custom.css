@@ -169,10 +169,7 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
   color: #000;
 }
 
-/* spacing between heading (h5 variant) and bullets */
-.card__heading.h5 {
-  margin-bottom: 12px;
-}
+/* heading spacing handled by card layout to keep alignment consistent */
 
 .lago-product-bullets__item::before {
   content: "";
