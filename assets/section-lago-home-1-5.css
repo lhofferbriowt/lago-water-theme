@@ -588,3 +588,8 @@
     height: 6.25rem;
   }
 }
+
+/* Collection: hero is its own section — remove gap before Lago content */
+.section-lago-collection-hero.section + .section-lago-collection-1-5.section {
+  margin-top: 0;
+}
