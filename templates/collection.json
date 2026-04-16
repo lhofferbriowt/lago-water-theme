@@ -9,6 +9,26 @@
  */
 {
   "sections": {
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "padding_top": 28,
+        "padding_bottom": 36
+      }
+    },
     "lago_collection_1_5": {
       "type": "lago-collection-1-5",
       "blocks": {
@@ -17,7 +37,7 @@
           "settings": {
             "image": "shopify://shop_images/counter_top_water_dispenser_2x_e98f8a94-f93f-491d-9a73-97cbc4ac69f9.png",
             "title": "Countertop Dispensers",
-            "link": ""
+            "link": "shopify://collections/countertop-water-dispensers"
           }
         },
         "pp2": {
@@ -41,7 +61,7 @@
           "settings": {
             "image": "shopify://shop_images/ice_machines_under_counter_2x_7e54d399-df71-432b-8e66-7412f4071f89.png",
             "title": "Ice Makers",
-            "link": ""
+            "link": "shopify://collections/ice-makers"
           }
         },
         "pp5": {
@@ -49,7 +69,7 @@
           "settings": {
             "image": "shopify://shop_images/undersink_filtration_systems_2x_c493e92d-83f5-4fa7-bd8c-47bf92a745d0.png",
             "title": "Undersink Filtration Systems",
-            "link": ""
+            "link": "shopify://collections/under-sink-filtration-systems"
           }
         },
         "pp6": {
@@ -57,7 +77,7 @@
           "settings": {
             "image": "shopify://shop_images/light_commercial_ro_systems_2x_18e79cd6-93f3-4009-a063-2a2cd38992ad.png",
             "title": "Light Commercial RO Systems",
-            "link": ""
+            "link": "shopify://collections/pou-reverse-osmosis-dispensers"
           }
         },
         "pp7": {
@@ -65,7 +85,7 @@
           "settings": {
             "image": "shopify://shop_images/poe_filtration_systems_2x_c84af0d4-bf29-4170-aec3-91b3b3eaa0ce.png",
             "title": "Point-of-Entry Filtration Systems",
-            "link": ""
+            "link": "shopify://collections/point-of-entry-filtration-systems"
           }
         },
         "pp8": {
@@ -73,7 +93,7 @@
           "settings": {
             "image": "shopify://shop_images/skid_mounted_ro_water_treatment_solutions_2x_86bfe469-7bef-405e-b2b3-6367cd658574.png",
             "title": "Industrial RO Systems",
-            "link": ""
+            "link": "shopify://collections/industrial-filtration-systems"
           }
         },
         "dv1": {
@@ -134,26 +154,6 @@
         "value_row_title_font_size": 16,
         "dealer_cta_label": "Become a Dealer",
         "dealer_cta_link": ""
-      }
-    },
-    "product-grid": {
-      "type": "main-collection-product-grid",
-      "settings": {
-        "products_per_page": 16,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "enable_filtering": true,
-        "filter_type": "horizontal",
-        "enable_sorting": true,
-        "padding_top": 28,
-        "padding_bottom": 36
       }
     }
   },
