@@ -3,23 +3,6 @@
 {%- liquid
   assign product_blocks = section.blocks | where: 'type', 'product_path'
   assign value_blocks = section.blocks | where: 'type', 'dealer_value'
-
-  assign hero_heading_display = section.settings.hero_heading | strip
-  if hero_heading_display == blank
-    assign hero_heading_display = collection.title
-  endif
-
-  assign hero_img_mobile = section.settings.hero_image
-  if hero_img_mobile == blank and collection.image
-    assign hero_img_mobile = collection.image
-  endif
-
-  assign hero_img_desktop = section.settings.hero_bg_desktop
-  if hero_img_desktop == blank and collection.image
-    assign hero_img_desktop = collection.image
-  elsif hero_img_desktop == blank
-    assign hero_img_desktop = hero_img_mobile
-  endif
 -%}
 
 <div
@@ -27,48 +10,6 @@
   style="--l15-path-label-font-size: {{ section.settings.path_card_label_font_size }}px; --l15-path-label-font-weight: {% if section.settings.path_card_label_bold %}600{% else %}400{% endif %}; --l15-section-title-font-size: {{ section.settings.section_title_font_size }}px; --l15-dealer-heading-font-size: {{ section.settings.dealer_heading_font_size }}px; --l15-value-row-title-font-size: {{ section.settings.value_row_title_font_size }}px; --l15-value-row-text-font-size: {{ section.settings.value_row_text_font_size }}px;"
 >
   <div class="lago-home-1-5__inner">
-    <section class="l15-hero" aria-labelledby="l15-hero-heading">
-      <div class="l15-hero__wrap">
-        <div class="l15-hero__media">
-          {%- if hero_img_mobile != blank or hero_img_desktop != blank -%}
-            <picture>
-              {%- if hero_img_desktop != blank -%}
-                <source
-                  media="(min-width: 990px)"
-                  srcset="{{ hero_img_desktop | image_url: width: 1100 }} 1100w, {{ hero_img_desktop | image_url: width: 1440 }} 1440w, {{ hero_img_desktop | image_url: width: 1920 }} 1920w, {{ hero_img_desktop | image_url: width: 2400 }} 2400w, {{ hero_img_desktop | image_url: width: 2880 }} 2880w"
-                >
-              {%- endif -%}
-              {%- if hero_img_mobile != blank -%}
-                {%- assign l15_hero_alt = hero_img_mobile.alt | default: collection.title -%}
-                {{
-                  hero_img_mobile
-                  | image_url: width: 1600
-                  | image_tag: loading: 'eager', class: 'l15-hero__photo', sizes: '(max-width: 989px) 100vw, 1440px', widths: '375, 550, 750, 900, 1100, 1280, 1440, 1600, 1920, 2400', alt: l15_hero_alt
-                }}
-              {%- elsif hero_img_desktop != blank -%}
-                {%- assign l15_hero_alt = hero_img_desktop.alt | default: collection.title -%}
-                {{
-                  hero_img_desktop
-                  | image_url: width: 2000
-                  | image_tag: loading: 'eager', class: 'l15-hero__photo', sizes: '(max-width: 989px) 100vw, 1440px', widths: '750, 900, 1100, 1280, 1440, 1600, 1920, 2400', alt: l15_hero_alt
-                }}
-              {%- endif -%}
-            </picture>
-          {%- else -%}
-            <div class="l15-hero__placeholder" aria-hidden="true"></div>
-          {%- endif -%}
-        </div>
-        <div class="l15-hero__content">
-          <div class="l15-hero__heading-wrap">
-            <h1 id="l15-hero-heading" class="l15-hero__text">{{ hero_heading_display | escape }}</h1>
-            {%- if section.settings.hero_button_label != blank -%}
-              <a class="l15-btn" href="{{ section.settings.hero_button_link | default: '#' }}">{{ section.settings.hero_button_label | escape }}</a>
-            {%- endif -%}
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="l15-solutions" aria-labelledby="l15-solutions-heading">
       <h2 id="l15-solutions-heading" class="l15-section-title">{{ section.settings.solutions_heading | escape }}</h2>
       <div class="l15-path-grid">
@@ -129,49 +70,13 @@
 
 {% schema %}
 {
-  "name": "Lago 1.5 collection intro",
+  "name": "Lago 1.5 collection content",
   "tag": "section",
   "class": "section section-lago-collection-1-5",
   "enabled_on": {
     "templates": ["collection"]
   },
   "settings": [
-    {
-      "type": "paragraph",
-      "content": "Hero: leave heading blank to use the collection title. Leave hero images blank to use the collection’s featured image when set in the admin."
-    },
-    {
-      "type": "header",
-      "content": "Hero"
-    },
-    {
-      "type": "image_picker",
-      "id": "hero_image",
-      "label": "Hero background — mobile"
-    },
-    {
-      "type": "image_picker",
-      "id": "hero_bg_desktop",
-      "label": "Hero background — desktop",
-      "info": "Shown from 990px up. If empty, uses collection image or mobile hero."
-    },
-    {
-      "type": "textarea",
-      "id": "hero_heading",
-      "label": "Hero heading",
-      "info": "Optional. If empty, the collection title is shown."
-    },
-    {
-      "type": "text",
-      "id": "hero_button_label",
-      "label": "Hero button label",
-      "default": "Become a Dealer"
-    },
-    {
-      "type": "url",
-      "id": "hero_button_link",
-      "label": "Hero button link"
-    },
     {
       "type": "header",
       "content": "Explore solutions"
@@ -309,7 +214,7 @@
   ],
   "presets": [
     {
-      "name": "Lago 1.5 collection intro",
+      "name": "Lago 1.5 collection content",
       "blocks": [
         {
           "type": "product_path",
