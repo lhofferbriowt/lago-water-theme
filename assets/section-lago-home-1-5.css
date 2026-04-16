@@ -1,0 +1,595 @@
+/* Lago 1.5 homepage — mobile-first from Figma iPhone_17_homepage (node 2:2) */
+
+.lago-home-1-5 {
+  --l15-blue: #4b71aa;
+  --l15-blue-text: #4a71aa;
+  --l15-neutral-700: #404040;
+  --l15-card: #f5f5f5;
+  --l15-radius-card: 11px;
+  --l15-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  --l15-font-display: 'Centra No2', 'CentraNo Book', Arial, sans-serif;
+  font-family: var(--l15-font-display);
+  color: #000;
+  background: #fff;
+  box-shadow: var(--l15-shadow);
+}
+
+/* Headings: stack + book weight (theme loads CentraNo Book as normal/400) */
+.lago-home-1-5 h1,
+.lago-home-1-5 h2,
+.lago-home-1-5 h3 {
+  font-family: var(--l15-font-display) !important;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+}
+
+.lago-home-1-5 .l15-innovation__lead,
+.lago-home-1-5 .l15-value-row__text {
+  font-family: var(--l15-font-display) !important;
+  font-weight: 400;
+}
+
+.lago-home-1-5 * {
+  box-sizing: border-box;
+}
+
+.lago-home-1-5 img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.lago-home-1-5__inner {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1200px) {
+  .lago-home-1-5__inner {
+    max-width: 1440px;
+  }
+}
+
+/* Hero — `<picture>` mobile vs desktop BG; wrap max 1440px from 990px up.
+   Image is in-flow (height: auto) so full frame shows; text overlays bottom. */
+.l15-hero {
+  position: relative;
+  overflow: visible;
+  background: #fff;
+}
+
+.l15-hero__wrap {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 990px) {
+  .l15-hero__wrap {
+    max-width: 1440px;
+  }
+}
+
+.l15-hero__media {
+  position: relative;
+  z-index: 0;
+  line-height: 0;
+}
+
+.l15-hero__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.l15-hero__media picture,
+.l15-hero__media img.l15-hero__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.l15-hero__media img.l15-hero__photo {
+  max-width: none;
+  height: auto;
+  vertical-align: middle;
+}
+
+.l15-hero__placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 22rem;
+  background: linear-gradient(135deg, #cfd9e8, #e8eef5);
+}
+
+.l15-hero__content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Constrains headline + CTA like a site header band (max 1200px), left-aligned copy */
+.l15-hero__heading-wrap {
+  position: relative;
+  width: min(100%, 1200px);
+  max-width: 1200px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 2.25rem 1.25rem 2.75rem;
+  text-align: left;
+}
+
+.l15-hero__text {
+  margin: 0 0 1.25rem;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 400;
+  color: #fff;
+  max-width: min(100%, 34rem);
+}
+
+.l15-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 12.5rem;
+  padding: 16px 32px;
+  margin: 1.25rem 0 0;
+  background: #4a71aa;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  /* Optical centering: caps can sit high in the box at line-height: 1 */
+  transform: translateY(1px);
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.l15-btn:hover {
+  opacity: 0.92;
+}
+
+.l15-btn:active {
+  transform: translateY(2px);
+}
+
+/* Explore solutions */
+.l15-solutions {
+  max-width: 1200px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 1rem 1.25rem 2.5rem;
+}
+
+.l15-section-title {
+  margin: 1.5rem 0 1.75rem;
+  font-size: var(--l15-section-title-font-size, 15px);
+  line-height: 1.2;
+  font-weight: 400;
+  color: #333;
+}
+
+.l15-path-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem 1.1rem;
+  /* Desktop (≥960px): Quench-style four columns — gap 24px ⇒ per-track calc(25% - 18px), since 3×24÷4 = 18 */
+  --l15-path-desktop-gap: 24px;
+  --l15-path-calc-offset: 18px;
+}
+
+.l15-path-card {
+  position: relative;
+  /* Grid: fixed-height label row so first lines align across cards when some titles wrap */
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) var(--l15-path-label-row-height, 4.5rem);
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+  min-width: 0;
+  min-height: 23.5rem;
+  padding: 0.75rem 0.5rem 1.25rem;
+  background: var(--l15-card);
+  border-radius: var(--l15-radius-card);
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.l15-path-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.l15-path-card__img {
+  min-height: 0;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 8.4rem;
+}
+
+.l15-path-card__img img {
+  max-height: 13.2rem;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.l15-path-card__placeholder {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0.5rem;
+  background: #e0e0e0;
+}
+
+.l15-path-card__label {
+  align-self: start;
+  justify-self: center;
+  width: calc(100% - 1.5rem);
+  max-width: 100%;
+  margin: 0;
+  text-align: center;
+  font-size: var(--l15-path-label-font-size, 12px);
+  font-weight: var(--l15-path-label-font-weight, 400);
+  color: var(--l15-blue-text);
+  text-decoration: none;
+  line-height: 1.35;
+  padding-top: 0.15rem;
+  /* Row height is grid-controlled; increase --l15-path-label-row-height on .lago-home-1-5 if labels use a much larger font */
+}
+
+/* Settings / venues */
+.l15-settings {
+  position: relative;
+  max-width: 1200px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 2.5rem 0.5rem 2rem;
+}
+
+/* Full-bleed band behind this section only (parent is max-width constrained) */
+.l15-settings::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  top: 0;
+  bottom: 0;
+  background: #f9f9f9;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.l15-settings > * {
+  position: relative;
+  z-index: 1;
+}
+
+.l15-settings__title {
+  margin: 1.75rem 1rem 1.5rem;
+  font-size: var(--l15-settings-title-font-size, 15px);
+  line-height: 1.2;
+  font-weight: 400;
+  color: #333;
+}
+
+/* 6-strip layout */
+.l15-settings__strips {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem 0.9rem;
+  padding: 0 0.5rem 0.5rem;
+}
+
+.l15-settings__strip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.l15-settings__strip-visual {
+  /* 250×250 container */
+  width: min(220px, 100%);
+  max-width: 220px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 1.1rem;
+  background: transparent;
+}
+
+.l15-settings__strip-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.l15-settings__strip-placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #d8dbe2, #f1f3f6);
+}
+
+.l15-settings__strip-caption {
+  font-size: var(--l15-settings-strip-caption-font-size, 16px);
+  text-align: center;
+  line-height: 1.2;
+  width: 100%;
+  max-width: 12.5rem;
+  margin: 0 auto;
+  text-wrap: balance;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+/* Dealer value props */
+.l15-dealer-values {
+  padding: 2rem 1.5rem 2rem;
+}
+
+.l15-dealer-values__title {
+  margin: 0 0 1.5rem;
+  font-size: var(--l15-dealer-heading-font-size, 16px);
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--l15-blue-text);
+  text-align: center;
+}
+
+.l15-value-row {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: 0.75rem 1rem;
+  align-items: start;
+  margin-bottom: 1.25rem;
+}
+
+.l15-value-row__icon {
+  width: 100%;
+  min-width: 0;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.l15-value-row__icon img {
+  max-width: 50px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.l15-value-row__title {
+  margin: 0 0 0.75rem;
+  font-size: var(--l15-value-row-title-font-size, 16px);
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.l15-value-row__text {
+  margin: 0;
+  font-size: var(--l15-value-row-text-font-size, 16px);
+  line-height: 1.35;
+  color: var(--l15-neutral-700);
+}
+
+.l15-dealer-values__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.l15-dealer-values__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* Innovation / category grid */
+.l15-innovation {
+  padding: 2rem 1.75rem 3.25rem;
+}
+
+.l15-innovation__title {
+  margin: 0 0 0.75rem;
+  font-size: var(--l15-innovation-heading-font-size, 16px);
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--l15-blue-text);
+}
+
+.l15-innovation__lead {
+  margin: 0 0 1.5rem;
+  font-size: var(--l15-innovation-lead-font-size, 16px);
+  line-height: 1.45;
+  font-weight: 400;
+  color: #555;
+  max-width: 900px;
+}
+
+.l15-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.l15-cat {
+  text-align: center;
+}
+
+.l15-cat__img {
+  width: 6.25rem;
+  height: 6.25rem;
+  margin: 0 auto 0.5rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  background: transparent;
+}
+
+.l15-cat__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.l15-cat__label {
+  margin: 0;
+  font-size: var(--l15-cat-label-font-size, 16px);
+  line-height: 1.25;
+}
+
+.l15-innovation__cta {
+  display: flex;
+  justify-content: center;
+}
+
+/* Desktop */
+@media screen and (min-width: 750px) {
+  .l15-hero__heading-wrap {
+    padding: 2.75rem 2rem 3rem;
+  }
+
+  .l15-hero__text {
+    font-size: 2rem;
+    line-height: 1.2;
+    max-width: min(100%, 36rem);
+  }
+
+  .l15-solutions,
+  .l15-settings,
+  .l15-dealer-values,
+  .l15-innovation {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .l15-section-title {
+    text-align: center;
+  }
+
+  .l15-path-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.35rem 1.25rem;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .l15-settings__strips {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.1rem 1rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .l15-cat-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Display-sized hero line (theme html uses ~62.5% rem ⇒ 4.8rem ≈ 48px) */
+@media screen and (min-width: 1024px) {
+  .l15-hero__text {
+    font-size: 4.8rem;
+    line-height: 1.2;
+    max-width: min(100%, 52rem);
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .l15-path-grid {
+    grid-template-columns: repeat(4, minmax(0, calc(25% - var(--l15-path-calc-offset, 18px))));
+    column-gap: var(--l15-path-desktop-gap, 24px);
+    row-gap: 1.35rem;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .l15-hero__heading-wrap {
+    padding: 3rem 2.5rem 3.25rem;
+  }
+
+  .l15-settings__title {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .l15-settings__strips {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: clamp(0.75rem, 2vw, 1.75rem);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0 1rem;
+  }
+
+  .l15-dealer-values__title {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2.25rem;
+  }
+
+  .l15-dealer-values__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .l15-dealer-values__grid .l15-value-row {
+    margin-bottom: 1rem;
+  }
+
+  .l15-cat-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    max-width: 64rem;
+    gap: 1rem 1.25rem;
+  }
+
+  .l15-innovation__title,
+  .l15-innovation__lead {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .l15-cat__img {
+    width: 6.25rem;
+    height: 6.25rem;
+  }
+}
+
+/* Collection: hero is its own section — remove gap before Lago content */
+.section-lago-collection-hero.section + .section-lago-collection-content.section {
+  margin-top: 0;
+}

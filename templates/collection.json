@@ -1,11 +1,22 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "banner": {
-      "type": "main-collection-banner",
+    "lago_collection_hero": {
+      "type": "lago-collection-hero",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "scheme-1"
+        "hero_image": "shopify://shop_images/mobile_hero.png",
+        "hero_bg_desktop": "shopify://shop_images/desktop_hero_1440w.png",
+        "hero_heading": "",
+        "hero_button_label": "Become a Dealer",
+        "hero_button_link": ""
       }
     },
     "product-grid": {
@@ -13,6 +24,7 @@
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
+        "columns_mobile": "2",
         "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
@@ -23,14 +35,13 @@
         "enable_filtering": true,
         "filter_type": "horizontal",
         "enable_sorting": true,
-        "columns_mobile": "2",
-        "padding_top": 36,
+        "padding_top": 28,
         "padding_bottom": 36
       }
     }
   },
   "order": [
-    "banner",
+    "lago_collection_hero",
     "product-grid"
   ]
 }

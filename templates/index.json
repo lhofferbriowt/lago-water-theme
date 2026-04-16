@@ -1,1 +1,218 @@
-{"sections":{"slideshow_JGUA3i":{"type":"slideshow","blocks":{"slide_H87er9":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/Home_Slides_1.png","image_overlay_opacity":0,"heading":"","heading_size":"h1","subheading":"","button_label":"","link":"shopify:\/\/pages\/lago-customer-inquiry","button_style_secondary":true,"show_text_box":false,"box_align":"bottom-left","text_alignment":"center","text_alignment_mobile":"center","color_scheme":"scheme-5"}},"slide_B4rgr3":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/Home_Slides_2.png","image_overlay_opacity":0,"heading":"","heading_size":"h2","subheading":"","button_label":"","link":"shopify:\/\/pages\/lago-customer-inquiry","button_style_secondary":false,"show_text_box":false,"box_align":"middle-center","text_alignment":"center","text_alignment_mobile":"center","color_scheme":""}},"slide_AyBibV":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/Home_Slides_3.png","image_overlay_opacity":0,"heading":"","heading_size":"h1","subheading":"","button_label":"","link":"shopify:\/\/pages\/lago-customer-inquiry","button_style_secondary":false,"show_text_box":false,"box_align":"middle-center","text_alignment":"center","text_alignment_mobile":"center","color_scheme":"scheme-1"}},"slide_gkEwEX":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/Home_Slides_4.png","image_overlay_opacity":0,"heading":"","heading_size":"h1","subheading":"","button_label":"","link":"https:\/\/lago-water.myshopify.com\/pages\/become-a-dealer","button_style_secondary":false,"show_text_box":false,"box_align":"middle-center","text_alignment":"center","text_alignment_mobile":"center","color_scheme":"scheme-1"}},"slide_bQyWDG":{"type":"slide","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/Home_Slides_4.png","image_overlay_opacity":90,"heading":"ddd","heading_size":"h1","subheading":"ddd","button_label":"dddddd","link":"https:\/\/lago-water.myshopify.com\/pages\/become-a-dealer","button_style_secondary":false,"show_text_box":false,"box_align":"middle-center","text_alignment":"center","text_alignment_mobile":"center","color_scheme":"scheme-1"}}},"block_order":["slide_H87er9","slide_B4rgr3","slide_AyBibV","slide_gkEwEX","slide_bQyWDG"],"name":"t:sections.slideshow.presets.name","settings":{"layout":"full_bleed","slide_height":"adapt_image","slider_visual":"dots","auto_rotate":true,"change_slides_speed":5,"image_behavior":"none","show_text_below":false,"accessibility_info":"Slideshow about our brand"}},"slideshow_3rUQph":{"type":"slideshow","blocks":{"slide_QMJTGX":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/Home-banner-1-mobile.jpg","image_overlay_opacity":0,"heading":"","heading_size":"h1","subheading":"","button_label":"","link":"shopify:\/\/pages\/lago-customer-inquiry","button_style_secondary":false,"show_text_box":true,"box_align":"middle-center","text_alignment":"center","text_alignment_mobile":"center","color_scheme":""}},"slide_mnkhBf":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/Home-banner-2-mobile.jpg","image_overlay_opacity":0,"heading":"","heading_size":"h1","subheading":"","button_label":"","link":"shopify:\/\/pages\/lago-customer-inquiry","button_style_secondary":false,"show_text_box":true,"box_align":"middle-center","text_alignment":"center","text_alignment_mobile":"center","color_scheme":""}},"slide_ziywH9":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/Mobile_Home3_-_Copy.jpg","image_overlay_opacity":0,"heading":"","heading_size":"h1","subheading":"","button_label":"","link":"shopify:\/\/pages\/lago-customer-inquiry","button_style_secondary":false,"show_text_box":true,"box_align":"middle-center","text_alignment":"center","text_alignment_mobile":"center","color_scheme":""}},"slide_cMcKQk":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/Home-banner-4-mobile.jpg","image_overlay_opacity":0,"heading":"","heading_size":"h1","subheading":"","button_label":"","link":"shopify:\/\/pages\/become-a-dealer","button_style_secondary":false,"show_text_box":true,"box_align":"middle-center","text_alignment":"center","text_alignment_mobile":"center","color_scheme":""}}},"block_order":["slide_QMJTGX","slide_mnkhBf","slide_ziywH9","slide_cMcKQk"],"custom_css":["selector {display: none !important;}"],"name":"t:sections.slideshow.presets.name","settings":{"layout":"full_bleed","slide_height":"adapt_image","slider_visual":"counter","auto_rotate":false,"change_slides_speed":5,"image_behavior":"none","show_text_below":true,"accessibility_info":"Slideshow about our brand"}},"featured_collection":{"type":"featured-collection","disabled":true,"settings":{"collection":"all","products_to_show":8,"title":"Featured products","heading_size":"h2","description":"","show_description":false,"description_style":"body","columns_desktop":4,"enable_desktop_slider":false,"full_width":false,"show_view_all":true,"view_all_style":"solid","color_scheme":"scheme-1","image_ratio":"adapt","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":false,"padding_top":44,"padding_bottom":36}},"image_with_text_3FPe6a":{"type":"image-with-text","blocks":{"heading_xCWnjD":{"type":"heading","settings":{"heading":"<strong>Go Bottleless & Save the World<\/strong>","heading_size":"h1"}},"text_F9XkKm":{"type":"text","settings":{"text":"<p>Eco-friendly bottleless water dispensers offer a sustainable alternative to traditional bottled water by connecting directly to a water source and filtering tap water. By eliminating single-use plastic bottles, they help reduce waste, minimize landfill overflow, and curb ocean pollution.<\/p>","text_style":"body"}},"button_RgYMP6":{"type":"button","settings":{"button_label":"FIND OUT MORE","button_link":"shopify:\/\/pages\/why-lago","button_style_secondary":false}}},"block_order":["heading_xCWnjD","text_F9XkKm","button_RgYMP6"],"custom_css":["h2 {color: #034ea2;}"],"settings":{"image":"shopify:\/\/shop_images\/Home_Bottles_Fact.png","height":"adapt","desktop_image_width":"medium","layout":"image_first","image_behavior":"none","content_layout":"no-overlap","desktop_content_position":"middle","desktop_content_alignment":"left","mobile_content_alignment":"center","section_color_scheme":"scheme-4baf2c69-c18d-4db0-a94f-0cf323a6e438","color_scheme":"scheme-4baf2c69-c18d-4db0-a94f-0cf323a6e438","padding_top":24,"padding_bottom":0}},"175649131929f14971":{"type":"apps","blocks":{"clicky_clickable_banner_Bii6aJ":{"type":"shopify:\/\/apps\/clicky\/blocks\/clickable_banner\/2d58f9d3-a5fb-4893-8aac-935f0ebcc5b8","settings":{"cb_desktop_image":"shopify:\/\/shop_images\/Home_DYK_2_3b5342ea-ee2f-41e8-8b86-c4634986bacc.png","cb_mobile_image":"shopify:\/\/shop_images\/Mobile_Home_DYK.jpg","image_size":"adapt","cb_image_link":"","cb_image_link_2":"","cb_mb_image_link":"","link_target":"_self","cb_is_boxed_layout":false,"is_banner_sticky":false,"overlay_text":"","overlay_text_color":"#ffffff","button_text":"","button_text_color":"#ffffff","button_bg_color":"#000000","content_position":"middle-center","content_alignment":"center","cb_custom_css":"","padding_top":0,"padding_bottom":28}}},"block_order":["clicky_clickable_banner_Bii6aJ"],"settings":{"include_margins":true}},"image_banner_KNVGG9":{"type":"image-banner","disabled":true,"name":"t:sections.image-banner.presets.name","settings":{"image":"shopify:\/\/shop_images\/Home_DYK_2_faaf4e3a-8301-4188-90a4-5a3092365690.png","image_overlay_opacity":0,"image_height":"small","image_behavior":"none","desktop_content_position":"top-center","desktop_content_alignment":"center","show_text_box":true,"color_scheme":"","stack_images_on_mobile":false,"mobile_content_alignment":"center","show_text_below":false}},"image_banner_V8L3Gj":{"type":"image-banner","disabled":true,"name":"t:sections.image-banner.presets.name","settings":{"image":"shopify:\/\/shop_images\/Home_Popular.png","image_overlay_opacity":0,"image_height":"medium","image_behavior":"none","desktop_content_position":"middle-center","desktop_content_alignment":"center","show_text_box":true,"color_scheme":"","stack_images_on_mobile":false,"mobile_content_alignment":"center","show_text_below":false}},"1756490937e4dc2285":{"type":"apps","blocks":{"clicky_clickable_banner_4dBkYe":{"type":"shopify:\/\/apps\/clicky\/blocks\/clickable_banner\/2d58f9d3-a5fb-4893-8aac-935f0ebcc5b8","settings":{"cb_desktop_image":"shopify:\/\/shop_images\/Home_Popular_6ad73644-c7c9-405f-9945-2d8a393c2438.png","cb_mobile_image":"shopify:\/\/shop_images\/Mobile_Home_Popular.jpg","image_size":"adapt","cb_image_link":"","cb_image_link_2":"","cb_mb_image_link":"","link_target":"_self","cb_is_boxed_layout":false,"is_banner_sticky":false,"overlay_text":"","overlay_text_color":"#ffffff","button_text":"","button_text_color":"#ffffff","button_bg_color":"#000000","content_position":"middle-center","content_alignment":"center","cb_custom_css":"","padding_top":28,"padding_bottom":26}}},"block_order":["clicky_clickable_banner_4dBkYe"],"settings":{"include_margins":true}},"image_with_text_H7N3a8":{"type":"image-with-text","blocks":{"heading_f4Rn8i":{"type":"heading","settings":{"heading":"Are You an Entrepreneur?  Become a Lago Dealer","heading_size":"h1"}},"text_JmKBk7":{"type":"text","settings":{"text":"<p>Lago Dealers have access to the most innovative and advanced product lineup in the water industry. They also benefit from a wide array of support tools, including personal hands-on dealer training, marketing strategy, customized business plans, and dedicated account managers.<\/p>","text_style":"body"}}},"block_order":["heading_f4Rn8i","text_JmKBk7"],"custom_css":["h2 {color: #034ea2;}"],"name":"t:sections.image-with-text.presets.name","settings":{"image":"shopify:\/\/shop_images\/Home_Lago_Dealer2.png","height":"adapt","desktop_image_width":"small","layout":"text_first","image_behavior":"none","content_layout":"no-overlap","desktop_content_position":"top","desktop_content_alignment":"left","mobile_content_alignment":"center","section_color_scheme":"scheme-65b1ee9e-e656-4c61-a9a8-783c15168e0a","color_scheme":"scheme-65b1ee9e-e656-4c61-a9a8-783c15168e0a","padding_top":36,"padding_bottom":0}},"image_banner_b6MpLt":{"type":"image-banner","settings":{"image":"shopify:\/\/shop_images\/Home_Dealer_Benefits_7c8621f9-4df1-4f47-b650-a7e8263cf25f.jpg","image_overlay_opacity":0,"image_height":"adapt","image_behavior":"none","desktop_content_position":"middle-center","desktop_content_alignment":"center","show_text_box":false,"color_scheme":"scheme-7d3e69d9-fb39-4ad5-bfe7-9f49a8f8cdc6","stack_images_on_mobile":false,"mobile_content_alignment":"center","show_text_below":false}},"image_with_text_TWeKQt":{"type":"image-with-text","blocks":{"heading_UXtXz9":{"type":"heading","settings":{"heading":"<strong>Remineralization = Healthier Hydration<\/strong>","heading_size":"h1"}},"text_fCry4x":{"type":"text","settings":{"text":"<p>At Lago our mission has always been to change  lives through better water solutions, which is why we strive to provide the most comprehensive and exclusive water filtration products available anywhere. We are committed to providing a truly elevated hydration experience.<\/p>","text_style":"body"}},"button_wPgYLX":{"type":"button","settings":{"button_label":"FIND OUT MORE","button_link":"https:\/\/lago-water.myshopify.com\/pages\/about-us","button_style_secondary":false}}},"block_order":["heading_UXtXz9","text_fCry4x","button_wPgYLX"],"disabled":true,"custom_css":["h2 {color: #034ea2;}"],"settings":{"image":"shopify:\/\/shop_images\/Home_2_750x750_b2259b79-0a10-4535-8375-00a2f377682d.png","height":"adapt","desktop_image_width":"medium","layout":"text_first","image_behavior":"none","content_layout":"no-overlap","desktop_content_position":"middle","desktop_content_alignment":"left","mobile_content_alignment":"left","section_color_scheme":"scheme-65b1ee9e-e656-4c61-a9a8-783c15168e0a","color_scheme":"scheme-65b1ee9e-e656-4c61-a9a8-783c15168e0a","padding_top":20,"padding_bottom":0}},"rich_text_TwnfEe":{"type":"rich-text","blocks":{"heading_3Vtp78":{"type":"heading","disabled":true,"settings":{"heading":"","heading_size":"h1"}},"text_Vjd9JA":{"type":"text","disabled":true,"settings":{"text":""}},"button_R93JUR":{"type":"button","settings":{"button_label":"BECOME A DEALER","button_link":"shopify:\/\/pages\/become-a-dealer","button_style_secondary":false,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_3Vtp78","text_Vjd9JA","button_R93JUR"],"name":"t:sections.rich-text.presets.name","settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-4baf2c69-c18d-4db0-a94f-0cf323a6e438","full_width":false,"padding_top":32,"padding_bottom":40}},"image_banner_WWTr7d":{"type":"image-banner","blocks":{"heading_NpYMiE":{"type":"heading","disabled":true,"settings":{"heading":"Image banner","heading_size":"h1"}},"text_KKgc8W":{"type":"text","disabled":true,"settings":{"text":"Give customers details about the banner image(s) or content on the template.","text_style":"body"}},"buttons_whkKhq":{"type":"buttons","disabled":true,"settings":{"button_label_1":"Button label","button_link_1":"","button_style_secondary_1":false,"button_label_2":"Button label","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_NpYMiE","text_KKgc8W","buttons_whkKhq"],"settings":{"image":"shopify:\/\/shop_images\/Home_6.png","image_overlay_opacity":0,"image_height":"adapt","image_behavior":"none","desktop_content_position":"bottom-center","desktop_content_alignment":"center","show_text_box":false,"color_scheme":"","stack_images_on_mobile":false,"mobile_content_alignment":"center","show_text_below":false}},"17565004618970a8d5":{"type":"apps","blocks":{"clicky_clickable_banner_L936DD":{"type":"shopify:\/\/apps\/clicky\/blocks\/clickable_banner\/2d58f9d3-a5fb-4893-8aac-935f0ebcc5b8","settings":{"image_size":"adapt","cb_image_link":"","cb_image_link_2":"","cb_mb_image_link":"","link_target":"_self","cb_is_boxed_layout":false,"is_banner_sticky":false,"overlay_text":"","overlay_text_color":"#ffffff","button_text":"","button_text_color":"#ffffff","button_bg_color":"#000000","content_position":"middle-center","content_alignment":"center","cb_custom_css":"","padding_top":0,"padding_bottom":0}}},"block_order":["clicky_clickable_banner_L936DD"],"settings":{"include_margins":true}}},"order":["slideshow_JGUA3i","slideshow_3rUQph","featured_collection","image_with_text_3FPe6a","175649131929f14971","image_banner_KNVGG9","image_banner_V8L3Gj","1756490937e4dc2285","image_with_text_H7N3a8","image_banner_b6MpLt","image_with_text_TWeKQt","rich_text_TwnfEe","image_banner_WWTr7d","17565004618970a8d5"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "lago_home_1_5": {
+      "type": "lago-home-1-5",
+      "blocks": {
+        "pp1": {
+          "type": "product_path",
+          "settings": {
+            "image": "shopify://shop_images/counter_top_water_dispenser_2x_e98f8a94-f93f-491d-9a73-97cbc4ac69f9.png",
+            "title": "Countertop Dispensers",
+            "link": "shopify://collections/countertop-water-dispensers"
+          }
+        },
+        "pp2": {
+          "type": "product_path",
+          "settings": {
+            "image": "shopify://shop_images/sparkling_water_dispenser_2x_e8f3d36b-0e80-4179-ac95-9fa131341ad6.png",
+            "title": "Sparkling Dispensers",
+            "link": "https://lagowater.com/collections/sparkling-water-dispensers"
+          }
+        },
+        "pp3": {
+          "type": "product_path",
+          "settings": {
+            "image": "shopify://shop_images/10k_standup_2x_5afdd607-ec97-4862-b641-9b92cbb473c0.png",
+            "title": "Stand Up Dispensers",
+            "link": "shopify://collections/stand-up-water-dispensers"
+          }
+        },
+        "pp4": {
+          "type": "product_path",
+          "settings": {
+            "image": "shopify://shop_images/ice_machines_under_counter_2x_7e54d399-df71-432b-8e66-7412f4071f89.png",
+            "title": "Ice Makers",
+            "link": ""
+          }
+        },
+        "pp5": {
+          "type": "product_path",
+          "settings": {
+            "image": "shopify://shop_images/undersink_filtration_systems_2x_c493e92d-83f5-4fa7-bd8c-47bf92a745d0.png",
+            "title": "Undersink Filtration Systems",
+            "link": ""
+          }
+        },
+        "pp6": {
+          "type": "product_path",
+          "settings": {
+            "image": "shopify://shop_images/light_commercial_ro_systems_2x_18e79cd6-93f3-4009-a063-2a2cd38992ad.png",
+            "title": "Light Commercial RO Systems",
+            "link": ""
+          }
+        },
+        "pp7": {
+          "type": "product_path",
+          "settings": {
+            "image": "shopify://shop_images/poe_filtration_systems_2x_c84af0d4-bf29-4170-aec3-91b3b3eaa0ce.png",
+            "title": "Point-of-Entry Filtration Systems",
+            "link": ""
+          }
+        },
+        "pp8": {
+          "type": "product_path",
+          "settings": {
+            "image": "shopify://shop_images/skid_mounted_ro_water_treatment_solutions_2x_86bfe469-7bef-405e-b2b3-6367cd658574.png",
+            "title": "Industrial RO Systems",
+            "link": ""
+          }
+        },
+        "dv1": {
+          "type": "dealer_value",
+          "settings": {
+            "icon": "shopify://shop_images/factory_direct_partner_svg.png",
+            "title": "Factory Direct Partner",
+            "text": "Dealers get access to the largest selection of water dispensers and filtration systems."
+          }
+        },
+        "dv2": {
+          "type": "dealer_value",
+          "settings": {
+            "icon": "shopify://shop_images/Dedicated_partner_2x_4150a315-a7ee-4718-8f1c-249325bb90a5.png",
+            "title": "Dedicated Representative",
+            "text": "Lago customer service representatives are ready to help and act as an extension of your team."
+          }
+        },
+        "dv3": {
+          "type": "dealer_value",
+          "settings": {
+            "icon": "shopify://shop_images/Shipping_svg_2x_0f39c0b1-3800-4710-8608-9355ee6e5ed9.png",
+            "title": "Expedited Shipping",
+            "text": "Our Lago distribution centers are located nationwide."
+          }
+        },
+        "dv4": {
+          "type": "dealer_value",
+          "settings": {
+            "icon": "shopify://shop_images/dealer_pricing_2x_8a7f2481-8f5f-4e65-a9f1-fae80287dc3f.png",
+            "title": "Exclusive Dealer Pricing",
+            "text": "Lago dealers get exclusive access to our full catalog of products at the lowest prices."
+          }
+        },
+        "dc1": {
+          "type": "dealer_category",
+          "settings": {
+            "image": "shopify://shop_images/pou_ro_dispensers_1_d2f9b1b7-9cd1-4d8f-992f-dd07a0b2fd67.png",
+            "title": "POU RO+\nDispensers"
+          }
+        },
+        "dc2": {
+          "type": "dealer_category",
+          "settings": {
+            "image": "shopify://shop_images/sparkling_dispensers_1_bdf3a480-323c-49fb-b9ff-a356671d6741.png",
+            "title": "Sparkling Dispensers"
+          }
+        },
+        "dc3": {
+          "type": "dealer_category",
+          "settings": {
+            "image": "shopify://shop_images/undersink_systems_1_4b66aef2-71cc-4d43-a107-13152a3b2e9a.png",
+            "title": "Undersink Systems"
+          }
+        },
+        "dc4": {
+          "type": "dealer_category",
+          "settings": {
+            "image": "shopify://shop_images/high_capacity_filtration_system_1_65986be0-9afc-4039-8a36-1503dabf46ab.png",
+            "title": "High-Capacity Filtration Systems"
+          }
+        },
+        "dc5": {
+          "type": "dealer_category",
+          "settings": {
+            "image": "shopify://shop_images/industrial_ro_systems_1_f9644bb7-d516-4dc1-93bf-0a29b1982b0e.png",
+            "title": "Industrial RO Systems"
+          }
+        },
+        "dc6": {
+          "type": "dealer_category",
+          "settings": {
+            "image": "shopify://shop_images/ice_machines_1_0ae67984-6cb7-47aa-bb50-d8813e71f45a.png",
+            "title": "Ice Machines"
+          }
+        }
+      },
+      "block_order": [
+        "pp1",
+        "pp2",
+        "pp3",
+        "pp4",
+        "pp5",
+        "pp6",
+        "pp7",
+        "pp8",
+        "dv1",
+        "dv2",
+        "dv3",
+        "dv4",
+        "dc1",
+        "dc2",
+        "dc3",
+        "dc4",
+        "dc5",
+        "dc6"
+      ],
+      "settings": {
+        "hero_image": "shopify://shop_images/mobile_hero.png",
+        "hero_bg_desktop": "shopify://shop_images/desktop_hero_1440w.png",
+        "hero_heading": "Your water solution partner for residential and commercial settings.",
+        "hero_button_label": "Become a Dealer",
+        "hero_button_link": "",
+        "solutions_heading": "Explore Our Solutions",
+        "section_title_font_size": 30,
+        "path_card_label_font_size": 16,
+        "path_card_label_bold": false,
+        "settings_heading": "Lago Solutions For Every Setting",
+        "settings_title_font_size": 28,
+        "settings_strip_caption_font_size": 16,
+        "settings_strip_1": "shopify://shop_images/hotels.png",
+        "settings_strip_2": "shopify://shop_images/restaurants_2x_c87b52eb-acfa-4eb1-a0e1-5c7af7e016ea.png",
+        "settings_strip_3": "shopify://shop_images/cafes_2x_ee2cad21-ad6d-4caf-8afe-f40f3eeec520.png",
+        "settings_strip_4": "shopify://shop_images/gyms_2x_b868d026-dd19-4e38-9631-1f65f670b9c0.png",
+        "settings_strip_5": "shopify://shop_images/laundromats_2x_2365202d-7599-4713-90fe-781c9e20dbe1.png",
+        "settings_strip_6": "shopify://shop_images/spas_2x_3ff00d9a-d0aa-455d-b9c9-17cd9a443ddc.png",
+        "label_hotels": "Hotels & Apartments",
+        "label_cafe": "Café Coffee Shops",
+        "label_restaurants": "Restaurants & Food Services",
+        "label_fitness": "Fitness Gyms",
+        "label_laundromat": "Laundromats & Car Washes",
+        "label_spa": "Spas & Beauty Salons",
+        "dealer_section_heading": "Join the Lago Dealer Network",
+        "dealer_heading_font_size": 28,
+        "value_row_text_font_size": 14,
+        "value_row_title_font_size": 16,
+        "dealer_cta_label": "Become a Dealer",
+        "dealer_cta_link": "",
+        "cat_label_font_size": 12,
+        "innovation_heading": "Hydration innovation is what we do.",
+        "innovation_heading_font_size": 28,
+        "innovation_lead": "We provide our dealers the largest product offering in the industry with the most advanced technology.",
+        "innovation_lead_font_size": 16,
+        "innovation_cta_label": "Learn More",
+        "innovation_cta_link": ""
+      }
+    }
+  },
+  "order": [
+    "lago_home_1_5"
+  ]
+}
