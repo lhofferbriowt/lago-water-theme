@@ -120,8 +120,9 @@
         "lago_csg_card_7epTHb": {
           "type": "lago_csg_card",
           "settings": {
-            "title": "Countertop Dispensers",
-            "link": ""
+            "image": "shopify://shop_images/skid_mounted_ro_water_treatment_solutions_2x_86bfe469-7bef-405e-b2b3-6367cd658574.png",
+            "title": "Industrial Filtration Systems",
+            "link": "shopify://collections/industrial-filtration-systems"
           }
         }
       },
