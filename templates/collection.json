@@ -96,8 +96,9 @@
         "lago_csg_card_HBMgPG": {
           "type": "lago_csg_card",
           "settings": {
-            "title": "Countertop Dispensers",
-            "link": ""
+            "image": "shopify://shop_images/undersink_filtration_systems_2x_c493e92d-83f5-4fa7-bd8c-47bf92a745d0.png",
+            "title": "Undersink Filtration Systems",
+            "link": "shopify://collections/under-sink-filtration-systems"
           }
         },
         "lago_csg_card_nDjfqe": {
