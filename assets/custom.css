@@ -169,6 +169,11 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
   color: #000;
 }
 
+/* spacing between heading (h5 variant) and bullets */
+.card__heading.h5 {
+  margin-bottom: 12px;
+}
+
 .lago-product-bullets__item::before {
   content: "";
   width: 8px;
@@ -201,4 +206,8 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
   /* keep existing visuals but allow it to be pushed to the bottom */
   margin-top: 0; /* reset if needed; visual spacing is controlled inside the card */
   margin-top: auto;
+}
+/* extra spacing below bullets */
+.lago-product-bullets {
+  padding-bottom: 12px;
 }
