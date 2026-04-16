@@ -197,7 +197,7 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
 #product-grid .grid__item .card > .card__content:last-child {
   display: flex;
   flex-direction: column;
-  min-height: 120px; /* keep media + h5 aligned when bullets absent */
+  min-height: 140px; /* keep media + h5 aligned when bullets absent */
 }
 
 .lago-product-bullets {
@@ -213,6 +213,6 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
 @media screen and (max-width: 749px) {
   /* smaller min-height on mobile */
   #product-grid .grid__item .card > .card__content:last-child {
-    min-height: 80px;
+    min-height: 100px;
   }
 }
