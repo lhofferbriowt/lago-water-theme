@@ -19,50 +19,6 @@
         "hero_button_link": ""
       }
     },
-    "lago_collection_solution_grid": {
-      "type": "lago-collection-solution-grid",
-      "blocks": {
-        "csg1": {
-          "type": "lago_csg_card",
-          "settings": {
-            "image": "shopify://shop_images/counter_top_water_dispenser_2x_e98f8a94-f93f-491d-9a73-97cbc4ac69f9.png",
-            "title": "Countertop Dispensers",
-            "link": "shopify://collections/countertop-water-dispensers"
-          }
-        },
-        "csg2": {
-          "type": "lago_csg_card",
-          "settings": {
-            "image": "shopify://shop_images/sparkling_water_dispenser_2x_e8f3d36b-0e80-4179-ac95-9fa131341ad6.png",
-            "title": "Sparkling Dispensers",
-            "link": "shopify://collections/sparkling-water-dispensers"
-          }
-        },
-        "csg3": {
-          "type": "lago_csg_card",
-          "settings": {
-            "image": "shopify://shop_images/10k_standup_2x_5afdd607-ec97-4862-b641-9b92cbb473c0.png",
-            "title": "Stand Up Dispensers",
-            "link": "shopify://collections/stand-up-water-dispensers"
-          }
-        },
-        "csg4": {
-          "type": "lago_csg_card",
-          "settings": {
-            "image": "shopify://shop_images/ice_machines_under_counter_2x_7e54d399-df71-432b-8e66-7412f4071f89.png",
-            "title": "Ice Makers",
-            "link": "shopify://collections/ice-makers"
-          }
-        }
-      },
-      "block_order": ["csg1", "csg2", "csg3", "csg4"],
-      "settings": {
-        "solutions_heading": "Explore Our Solutions",
-        "section_title_font_size": 30,
-        "path_card_label_font_size": 16,
-        "path_card_label_bold": false
-      }
-    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -133,12 +89,58 @@
         "dealer_cta_label": "Become a Dealer",
         "dealer_cta_link": ""
       }
+    },
+    "lago_collection_solution_grid_Kreijf": {
+      "type": "lago-collection-solution-grid",
+      "blocks": {
+        "lago_csg_card_HBMgPG": {
+          "type": "lago_csg_card",
+          "settings": {
+            "title": "Countertop Dispensers",
+            "link": ""
+          }
+        },
+        "lago_csg_card_nDjfqe": {
+          "type": "lago_csg_card",
+          "settings": {
+            "title": "Countertop Dispensers",
+            "link": ""
+          }
+        },
+        "lago_csg_card_9CDweE": {
+          "type": "lago_csg_card",
+          "settings": {
+            "title": "Countertop Dispensers",
+            "link": ""
+          }
+        },
+        "lago_csg_card_7epTHb": {
+          "type": "lago_csg_card",
+          "settings": {
+            "title": "Countertop Dispensers",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "lago_csg_card_HBMgPG",
+        "lago_csg_card_nDjfqe",
+        "lago_csg_card_9CDweE",
+        "lago_csg_card_7epTHb"
+      ],
+      "name": "Lago solution grid",
+      "settings": {
+        "solutions_heading": "Explore Our Filtration Systems",
+        "section_title_font_size": 30,
+        "path_card_label_font_size": 16,
+        "path_card_label_bold": false
+      }
     }
   },
   "order": [
     "lago_collection_hero",
-    "lago_collection_solution_grid",
     "product-grid",
-    "lago_dealer_value_prop"
+    "lago_dealer_value_prop",
+    "lago_collection_solution_grid_Kreijf"
   ]
 }
