@@ -1,8 +1,10 @@
 {{ 'section-lago-home-1-5.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
-  assign product_blocks = section.blocks | where: 'type', 'product_path'
-  assign value_blocks = section.blocks | where: 'type', 'dealer_value'
+  assign l15_solutions_heading_id = 'l15-solutions-heading-' | append: section.id
+  assign l15_dealer_heading_id = 'l15-dealer-heading-' | append: section.id
+  assign product_blocks = section.blocks | where: 'type', 'lago_coll_path'
+  assign value_blocks = section.blocks | where: 'type', 'lago_coll_dealer'
 -%}
 
 <div
@@ -10,13 +12,13 @@
   style="--l15-path-label-font-size: {{ section.settings.path_card_label_font_size }}px; --l15-path-label-font-weight: {% if section.settings.path_card_label_bold %}600{% else %}400{% endif %}; --l15-section-title-font-size: {{ section.settings.section_title_font_size }}px; --l15-dealer-heading-font-size: {{ section.settings.dealer_heading_font_size }}px; --l15-value-row-title-font-size: {{ section.settings.value_row_title_font_size }}px; --l15-value-row-text-font-size: {{ section.settings.value_row_text_font_size }}px;"
 >
   <div class="lago-home-1-5__inner">
-    <section class="l15-solutions" aria-labelledby="l15-solutions-heading">
-      <h2 id="l15-solutions-heading" class="l15-section-title">{{ section.settings.solutions_heading | escape }}</h2>
+    <section class="l15-solutions" aria-labelledby="{{ l15_solutions_heading_id }}">
+      <h2 id="{{ l15_solutions_heading_id }}" class="l15-section-title">{{ section.settings.solutions_heading | escape }}</h2>
       <div class="l15-path-grid">
         {%- for block in product_blocks -%}
           <a
             class="l15-path-card"
-            href="{{ block.settings.link | default: '#' }}"
+            href="{% if block.settings.link != blank %}{{ block.settings.link }}{% else %}#{% endif %}"
             {{ block.shopify_attributes }}
           >
             <div class="l15-path-card__img">
@@ -37,8 +39,8 @@
       </div>
     </section>
 
-    <section class="l15-dealer-values" aria-labelledby="l15-dealer-heading">
-      <h2 id="l15-dealer-heading" class="l15-dealer-values__title">{{ section.settings.dealer_section_heading | escape }}</h2>
+    <section class="l15-dealer-values" aria-labelledby="{{ l15_dealer_heading_id }}">
+      <h2 id="{{ l15_dealer_heading_id }}" class="l15-dealer-values__title">{{ section.settings.dealer_section_heading | escape }}</h2>
       <div class="l15-dealer-values__grid">
         {%- for block in value_blocks -%}
           <div class="l15-value-row" {{ block.shopify_attributes }}>
@@ -61,7 +63,7 @@
       </div>
       {%- if section.settings.dealer_cta_label != blank -%}
         <div class="l15-dealer-values__cta">
-          <a class="l15-btn" href="{{ section.settings.dealer_cta_link | default: '#' }}">{{ section.settings.dealer_cta_label | escape }}</a>
+          <a class="l15-btn" href="{% if section.settings.dealer_cta_link != blank %}{{ section.settings.dealer_cta_link }}{% else %}#{% endif %}">{{ section.settings.dealer_cta_label | escape }}</a>
         </div>
       {%- endif -%}
     </section>
@@ -164,7 +166,7 @@
   ],
   "blocks": [
     {
-      "type": "product_path",
+      "type": "lago_coll_path",
       "name": "Solution card",
       "settings": [
         {
@@ -186,7 +188,7 @@
       ]
     },
     {
-      "type": "dealer_value",
+      "type": "lago_coll_dealer",
       "name": "Dealer benefit",
       "settings": [
         {

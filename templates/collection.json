@@ -19,6 +19,52 @@
         "hero_button_link": ""
       }
     },
+    "lago_collection_content": {
+      "type": "lago-collection-content",
+      "blocks": {
+        "pp1": {
+          "type": "lago_coll_path",
+          "settings": {
+            "title": "Countertop Dispensers",
+            "link": "shopify://collections/countertop-water-dispensers"
+          }
+        },
+        "pp2": {
+          "type": "lago_coll_path",
+          "settings": {
+            "title": "Sparkling Dispensers",
+            "link": "shopify://collections/sparkling-water-dispensers"
+          }
+        },
+        "pp3": {
+          "type": "lago_coll_path",
+          "settings": {
+            "title": "Stand Up Dispensers",
+            "link": "shopify://collections/stand-up-water-dispensers"
+          }
+        },
+        "dv1": {
+          "type": "lago_coll_dealer",
+          "settings": {
+            "title": "Factory Direct Partner",
+            "text": "Dealers get access to the largest selection of water dispensers and filtration systems."
+          }
+        }
+      },
+      "block_order": ["pp1", "pp2", "pp3", "dv1"],
+      "settings": {
+        "solutions_heading": "Explore Our Solutions",
+        "section_title_font_size": 30,
+        "path_card_label_font_size": 16,
+        "path_card_label_bold": false,
+        "dealer_section_heading": "Join the Lago Dealer Network",
+        "dealer_heading_font_size": 28,
+        "value_row_text_font_size": 14,
+        "value_row_title_font_size": 16,
+        "dealer_cta_label": "Become a Dealer",
+        "dealer_cta_link": ""
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -40,8 +86,5 @@
       }
     }
   },
-  "order": [
-    "lago_collection_hero",
-    "product-grid"
-  ]
+  "order": ["lago_collection_hero", "lago_collection_content", "product-grid"]
 }
