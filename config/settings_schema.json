@@ -1451,5 +1451,110 @@
         "default": "scheme-1"
       }
     ]
+  },
+  {
+    "name": "Lago 1.5 footer",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Shared footer for the Lago 1.5 homepage and collection templates. Edit here once — both pages stay in sync."
+      },
+      {
+        "type": "image_picker",
+        "id": "l15_footer_logo",
+        "label": "Logo"
+      },
+      {
+        "type": "textarea",
+        "id": "l15_footer_intro",
+        "label": "Intro text",
+        "default": "At Lago we understand our dealers and their customers which enables us to provide the best filtration products to fit your needs. Our goal is that with every sip you take you feel the passion we put into all of our products."
+      },
+      {
+        "type": "text",
+        "id": "l15_footer_resources_heading",
+        "label": "Resources column heading",
+        "default": "Resources"
+      },
+      {
+        "type": "text",
+        "id": "l15_footer_label_home",
+        "label": "Nav — Home label",
+        "default": "Home"
+      },
+      {
+        "type": "url",
+        "id": "l15_footer_link_home",
+        "label": "Nav — Home link"
+      },
+      {
+        "type": "text",
+        "id": "l15_footer_label_dispensers",
+        "label": "Nav — Water dispensers label",
+        "default": "Water Dispensers"
+      },
+      {
+        "type": "url",
+        "id": "l15_footer_link_dispensers",
+        "label": "Nav — Water dispensers link"
+      },
+      {
+        "type": "text",
+        "id": "l15_footer_label_filtration",
+        "label": "Nav — Filtration label",
+        "default": "Filtration Systems"
+      },
+      {
+        "type": "text",
+        "id": "l15_footer_label_why_lago",
+        "label": "Nav — Why Lago label",
+        "default": "Why Lago"
+      },
+      {
+        "type": "url",
+        "id": "l15_footer_link_why_lago",
+        "label": "Nav — Why Lago link"
+      },
+      {
+        "type": "url",
+        "id": "l15_footer_link_filtration",
+        "label": "Nav — Filtration link"
+      },
+      {
+        "type": "text",
+        "id": "l15_footer_label_dealer",
+        "label": "Nav — Become a dealer label",
+        "default": "Become a Dealer"
+      },
+      {
+        "type": "url",
+        "id": "l15_footer_link_dealer",
+        "label": "Nav — Become a dealer link"
+      },
+      {
+        "type": "text",
+        "id": "l15_footer_contact_heading",
+        "label": "Contact column heading",
+        "default": "Contact Us"
+      },
+      {
+        "type": "text",
+        "id": "l15_footer_phone",
+        "label": "Phone (display)",
+        "default": "(800) 555-0123"
+      },
+      {
+        "type": "text",
+        "id": "l15_footer_email",
+        "label": "Email",
+        "default": "info@lagowater.com"
+      },
+      {
+        "type": "textarea",
+        "id": "l15_footer_copyright",
+        "label": "Copyright line",
+        "default": "©2025 Brio Water Technology. Inc. All rights reserved. Lago is a registered trademark of Brio Water Tech., INC."
+      }
+    ]
   }
 ]

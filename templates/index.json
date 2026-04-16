@@ -208,23 +208,7 @@
         "innovation_lead": "We provide our dealers the largest product offering in the industry with the most advanced technology.",
         "innovation_lead_font_size": 16,
         "innovation_cta_label": "Learn More",
-        "innovation_cta_link": "",
-        "footer_intro": "At Lago we understand our dealers and their customers which enables us to provide the best filtration products to fit your needs. Our goal is that with every sip you take you feel the passion we put into all of our products.",
-        "footer_resources_heading": "Resources",
-        "label_home": "Home",
-        "link_home": "",
-        "label_dispensers": "Water Dispensers",
-        "link_dispensers": "",
-        "label_filtration": "Filtration Systems",
-        "label_why_lago": "Why Lago",
-        "link_why_lago": "",
-        "link_filtration": "",
-        "label_dealer": "Become a Dealer",
-        "link_dealer": "",
-        "footer_contact_heading": "Contact Us",
-        "footer_phone": "(800) 555-0123",
-        "footer_email": "info@lagowater.com",
-        "footer_copyright": "©2025 Brio Water Technology. Inc. All rights reserved. Lago is a registered trademark of Brio Water Tech., INC."
+        "innovation_cta_link": ""
       }
     }
   },

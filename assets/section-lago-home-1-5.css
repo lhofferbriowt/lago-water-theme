@@ -780,3 +780,8 @@
     padding-bottom: 0.25rem;
   }
 }
+
+/* Collection footer is a separate shopify-section; remove Dawn’s .section + .section gap so it matches the homepage footer band */
+.section-lago-collection-footer.section {
+  margin-top: 0;
+}
