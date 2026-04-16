@@ -141,3 +141,36 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
 
 
 }
+
+/* Lago: product card bullet list (collection grid) */
+.lago-product-bullets {
+  background: #dfdfdf;
+  padding: 12px 14px;
+}
+
+.lago-product-bullets__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.lago-product-bullets__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  line-height: 1.25;
+  color: #000;
+}
+
+.lago-product-bullets__item::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  border: 1px solid #4a71aa;
+  box-sizing: border-box;
+  flex: none;
+}

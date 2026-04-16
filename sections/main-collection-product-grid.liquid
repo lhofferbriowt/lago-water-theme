@@ -172,6 +172,9 @@
                     show_secondary_image: section.settings.show_secondary_image,
                     show_vendor: section.settings.show_vendor,
                     show_rating: section.settings.show_rating,
+                    show_bullets: section.settings.show_bullets,
+                    bullets_metafield: section.settings.bullets_metafield,
+                    bullets_max: section.settings.bullets_max,
                     lazy_load: lazy_load,
                     skip_styles: skip_card_product_styles,
                     quick_add: section.settings.quick_add,
@@ -323,6 +326,32 @@
       "default": false,
       "label": "t:sections.main-collection-product-grid.settings.show_rating.label",
       "info": "t:sections.main-collection-product-grid.settings.show_rating.info"
+    },
+    {
+      "type": "header",
+      "content": "Product tile bullets"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bullets",
+      "default": false,
+      "label": "Show bullet points"
+    },
+    {
+      "type": "text",
+      "id": "bullets_metafield",
+      "label": "Bullets metafield (namespace.key)",
+      "default": "custom.product_bullets",
+      "info": "Create a product metafield that is either a list of single line text (recommended) or a multi-line text field. Example: custom.product_bullets"
+    },
+    {
+      "type": "range",
+      "id": "bullets_max",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "default": 4,
+      "label": "Max bullets to show"
     },
     {
       "type": "select",

@@ -144,6 +144,48 @@
         </div>
       </div>
       <div class="card__content">
+        {%- liquid
+          assign lago_bullets_render = false
+          assign lago_bullets_ns = ''
+          assign lago_bullets_key = ''
+          assign lago_bullets_mf = blank
+
+          if show_bullets and bullets_metafield != blank
+            assign lago_bullets_ref = bullets_metafield | strip
+            if lago_bullets_ref contains '.'
+              assign lago_bullets_parts = lago_bullets_ref | split: '.'
+              assign lago_bullets_ns = lago_bullets_parts | first
+              assign lago_bullets_key = lago_bullets_parts | last
+              assign lago_bullets_mf = card_product.metafields[lago_bullets_ns][lago_bullets_key]
+              if lago_bullets_mf != blank and lago_bullets_mf.value != blank
+                assign lago_bullets_render = true
+              endif
+            endif
+          endif
+        -%}
+
+        {%- if lago_bullets_render -%}
+          <div class="lago-product-bullets" aria-label="Product features">
+            <ul class="lago-product-bullets__list" role="list">
+              {%- if lago_bullets_mf.type contains 'list.' -%}
+                {%- for item in lago_bullets_mf.value limit: bullets_max -%}
+                  {%- if item != blank -%}
+                    <li class="lago-product-bullets__item">{{ item | escape }}</li>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- else -%}
+                {%- assign lago_bullets_lines = lago_bullets_mf.value | split: '\n' -%}
+                {%- for line in lago_bullets_lines limit: bullets_max -%}
+                  {%- assign trimmed = line | strip -%}
+                  {%- if trimmed != blank -%}
+                    <li class="lago-product-bullets__item">{{ trimmed | escape }}</li>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
+            </ul>
+          </div>
+        {%- endif -%}
+
         <div class="card__information">
           <h3
             class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
