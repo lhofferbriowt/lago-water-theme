@@ -1,1 +1,275 @@
-{"name":"t:sections.footer.name","type":"footer","sections":{"footer":{"type":"footer","blocks":{"link_list_mygRNi":{"type":"link_list","settings":{"heading":"","menu":"footer"}},"link_list_NbwHVD":{"type":"link_list","settings":{"heading":"","menu":"footer-menu-2"}}},"block_order":["link_list_mygRNi","link_list_NbwHVD"],"disabled":true,"settings":{"color_scheme":"scheme-4","newsletter_enable":true,"newsletter_heading":"Sign up for email newsletter:","enable_follow_on_shop":false,"show_social":false,"enable_country_selector":false,"enable_language_selector":false,"payment_enable":false,"show_policy":false,"margin_top":0,"padding_top":16,"padding_bottom":20}},"custom_liquid_mxmBDG":{"type":"custom-liquid","disabled":true,"name":"t:sections.custom-liquid.presets.name","settings":{"custom_liquid":"","color_scheme":"scheme-4","padding_top":0,"padding_bottom":52}},"ss_footer_6_a8TaTe":{"type":"ss-footer-6","blocks":{"menu_6MzpPm":{"type":"menu","settings":{"heading":"","menu":"footer"}},"menu_7K63fK":{"type":"menu","settings":{"heading":"","menu":"footer-menu-2"}},"heading_ahmTCe":{"type":"heading","settings":{"heading":"<h4>Sign up for email newsletter:<\/h4>","heading_custom":false,"heading_font":"arimo_n4","heading_size":20,"heading_size_mobile":17,"heading_height":120,"heading_mt":22,"heading_mt_mobile":0,"heading_color":"#ffffff"}},"text_ewRpdV":{"type":"text","settings":{"text":"","text_custom":false,"text_font":"arimo_n4","text_size":16,"text_size_mobile":14,"text_height":110,"text_mt":4,"text_mt_mobile":12,"text_color":"#ffffff"}},"newsletter_FEc3Rc":{"type":"newsletter","settings":{"form_mt":22,"form_mt_mobile":28,"input_padding_vertical":12,"input_padding_horizontal":12,"input_radius":0,"input_border_thickness":1,"input_placeholder":"Enter email","input_custom":false,"input_font":"arimo_n4","input_size":13,"input_size_mobile":13,"input_height":70,"submit":"SUBMIT","submit_custom":false,"submit_font":"arimo_n7","submit_size":13,"submit_size_mobile":13,"submit_height":100,"submit_padding_vertical":12,"submit_padding_horizontal":30,"submit_radius":0,"submit_border_thickness":0,"thanks_text":"Thank you for subscribing","thanks_text_custom":false,"thanks_text_font":"arimo_n4","thanks_text_size":13,"thanks_text_size_mobile":13,"thanks_text_height":130,"thanks_text_mt":20,"thanks_text_mt_mobile":20,"show_privacy_checkbox":true,"privacy":"<p>You agree to receive recurring automated email blasts from Lago.  View Terms & Privacy.<\/p>","privacy_custom":false,"privacy_font":"arimo_n4","privacy_size":11,"privacy_size_mobile":11,"privacy_height":100,"privacy_mt":20,"privacy_mt_mobile":20,"input_bg_color":"","input_border_color":"#ffffff","input_border_focus_color":"","input_color":"#ffffff","input_placeholder_color":"#ffffff","submit_color":"#000000","submit_hover_color":"#000000","submit_bg_color":"#e8e8e8","submit_bg_hover_color":"#ffffff","submit_border_color":"#ffffff","submit_border_hover_color":"#717176","thanks_text_color":"#818181","privacy_color":"#ffffff","privacy_checkbox_color":"#ffffff","privacy_checkbox_active_color":"#ffffff","privacy_checkbox_active_arrow_color":"#000000"}},"logo_cgAbhw":{"type":"logo","settings":{"logo_mt":0,"logo_mt_mobile":10,"logo_mb":2,"logo_mb_mobile":4,"logo":"shopify:\/\/shop_images\/Lago_Logo_White.png","image_width":10,"image_width_mobile":10,"text":"<p>©2025 BRIO WATER TECHNOLOGY, INC. ALL RIGHTS RESERVED. LAGO IS A REGISTERED TRADEMARK OF BRIO WATER TECH., INC.<\/p>","text_custom":false,"text_font":"arimo_n4","text_size":12,"text_size_mobile":10,"text_height":100,"text_color":"#ffffff"}}},"block_order":["menu_6MzpPm","menu_7K63fK","heading_ahmTCe","text_ewRpdV","newsletter_FEc3Rc","logo_cgAbhw"],"name":"SS - Footer #6","settings":{"block_padding_vertical":48,"block_padding_vertical_mobile":46,"block_padding_horizontal":44,"block_padding_horizontal_mobile":40,"bottom_block_padding_vertical":22,"bottom_block_padding_vertical_mobile":26,"bottom_block_padding_horizontal":12,"bottom_block_padding_horizontal_mobile":36,"block_border_thickness":1,"menu_gap":18,"menu_gap_mobile":12,"menu_heading_custom":false,"menu_heading_font":"arimo_n4","menu_heading_size":19,"menu_heading_size_mobile":14,"menu_heading_height":100,"list_mt":10,"list_gap":28,"list_gap_mobile":10,"link_custom":false,"link_font":"arimo_n4","link_size":14,"link_size_mobile":12,"link_height":140,"languages":false,"lang_custom":false,"lang_font":"arimo_n7","lang_size":13,"lang_size_mobile":13,"lang_height":130,"bottom_menu":"","bottom_menu_hide_mobile":true,"bottom_list_mt_mobile":4,"bottom_list_gap":20,"bottom_list_gap_mobile":10,"bottom_link_custom":false,"bottom_link_font":"arimo_n4","bottom_link_size":0,"bottom_link_size_mobile":5,"bottom_link_height":60,"menu_heading_color":"#ffffff","menu_item_border_color":"#f7f7f7","link_color":"#ffffff","link_hover_color":"#d9d9d9","lang_color":"#ffffff","lang_hover_color":"#d9d9d9","bottom_link_color":"#ffffff","bottom_link_hover_color":"#d9d9d9","block_border_color":"#8e8d8c","background_color":"#8e8d8c","background_gradient":"","border_color":"#000000","margin_top":0,"margin_bottom":0,"margin_horizontal":0,"margin_horizontal_mobile":0,"padding_top":0,"padding_top_mobile":0,"padding_bottom":8,"padding_bottom_mobile":0,"padding_horizontal":16,"padding_horizontal_mobile":0,"full_width":true,"content_width":160,"border_thickness":0,"section_radius":0,"lazy":false}}},"order":["footer","custom_liquid_mxmBDG","ss_footer_6_a8TaTe"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "link_list_mygRNi": {
+          "type": "link_list",
+          "disabled": true,
+          "settings": {
+            "heading": "",
+            "menu": "footer"
+          }
+        },
+        "link_list_NbwHVD": {
+          "type": "link_list",
+          "disabled": true,
+          "settings": {
+            "heading": "",
+            "menu": "footer-menu-2"
+          }
+        }
+      },
+      "block_order": [
+        "link_list_mygRNi",
+        "link_list_NbwHVD"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "newsletter_enable": true,
+        "newsletter_heading": "Sign up for email newsletter:",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": false,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 16,
+        "padding_bottom": 20
+      }
+    },
+    "custom_liquid_mxmBDG": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "scheme-4",
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    },
+    "ss_footer_6_a8TaTe": {
+      "type": "ss-footer-6",
+      "blocks": {
+        "menu_6MzpPm": {
+          "type": "menu",
+          "settings": {
+            "heading": "",
+            "menu": "footer"
+          }
+        },
+        "menu_7K63fK": {
+          "type": "menu",
+          "settings": {
+            "heading": "",
+            "menu": "footer-menu-2"
+          }
+        },
+        "heading_ahmTCe": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h4>Sign up for email newsletter:</h4>",
+            "heading_custom": false,
+            "heading_font": "arimo_n4",
+            "heading_size": 20,
+            "heading_size_mobile": 17,
+            "heading_height": 120,
+            "heading_mt": 22,
+            "heading_mt_mobile": 0,
+            "heading_color": "#ffffff"
+          }
+        },
+        "text_ewRpdV": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_custom": false,
+            "text_font": "arimo_n4",
+            "text_size": 16,
+            "text_size_mobile": 14,
+            "text_height": 110,
+            "text_mt": 4,
+            "text_mt_mobile": 12,
+            "text_color": "#ffffff"
+          }
+        },
+        "newsletter_FEc3Rc": {
+          "type": "newsletter",
+          "settings": {
+            "form_mt": 22,
+            "form_mt_mobile": 28,
+            "input_padding_vertical": 12,
+            "input_padding_horizontal": 12,
+            "input_radius": 0,
+            "input_border_thickness": 1,
+            "input_placeholder": "Enter email",
+            "input_custom": false,
+            "input_font": "arimo_n4",
+            "input_size": 13,
+            "input_size_mobile": 13,
+            "input_height": 70,
+            "submit": "SUBMIT",
+            "submit_custom": false,
+            "submit_font": "arimo_n7",
+            "submit_size": 13,
+            "submit_size_mobile": 13,
+            "submit_height": 100,
+            "submit_padding_vertical": 12,
+            "submit_padding_horizontal": 30,
+            "submit_radius": 0,
+            "submit_border_thickness": 0,
+            "thanks_text": "Thank you for subscribing",
+            "thanks_text_custom": false,
+            "thanks_text_font": "arimo_n4",
+            "thanks_text_size": 13,
+            "thanks_text_size_mobile": 13,
+            "thanks_text_height": 130,
+            "thanks_text_mt": 20,
+            "thanks_text_mt_mobile": 20,
+            "show_privacy_checkbox": true,
+            "privacy": "<p>You agree to receive recurring automated email blasts from Lago.  View Terms & Privacy.</p>",
+            "privacy_custom": false,
+            "privacy_font": "arimo_n4",
+            "privacy_size": 11,
+            "privacy_size_mobile": 11,
+            "privacy_height": 100,
+            "privacy_mt": 20,
+            "privacy_mt_mobile": 20,
+            "input_bg_color": "",
+            "input_border_color": "#ffffff",
+            "input_border_focus_color": "",
+            "input_color": "#ffffff",
+            "input_placeholder_color": "#ffffff",
+            "submit_color": "#000000",
+            "submit_hover_color": "#000000",
+            "submit_bg_color": "#e8e8e8",
+            "submit_bg_hover_color": "#ffffff",
+            "submit_border_color": "#ffffff",
+            "submit_border_hover_color": "#717176",
+            "thanks_text_color": "#818181",
+            "privacy_color": "#ffffff",
+            "privacy_checkbox_color": "#ffffff",
+            "privacy_checkbox_active_color": "#ffffff",
+            "privacy_checkbox_active_arrow_color": "#000000"
+          }
+        },
+        "logo_cgAbhw": {
+          "type": "logo",
+          "settings": {
+            "logo_mt": 0,
+            "logo_mt_mobile": 10,
+            "logo_mb": 2,
+            "logo_mb_mobile": 4,
+            "logo": "shopify://shop_images/Lago_Logo_White.png",
+            "image_width": 10,
+            "image_width_mobile": 10,
+            "text": "<p>©2025 BRIO WATER TECHNOLOGY, INC. ALL RIGHTS RESERVED. LAGO IS A REGISTERED TRADEMARK OF BRIO WATER TECH., INC.</p>",
+            "text_custom": false,
+            "text_font": "arimo_n4",
+            "text_size": 12,
+            "text_size_mobile": 10,
+            "text_height": 100,
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "menu_6MzpPm",
+        "menu_7K63fK",
+        "heading_ahmTCe",
+        "text_ewRpdV",
+        "newsletter_FEc3Rc",
+        "logo_cgAbhw"
+      ],
+      "disabled": true,
+      "name": "SS - Footer #6",
+      "settings": {
+        "block_padding_vertical": 48,
+        "block_padding_vertical_mobile": 46,
+        "block_padding_horizontal": 44,
+        "block_padding_horizontal_mobile": 40,
+        "bottom_block_padding_vertical": 22,
+        "bottom_block_padding_vertical_mobile": 26,
+        "bottom_block_padding_horizontal": 12,
+        "bottom_block_padding_horizontal_mobile": 36,
+        "block_border_thickness": 1,
+        "menu_gap": 18,
+        "menu_gap_mobile": 12,
+        "menu_heading_custom": false,
+        "menu_heading_font": "arimo_n4",
+        "menu_heading_size": 19,
+        "menu_heading_size_mobile": 14,
+        "menu_heading_height": 100,
+        "list_mt": 10,
+        "list_gap": 28,
+        "list_gap_mobile": 10,
+        "link_custom": false,
+        "link_font": "arimo_n4",
+        "link_size": 14,
+        "link_size_mobile": 12,
+        "link_height": 140,
+        "languages": false,
+        "lang_custom": false,
+        "lang_font": "arimo_n7",
+        "lang_size": 13,
+        "lang_size_mobile": 13,
+        "lang_height": 130,
+        "bottom_menu": "",
+        "bottom_menu_hide_mobile": true,
+        "bottom_list_mt_mobile": 4,
+        "bottom_list_gap": 20,
+        "bottom_list_gap_mobile": 10,
+        "bottom_link_custom": false,
+        "bottom_link_font": "arimo_n4",
+        "bottom_link_size": 0,
+        "bottom_link_size_mobile": 5,
+        "bottom_link_height": 60,
+        "menu_heading_color": "#ffffff",
+        "menu_item_border_color": "#f7f7f7",
+        "link_color": "#ffffff",
+        "link_hover_color": "#d9d9d9",
+        "lang_color": "#ffffff",
+        "lang_hover_color": "#d9d9d9",
+        "bottom_link_color": "#ffffff",
+        "bottom_link_hover_color": "#d9d9d9",
+        "block_border_color": "#8e8d8c",
+        "background_color": "#8e8d8c",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 8,
+        "padding_bottom_mobile": 0,
+        "padding_horizontal": 16,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 160,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": false
+      }
+    }
+  },
+  "order": [
+    "footer",
+    "custom_liquid_mxmBDG",
+    "ss_footer_6_a8TaTe"
+  ]
+}
