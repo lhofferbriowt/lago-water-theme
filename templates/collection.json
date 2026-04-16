@@ -33,7 +33,7 @@
         "show_rating": false,
         "show_bullets": true,
         "bullets_metafield": "custom.product_bullets",
-        "bullets_max": 4,
+        "bullets_max": 8,
         "quick_add": "none",
         "enable_filtering": true,
         "filter_type": "horizontal",
