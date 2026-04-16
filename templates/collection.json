@@ -25,7 +25,7 @@
           "settings": {
             "image": "shopify://shop_images/sparkling_water_dispenser_2x_e8f3d36b-0e80-4179-ac95-9fa131341ad6.png",
             "title": "Sparkling Dispensers",
-            "link": ""
+            "link": "shopify://collections/sparkling-water-dispensers"
           }
         },
         "pp3": {
@@ -33,7 +33,7 @@
           "settings": {
             "image": "shopify://shop_images/10k_standup_2x_5afdd607-ec97-4862-b641-9b92cbb473c0.png",
             "title": "Stand Up Dispensers",
-            "link": ""
+            "link": "shopify://collections/stand-up-water-dispensers"
           }
         },
         "pp4": {
@@ -144,6 +144,7 @@
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
+        "columns_mobile": "2",
         "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
@@ -154,7 +155,6 @@
         "enable_filtering": true,
         "filter_type": "horizontal",
         "enable_sorting": true,
-        "columns_mobile": "2",
         "padding_top": 28,
         "padding_bottom": 36
       }
