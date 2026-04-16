@@ -144,13 +144,13 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
 
 /* Lago: product card bullet list (collection grid) */
 #product-grid {
-  /* Vertical room for ~8 bullet rows + .lago-product-bullets padding */
-  --lago-product-bullets-slot: clamp(9.5rem, 30vw, 12rem);
+  /* Fixed strip: 8 rows (11px × 1.25) + 7×8px gaps + vertical padding — min-height was too small vs 8 bullets */
+  --lago-product-bullets-slot: clamp(12.5rem, 42vw, 14.75rem);
 }
 
 @media screen and (min-width: 750px) {
   #product-grid {
-    --lago-product-bullets-slot: 12rem;
+    --lago-product-bullets-slot: 14.75rem;
   }
 }
 
@@ -169,8 +169,21 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
   overflow: hidden;
 }
 
+/* Same pixel height for 1 or 8 bullets (collection grid) */
 #product-grid .lago-product-bullets {
+  box-sizing: border-box;
+  height: var(--lago-product-bullets-slot);
   min-height: var(--lago-product-bullets-slot);
+  max-height: var(--lago-product-bullets-slot);
+  display: flex;
+  flex-direction: column;
+}
+
+#product-grid .lago-product-bullets__list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  align-content: start;
 }
 
 #product-grid .card__information > .card__heading + .lago-product-bullets {
@@ -186,8 +199,11 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
 #product-grid .card__information > .card__heading:first-of-type:not(:has(+ .lago-product-bullets))::after {
   content: "";
   display: block;
+  height: var(--lago-product-bullets-slot);
   min-height: var(--lago-product-bullets-slot);
+  max-height: var(--lago-product-bullets-slot);
   margin-top: 0.5rem;
+  flex-shrink: 0;
 }
 
 .lago-product-bullets__list {
