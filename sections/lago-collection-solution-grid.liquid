@@ -25,7 +25,7 @@
                 {{
                   block.settings.image
                   | image_url: width: 480
-                  | image_tag: loading: 'lazy', sizes: '(max-width: 749px) 45vw, 28vw', widths: '240, 360, 480', alt: l15_path_alt
+                  | image_tag: loading: 'lazy', alt: l15_path_alt
                 }}
               {%- else -%}
                 <span class="l15-path-card__placeholder" aria-hidden="true"></span>
@@ -44,6 +44,9 @@
   "name": "Lago collection solution grid",
   "tag": "section",
   "class": "section section-lago-collection-solution-grid",
+  "enabled_on": {
+    "templates": ["collection"]
+  },
   "settings": [
     {
       "type": "header",
