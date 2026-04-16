@@ -143,14 +143,51 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
 }
 
 /* Lago: product card bullet list (collection grid) */
+#product-grid {
+  /* Vertical room for ~8 bullet rows + .lago-product-bullets padding */
+  --lago-product-bullets-slot: clamp(9.5rem, 30vw, 12rem);
+}
+
+@media screen and (min-width: 750px) {
+  #product-grid {
+    --lago-product-bullets-slot: 12rem;
+  }
+}
+
+/* One aspect for all collection cards so image bands share height in a row */
+#product-grid .card.card--media > .card__inner.ratio {
+  --ratio-percent: 125% !important;
+}
+
 .lago-product-bullets {
   background: #f5f5f5;
   box-shadow: 0 6px 16px #00000014;
   padding: 12px 14px;
-  margin-top: 10px;
+  margin-top: 0;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   overflow: hidden;
+}
+
+#product-grid .lago-product-bullets {
+  min-height: var(--lago-product-bullets-slot);
+}
+
+#product-grid .card__information > .card__heading + .lago-product-bullets {
+  margin-top: 0.75rem;
+}
+
+/* Match title block height across cards (typical multi-line title) */
+#product-grid .card__information > .card__heading:first-of-type {
+  min-height: 2.75lh;
+}
+
+/* Same reserved strip when bullets are not rendered */
+#product-grid .card__information > .card__heading:first-of-type:not(:has(+ .lago-product-bullets))::after {
+  content: "";
+  display: block;
+  min-height: var(--lago-product-bullets-slot);
+  margin-top: 0.75rem;
 }
 
 .lago-product-bullets__list {
@@ -170,19 +207,12 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
   color: #000;
 }
 
-/* Space between product title and bullet strip (% resolves to card content width) */
-.card__information > .card__heading + .lago-product-bullets {
-  margin-top: 10%;
-}
-
-/* heading spacing handled by card layout to keep alignment consistent */
-
 .lago-product-bullets__item::before {
   content: "";
   width: 8px;
   height: 8px;
   border-radius: 999px;
-  background-color: #4B71AA;
+  background-color: #4b71aa;
   border: none;
   box-sizing: border-box;
   flex: none;
@@ -191,6 +221,7 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
 /* Make product grid items flex containers so cards can stretch to equal height */
 #product-grid .grid__item {
   display: flex;
+  min-height: clamp(17rem, 52vmin, 30rem);
 }
 
 #product-grid .grid__item > .card-wrapper {
@@ -199,25 +230,14 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
   flex-direction: column;
 }
 
-/* Ensure the lower card content stacks and bullets sit at the bottom */
+/* Ensure the lower card content stacks (no margin-top:auto on bullets — it broke row alignment) */
 #product-grid .grid__item .card > .card__content:last-child {
   display: flex;
   flex-direction: column;
-  min-height: 140px; /* keep media + h5 aligned when bullets absent */
-}
-
-.lago-product-bullets {
-  /* keep existing visuals but allow it to be pushed to the bottom */
-  margin-top: 0; /* reset if needed; visual spacing is controlled inside the card */
-  margin-top: auto;
-}
-/* extra spacing below bullets */
-.lago-product-bullets {
-  padding-bottom: 12px;
+  min-height: 140px;
 }
 
 @media screen and (max-width: 749px) {
-  /* smaller min-height on mobile */
   #product-grid .grid__item .card > .card__content:last-child {
     min-height: 100px;
   }
