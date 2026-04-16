@@ -144,10 +144,6 @@
         "dealer_cta_link": ""
       }
     },
-    "lago_collection_footer": {
-      "type": "lago-collection-footer",
-      "settings": {}
-    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -171,7 +167,6 @@
   },
   "order": [
     "lago_collection_1_5",
-    "product-grid",
-    "lago_collection_footer"
+    "product-grid"
   ]
 }
