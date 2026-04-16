@@ -167,10 +167,11 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
 
 .lago-product-bullets__item::before {
   content: "";
-  width: 14px;
-  height: 14px;
+  width: 8px;
+  height: 8px;
   border-radius: 999px;
-  border: 1px solid #4a71aa;
+  background-color: #4B71AA;
+  border: none;
   box-sizing: border-box;
   flex: none;
 }
