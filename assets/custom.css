@@ -146,6 +146,10 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
 .lago-product-bullets {
   background: #dfdfdf;
   padding: 12px 14px;
+  margin-top: 10px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  overflow: hidden;
 }
 
 .lago-product-bullets__list {
@@ -174,4 +178,27 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
   border: none;
   box-sizing: border-box;
   flex: none;
+}
+
+/* Make product grid items flex containers so cards can stretch to equal height */
+#product-grid .grid__item {
+  display: flex;
+}
+
+#product-grid .grid__item > .card-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure the lower card content stacks and bullets sit at the bottom */
+#product-grid .grid__item .card > .card__content:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.lago-product-bullets {
+  /* keep existing visuals but allow it to be pushed to the bottom */
+  margin-top: 0; /* reset if needed; visual spacing is controlled inside the card */
+  margin-top: auto;
 }
