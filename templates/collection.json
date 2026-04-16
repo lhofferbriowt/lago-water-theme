@@ -112,8 +112,9 @@
         "lago_csg_card_9CDweE": {
           "type": "lago_csg_card",
           "settings": {
-            "title": "Countertop Dispensers",
-            "link": ""
+            "image": "shopify://shop_images/poe_filtration_systems_2x_c84af0d4-bf29-4170-aec3-91b3b3eaa0ce.png",
+            "title": "Point of Entry Filtration Systems",
+            "link": "shopify://collections/point-of-entry-filtration-systems"
           }
         },
         "lago_csg_card_7epTHb": {
