@@ -1,6 +1,10 @@
 /*
  * ------------------------------------------------------------
- * IMPORTANT: The contents of this file may be updated by the Shopify admin theme editor.
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
 {
@@ -8,9 +12,31 @@
     "lago_collection_hero": {
       "type": "lago-collection-hero",
       "settings": {
+        "hero_image": "shopify://shop_images/mobile_hero.png",
+        "hero_bg_desktop": "shopify://shop_images/desktop_hero_1440w.png",
         "hero_heading": "",
         "hero_button_label": "Become a Dealer",
         "hero_button_link": ""
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "padding_top": 28,
+        "padding_bottom": 36
       }
     },
     "lago_collection_1_5": {
@@ -142,31 +168,11 @@
         "dealer_cta_label": "Become a Dealer",
         "dealer_cta_link": ""
       }
-    },
-    "product-grid": {
-      "type": "main-collection-product-grid",
-      "settings": {
-        "products_per_page": 16,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "enable_filtering": true,
-        "filter_type": "horizontal",
-        "enable_sorting": true,
-        "padding_top": 28,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
     "lago_collection_hero",
-    "lago_collection_1_5",
-    "product-grid"
+    "product-grid",
+    "lago_collection_1_5"
   ]
 }
