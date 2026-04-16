@@ -37,7 +37,7 @@
       ],
       "settings": {
         "color_scheme": "scheme-4",
-        "newsletter_enable": true,
+        "newsletter_enable": false,
         "newsletter_heading": "Sign up for email newsletter:",
         "enable_follow_on_shop": false,
         "show_social": false,
