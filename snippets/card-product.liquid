@@ -166,29 +166,7 @@
           endif
         -%}
 
-        {%- if lago_bullets_render -%}
-          <div class="lago-product-bullets" aria-label="Product features">
-            <ul class="lago-product-bullets__list" role="list">
-              {%- if lago_bullets_mf.type contains 'list.' -%}
-                {%- for item in lago_bullets_value limit: bullets_max -%}
-                  {%- if item != blank -%}
-                    <li class="lago-product-bullets__item">{{ item | escape }}</li>
-                  {%- endif -%}
-                {%- endfor -%}
-              {%- else -%}
-                {%- assign lago_bullets_text = lago_bullets_value | default: '' -%}
-                {%- assign lago_bullets_text = lago_bullets_text | replace: '\r\n', '\n' | replace: '\r', '\n' -%}
-                {%- assign lago_bullets_lines = lago_bullets_text | split: '\n' -%}
-                {%- for line in lago_bullets_lines limit: bullets_max -%}
-                  {%- assign trimmed = line | strip -%}
-                  {%- if trimmed != blank -%}
-                    <li class="lago-product-bullets__item">{{ trimmed | escape }}</li>
-                  {%- endif -%}
-                {%- endfor -%}
-              {%- endif -%}
-            </ul>
-          </div>
-        {%- endif -%}
+        {%- comment -%}lago-product-bullets moved below the product title to appear under the heading{%- endcomment -%}
 
         <div class="card__information">
           <h3
@@ -206,6 +184,29 @@
               {{ card_product.title | escape }}
             </a>
           </h3>
+          {%- if lago_bullets_render -%}
+            <div class="lago-product-bullets" aria-label="Product features">
+              <ul class="lago-product-bullets__list" role="list">
+                {%- if lago_bullets_mf.type contains 'list.' -%}
+                  {%- for item in lago_bullets_value limit: bullets_max -%}
+                    {%- if item != blank -%}
+                      <li class="lago-product-bullets__item">{{ item | escape }}</li>
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- else -%}
+                  {%- assign lago_bullets_text = lago_bullets_value | default: '' -%}
+                  {%- assign lago_bullets_text = lago_bullets_text | replace: '\r\n', '\n' | replace: '\r', '\n' -%}
+                  {%- assign lago_bullets_lines = lago_bullets_text | split: '\n' -%}
+                  {%- for line in lago_bullets_lines limit: bullets_max -%}
+                    {%- assign trimmed = line | strip -%}
+                    {%- if trimmed != blank -%}
+                      <li class="lago-product-bullets__item">{{ trimmed | escape }}</li>
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- endif -%}
+              </ul>
+            </div>
+          {%- endif -%}
           <div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
