@@ -144,13 +144,13 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
 
 /* Lago: product card bullet list (collection grid) */
 #product-grid {
-  /* Fixed strip: 8 rows (11px × 1.25) + 7×8px gaps + vertical padding — min-height was too small vs 8 bullets */
-  --lago-product-bullets-slot: clamp(12.5rem, 42vw, 14.75rem);
+  /* Fixed strip for 8 single-line rows: pad 12+12 + 8×~1.5rem row + 7×8px gap (no inner scroll) */
+  --lago-product-bullets-slot: clamp(14.5rem, 48vw, 17.5rem);
 }
 
 @media screen and (min-width: 750px) {
   #product-grid {
-    --lago-product-bullets-slot: 14.75rem;
+    --lago-product-bullets-slot: 17.5rem;
   }
 }
 
@@ -180,9 +180,6 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
 }
 
 #product-grid .lago-product-bullets__list {
-  flex: 1 1 auto;
-  min-height: 0;
-  overflow-y: auto;
   align-content: start;
 }
 
