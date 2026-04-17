@@ -3,7 +3,27 @@
  * - Desktop (990px+): vertical thumbnail rail on the left, main image on the right
  * - Mobile: main image first, horizontal thumbnails below (Dawn default order)
  * Requires main-product: gallery_layout "thumbnail", mobile_thumbnails "show", image_zoom "lightbox"
+ * Large screens: aim for ~1000×1000 view box for the active main image (with object-fit: contain inside).
  */
+
+@media screen and (min-width: 1200px) {
+  /* Dawn constrain-height caps display; raise floor so a 1000px-tall box is achievable on desktop */
+  .product--thumbnail media-gallery.lago-product-gallery .product__media-item.is-active .product-media-container.constrain-height {
+    --constrained-min-height: 1000px;
+    --viewport-offset: 140px;
+  }
+
+  /* Prefer at least ~1000px box for the active slide’s media frame */
+  .product--thumbnail media-gallery.lago-product-gallery .product__media-item.is-active .product-media-container {
+    width: min(100%, 1000px);
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  .product--thumbnail media-gallery.lago-product-gallery .product__media-item.is-active .product__media img {
+    object-fit: contain;
+  }
+}
 
 @media screen and (min-width: 990px) {
   .product--thumbnail media-gallery.lago-product-gallery {
