@@ -93,7 +93,7 @@
       "type": "lago-product-specs",
       "name": "Product specs",
       "settings": {
-        "product_family": "dispenser_5_4",
+        "product_family": "dispenser_10_6",
         "heading": "Specifications",
         "heading_size": "h1",
         "dimensions_heading": "Dimensions",
