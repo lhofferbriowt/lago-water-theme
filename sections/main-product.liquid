@@ -200,9 +200,13 @@
                 {%- endif -%}
               {%- when 'description_cta' -%}
                 {%- if block.settings.label != blank -%}
-                  <div class="product__description-cta quick-add-hidden" {{ block.shopify_attributes }}>
+                  <div
+                    class="product__description-cta quick-add-hidden product__description-cta--{{ block.settings.alignment }}"
+                    style="--pdp-desc-cta-bg: {{ block.settings.button_color }};"
+                    {{ block.shopify_attributes }}
+                  >
                     <a
-                      class="button{% if block.settings.style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+                      class="l15-btn"
                       {% if block.settings.link == blank %}
                         role="link" aria-disabled="true"
                       {% else %}
@@ -951,10 +955,21 @@
           "label": "Link"
         },
         {
-          "type": "checkbox",
-          "id": "style_secondary",
-          "label": "Use secondary style",
-          "default": false
+          "type": "select",
+          "id": "alignment",
+          "label": "Alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "color",
+          "id": "button_color",
+          "label": "Button color",
+          "default": "#4a71aa"
         }
       ]
     },
