@@ -236,7 +236,7 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
 /* Make product grid items flex containers so cards can stretch to equal height */
 #product-grid .grid__item {
   display: flex;
-  min-height: clamp(21rem, 58vmin, 36rem);
+  min-height: clamp(23rem, 62vmin, 39rem);
 }
 
 #product-grid .grid__item > .card-wrapper {
