@@ -1,0 +1,10 @@
+{%- comment -%}
+  Renders one <dl> row when value is present.
+  Accepts: label {String}, value {String}
+{%- endcomment -%}
+{%- if value != blank -%}
+  <div class="lago-product-specs__row">
+    <dt>{{ label | escape }}</dt>
+    <dd>{{ value | escape }}</dd>
+  </div>
+{%- endif -%}
