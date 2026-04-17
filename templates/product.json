@@ -26,12 +26,21 @@
         "description": {
           "type": "description",
           "settings": {}
+        },
+        "description_cta_JgWC3n": {
+          "type": "description_cta",
+          "settings": {
+            "label": "Become a Dealer",
+            "link": "",
+            "style_secondary": false
+          }
         }
       },
       "block_order": [
         "title",
         "variant_picker",
-        "description"
+        "description",
+        "description_cta_JgWC3n"
       ],
       "settings": {
         "enable_sticky_info": true,
