@@ -1,0 +1,81 @@
+/**
+ * Lago PDP gallery layout (Dawn media-gallery + thumbnails):
+ * - Desktop (990px+): vertical thumbnail rail on the left, main image on the right
+ * - Mobile: main image first, horizontal thumbnails below (Dawn default order)
+ * Requires main-product: gallery_layout "thumbnail", mobile_thumbnails "show", image_zoom "lightbox"
+ */
+
+@media screen and (min-width: 990px) {
+  .product--thumbnail media-gallery.lago-product-gallery {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 1.6rem;
+    width: 100%;
+  }
+
+  .product--thumbnail media-gallery.lago-product-gallery > slider-component:first-of-type {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .product--thumbnail media-gallery.lago-product-gallery .thumbnail-slider {
+    flex: 0 0 9.6rem;
+    max-width: 9.6rem;
+    width: 9.6rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+  }
+
+  /* Vertical thumb list: override Dawn’s thumbnail grid */
+  .product--thumbnail media-gallery.lago-product-gallery .thumbnail-slider .thumbnail-list.slider {
+    display: flex !important;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    grid-template-columns: unset !important;
+    gap: 0.8rem;
+    max-height: min(72vh, 52rem);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0.4rem 0.2rem;
+    scroll-snap-type: y proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .product--thumbnail media-gallery.lago-product-gallery .thumbnail-list__item.slider__slide {
+    width: 100% !important;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  /* Prev/next assume horizontal scroll in Dawn; use native vertical scroll instead */
+  .product--thumbnail media-gallery.lago-product-gallery .thumbnail-slider > .slider-button {
+    display: none !important;
+  }
+}
+
+/* Mobile / tablet: stronger “selected” cue (underline), closer to Brio reference */
+@media screen and (max-width: 989px) {
+  .product--thumbnail media-gallery.lago-product-gallery .thumbnail[aria-current='true'] {
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: 0.3rem solid rgb(var(--color-foreground));
+  }
+}
+
+/* Lightbox: keep close control pinned to upper-right of the viewport */
+.product-media-modal.media-modal[open] .product-media-modal__toggle {
+  position: fixed;
+  top: 1.6rem;
+  right: 1.6rem;
+  z-index: 102;
+}
+
+@media screen and (min-width: 750px) {
+  .product-media-modal.media-modal[open] .product-media-modal__toggle {
+    top: 2rem;
+    right: 2rem;
+  }
+}

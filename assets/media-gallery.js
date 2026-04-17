@@ -76,10 +76,25 @@ if (!customElements.get('media-gallery')) {
         this.elements.thumbnails
           .querySelectorAll('button')
           .forEach((element) => element.removeAttribute('aria-current'));
-        thumbnail.querySelector('button').setAttribute('aria-current', true);
+        const thumbButton = thumbnail.querySelector('button');
+        if (!thumbButton) return;
+        thumbButton.setAttribute('aria-current', true);
+
+        const slider = this.elements.thumbnails.slider;
+        if (!slider) return;
+
+        const listStyle = window.getComputedStyle(slider);
+        const isVertical =
+          listStyle.flexDirection === 'column' || listStyle.flexDirection === 'column-reverse';
+
+        if (isVertical) {
+          thumbnail.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
+          return;
+        }
+
         if (this.elements.thumbnails.isSlideVisible(thumbnail, 10)) return;
 
-        this.elements.thumbnails.slider.scrollTo({ left: thumbnail.offsetLeft });
+        slider.scrollTo({ left: thumbnail.offsetLeft });
       }
 
       announceLiveRegion(activeItem, position) {
