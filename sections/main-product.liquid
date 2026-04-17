@@ -197,6 +197,20 @@
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
                     {{ product.description }}
                   </div>
+                  {%- if section.settings.description_cta_label != blank -%}
+                    <div class="product__description-cta quick-add-hidden">
+                      <a
+                        class="button button--primary"
+                        {% if section.settings.description_cta_link == blank %}
+                          role="link" aria-disabled="true"
+                        {% else %}
+                          href="{{ section.settings.description_cta_link }}"
+                        {% endif %}
+                      >
+                        {{ section.settings.description_cta_label | escape }}
+                      </a>
+                    </div>
+                  {%- endif -%}
                 {%- endif -%}
               {%- when 'sku' -%}
                 <p
@@ -2225,6 +2239,21 @@
       "id": "enable_video_looping",
       "default": false,
       "label": "t:sections.main-product.settings.enable_video_looping.label"
+    },
+    {
+      "type": "header",
+      "content": "Description button"
+    },
+    {
+      "type": "text",
+      "id": "description_cta_label",
+      "label": "Button label",
+      "default": ""
+    },
+    {
+      "type": "url",
+      "id": "description_cta_link",
+      "label": "Button link"
     },
     {
       "type": "header",

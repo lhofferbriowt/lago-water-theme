@@ -231,6 +231,10 @@ product-info {
   margin: 2.5rem 0;
 }
 
+.product__description-cta {
+  margin: -1.25rem 0 2.5rem;
+}
+
 .product__text {
   margin-bottom: 0;
 }
