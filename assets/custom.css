@@ -213,13 +213,14 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
 
 .lago-product-bullets__item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   font-size: 11px;
   line-height: 1.25;
   color: #000;
 }
 
+/* Center the 8px dot on the first line (flex center looked optically “high” vs lowercase) */
 .lago-product-bullets__item::before {
   content: "";
   width: 8px;
@@ -229,6 +230,7 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
   border: none;
   box-sizing: border-box;
   flex: none;
+  margin-top: calc((1lh - 8px) / 2);
 }
 
 /* Make product grid items flex containers so cards can stretch to equal height */
