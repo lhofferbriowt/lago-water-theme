@@ -93,6 +93,22 @@
       "type": "lago-product-specs",
       "name": "Product specs",
       "settings": {
+        "product_family": "dispenser_10_6",
+        "heading": "Specifications",
+        "heading_size": "h1",
+        "dimensions_heading": "Dimensions",
+        "features_heading": "Features",
+        "materials_label": "Materials",
+        "manual_label": "Instruction manual",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "lago_product_specs_gDg38V": {
+      "type": "lago-product-specs",
+      "name": "Product specs",
+      "settings": {
         "product_family": "dispenser_5_4",
         "heading": "Specifications",
         "heading_size": "h1",
@@ -110,6 +126,7 @@
     "main",
     "custom_liquid_Yk8wNz",
     "related-products",
-    "lago_product_specs_zPKT3T"
+    "lago_product_specs_zPKT3T",
+    "lago_product_specs_gDg38V"
   ]
 }
