@@ -197,20 +197,21 @@
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
                     {{ product.description }}
                   </div>
-                  {%- if section.settings.description_cta_label != blank -%}
-                    <div class="product__description-cta quick-add-hidden">
-                      <a
-                        class="button button--primary"
-                        {% if section.settings.description_cta_link == blank %}
-                          role="link" aria-disabled="true"
-                        {% else %}
-                          href="{{ section.settings.description_cta_link }}"
-                        {% endif %}
-                      >
-                        {{ section.settings.description_cta_label | escape }}
-                      </a>
-                    </div>
-                  {%- endif -%}
+                {%- endif -%}
+              {%- when 'description_cta' -%}
+                {%- if block.settings.label != blank -%}
+                  <div class="product__description-cta quick-add-hidden" {{ block.shopify_attributes }}>
+                    <a
+                      class="button{% if block.settings.style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+                      {% if block.settings.link == blank %}
+                        role="link" aria-disabled="true"
+                      {% else %}
+                        href="{{ block.settings.link }}"
+                      {% endif %}
+                    >
+                      {{ block.settings.label | escape }}
+                    </a>
+                  </div>
                 {%- endif -%}
               {%- when 'sku' -%}
                 <p
@@ -933,6 +934,29 @@
       "type": "description",
       "name": "t:sections.main-product.blocks.description.name",
       "limit": 1
+    },
+    {
+      "type": "description_cta",
+      "name": "Description button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": ""
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "checkbox",
+          "id": "style_secondary",
+          "label": "Use secondary style",
+          "default": false
+        }
+      ]
     },
     {
       "type": "share",
@@ -2239,21 +2263,6 @@
       "id": "enable_video_looping",
       "default": false,
       "label": "t:sections.main-product.settings.enable_video_looping.label"
-    },
-    {
-      "type": "header",
-      "content": "Description button"
-    },
-    {
-      "type": "text",
-      "id": "description_cta_label",
-      "label": "Button label",
-      "default": ""
-    },
-    {
-      "type": "url",
-      "id": "description_cta_link",
-      "label": "Button link"
     },
     {
       "type": "header",
