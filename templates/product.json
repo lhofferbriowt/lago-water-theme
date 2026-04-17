@@ -51,6 +51,7 @@
     },
     "custom_liquid_Yk8wNz": {
       "type": "custom-liquid",
+      "disabled": true,
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
         "custom_liquid": "<a href=\"pages/become-a-dealer\" class=\"button button--primary\" style=\"width: 20%\"><strong>WANT TO BUY</strong></a>",
