@@ -7,10 +7,15 @@
     cooling_capacity, cooling_power  (single line text each)
   - Optional on same entry: display_title, manual_url (URL), supporting_image (image)
 
+  Metaobject `lago_specs_dispenser_5_4` (product metafield `custom.lago_specs_5_4`):
+  - item_no, model, cleaning_system, water_temp, flow_rate, product_dim_wdh, packing_dim_wdh,
+    net_weight, pallet_qty, container_qty
+  - Optional: display_title, manual_url, supporting_image
+
   Other families: shared optional fields — display_title, dimensions (pipes), additional_specs (pipes),
   spec_rows (list of lago_spec_row), materials, manual_url, supporting_image — see case branches.
 
-  Product metafields (namespace custom): lago_specs_dispenser_10_6, lago_specs_dispenser_5_4,
+  Product metafields (namespace custom): lago_specs_dispenser_10_6, lago_specs_5_4 (5-4 line),
   lago_specs_sparkling_countertop, lago_specs_sparkling_undersink, lago_specs_ice_scoop,
   lago_specs_ice_modular — each references its definition.
 {%- endcomment -%}
@@ -25,7 +30,7 @@
     when 'dispenser_10_6'
       assign specs = product.metafields.custom.lago_specs_dispenser_10_6.value
     when 'dispenser_5_4'
-      assign specs = product.metafields.custom.lago_specs_dispenser_5_4.value
+      assign specs = product.metafields.custom.lago_specs_5_4.value
     when 'sparkling_countertop'
       assign specs = product.metafields.custom.lago_specs_sparkling_countertop.value
     when 'sparkling_undersink'
@@ -73,9 +78,20 @@
     endif
   endif
 
+  assign dispenser_5_4_visible = false
+  if family == 'dispenser_5_4' and specs != blank
+    if specs.item_no != blank or specs.model != blank or specs.cleaning_system != blank or specs.water_temp != blank or specs.flow_rate != blank or specs.product_dim_wdh != blank or specs.packing_dim_wdh != blank or specs.net_weight != blank or specs.pallet_qty != blank or specs.container_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
+      assign dispenser_5_4_visible = true
+    endif
+  endif
+
   assign show_section = false
   if family == 'dispenser_10_6'
     if dispenser_10_6_visible
+      assign show_section = true
+    endif
+  elsif family == 'dispenser_5_4'
+    if dispenser_5_4_visible
       assign show_section = true
     endif
   elsif specs != blank
@@ -136,6 +152,57 @@
               {%- render 'lago-spec-dl-row', label: 'Combined Cooling System', value: specs.combined_cooling_system -%}
               {%- render 'lago-spec-dl-row', label: 'Cooling Capacity', value: specs.cooling_capacity -%}
               {%- render 'lago-spec-dl-row', label: 'Cooling Power', value: specs.cooling_power -%}
+            </dl>
+
+            {%- if specs.manual_url != blank -%}
+              <div class="lago-product-specs__manual">
+                <a
+                  href="{{ specs.manual_url }}"
+                  class="button button--secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ section.settings.manual_label | escape }}
+                </a>
+              </div>
+            {%- endif -%}
+          </div>
+
+          {%- if specs.supporting_image != blank -%}
+            <div class="lago-product-specs__image-wrap">
+              <div class="global-media-settings" style="max-width: 900px; width: 100%;">
+                {{
+                  specs.supporting_image
+                  | image_url: width: 900
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '550, 720, 900',
+                    sizes: '(min-width: 990px) 45vw, 100vw',
+                    class: 'lago-product-specs__image'
+                }}
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- elsif family == 'dispenser_5_4' -%}
+        <div
+          class="
+            lago-product-specs__grid
+            {% if specs.supporting_image != blank %}lago-product-specs__grid--split{% endif %}
+          "
+        >
+          <div>
+            <dl class="lago-product-specs__dl">
+              {%- render 'lago-spec-dl-row', label: 'Item No.', value: specs.item_no -%}
+              {%- render 'lago-spec-dl-row', label: 'Model', value: specs.model -%}
+              {%- render 'lago-spec-dl-row', label: 'Cleaning System', value: specs.cleaning_system -%}
+              {%- render 'lago-spec-dl-row', label: 'Water Temp.', value: specs.water_temp -%}
+              {%- render 'lago-spec-dl-row', label: 'Flow Rate', value: specs.flow_rate -%}
+              {%- render 'lago-spec-dl-row', label: 'Product Dim. (WxDxH)', value: specs.product_dim_wdh -%}
+              {%- render 'lago-spec-dl-row', label: 'Packing Dim. (WxDxH)', value: specs.packing_dim_wdh -%}
+              {%- render 'lago-spec-dl-row', label: 'Net Weight', value: specs.net_weight -%}
+              {%- render 'lago-spec-dl-row', label: 'Pallet Qty.', value: specs.pallet_qty -%}
+              {%- render 'lago-spec-dl-row', label: 'Container Qty.', value: specs.container_qty -%}
             </dl>
 
             {%- if specs.manual_url != blank -%}
