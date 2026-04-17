@@ -39,10 +39,11 @@
     min-width: 0;
   }
 
+  /* ~30% narrower than 9.6rem to give the main image more horizontal room */
   .product--thumbnail media-gallery.lago-product-gallery .thumbnail-slider {
-    flex: 0 0 9.6rem;
-    max-width: 9.6rem;
-    width: 9.6rem;
+    flex: 0 0 calc(9.6rem * 0.7);
+    max-width: calc(9.6rem * 0.7);
+    width: calc(9.6rem * 0.7);
     flex-direction: column;
     align-items: stretch;
     gap: 0.6rem;
