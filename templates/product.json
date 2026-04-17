@@ -1,16 +1,38 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-product",
       "blocks": {
-        "title": { "type": "title", "settings": {} },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
         "variant_picker": {
           "type": "variant_picker",
-          "settings": { "picker_type": "button", "swatch_shape": "circle" }
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
         },
-        "description": { "type": "description", "settings": {} }
+        "description": {
+          "type": "description",
+          "settings": {}
+        }
       },
-      "block_order": ["title", "variant_picker", "description"],
+      "block_order": [
+        "title",
+        "variant_picker",
+        "description"
+      ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
@@ -25,21 +47,6 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
-      }
-    },
-    "lago_product_specs": {
-      "type": "lago-product-specs",
-      "settings": {
-        "product_family": "dispenser_10_6",
-        "heading": "Specifications",
-        "heading_size": "h1",
-        "dimensions_heading": "Dimensions",
-        "features_heading": "Features",
-        "materials_label": "Materials",
-        "manual_label": "Instruction manual",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "custom_liquid_Yk8wNz": {
@@ -70,7 +77,28 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "lago_product_specs_zPKT3T": {
+      "type": "lago-product-specs",
+      "name": "Product specs",
+      "settings": {
+        "product_family": "dispenser_10_6",
+        "heading": "Specifications",
+        "heading_size": "h1",
+        "dimensions_heading": "Dimensions",
+        "features_heading": "Features",
+        "materials_label": "Materials",
+        "manual_label": "Instruction manual",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
-  "order": ["main", "lago_product_specs", "custom_liquid_Yk8wNz", "related-products"]
+  "order": [
+    "main",
+    "custom_liquid_Yk8wNz",
+    "related-products",
+    "lago_product_specs_zPKT3T"
+  ]
 }
