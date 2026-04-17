@@ -144,13 +144,13 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
 
 /* Lago: product card bullet list (collection grid) */
 #product-grid {
-  /* Fixed strip for 8 single-line rows: pad 12+12 + 8×~1.5rem row + 7×8px gap (no inner scroll) */
-  --lago-product-bullets-slot: clamp(14.5rem, 48vw, 17.5rem);
+  /* Fixed strip: 8 rows + gaps + padding + extra bottom breathing room */
+  --lago-product-bullets-slot: clamp(15.25rem, 48vw, 18.5rem);
 }
 
 @media screen and (min-width: 750px) {
   #product-grid {
-    --lago-product-bullets-slot: 17.5rem;
+    --lago-product-bullets-slot: 18.5rem;
   }
 }
 
