@@ -32,7 +32,8 @@
           "settings": {
             "label": "Become a Dealer",
             "link": "",
-            "style_secondary": false
+            "alignment": "center",
+            "button_color": "#4a71aa"
           }
         }
       },
