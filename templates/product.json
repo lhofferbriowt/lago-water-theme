@@ -23,10 +23,6 @@
             "swatch_shape": "circle"
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {}
-        },
         "description_cta_JgWC3n": {
           "type": "description_cta",
           "settings": {
@@ -35,13 +31,17 @@
             "alignment": "left",
             "button_color": "#4a71aa"
           }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
         }
       },
       "block_order": [
         "title",
         "variant_picker",
-        "description",
-        "description_cta_JgWC3n"
+        "description_cta_JgWC3n",
+        "description"
       ],
       "settings": {
         "enable_sticky_info": true,
