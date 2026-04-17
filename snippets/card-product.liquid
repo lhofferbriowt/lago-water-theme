@@ -16,6 +16,9 @@
   - horizontal_class: {Boolean} Add a card--horizontal class if set to true. Default: false (optional)
   - horizontal_quick_add: {Boolean} Changes the quick add button styles when set to true. Default: false (optional)
   - placeholder_image: {String} The placeholder image to use when no product exists. Default: 'product-apparel-2' (optional)
+  - show_bullets: {Boolean} When true, renders the bullet strip or an empty placeholder for consistent grid height. Default: false (optional)
+  - bullets_metafield: {String} Metafield reference namespace.key (optional)
+  - bullets_max: {Number} Max bullet lines (optional)
 
   Usage:
   {% render 'card-product', show_vendor: section.settings.show_vendor %}
@@ -205,6 +208,11 @@
                   {%- endfor -%}
                 {%- endif -%}
               </ul>
+            </div>
+          {%- elsif show_bullets -%}
+            {%- comment -%}Reserve the same tile height as metafilled bullets so row layout matches peers{%- endcomment -%}
+            <div class="lago-product-bullets lago-product-bullets--empty" aria-hidden="true">
+              <ul class="lago-product-bullets__list" role="presentation"></ul>
             </div>
           {%- endif -%}
           <div class="card-information">

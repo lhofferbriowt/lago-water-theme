@@ -154,9 +154,20 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
   }
 }
 
+/* Top-align tiles so unequal card heights don’t vertically center shorter cards */
+#product-grid.grid {
+  align-items: flex-start;
+}
+
 /* One aspect for all collection cards so image bands share height in a row */
 #product-grid .card.card--media > .card__inner.ratio {
   --ratio-percent: 125% !important;
+}
+
+/* Stop media block from absorbing different amounts of row slack (extends image band unevenly) */
+#product-grid .card.card--extend-height.card--media > .card__inner {
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 .lago-product-bullets {
@@ -179,6 +190,11 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
   flex-direction: column;
 }
 
+#product-grid .lago-product-bullets--empty {
+  background: transparent;
+  box-shadow: none;
+}
+
 #product-grid .lago-product-bullets__list {
   align-content: start;
 }
@@ -190,17 +206,6 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
 /* Light floor for title line box — keep small so titles + bullets align across cards */
 #product-grid .card__information > .card__heading:first-of-type {
   min-height: 1.5lh;
-}
-
-/* Same reserved strip when bullets are not rendered */
-#product-grid .card__information > .card__heading:first-of-type:not(:has(+ .lago-product-bullets))::after {
-  content: "";
-  display: block;
-  height: var(--lago-product-bullets-slot);
-  min-height: var(--lago-product-bullets-slot);
-  max-height: var(--lago-product-bullets-slot);
-  margin-top: 0.5rem;
-  flex-shrink: 0;
 }
 
 .lago-product-bullets__list {
@@ -236,6 +241,8 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
 /* Make product grid items flex containers so cards can stretch to equal height */
 #product-grid .grid__item {
   display: flex;
+  /* clamp(MIN, preferred, MAX): on many desktops 62vmin > MAX, so the used height is 39rem.
+     Chrome then strikes through MIN and preferred in DevTools — that is clamp(), not another rule overriding. */
   min-height: clamp(23rem, 62vmin, 39rem);
 }
 
