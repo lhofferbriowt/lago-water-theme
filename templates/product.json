@@ -27,7 +27,7 @@
           "type": "description_cta",
           "settings": {
             "label": "Become a Dealer",
-            "link": "",
+            "link": "shopify://pages/become-a-dealer",
             "alignment": "left",
             "button_color": "#4a71aa"
           }
