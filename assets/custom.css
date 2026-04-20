@@ -161,7 +161,7 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
 
 /* One aspect for all collection cards so image bands share height in a row */
 #product-grid .card.card--media > .card__inner.ratio {
-  --ratio-percent: 125% !important;
+  --ratio-percent: 100% !important;
 }
 
 /* Stop media block from absorbing different amounts of row slack (extends image band unevenly) */
