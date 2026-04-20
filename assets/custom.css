@@ -99,6 +99,106 @@ a#cart-icon-bubble {
   .header .header__inline-menu > .list-menu.list-menu--inline > li > header-menu > details > summary.header__menu-item {
     font-size: 16px;
   }
+
+  /* Desktop dropdown + top-level nav — Brio / briowt-style reference */
+  .header .header__inline-menu > .list-menu > li > a.header__menu-item,
+  .header .header__inline-menu > .list-menu > li > header-menu > details > summary.header__menu-item {
+    position: relative;
+    color: rgba(var(--color-foreground), 0.55);
+    text-decoration: none;
+  }
+
+  .header .header__inline-menu > .list-menu > li > a.header__menu-item:hover,
+  .header .header__inline-menu > .list-menu > li > header-menu > details > summary.header__menu-item:hover {
+    color: rgb(var(--color-foreground));
+  }
+
+  .header .header__inline-menu > .list-menu > li > a.header__menu-item::after,
+  .header .header__inline-menu > .list-menu > li > header-menu > details > summary.header__menu-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0.25rem;
+    background: rgb(var(--color-button));
+    opacity: 0;
+    transition: opacity var(--duration-default) ease;
+  }
+
+  .header .header__inline-menu > .list-menu > li > a.header__menu-item:hover::after,
+  .header .header__inline-menu > .list-menu > li > a.header__menu-item:has(.header__active-menu-item)::after,
+  .header .header__inline-menu > .list-menu > li > header-menu > details > summary.header__menu-item:hover::after,
+  .header .header__inline-menu > .list-menu > li > header-menu > details[open] > summary.header__menu-item::after,
+  .header .header__inline-menu > .list-menu > li > header-menu > details > summary.header__menu-item:has(.header__active-menu-item)::after {
+    opacity: 1;
+  }
+
+  .header .header__inline-menu > .list-menu > li > a.header__menu-item:hover span,
+  .header .header__inline-menu > .list-menu > li > header-menu > details > summary.header__menu-item:hover span {
+    text-decoration: none;
+  }
+
+  .header .header__inline-menu > .list-menu > li > a.header__menu-item .header__active-menu-item,
+  .header .header__inline-menu > .list-menu > li > header-menu > details > summary.header__menu-item .header__active-menu-item {
+    color: rgb(var(--color-foreground));
+    text-decoration: none;
+  }
+
+  .header .header__inline-menu > .list-menu > li > header-menu > details[open] > summary.header__menu-item {
+    text-decoration: none;
+    color: rgb(var(--color-foreground));
+  }
+
+  /* First-level dropdown panel */
+  .header .header__inline-menu header-menu details > ul.header__submenu.list-menu--disclosure {
+    border: none;
+    border-radius: 0 0 0.5rem 0.5rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(var(--color-shadow), 0.18);
+    padding: 0.5rem 0;
+    min-width: 14rem;
+    z-index: 10;
+  }
+
+  .header .header__inline-menu header-menu details > ul.header__submenu > li > a.header__menu-item,
+  .header .header__inline-menu header-menu details > ul.header__submenu > li > details > summary.header__menu-item {
+    padding: 1rem 1.75rem;
+    color: rgba(var(--color-foreground), 0.62);
+    text-decoration: none;
+    justify-content: flex-start;
+  }
+
+  .header .header__inline-menu header-menu details > ul.header__submenu > li > a.header__menu-item:hover,
+  .header .header__inline-menu header-menu details > ul.header__submenu > li > details > summary.header__menu-item:hover {
+    background-color: rgba(var(--color-foreground), 0.06);
+    color: rgba(var(--color-foreground), 0.9);
+    text-decoration: none;
+  }
+
+  .header .header__inline-menu header-menu details > ul.header__submenu > li > a.header__menu-item.list-menu__item--active {
+    color: rgb(var(--color-foreground));
+    text-decoration: none;
+    font-weight: 500;
+    background-color: rgba(var(--color-foreground), 0.06);
+  }
+
+  .header .header__inline-menu .header__submenu .header__menu-item:hover {
+    text-decoration: none;
+  }
+
+  /* Nested flyout under a child with grandchildren */
+  .header .header__inline-menu .header__submenu .header__submenu {
+    border-radius: 0 0.5rem 0.5rem 0.5rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(var(--color-shadow), 0.15);
+    border: none;
+    margin: 0;
+    padding: 0.5rem 0;
+    background-color: rgb(var(--color-background));
+  }
+
+  .header .header__inline-menu .header__submenu .header__submenu .header__menu-item {
+    padding: 1rem 1.5rem;
+  }
 }
 
 /* media query */
