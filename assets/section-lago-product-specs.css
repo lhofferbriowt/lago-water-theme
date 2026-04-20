@@ -55,8 +55,7 @@
 .lago-product-specs__row dt {
   margin: 0;
   flex: 1 1 auto;
-  font-weight: 700;
-  color: rgb(var(--color-foreground));
+  color: #4a71aa;
 }
 
 .lago-product-specs__row dd {
