@@ -12,7 +12,7 @@
     "lago_collection_hero": {
       "type": "lago-collection-hero",
       "settings": {
-        "hero_image": "shopify://shop_images/mobile_hero.png",
+        "hero_image": "shopify://shop_images/countertop_dispensers_hero_mobile.jpg",
         "hero_bg_desktop": "shopify://shop_images/countertop_dispensers_hero.jpg",
         "hero_heading": "",
         "hero_button_label": "Become a Dealer",
