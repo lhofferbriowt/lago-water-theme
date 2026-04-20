@@ -80,3 +80,10 @@
   width: 100%;
   height: auto;
 }
+
+@media screen and (max-width: 749px) {
+  .lago-product-specs__row dt,
+  .lago-product-specs__row dd {
+    font-size: 12px;
+  }
+}
