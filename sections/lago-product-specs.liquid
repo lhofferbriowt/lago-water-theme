@@ -50,6 +50,8 @@
       assign specs = product.metafields.custom.lago_specs_ice_scoop.value
     when 'ice_modular'
       assign specs = product.metafields.custom.lago_specs_ice_modular.value
+    when 'modular_ice_dispenser'
+      assign specs = product.metafields.custom.lago_specs_modular_ice_dispenser.value
   endcase
 
   assign spec_rows_count = 0
@@ -124,6 +126,13 @@
     endif
   endif
 
+  assign modular_ice_dispenser_visible = false
+  if family == 'modular_ice_dispenser' and specs != blank
+    if specs.item_no != blank or specs.overall_dimensions_lwh != blank or specs.ice_maker_head_lwh != blank or specs.ice_output != blank or specs.ice_shape != blank or specs.compressor != blank or specs.voltage != blank or specs.power != blank or specs.condenser_unit != blank or specs.refrigerant != blank or specs.ice_maker_weight_net_gross != blank or specs.ice_maker_packing_dimensions != blank or specs.ice_maker_head_loading_qty != blank or specs.ice_maker_whole_lwh != blank or specs.ice_dispenser_bin_lwh != blank or specs.ice_dispenser_bin_capacity != blank or specs.ice_dispenser_bin_power != blank or specs.ice_dispenser_bin_weight_net_gross != blank or specs.ice_dispenser_bin_packing_dimensions != blank or specs.ice_dispenser_bin_loading_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
+      assign modular_ice_dispenser_visible = true
+    endif
+  endif
+
   assign show_section = false
   if family == 'dispenser_10_6'
     if dispenser_10_6_visible
@@ -147,6 +156,10 @@
     endif
   elsif family == 'ice_modular'
     if ice_modular_visible
+      assign show_section = true
+    endif
+  elsif family == 'modular_ice_dispenser'
+    if modular_ice_dispenser_visible
       assign show_section = true
     endif
   elsif specs != blank
@@ -498,6 +511,67 @@
             </div>
           {%- endif -%}
         </div>
+      {%- elsif family == 'modular_ice_dispenser' -%}
+        <div
+          class="
+            lago-product-specs__grid
+            {% if specs.supporting_image != blank %}lago-product-specs__grid--split{% endif %}
+          "
+        >
+          <div>
+            <dl class="lago-product-specs__dl">
+              {%- render 'lago-spec-dl-row', label: 'Item No.', value: specs.item_no -%}
+              {%- render 'lago-spec-dl-row', label: 'Overall Dimensions (L x W x H)', value: specs.overall_dimensions_lwh -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Maker Head (L x W x H)', value: specs.ice_maker_head_lwh -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Output', value: specs.ice_output -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Shape', value: specs.ice_shape -%}
+              {%- render 'lago-spec-dl-row', label: 'Compressor', value: specs.compressor -%}
+              {%- render 'lago-spec-dl-row', label: 'Voltage (V/Hz)', value: specs.voltage -%}
+              {%- render 'lago-spec-dl-row', label: 'Power', value: specs.power -%}
+              {%- render 'lago-spec-dl-row', label: 'Condenser Unit', value: specs.condenser_unit -%}
+              {%- render 'lago-spec-dl-row', label: 'Refrigerant', value: specs.refrigerant -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Maker Weight, Net / Gross', value: specs.ice_maker_weight_net_gross -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Maker Packing Dimensions', value: specs.ice_maker_packing_dimensions -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Maker Head Loading Qty. (20GP/40HQ)', value: specs.ice_maker_head_loading_qty -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Maker Whole Set Load. Qty (20GP/40HQ)', value: specs.ice_maker_whole_lwh -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Dispenser Bin (L x W x H)', value: specs.ice_dispenser_bin_lwh -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Dispenser Bin Capacity', value: specs.ice_dispenser_bin_capacity -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Dispenser Bin Power', value: specs.ice_dispenser_bin_power -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Dispenser Bin Weight, Net/Gross', value: specs.ice_dispenser_bin_weight_net_gross -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Dispenser Bin Packing Dimensions', value: specs.ice_dispenser_bin_packing_dimensions -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Dispenser Bin Loading Qty (20GP/40HQ)', value: specs.ice_dispenser_bin_loading_qty -%}
+            </dl>
+
+            {%- if specs.manual_url != blank -%}
+              <div class="lago-product-specs__manual">
+                <a
+                  href="{{ specs.manual_url }}"
+                  class="button button--secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ section.settings.manual_label | escape }}
+                </a>
+              </div>
+            {%- endif -%}
+          </div>
+
+          {%- if specs.supporting_image != blank -%}
+            <div class="lago-product-specs__image-wrap">
+              <div class="global-media-settings" style="max-width: 900px; width: 100%;">
+                {{
+                  specs.supporting_image
+                  | image_url: width: 900
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '550, 720, 900',
+                    sizes: '(min-width: 990px) 45vw, 100vw',
+                    class: 'lago-product-specs__image'
+                }}
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
       {%- else -%}
         <div
           class="
@@ -620,7 +694,8 @@
         { "value": "sparkling_countertop", "label": "Sparkling countertop dispensers" },
         { "value": "sparkling_undersink", "label": "Sparkling undersink dispensers" },
         { "value": "ice_scoop", "label": "Scoop ice machines" },
-        { "value": "ice_modular", "label": "Modular ice machines" }
+        { "value": "ice_modular", "label": "Modular ice machines" },
+        { "value": "modular_ice_dispenser", "label": "Modular ice dispenser" }
       ],
       "default": "dispenser_10_6"
     },
