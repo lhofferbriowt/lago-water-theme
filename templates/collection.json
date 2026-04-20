@@ -16,7 +16,7 @@
         "hero_bg_desktop": "shopify://shop_images/desktop_hero_1440w.png",
         "hero_heading": "",
         "hero_button_label": "Become a Dealer",
-        "hero_button_link": ""
+        "hero_button_link": "shopify://pages/become-a-dealer"
       }
     },
     "product-grid": {

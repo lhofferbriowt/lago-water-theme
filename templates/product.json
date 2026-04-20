@@ -27,7 +27,7 @@
           "type": "description_cta",
           "settings": {
             "label": "Become a Dealer",
-            "link": "",
+            "link": "shopify://pages/become-a-dealer",
             "alignment": "left",
             "button_color": "#4a71aa"
           }
@@ -120,6 +120,54 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "lago_product_specs_Phqhpi": {
+      "type": "lago-product-specs",
+      "name": "Product specs",
+      "settings": {
+        "product_family": "sparkling_countertop",
+        "heading": "Specifications",
+        "heading_size": "h1",
+        "dimensions_heading": "Dimensions",
+        "features_heading": "Features",
+        "materials_label": "Materials",
+        "manual_label": "Instruction manual",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "lago_product_specs_xYm3LY": {
+      "type": "lago-product-specs",
+      "name": "Product specs",
+      "settings": {
+        "product_family": "sparkling_undersink",
+        "heading": "Specifications",
+        "heading_size": "h1",
+        "dimensions_heading": "Dimensions",
+        "features_heading": "Features",
+        "materials_label": "Materials",
+        "manual_label": "Instruction manual",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "lago_product_specs_8F3qQb": {
+      "type": "lago-product-specs",
+      "name": "Product specs",
+      "settings": {
+        "product_family": "ice_scoop",
+        "heading": "Specifications",
+        "heading_size": "h1",
+        "dimensions_heading": "Dimensions",
+        "features_heading": "Features",
+        "materials_label": "Materials",
+        "manual_label": "Instruction manual",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -127,6 +175,9 @@
     "custom_liquid_Yk8wNz",
     "related-products",
     "lago_product_specs_zPKT3T",
-    "lago_product_specs_gDg38V"
+    "lago_product_specs_gDg38V",
+    "lago_product_specs_Phqhpi",
+    "lago_product_specs_xYm3LY",
+    "lago_product_specs_8F3qQb"
   ]
 }
