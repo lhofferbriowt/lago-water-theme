@@ -168,6 +168,22 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "lago_product_specs_48ExgK": {
+      "type": "lago-product-specs",
+      "name": "Product specs",
+      "settings": {
+        "product_family": "modular_ice_dispenser",
+        "heading": "Specifications",
+        "heading_size": "h1",
+        "dimensions_heading": "Dimensions",
+        "features_heading": "Features",
+        "materials_label": "Materials",
+        "manual_label": "Instruction manual",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -178,6 +194,7 @@
     "lago_product_specs_gDg38V",
     "lago_product_specs_Phqhpi",
     "lago_product_specs_xYm3LY",
-    "lago_product_specs_8F3qQb"
+    "lago_product_specs_8F3qQb",
+    "lago_product_specs_48ExgK"
   ]
 }
