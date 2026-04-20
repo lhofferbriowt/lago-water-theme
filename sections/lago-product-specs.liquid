@@ -128,7 +128,7 @@
 
   assign modular_ice_dispenser_visible = false
   if family == 'modular_ice_dispenser' and specs != blank
-    if specs.item_no != blank or specs.overall_dimensions_lwh != blank or specs.ice_maker_head_lwh != blank or specs.ice_output != blank or specs.ice_shape != blank or specs.compressor != blank or specs.voltage != blank or specs.power != blank or specs.condenser_unit != blank or specs.refrigerant != blank or specs.ice_maker_weight_net_gross != blank or specs.ice_maker_packing_dimensions != blank or specs.ice_maker_head_loading_qty != blank or specs.ice_maker_whole_lwh != blank or specs.ice_dispenser_bin_lwh != blank or specs.ice_dispenser_bin_capacity != blank or specs.ice_dispenser_bin_power != blank or specs.ice_dispenser_bin_weight_net_gross != blank or specs.ice_dispenser_bin_packing_dimensions != blank or specs.ice_dispenser_bin_loading_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
+    if specs.item_no_ice_maker_head != blank or specs.item_no_ice_dispenser_bin != blank or specs.overall_dimensions_lwh != blank or specs.ice_maker_head_lwh != blank or specs.ice_output != blank or specs.ice_shape != blank or specs.compressor != blank or specs.voltage != blank or specs.power != blank or specs.condenser_unit != blank or specs.refrigerant != blank or specs.ice_maker_weight_net_gross != blank or specs.ice_maker_packing_dimensions != blank or specs.ice_maker_head_loading_qty != blank or specs.ice_maker_whole_lwh != blank or specs.ice_dispenser_bin_lwh != blank or specs.ice_dispenser_bin_capacity != blank or specs.ice_dispenser_bin_power != blank or specs.ice_dispenser_bin_weight_net_gross != blank or specs.ice_dispenser_bin_packing_dimensions != blank or specs.ice_dispenser_bin_loading_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
       assign modular_ice_dispenser_visible = true
     endif
   endif
@@ -520,7 +520,8 @@
         >
           <div>
             <dl class="lago-product-specs__dl">
-              {%- render 'lago-spec-dl-row', label: 'Item No.', value: specs.item_no -%}
+              {%- render 'lago-spec-dl-row', label: 'Item No. - Ice Maker Head', value: specs.item_no_ice_maker_head -%}
+              {%- render 'lago-spec-dl-row', label: 'Item No. - Ice Dispenser Bin', value: specs.item_no_ice_dispenser_bin -%}
               {%- render 'lago-spec-dl-row', label: 'Overall Dimensions (L x W x H)', value: specs.overall_dimensions_lwh -%}
               {%- render 'lago-spec-dl-row', label: 'Ice Maker Head (L x W x H)', value: specs.ice_maker_head_lwh -%}
               {%- render 'lago-spec-dl-row', label: 'Ice Output', value: specs.ice_output -%}
