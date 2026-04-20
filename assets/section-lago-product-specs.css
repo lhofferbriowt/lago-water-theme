@@ -55,12 +55,16 @@
 .lago-product-specs__row dt {
   margin: 0;
   flex: 1 1 auto;
+  font-weight: 700;
+  color: rgb(var(--color-foreground));
 }
 
 .lago-product-specs__row dd {
   margin: 0;
   text-align: right;
   white-space: nowrap;
+  font-weight: 400;
+  color: rgba(var(--color-foreground), 0.85);
 }
 
 .lago-product-specs__manual {
