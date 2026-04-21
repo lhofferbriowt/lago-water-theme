@@ -67,18 +67,19 @@
             "text": "<p>The Lago family of products enables customers to effortlessly experience premium hydration.</p>"
           }
         },
-        "column_intro_83FCzc": {
-          "type": "column_intro",
+        "bullet_KFxb76": {
+          "type": "bullet",
           "settings": {
             "column": "1",
-            "heading": "Heading",
-            "text": ""
+            "icon": "shopify://shop_images/innovation.png",
+            "title": "Innovation",
+            "text": "<p>Lago creates innovative & intuitively-designed water solutions with you in mind.</p>"
           }
         }
       },
       "block_order": [
         "bullet_AeXAD6",
-        "column_intro_83FCzc"
+        "bullet_KFxb76"
       ],
       "name": "Lago media bullets",
       "settings": {
