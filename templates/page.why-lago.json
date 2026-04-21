@@ -91,6 +91,7 @@
       "block_order": [
         "heading_xVDdjV"
       ],
+      "disabled": true,
       "custom_css": [
         "h2 {color: #034ea2;}",
         ".isolate .rich-text__blocks {max-width: 100%;}"
@@ -172,36 +173,27 @@
         "heading_q6m6DC": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>We Provide Solutions for Every Hydration Challenge</strong>",
+            "heading": "We are passionate about water.",
             "heading_size": "h1"
           }
         },
         "text_yrM8Qw": {
           "type": "text",
           "settings": {
-            "text": "<p>Lago is an industry leader that provides innovative clean water solutions.  From businesses, hotels, restaurants and spas, Lago has a solution for every hydration need anywhere around the world.</p>",
+            "text": "<p>We strive every day to deliver premium filtration that elevates the hydration experience to a whole new level. At Lago we understand our dealers and their customers which enables us to provide the best filtration products to fit your needs. Our goal is that with every sip you take<br/>you feel the passion we put into all of our products.<br/><br/></p>",
             "text_style": "body"
-          }
-        },
-        "button_GBV8qJ": {
-          "type": "button",
-          "settings": {
-            "button_label": "SCHEDULE NOW",
-            "button_link": "https://lago-water.myshopify.com/pages/become-a-dealer",
-            "button_style_secondary": false
           }
         }
       },
       "block_order": [
         "heading_q6m6DC",
-        "text_yrM8Qw",
-        "button_GBV8qJ"
+        "text_yrM8Qw"
       ],
       "custom_css": [
         "h2 {color: #034ea2;}"
       ],
       "settings": {
-        "image": "shopify://shop_images/Why_1_800x800_48860d6e-6a38-4551-a05b-af24a7bc36b5.png",
+        "image": "shopify://shop_images/why_lago_grid_image_3.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -214,6 +206,45 @@
         "color_scheme": "scheme-4baf2c69-c18d-4db0-a94f-0cf323a6e438",
         "padding_top": 36,
         "padding_bottom": 12
+      }
+    },
+    "image_with_text_A47mbk": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_7qPhab": {
+          "type": "heading",
+          "settings": {
+            "heading": "Hydration",
+            "heading_size": "h2"
+          }
+        },
+        "text_p4RGbD": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_7qPhab",
+        "text_p4RGbD"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/filtration_grid_image.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "rich_text_LAkRQQ": {
@@ -230,6 +261,7 @@
       "block_order": [
         "heading_hkbiwi"
       ],
+      "disabled": true,
       "custom_css": [
         ".rich-text__blocks {max-width: 100%;}"
       ],
@@ -282,6 +314,7 @@
         "column_wKRczw",
         "column_Lbij8x"
       ],
+      "disabled": true,
       "custom_css": [
         "h3 {color: #034ea2;}"
       ],
@@ -331,6 +364,7 @@
         "column_VfdNJV",
         "column_N3jW4C"
       ],
+      "disabled": true,
       "custom_css": [
         "h3 {color: #034ea2;}"
       ],
@@ -366,6 +400,7 @@
       "block_order": [
         "heading_ecMyRj"
       ],
+      "disabled": true,
       "custom_css": [
         "h2 {color: #034ea2;}"
       ],
@@ -417,6 +452,7 @@
       "block_order": [
         "clicky_clickable_banner_GxPndg"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": true
       }
@@ -465,6 +501,7 @@
         "column_HViWCg",
         "column_mAALmT"
       ],
+      "disabled": true,
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "title": "<strong>COMMERCIAL SETTINGS:</strong>",
@@ -509,6 +546,7 @@
         "heading_6aAyEr",
         "button_qxtbjz"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",
@@ -528,6 +566,7 @@
     "1756507841046ded2a",
     "image_banner_CKQkyX",
     "image_with_text_Db9tr7",
+    "image_with_text_A47mbk",
     "rich_text_LAkRQQ",
     "multicolumn_LgGTAX",
     "multicolumn_LXMeKh",
