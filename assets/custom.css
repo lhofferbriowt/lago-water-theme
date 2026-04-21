@@ -482,43 +482,15 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
   object-fit: contain;
 }
 
-/* Keep the logo perfectly centered on mobile even when the right icon group grows */
+/* Header: keep logo visually centered on mobile (even with extra right-side icons) */
 @media screen and (max-width: 989px) {
-  .header.header--mobile-center,
-  .header.header--mobile-left {
-    position: relative;
+  /* Use equal “side” columns with an auto center column so the logo stays centered */
+  .header {
+    grid-template-columns: 1fr auto 1fr;
   }
 
-  .header.header--mobile-center .header__heading,
-  .header.header--mobile-left .header__heading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    /* Block-level headings can span the full header width when absolutely positioned; that
-       invisible box sat above the menu/icons (especially with z-index) and swallowed taps. */
-    width: max-content;
-    max-width: calc(100% - 11rem);
-    pointer-events: none;
-  }
-
-  /* `middle-center` on non-home pages: logo is a direct `.header__heading-link` (no wrapping heading) */
-  .header.header--mobile-center.header--middle-center > .header__heading-link,
-  .header.header--mobile-left.header--middle-center > .header__heading-link {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  /* Nested link stays in normal flow inside the positioned heading (avoids double-offset) */
-  .header.header--mobile-center .header__heading .header__heading-link,
-  .header.header--mobile-left .header__heading .header__heading-link {
-    position: relative;
-    left: auto;
-    top: auto;
-    transform: none;
-    pointer-events: auto;
+  /* Remove extra right padding that can bias visual centering */
+  .header__icons {
+    padding-right: 0;
   }
 }
