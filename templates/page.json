@@ -24,6 +24,7 @@
         "heading": "",
         "heading_size": "h1",
         "color_scheme": "",
+        "column_heading_font_size": 30,
         "column_1_image": "shopify://shop_images/why_lago_grid_image_3.jpg",
         "column_1_title": "",
         "column_1_text": "",
@@ -84,6 +85,7 @@
         "heading": "",
         "heading_size": "h1",
         "color_scheme": "",
+        "column_heading_font_size": 32,
         "column_1_title": "",
         "column_1_text": "",
         "column_2_image": "shopify://shop_images/filtration_grid_image.jpg",
@@ -95,14 +97,54 @@
     },
     "lago_dealer_value_prop_rmypNA": {
       "type": "lago-dealer-value-prop",
+      "blocks": {
+        "lago_dvp_row_VeUeYa": {
+          "type": "lago_dvp_row",
+          "settings": {
+            "icon": "shopify://shop_images/factory_direct_partner_svg.png",
+            "title": "Factory direct partner",
+            "text": "Dealers get access to the largest selection of water dispensers and filtration systems."
+          }
+        },
+        "lago_dvp_row_QQhgHg": {
+          "type": "lago_dvp_row",
+          "settings": {
+            "icon": "shopify://shop_images/Shipping_svg_2x_0f39c0b1-3800-4710-8608-9355ee6e5ed9.png",
+            "title": "Factory direct partner",
+            "text": "Dealers get access to the largest selection of water dispensers and filtration systems."
+          }
+        },
+        "lago_dvp_row_FTqREW": {
+          "type": "lago_dvp_row",
+          "settings": {
+            "icon": "shopify://shop_images/Dedicated_partner_2x_4150a315-a7ee-4718-8f1c-249325bb90a5.png",
+            "title": "Factory direct partner",
+            "text": "Dealers get access to the largest selection of water dispensers and filtration systems."
+          }
+        },
+        "lago_dvp_row_aEYWHg": {
+          "type": "lago_dvp_row",
+          "settings": {
+            "icon": "shopify://shop_images/dealer_pricing_2x_8a7f2481-8f5f-4e65-a9f1-fae80287dc3f.png",
+            "title": "Factory direct partner",
+            "text": "Dealers get access to the largest selection of water dispensers and filtration systems."
+          }
+        }
+      },
+      "block_order": [
+        "lago_dvp_row_VeUeYa",
+        "lago_dvp_row_QQhgHg",
+        "lago_dvp_row_FTqREW",
+        "lago_dvp_row_aEYWHg"
+      ],
       "name": "Lago dealer value prop",
       "settings": {
         "dealer_section_heading": "Join the Lago Dealer Network",
-        "dealer_heading_font_size": 16,
+        "dealer_heading_font_size": 24,
         "value_row_text_font_size": 16,
         "value_row_title_font_size": 16,
         "dealer_cta_label": "Become a Dealer",
-        "dealer_cta_link": ""
+        "dealer_cta_link": "shopify://pages/become-a-dealer"
       }
     }
   },
