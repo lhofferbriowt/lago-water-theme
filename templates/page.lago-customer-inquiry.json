@@ -28,18 +28,36 @@
             "text": "<p>Please fill out your information and answer a few quick questions below so we can recommend the best hydration system for your home or buiness and follow up with a free estimate.  Thank you.</p>"
           }
         },
-        "column_intro_GBYhM8": {
+        "column_intro_jL7AmE": {
           "type": "column_intro",
           "settings": {
             "column": "1",
             "heading": "Contact Us",
-            "text": "<p><a href=\"tel:18555524692837\" title=\"tel:18555524692837\">Ph: 855-LAGOWATER<br/>Email: INFO@LAGOWATER.COM</a></p>"
+            "text": ""
+          }
+        },
+        "column_intro_GBYhM8": {
+          "type": "column_intro",
+          "settings": {
+            "column": "1",
+            "heading": "",
+            "text": "<p><a href=\"tel:18555524692837\" title=\"tel:18555524692837\">Ph: 855-LAGOWATER</a></p>"
+          }
+        },
+        "column_intro_ji4Yiw": {
+          "type": "column_intro",
+          "settings": {
+            "column": "1",
+            "heading": "",
+            "text": "<p><a href=\"mailto:info@lagowater.com\" title=\"mailto:info@lagowater.com\">Email: INFO@LAGOWATER</a></p>"
           }
         }
       },
       "block_order": [
         "column_intro_HPmKqA",
-        "column_intro_GBYhM8"
+        "column_intro_jL7AmE",
+        "column_intro_GBYhM8",
+        "column_intro_ji4Yiw"
       ],
       "name": "Lago media bullets",
       "settings": {
