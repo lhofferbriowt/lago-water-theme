@@ -49,7 +49,7 @@
           "settings": {
             "column": "1",
             "heading": "",
-            "text": "<p>Email: INFO@LAGOWATER</p>"
+            "text": "<p><a href=\"mailto:info@lagowater.com\" title=\"mailto:info@lagowater.com\">Email: INFO@LAGOWATER</a></p>"
           }
         }
       },
