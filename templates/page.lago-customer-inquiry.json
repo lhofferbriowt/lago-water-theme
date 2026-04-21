@@ -38,58 +38,17 @@
         "heading_size": "h1",
         "color_scheme": "scheme-2",
         "column_heading_font_size": 32,
-        "column_1_intro_margin_top": 32,
+        "column_1_intro_margin_top": 60,
         "column_1_text_padding_top": 0,
         "column_1_title": "Thank You For Your Interest",
         "column_1_text": "",
-        "column_2_intro_margin_top": 32,
+        "column_2_intro_margin_top": 0,
         "column_2_text_padding_top": 0,
         "column_2_image": "shopify://shop_images/thank_you_for_your_interest.jpg",
         "column_2_title": "",
         "column_2_text": "",
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "image_with_text_Db9tr7": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_q6m6DC": {
-          "type": "heading",
-          "settings": {
-            "heading": "<strong>Thank You For Your Interest</strong>",
-            "heading_size": "h1"
-          }
-        },
-        "text_yrM8Qw": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Please fill out your information and answer a few quick questions below so we can recommend the best hydration system for your home or buiness and follow up with a free estimate.  Thank you.</p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "heading_q6m6DC",
-        "text_yrM8Qw"
-      ],
-      "custom_css": [
-        "h2 {color: #034ea2;}"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/Contact_Us.jpg",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "center",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 60
       }
     },
     "rich_text_KRQazB": {
@@ -201,7 +160,6 @@
   "order": [
     "main",
     "lago_page_media_bullets_tYKV9x",
-    "image_with_text_Db9tr7",
     "rich_text_KRQazB",
     "1756496526d95d7530",
     "lago_4_col_9Aw89R"
