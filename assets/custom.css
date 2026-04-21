@@ -484,14 +484,18 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
 
 /* Keep the logo perfectly centered on mobile even when the right icon group grows */
 @media screen and (max-width: 989px) {
-  .header.header--mobile-center {
+  .header.header--mobile-center,
+  .header.header--mobile-left {
     position: relative;
   }
 
   .header.header--mobile-center .header__heading,
-  .header.header--mobile-center .header__heading-link {
+  .header.header--mobile-center .header__heading-link,
+  .header.header--mobile-left .header__heading,
+  .header.header--mobile-left .header__heading-link {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1;
   }
 }
