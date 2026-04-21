@@ -5,7 +5,10 @@
   assign col2_image = section.settings.column_2_image
 -%}
 
-<section class="lago-page-media-bullets color-{{ section.settings.color_scheme }} gradient">
+<section
+  class="lago-page-media-bullets color-{{ section.settings.color_scheme }} gradient"
+  style="--lago-media-bullets-col-heading-size: {{ section.settings.column_heading_font_size }}px;"
+>
   <div class="page-width section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
       <h2 class="lago-page-media-bullets__heading {{ section.settings.heading_size }}">
@@ -205,6 +208,16 @@
       "id": "color_scheme",
       "label": "Color scheme",
       "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "column_heading_font_size",
+      "min": 14,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Column heading font size",
+      "default": 32
     },
     {
       "type": "header",

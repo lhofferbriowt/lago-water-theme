@@ -35,7 +35,7 @@
 
 .lago-page-media-bullets__intro-title {
   margin: 0 0 1rem;
-  font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+  font-size: var(--lago-media-bullets-col-heading-size, clamp(1.6rem, 2.2vw, 2.2rem));
   line-height: 1.25;
 }
 
@@ -62,7 +62,7 @@
 
 .lago-page-media-bullets__bullet {
   display: grid;
-  grid-template-columns: 3.2rem minmax(0, 1fr);
+  grid-template-columns: 6rem minmax(0, 1fr);
   column-gap: 1.4rem;
   align-items: start;
 }
@@ -71,11 +71,13 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  max-width: 60px;
 }
 
 .lago-page-media-bullets__bullet-icon-img {
-  width: 2.8rem;
-  height: 2.8rem;
+  width: 100%;
+  max-width: 60px;
+  height: auto;
 }
 
 .lago-page-media-bullets__bullet-title {
