@@ -51,6 +51,9 @@
         "enable_country_selector": false,
         "enable_language_selector": false,
         "enable_customer_avatar": false,
+        "mobile_phone_show": true,
+        "mobile_phone_number": "1855524692837",
+        "mobile_phone_icon": "shopify://shop_images/phone_icon_0fef9da6-ac87-4320-a828-a2c4546df432.png",
         "margin_bottom": 0,
         "padding_top": 12,
         "padding_bottom": 12
