@@ -1,0 +1,90 @@
+/* Lago — Media + bullets (2 col) */
+.lago-page-media-bullets__heading {
+  margin: 0 0 2.5rem;
+}
+
+.lago-page-media-bullets__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media screen and (min-width: 990px) {
+  .lago-page-media-bullets__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4rem;
+    align-items: start;
+  }
+}
+
+.lago-page-media-bullets__image-wrap {
+  border-radius: 0.4rem;
+  overflow: hidden;
+  background: rgba(var(--color-foreground), 0.03);
+}
+
+.lago-page-media-bullets__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.lago-page-media-bullets__intro {
+  margin-top: 2rem;
+}
+
+.lago-page-media-bullets__intro-title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+  line-height: 1.25;
+}
+
+.lago-page-media-bullets__intro-text {
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.lago-page-media-bullets__stack {
+  margin-top: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.lago-page-media-bullets__group-heading {
+  margin: 0 0 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.lago-page-media-bullets__group-text {
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.lago-page-media-bullets__bullet {
+  display: grid;
+  grid-template-columns: 3.2rem minmax(0, 1fr);
+  column-gap: 1.4rem;
+  align-items: start;
+}
+
+.lago-page-media-bullets__bullet-icon {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.lago-page-media-bullets__bullet-icon-img {
+  width: 2.8rem;
+  height: 2.8rem;
+}
+
+.lago-page-media-bullets__bullet-title {
+  font-weight: 600;
+  margin: 0;
+}
+
+.lago-page-media-bullets__bullet-text {
+  margin-top: 0.35rem;
+  color: rgba(var(--color-foreground), 0.75);
+}
+

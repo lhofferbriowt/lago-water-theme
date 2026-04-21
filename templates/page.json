@@ -17,6 +17,24 @@
         "padding_bottom": 28
       }
     },
+    "lago_page_media_bullets": {
+      "type": "lago-page-media-bullets",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "scheme-1",
+        "column_1_image": "",
+        "column_1_title": "",
+        "column_1_text": "<p></p>",
+        "column_2_image": "",
+        "column_2_title": "",
+        "column_2_text": "<p></p>",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "image_with_text_V6ipiU": {
       "type": "image-with-text",
       "blocks": {
@@ -43,11 +61,7 @@
           }
         }
       },
-      "block_order": [
-        "heading_Xrq8mT",
-        "text_MQMrKH",
-        "button_eRrCJP"
-      ],
+      "block_order": ["heading_Xrq8mT", "text_MQMrKH", "button_eRrCJP"],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/why_lago_grid_image_3.jpg",
@@ -66,8 +80,6 @@
       }
     }
   },
-  "order": [
-    "main",
-    "image_with_text_V6ipiU"
-  ]
+  "order": ["main", "lago_page_media_bullets", "image_with_text_V6ipiU"]
 }
+

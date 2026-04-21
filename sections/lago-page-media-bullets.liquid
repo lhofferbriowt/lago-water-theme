@@ -1,0 +1,364 @@
+{{ 'section-lago-page-media-bullets.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign col1_image = section.settings.column_1_image
+  assign col2_image = section.settings.column_2_image
+-%}
+
+<section class="lago-page-media-bullets color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="lago-page-media-bullets__heading {{ section.settings.heading_size }}">
+        {{ section.settings.heading | escape }}
+      </h2>
+    {%- endif -%}
+
+    <div class="lago-page-media-bullets__grid">
+      <div class="lago-page-media-bullets__col">
+        {%- if col1_image != blank -%}
+          <div class="lago-page-media-bullets__image-wrap">
+            {{
+              col1_image
+              | image_url: width: 1400
+              | image_tag:
+                loading: 'lazy',
+                widths: '550, 750, 900, 1100, 1400',
+                sizes: '(min-width: 990px) 50vw, 100vw',
+                class: 'lago-page-media-bullets__image',
+                alt: col1_image.alt | default: section.settings.column_1_title
+            }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.column_1_title != blank or section.settings.column_1_text != blank -%}
+          <div class="lago-page-media-bullets__intro">
+            {%- if section.settings.column_1_title != blank -%}
+              <h3 class="lago-page-media-bullets__intro-title">{{ section.settings.column_1_title | escape }}</h3>
+            {%- endif -%}
+            {%- if section.settings.column_1_text != blank -%}
+              <div class="lago-page-media-bullets__intro-text rte">{{ section.settings.column_1_text }}</div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        <div class="lago-page-media-bullets__stack">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.column == '1' -%}
+              {%- case block.type -%}
+                {%- when 'column_intro' -%}
+                  <div class="lago-page-media-bullets__group" {{ block.shopify_attributes }}>
+                    {%- if block.settings.heading != blank -%}
+                      <h4 class="lago-page-media-bullets__group-heading">{{ block.settings.heading | escape }}</h4>
+                    {%- endif -%}
+                    {%- if block.settings.text != blank -%}
+                      <div class="lago-page-media-bullets__group-text rte">{{ block.settings.text }}</div>
+                    {%- endif -%}
+                  </div>
+                {%- when 'bullet' -%}
+                  <div class="lago-page-media-bullets__bullet" {{ block.shopify_attributes }}>
+                    {%- if block.settings.icon != blank -%}
+                      <div class="lago-page-media-bullets__bullet-icon">
+                        {{
+                          block.settings.icon
+                          | image_url: width: 96
+                          | image_tag:
+                            loading: 'lazy',
+                            widths: '48, 96',
+                            sizes: '48px',
+                            alt: block.settings.icon.alt | default: block.settings.title,
+                            class: 'lago-page-media-bullets__bullet-icon-img'
+                        }}
+                      </div>
+                    {%- endif -%}
+                    <div class="lago-page-media-bullets__bullet-body">
+                      {%- if block.settings.title != blank -%}
+                        <div class="lago-page-media-bullets__bullet-title">{{ block.settings.title | escape }}</div>
+                      {%- endif -%}
+                      {%- if block.settings.text != blank -%}
+                        <div class="lago-page-media-bullets__bullet-text rte">{{ block.settings.text }}</div>
+                      {%- endif -%}
+                    </div>
+                  </div>
+              {%- endcase -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <div class="lago-page-media-bullets__col">
+        {%- if col2_image != blank -%}
+          <div class="lago-page-media-bullets__image-wrap">
+            {{
+              col2_image
+              | image_url: width: 1400
+              | image_tag:
+                loading: 'lazy',
+                widths: '550, 750, 900, 1100, 1400',
+                sizes: '(min-width: 990px) 50vw, 100vw',
+                class: 'lago-page-media-bullets__image',
+                alt: col2_image.alt | default: section.settings.column_2_title
+            }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.column_2_title != blank or section.settings.column_2_text != blank -%}
+          <div class="lago-page-media-bullets__intro">
+            {%- if section.settings.column_2_title != blank -%}
+              <h3 class="lago-page-media-bullets__intro-title">{{ section.settings.column_2_title | escape }}</h3>
+            {%- endif -%}
+            {%- if section.settings.column_2_text != blank -%}
+              <div class="lago-page-media-bullets__intro-text rte">{{ section.settings.column_2_text }}</div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        <div class="lago-page-media-bullets__stack">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.column == '2' -%}
+              {%- case block.type -%}
+                {%- when 'column_intro' -%}
+                  <div class="lago-page-media-bullets__group" {{ block.shopify_attributes }}>
+                    {%- if block.settings.heading != blank -%}
+                      <h4 class="lago-page-media-bullets__group-heading">{{ block.settings.heading | escape }}</h4>
+                    {%- endif -%}
+                    {%- if block.settings.text != blank -%}
+                      <div class="lago-page-media-bullets__group-text rte">{{ block.settings.text }}</div>
+                    {%- endif -%}
+                  </div>
+                {%- when 'bullet' -%}
+                  <div class="lago-page-media-bullets__bullet" {{ block.shopify_attributes }}>
+                    {%- if block.settings.icon != blank -%}
+                      <div class="lago-page-media-bullets__bullet-icon">
+                        {{
+                          block.settings.icon
+                          | image_url: width: 96
+                          | image_tag:
+                            loading: 'lazy',
+                            widths: '48, 96',
+                            sizes: '48px',
+                            alt: block.settings.icon.alt | default: block.settings.title,
+                            class: 'lago-page-media-bullets__bullet-icon-img'
+                        }}
+                      </div>
+                    {%- endif -%}
+                    <div class="lago-page-media-bullets__bullet-body">
+                      {%- if block.settings.title != blank -%}
+                        <div class="lago-page-media-bullets__bullet-title">{{ block.settings.title | escape }}</div>
+                      {%- endif -%}
+                      {%- if block.settings.text != blank -%}
+                        <div class="lago-page-media-bullets__bullet-text rte">{{ block.settings.text }}</div>
+                      {%- endif -%}
+                    </div>
+                  </div>
+              {%- endcase -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "Lago — Media + bullets (2 col)",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading",
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Section heading size",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Column 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "column_1_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "column_1_title",
+      "label": "Heading",
+      "default": ""
+    },
+    {
+      "type": "richtext",
+      "id": "column_1_text",
+      "label": "Subtext",
+      "default": "<p></p>"
+    },
+    {
+      "type": "header",
+      "content": "Column 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "column_2_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "column_2_title",
+      "label": "Heading",
+      "default": ""
+    },
+    {
+      "type": "richtext",
+      "id": "column_2_text",
+      "label": "Subtext",
+      "default": "<p></p>"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column_intro",
+      "name": "Text intro (before bullets)",
+      "settings": [
+        {
+          "type": "select",
+          "id": "column",
+          "label": "Column",
+          "options": [
+            { "value": "1", "label": "Column 1" },
+            { "value": "2", "label": "Column 2" }
+          ],
+          "default": "1"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": ""
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Subtext",
+          "default": "<p></p>"
+        }
+      ]
+    },
+    {
+      "type": "bullet",
+      "name": "Bullet row",
+      "settings": [
+        {
+          "type": "select",
+          "id": "column",
+          "label": "Column",
+          "options": [
+            { "value": "1", "label": "Column 1" },
+            { "value": "2", "label": "Column 2" }
+          ],
+          "default": "1"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": ""
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Subtext",
+          "default": "<p></p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lago — Media + bullets (2 col)",
+      "blocks": [
+        {
+          "type": "column_intro",
+          "settings": {
+            "column": "2",
+            "heading": "We are passionate about water.",
+            "text": "<p>We strive every day to deliver premium filtration that elevates the hydration experience to a whole new level.</p>"
+          }
+        },
+        {
+          "type": "column_intro",
+          "settings": {
+            "column": "1",
+            "heading": "",
+            "text": "<p></p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
