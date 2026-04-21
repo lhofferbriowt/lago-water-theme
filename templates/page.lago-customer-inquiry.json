@@ -34,9 +34,9 @@
       ],
       "name": "Lago media bullets",
       "settings": {
-        "heading": "Section heading",
+        "heading": "",
         "heading_size": "h1",
-        "color_scheme": "",
+        "color_scheme": "scheme-2",
         "column_heading_font_size": 32,
         "column_1_intro_margin_top": 32,
         "column_1_text_padding_top": 0,
