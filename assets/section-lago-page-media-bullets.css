@@ -60,11 +60,20 @@
   color: rgba(var(--color-foreground), 0.75);
 }
 
-/* Text intro block (column_intro): links inherit copy styling without underline */
-.lago-page-media-bullets__group-text.rte a,
-.lago-page-media-bullets__group-text.rte a:hover,
-.lago-page-media-bullets__group-text.rte a:focus {
-  text-decoration: none;
+/* Text intro block (column_intro): strip link underlines (RTE + Dawn `.link` / `.link--text`) */
+.lago-page-media-bullets .lago-page-media-bullets__group-text.rte a,
+.lago-page-media-bullets .lago-page-media-bullets__group-text.rte a.link,
+.lago-page-media-bullets .lago-page-media-bullets__group-text.rte a.link--text,
+.lago-page-media-bullets .lago-page-media-bullets__group-text.rte a:hover,
+.lago-page-media-bullets .lago-page-media-bullets__group-text.rte a.link:hover,
+.lago-page-media-bullets .lago-page-media-bullets__group-text.rte a.link--text:hover,
+.lago-page-media-bullets .lago-page-media-bullets__group-text.rte a:focus,
+.lago-page-media-bullets .lago-page-media-bullets__group-text.rte a:focus-visible,
+.lago-page-media-bullets .lago-page-media-bullets__group-text.rte a:active {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  text-decoration-thickness: 0 !important;
+  text-underline-offset: 0 !important;
 }
 
 .lago-page-media-bullets__bullet {
