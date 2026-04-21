@@ -17,69 +17,99 @@
         "padding_bottom": 28
       }
     },
-    "lago_page_media_bullets": {
+    "lago_page_media_bullets_YTXywG": {
       "type": "lago-page-media-bullets",
-      "blocks": {},
-      "block_order": [],
+      "name": "Lago media bullets",
       "settings": {
         "heading": "",
         "heading_size": "h1",
-        "color_scheme": "scheme-1",
-        "column_1_image": "",
+        "color_scheme": "",
+        "column_1_image": "shopify://shop_images/why_lago_grid_image_3.jpg",
         "column_1_title": "",
-        "column_1_text": "<p></p>",
-        "column_2_image": "",
-        "column_2_title": "",
-        "column_2_text": "<p></p>",
+        "column_1_text": "",
+        "column_2_title": "We are passionate about water.",
+        "column_2_text": "<p>We strive every day to deliver premium filtration that elevates the hydration experience to a whole new level. </p><p>At Lago we understand our dealers and their customers which enables us to provide the best filtration products to fit your needs. Our goal is that with every sip you take you feel the passion we put into all of our products.<br/><br/></p>",
         "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    "image_with_text_V6ipiU": {
-      "type": "image-with-text",
+    "lago_page_media_bullets_rGU9GP": {
+      "type": "lago-page-media-bullets",
       "blocks": {
-        "heading_Xrq8mT": {
-          "type": "heading",
+        "bullet_AeXAD6": {
+          "type": "bullet",
           "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
+            "column": "1",
+            "icon": "shopify://shop_images/hydration_svg.png",
+            "title": "Hydration",
+            "text": "<p>The Lago family of products enables customers to effortlessly experience premium hydration.</p>"
           }
         },
-        "text_MQMrKH": {
-          "type": "text",
+        "bullet_KFxb76": {
+          "type": "bullet",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "text_style": "body"
+            "column": "1",
+            "icon": "shopify://shop_images/innovation.png",
+            "title": "Innovation",
+            "text": "<p>Lago creates innovative & intuitively-designed water solutions with you in mind.</p>"
           }
         },
-        "button_eRrCJP": {
-          "type": "button",
+        "bullet_hmDJpq": {
+          "type": "bullet",
           "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false
+            "column": "1",
+            "icon": "shopify://shop_images/service_svg.png",
+            "title": "Service",
+            "text": "<p>Lago is a service-first company because our customer’s journey doesn’t stop at purchase.</p>"
+          }
+        },
+        "bullet_XWRXwq": {
+          "type": "bullet",
+          "settings": {
+            "column": "1",
+            "icon": "shopify://shop_images/wellness.png",
+            "title": "Wellness",
+            "text": "<p>We believe our clean water solutions lead to a better you and  a more hopeful tomorrow.</p>"
           }
         }
       },
-      "block_order": ["heading_Xrq8mT", "text_MQMrKH", "button_eRrCJP"],
-      "name": "t:sections.image-with-text.presets.name",
+      "block_order": [
+        "bullet_AeXAD6",
+        "bullet_KFxb76",
+        "bullet_hmDJpq",
+        "bullet_XWRXwq"
+      ],
+      "name": "Lago media bullets",
       "settings": {
-        "image": "shopify://shop_images/why_lago_grid_image_3.jpg",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "",
+        "heading": "",
+        "heading_size": "h1",
         "color_scheme": "",
+        "column_1_title": "",
+        "column_1_text": "",
+        "column_2_image": "shopify://shop_images/filtration_grid_image.jpg",
+        "column_2_title": "",
+        "column_2_text": "",
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "lago_dealer_value_prop_rmypNA": {
+      "type": "lago-dealer-value-prop",
+      "name": "Lago dealer value prop",
+      "settings": {
+        "dealer_section_heading": "Join the Lago Dealer Network",
+        "dealer_heading_font_size": 16,
+        "value_row_text_font_size": 16,
+        "value_row_title_font_size": 16,
+        "dealer_cta_label": "Become a Dealer",
+        "dealer_cta_link": ""
+      }
     }
   },
-  "order": ["main", "lago_page_media_bullets", "image_with_text_V6ipiU"]
+  "order": [
+    "main",
+    "lago_page_media_bullets_YTXywG",
+    "lago_page_media_bullets_rGU9GP",
+    "lago_dealer_value_prop_rmypNA"
+  ]
 }
-
