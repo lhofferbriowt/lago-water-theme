@@ -24,22 +24,13 @@
           "type": "column_intro",
           "settings": {
             "column": "2",
-            "heading": "We are passionate about water.",
-            "text": "<p>We strive every day to deliver premium filtration that elevates the hydration experience to a whole new level.</p>"
-          }
-        },
-        "column_intro_wGQfPH": {
-          "type": "column_intro",
-          "settings": {
-            "column": "1",
             "heading": "",
-            "text": ""
+            "text": "<p>We strive every day to deliver premium filtration that elevates the hydration experience to a whole new level.</p>"
           }
         }
       },
       "block_order": [
-        "column_intro_PDAGmK",
-        "column_intro_wGQfPH"
+        "column_intro_PDAGmK"
       ],
       "name": "Lago media bullets",
       "settings": {
@@ -49,8 +40,8 @@
         "column_1_image": "shopify://shop_images/why_lago_grid_image_3.jpg",
         "column_1_title": "",
         "column_1_text": "",
-        "column_2_title": "Column heading",
-        "column_2_text": "",
+        "column_2_title": "We are passionate about water.",
+        "column_2_text": "<p>We strive every day to deliver premium filtration that elevates the hydration experience to a whole new level. </p><p>At Lago we understand our dealers and their customers which enables us to provide the best filtration products to fit your needs. Our goal is that with every sip you take you feel the passion we put into all of our products.<br/><br/></p>",
         "padding_top": 36,
         "padding_bottom": 36
       }
