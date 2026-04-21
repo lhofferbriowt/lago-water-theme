@@ -506,3 +506,41 @@
     }
   }
 }
+
+/* Footer logo: first column on tablet/desktop; keep legacy bottom bar logo on small screens only */
+.footer-block--footer-logo-first {
+  display: none;
+}
+
+@media screen and (min-width: 750px) {
+  .footer-block--footer-logo-first {
+    display: block;
+  }
+
+  .footer-block--footer-logo-first .footer-block__brand-link {
+    display: inline-block;
+    line-height: 0;
+  }
+
+  .footer-block--footer-logo-first .footer-block__footer-logo-img {
+    max-width: min(100%, 18rem);
+    width: 100%;
+    height: auto;
+  }
+}
+
+.footer-logo--mobile-only {
+  display: block;
+}
+
+@media screen and (min-width: 750px) {
+  .footer-logo--mobile-only {
+    display: none;
+  }
+}
+
+.footer-logo__img {
+  max-width: min(100%, 18rem);
+  width: 100%;
+  height: auto;
+}

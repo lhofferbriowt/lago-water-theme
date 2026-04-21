@@ -41,6 +41,23 @@
     if section.blocks.size == 1 and section.blocks[0].type == 'brand_information' and brand_empty and has_social_icons == false and section.settings.newsletter_enable == false and section.settings.enable_follow_on_shop == false
       assign only_empty_brand = true
     endif
+
+    assign footer_logo_image = settings.brand_image
+    if footer_logo_image == blank
+      assign footer_logo_image = settings.logo
+    endif
+
+    assign footer_logo_display_width = 180
+    assign footer_logo_alt = shop.name
+
+    if footer_logo_image != blank
+      assign footer_logo_alt = footer_logo_image.alt | default: shop.name | escape
+      if footer_logo_image == settings.brand_image and settings.brand_image != blank
+        assign footer_logo_display_width = settings.brand_image_width | default: 180
+      elsif footer_logo_image == settings.logo and settings.logo != blank
+        assign footer_logo_display_width = settings.logo_width | default: 200
+      endif
+    endif
   -%}
   {%- if section.blocks.size > 0
     or section.settings.newsletter_enable
@@ -66,6 +83,28 @@
               data-cascade
             {% endif %}
           >
+            {%- if footer_logo_image != blank -%}
+              <div
+                class="footer-block grid__item footer-block--footer-logo-first{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: 0;"
+                {% endif %}
+              >
+                <a href="{{ routes.root_url }}" class="footer-block__brand-link focus-inset">
+                  {{
+                    footer_logo_image
+                    | image_url: width: 360
+                    | image_tag:
+                      loading: 'lazy',
+                      class: 'footer-block__footer-logo-img',
+                      widths: '180, 240, 360',
+                      width: footer_logo_display_width,
+                      alt: footer_logo_alt
+                  }}
+                </a>
+              </div>
+            {%- endif -%}
             {%- for block in section.blocks -%}
               <div
                 class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -249,9 +288,20 @@
       </div>
     {%- endunless -%}
   {%- endif -%}
-  <div class="footer-logo">
-  <img src=" https://cdn.shopify.com/s/files/1/0940/1168/7234/files/Lago_Logo_White_180.png?v=1749595255 " alt="Lago White Footer Logo">
-</div>
+  {%- if footer_logo_image != blank -%}
+    <div class="footer-logo footer-logo--mobile-only">
+      {{
+        footer_logo_image
+        | image_url: width: 360
+        | image_tag:
+          loading: 'lazy',
+          class: 'footer-logo__img',
+          widths: '180, 240, 360',
+          width: footer_logo_display_width,
+          alt: footer_logo_alt
+      }}
+    </div>
+  {%- endif -%}
 
   <div
     class="footer__content-bottom{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
