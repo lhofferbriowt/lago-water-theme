@@ -17,6 +17,40 @@
         "padding_bottom": 28
       }
     },
+    "lago_page_media_bullets_tYKV9x": {
+      "type": "lago-page-media-bullets",
+      "blocks": {
+        "column_intro_HPmKqA": {
+          "type": "column_intro",
+          "settings": {
+            "column": "1",
+            "heading": "",
+            "text": "<p>Please fill out your information and answer a few quick questions below so we can recommend the best hydration system for your home or buiness and follow up with a free estimate.  Thank you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_intro_HPmKqA"
+      ],
+      "name": "Lago media bullets",
+      "settings": {
+        "heading": "Section heading",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "column_heading_font_size": 32,
+        "column_1_intro_margin_top": 32,
+        "column_1_text_padding_top": 0,
+        "column_1_title": "Thank You For Your Interest",
+        "column_1_text": "",
+        "column_2_intro_margin_top": 32,
+        "column_2_text_padding_top": 0,
+        "column_2_image": "shopify://shop_images/thank_you_for_your_interest.jpg",
+        "column_2_title": "",
+        "column_2_text": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "image_with_text_Db9tr7": {
       "type": "image-with-text",
       "blocks": {
@@ -112,12 +146,6 @@
         "include_margins": false
       }
     },
-    "1748885777bd2ab080": {
-      "type": "apps",
-      "settings": {
-        "include_margins": false
-      }
-    },
     "lago_4_col_9Aw89R": {
       "type": "lago-4-col",
       "blocks": {
@@ -163,7 +191,7 @@
       "name": "Lago 4 col",
       "settings": {
         "heading": "Hydration solutions packed with innovation",
-        "heading_size": "h1",
+        "heading_size": "h2",
         "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 36
@@ -172,10 +200,10 @@
   },
   "order": [
     "main",
+    "lago_page_media_bullets_tYKV9x",
     "image_with_text_Db9tr7",
     "rich_text_KRQazB",
     "1756496526d95d7530",
-    "1748885777bd2ab080",
     "lago_4_col_9Aw89R"
   ]
 }
