@@ -157,6 +157,18 @@
   transition: opacity 0.2s ease, transform 0.15s ease;
 }
 
+/* Homepage hero: theme-editor controlled spacing + typography */
+.section-lago-home-1-5 .l15-hero__text {
+  margin-top: var(--l15-hero-heading-mt, 0);
+  margin-bottom: var(--l15-hero-heading-mb, 1.25rem);
+  font-size: var(--l15-hero-heading-font-size-mobile, 1.5rem);
+}
+
+.section-lago-home-1-5 .l15-hero .l15-btn {
+  margin-top: var(--l15-hero-button-mt, 1.25rem);
+  margin-bottom: var(--l15-hero-button-mb, 0);
+}
+
 .l15-btn:hover {
   opacity: 0.92;
 }
@@ -586,6 +598,10 @@
   .l15-cat__img {
     width: 6.25rem;
     height: 6.25rem;
+  }
+
+  .section-lago-home-1-5 .l15-hero__text {
+    font-size: var(--l15-hero-heading-font-size-desktop, 4.8rem);
   }
 }
 
