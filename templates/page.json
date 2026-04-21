@@ -58,6 +58,15 @@
     "lago_page_media_bullets_rGU9GP": {
       "type": "lago-page-media-bullets",
       "blocks": {
+        "bullet_AeXAD6": {
+          "type": "bullet",
+          "settings": {
+            "column": "1",
+            "icon": "shopify://shop_images/hydration_svg.png",
+            "title": "Hydration",
+            "text": "<p>The Lago family of products enables customers to effortlessly experience premium hydration.</p>"
+          }
+        },
         "column_intro_83FCzc": {
           "type": "column_intro",
           "settings": {
@@ -68,6 +77,7 @@
         }
       },
       "block_order": [
+        "bullet_AeXAD6",
         "column_intro_83FCzc"
       ],
       "name": "Lago media bullets",
