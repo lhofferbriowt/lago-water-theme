@@ -35,7 +35,10 @@
 
         <div class="lago-page-media-bullets__col-text" style="padding-top: {{ section.settings.column_1_text_padding_top }}px;">
           {%- if section.settings.column_1_title != blank or section.settings.column_1_text != blank -%}
-            <div class="lago-page-media-bullets__intro">
+            <div
+              class="lago-page-media-bullets__intro"
+              style="margin-top: {{ section.settings.column_1_intro_margin_top }}px;"
+            >
               {%- if section.settings.column_1_title != blank -%}
                 <h3 class="lago-page-media-bullets__intro-title">{{ section.settings.column_1_title | escape }}</h3>
               {%- endif -%}
@@ -108,7 +111,10 @@
 
         <div class="lago-page-media-bullets__col-text" style="padding-top: {{ section.settings.column_2_text_padding_top }}px;">
           {%- if section.settings.column_2_title != blank or section.settings.column_2_text != blank -%}
-            <div class="lago-page-media-bullets__intro">
+            <div
+              class="lago-page-media-bullets__intro"
+              style="margin-top: {{ section.settings.column_2_intro_margin_top }}px;"
+            >
               {%- if section.settings.column_2_title != blank -%}
                 <h3 class="lago-page-media-bullets__intro-title">{{ section.settings.column_2_title | escape }}</h3>
               {%- endif -%}
@@ -229,6 +235,16 @@
     },
     {
       "type": "range",
+      "id": "column_1_intro_margin_top",
+      "min": 0,
+      "max": 240,
+      "step": 4,
+      "unit": "px",
+      "label": "Column 1 intro margin top",
+      "default": 32
+    },
+    {
+      "type": "range",
       "id": "column_1_text_padding_top",
       "min": 0,
       "max": 240,
@@ -257,6 +273,16 @@
     {
       "type": "header",
       "content": "Column 2"
+    },
+    {
+      "type": "range",
+      "id": "column_2_intro_margin_top",
+      "min": 0,
+      "max": 240,
+      "step": 4,
+      "unit": "px",
+      "label": "Column 2 intro margin top",
+      "default": 32
     },
     {
       "type": "range",
