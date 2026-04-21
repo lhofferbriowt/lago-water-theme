@@ -27,11 +27,19 @@
             "heading": "Our Company",
             "menu": "footer-menu-2"
           }
+        },
+        "link_list_getaEn": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Contact Us",
+            "menu": "footer"
+          }
         }
       },
       "block_order": [
         "link_list_mygRNi",
-        "link_list_NbwHVD"
+        "link_list_NbwHVD",
+        "link_list_getaEn"
       ],
       "settings": {
         "color_scheme": "scheme-2",
