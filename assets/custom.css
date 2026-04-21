@@ -490,12 +490,31 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
   }
 
   .header.header--mobile-center .header__heading,
-  .header.header--mobile-center .header__heading-link,
-  .header.header--mobile-left .header__heading,
-  .header.header--mobile-left .header__heading-link {
+  .header.header--mobile-left .header__heading {
     position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     z-index: 1;
+    margin: 0;
+  }
+
+  /* `middle-center` on non-home pages: logo is a direct `.header__heading-link` (no wrapping heading) */
+  .header.header--mobile-center.header--middle-center > .header__heading-link,
+  .header.header--mobile-left.header--middle-center > .header__heading-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  /* Nested link stays in normal flow inside the positioned heading (avoids double-offset) */
+  .header.header--mobile-center .header__heading .header__heading-link,
+  .header.header--mobile-left .header__heading .header__heading-link {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
   }
 }
