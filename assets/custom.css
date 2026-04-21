@@ -481,3 +481,17 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
   height: 2rem;
   object-fit: contain;
 }
+
+/* Keep the logo perfectly centered on mobile even when the right icon group grows */
+@media screen and (max-width: 989px) {
+  .header.header--mobile-center {
+    position: relative;
+  }
+
+  .header.header--mobile-center .header__heading,
+  .header.header--mobile-center .header__heading-link {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
