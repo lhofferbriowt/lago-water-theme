@@ -175,7 +175,7 @@
         "hero_image": "shopify://shop_images/mobile_hero.png",
         "hero_bg_desktop": "shopify://shop_images/desktop_hero_1440w.png",
         "hero_heading": "Your water solution partner for residential and commercial settings.",
-        "hero_heading_font_size_desktop": 48,
+        "hero_heading_font_size_desktop": 38,
         "hero_heading_font_size_mobile": 24,
         "hero_heading_margin_top": 0,
         "hero_heading_margin_bottom": 20,
