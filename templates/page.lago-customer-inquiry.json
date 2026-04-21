@@ -28,19 +28,18 @@
             "text": "<p>Please fill out your information and answer a few quick questions below so we can recommend the best hydration system for your home or buiness and follow up with a free estimate.  Thank you.</p>"
           }
         },
-        "bullet_Ca3r6J": {
-          "type": "bullet",
+        "column_intro_GBYhM8": {
+          "type": "column_intro",
           "settings": {
             "column": "1",
-            "icon": "shopify://shop_images/wellness.png",
-            "title": "",
-            "text": "<p>Ph: 855-LAGOWATER</p>"
+            "heading": "Contact Us",
+            "text": "<p>PH: 855-LAGOWATER</p>"
           }
         }
       },
       "block_order": [
         "column_intro_HPmKqA",
-        "bullet_Ca3r6J"
+        "column_intro_GBYhM8"
       ],
       "name": "Lago media bullets",
       "settings": {
