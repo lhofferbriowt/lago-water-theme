@@ -17,13 +17,12 @@
         "link_list_mygRNi": {
           "type": "link_list",
           "settings": {
-            "heading": "",
+            "heading": "Our Solutions",
             "menu": "footer"
           }
         },
         "link_list_NbwHVD": {
           "type": "link_list",
-          "disabled": true,
           "settings": {
             "heading": "",
             "menu": "footer-menu-2"
