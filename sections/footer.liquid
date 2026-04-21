@@ -356,13 +356,15 @@
       <div class="footer__copyright caption">
         {%- assign copyright_year = 'now' | date: '%Y' -%}
         <small class="copyright__content">
-          {%- if section.settings.copyright_text != blank -%}
-            {%- assign copyright_line = section.settings.copyright_text | strip | escape -%}
+          {%- assign copyright_raw = section.settings.copyright_text | strip -%}
+          {%- assign copyright_placeholder_default = '© {year}, {store_name}' -%}
+          {%- if copyright_raw == blank or copyright_raw == copyright_placeholder_default -%}
+            &copy; {{ copyright_year }}, {{ shop.name | link_to: routes.root_url }}
+          {%- else -%}
+            {%- assign copyright_line = copyright_raw | escape -%}
             {%- assign copyright_line = copyright_line | replace: '{year}', copyright_year -%}
             {%- assign copyright_line = copyright_line | replace: '{store_name}', shop.name | escape -%}
             {{- copyright_line -}}
-          {%- else -%}
-            &copy; {{ copyright_year }}, {{ shop.name | link_to: routes.root_url }}
           {%- endif -%}
         </small>
         {%- if section.settings.show_policy -%}
@@ -567,8 +569,8 @@
       "type": "textarea",
       "id": "copyright_text",
       "label": "Copyright line",
-      "info": "Leave blank for the default (© current year, linked store name). If set, use {year} for the current year and {store_name} for the store name (plain text).",
-      "default": ""
+      "info": "Clear this field to use the default (© current year, linked store name). If set, use {year} for the current year and {store_name} for the store name (plain text).",
+      "default": "© {year}, {store_name}"
     },
     {
       "type": "header",
