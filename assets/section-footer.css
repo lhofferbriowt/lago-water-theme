@@ -523,8 +523,8 @@
   }
 
   .footer-block--footer-logo-first .footer-block__footer-logo-img {
-    max-width: min(100%, 18rem);
-    width: 100%;
+    width: min(100%, var(--footer-logo-width, 180px));
+    max-width: min(100%, var(--footer-logo-width, 180px));
     height: auto;
   }
 }
@@ -540,7 +540,7 @@
 }
 
 .footer-logo__img {
-  max-width: min(100%, 18rem);
-  width: 100%;
+  width: min(100%, var(--footer-logo-width, 180px));
+  max-width: min(100%, var(--footer-logo-width, 180px));
   height: auto;
 }

@@ -88,7 +88,9 @@
                 class="footer-block grid__item footer-block--footer-logo-first{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
-                  style="--animation-order: 0;"
+                  style="--animation-order: 0; --footer-logo-width: {{ footer_logo_display_width }}px;"
+                {% else %}
+                  style="--footer-logo-width: {{ footer_logo_display_width }}px;"
                 {% endif %}
               >
                 <a href="{{ routes.root_url }}" class="footer-block__brand-link focus-inset">
@@ -289,7 +291,7 @@
     {%- endunless -%}
   {%- endif -%}
   {%- if footer_logo_image != blank -%}
-    <div class="footer-logo footer-logo--mobile-only">
+    <div class="footer-logo footer-logo--mobile-only" style="--footer-logo-width: {{ footer_logo_display_width }}px;">
       {{
         footer_logo_image
         | image_url: width: 360
