@@ -33,58 +33,60 @@
           </div>
         {%- endif -%}
 
-        {%- if section.settings.column_1_title != blank or section.settings.column_1_text != blank -%}
-          <div class="lago-page-media-bullets__intro">
-            {%- if section.settings.column_1_title != blank -%}
-              <h3 class="lago-page-media-bullets__intro-title">{{ section.settings.column_1_title | escape }}</h3>
-            {%- endif -%}
-            {%- if section.settings.column_1_text != blank -%}
-              <div class="lago-page-media-bullets__intro-text rte">{{ section.settings.column_1_text }}</div>
-            {%- endif -%}
-          </div>
-        {%- endif -%}
+        <div class="lago-page-media-bullets__col-text" style="padding-top: {{ section.settings.column_1_text_padding_top }}px;">
+          {%- if section.settings.column_1_title != blank or section.settings.column_1_text != blank -%}
+            <div class="lago-page-media-bullets__intro">
+              {%- if section.settings.column_1_title != blank -%}
+                <h3 class="lago-page-media-bullets__intro-title">{{ section.settings.column_1_title | escape }}</h3>
+              {%- endif -%}
+              {%- if section.settings.column_1_text != blank -%}
+                <div class="lago-page-media-bullets__intro-text rte">{{ section.settings.column_1_text }}</div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
 
-        <div class="lago-page-media-bullets__stack">
-          {%- for block in section.blocks -%}
-            {%- if block.settings.column == '1' -%}
-              {%- case block.type -%}
-                {%- when 'column_intro' -%}
-                  <div class="lago-page-media-bullets__group" {{ block.shopify_attributes }}>
-                    {%- if block.settings.heading != blank -%}
-                      <h4 class="lago-page-media-bullets__group-heading">{{ block.settings.heading | escape }}</h4>
-                    {%- endif -%}
-                    {%- if block.settings.text != blank -%}
-                      <div class="lago-page-media-bullets__group-text rte">{{ block.settings.text }}</div>
-                    {%- endif -%}
-                  </div>
-                {%- when 'bullet' -%}
-                  <div class="lago-page-media-bullets__bullet" {{ block.shopify_attributes }}>
-                    {%- if block.settings.icon != blank -%}
-                      <div class="lago-page-media-bullets__bullet-icon">
-                        {{
-                          block.settings.icon
-                          | image_url: width: 60
-                          | image_tag:
-                            loading: 'lazy',
-                            widths: '60, 120',
-                            sizes: '60px',
-                            alt: block.settings.icon.alt | default: block.settings.title,
-                            class: 'lago-page-media-bullets__bullet-icon-img'
-                        }}
-                      </div>
-                    {%- endif -%}
-                    <div class="lago-page-media-bullets__bullet-body">
-                      {%- if block.settings.title != blank -%}
-                        <div class="lago-page-media-bullets__bullet-title">{{ block.settings.title | escape }}</div>
+          <div class="lago-page-media-bullets__stack">
+            {%- for block in section.blocks -%}
+              {%- if block.settings.column == '1' -%}
+                {%- case block.type -%}
+                  {%- when 'column_intro' -%}
+                    <div class="lago-page-media-bullets__group" {{ block.shopify_attributes }}>
+                      {%- if block.settings.heading != blank -%}
+                        <h4 class="lago-page-media-bullets__group-heading">{{ block.settings.heading | escape }}</h4>
                       {%- endif -%}
                       {%- if block.settings.text != blank -%}
-                        <div class="lago-page-media-bullets__bullet-text rte">{{ block.settings.text }}</div>
+                        <div class="lago-page-media-bullets__group-text rte">{{ block.settings.text }}</div>
                       {%- endif -%}
                     </div>
-                  </div>
-              {%- endcase -%}
-            {%- endif -%}
-          {%- endfor -%}
+                  {%- when 'bullet' -%}
+                    <div class="lago-page-media-bullets__bullet" {{ block.shopify_attributes }}>
+                      {%- if block.settings.icon != blank -%}
+                        <div class="lago-page-media-bullets__bullet-icon">
+                          {{
+                            block.settings.icon
+                            | image_url: width: 60
+                            | image_tag:
+                              loading: 'lazy',
+                              widths: '60, 120',
+                              sizes: '60px',
+                              alt: block.settings.icon.alt | default: block.settings.title,
+                              class: 'lago-page-media-bullets__bullet-icon-img'
+                          }}
+                        </div>
+                      {%- endif -%}
+                      <div class="lago-page-media-bullets__bullet-body">
+                        {%- if block.settings.title != blank -%}
+                          <div class="lago-page-media-bullets__bullet-title">{{ block.settings.title | escape }}</div>
+                        {%- endif -%}
+                        {%- if block.settings.text != blank -%}
+                          <div class="lago-page-media-bullets__bullet-text rte">{{ block.settings.text }}</div>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                {%- endcase -%}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
         </div>
       </div>
 
@@ -104,58 +106,60 @@
           </div>
         {%- endif -%}
 
-        {%- if section.settings.column_2_title != blank or section.settings.column_2_text != blank -%}
-          <div class="lago-page-media-bullets__intro">
-            {%- if section.settings.column_2_title != blank -%}
-              <h3 class="lago-page-media-bullets__intro-title">{{ section.settings.column_2_title | escape }}</h3>
-            {%- endif -%}
-            {%- if section.settings.column_2_text != blank -%}
-              <div class="lago-page-media-bullets__intro-text rte">{{ section.settings.column_2_text }}</div>
-            {%- endif -%}
-          </div>
-        {%- endif -%}
+        <div class="lago-page-media-bullets__col-text" style="padding-top: {{ section.settings.column_2_text_padding_top }}px;">
+          {%- if section.settings.column_2_title != blank or section.settings.column_2_text != blank -%}
+            <div class="lago-page-media-bullets__intro">
+              {%- if section.settings.column_2_title != blank -%}
+                <h3 class="lago-page-media-bullets__intro-title">{{ section.settings.column_2_title | escape }}</h3>
+              {%- endif -%}
+              {%- if section.settings.column_2_text != blank -%}
+                <div class="lago-page-media-bullets__intro-text rte">{{ section.settings.column_2_text }}</div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
 
-        <div class="lago-page-media-bullets__stack">
-          {%- for block in section.blocks -%}
-            {%- if block.settings.column == '2' -%}
-              {%- case block.type -%}
-                {%- when 'column_intro' -%}
-                  <div class="lago-page-media-bullets__group" {{ block.shopify_attributes }}>
-                    {%- if block.settings.heading != blank -%}
-                      <h4 class="lago-page-media-bullets__group-heading">{{ block.settings.heading | escape }}</h4>
-                    {%- endif -%}
-                    {%- if block.settings.text != blank -%}
-                      <div class="lago-page-media-bullets__group-text rte">{{ block.settings.text }}</div>
-                    {%- endif -%}
-                  </div>
-                {%- when 'bullet' -%}
-                  <div class="lago-page-media-bullets__bullet" {{ block.shopify_attributes }}>
-                    {%- if block.settings.icon != blank -%}
-                      <div class="lago-page-media-bullets__bullet-icon">
-                        {{
-                          block.settings.icon
-                          | image_url: width: 60
-                          | image_tag:
-                            loading: 'lazy',
-                            widths: '60, 120',
-                            sizes: '60px',
-                            alt: block.settings.icon.alt | default: block.settings.title,
-                            class: 'lago-page-media-bullets__bullet-icon-img'
-                        }}
-                      </div>
-                    {%- endif -%}
-                    <div class="lago-page-media-bullets__bullet-body">
-                      {%- if block.settings.title != blank -%}
-                        <div class="lago-page-media-bullets__bullet-title">{{ block.settings.title | escape }}</div>
+          <div class="lago-page-media-bullets__stack">
+            {%- for block in section.blocks -%}
+              {%- if block.settings.column == '2' -%}
+                {%- case block.type -%}
+                  {%- when 'column_intro' -%}
+                    <div class="lago-page-media-bullets__group" {{ block.shopify_attributes }}>
+                      {%- if block.settings.heading != blank -%}
+                        <h4 class="lago-page-media-bullets__group-heading">{{ block.settings.heading | escape }}</h4>
                       {%- endif -%}
                       {%- if block.settings.text != blank -%}
-                        <div class="lago-page-media-bullets__bullet-text rte">{{ block.settings.text }}</div>
+                        <div class="lago-page-media-bullets__group-text rte">{{ block.settings.text }}</div>
                       {%- endif -%}
                     </div>
-                  </div>
-              {%- endcase -%}
-            {%- endif -%}
-          {%- endfor -%}
+                  {%- when 'bullet' -%}
+                    <div class="lago-page-media-bullets__bullet" {{ block.shopify_attributes }}>
+                      {%- if block.settings.icon != blank -%}
+                        <div class="lago-page-media-bullets__bullet-icon">
+                          {{
+                            block.settings.icon
+                            | image_url: width: 60
+                            | image_tag:
+                              loading: 'lazy',
+                              widths: '60, 120',
+                              sizes: '60px',
+                              alt: block.settings.icon.alt | default: block.settings.title,
+                              class: 'lago-page-media-bullets__bullet-icon-img'
+                          }}
+                        </div>
+                      {%- endif -%}
+                      <div class="lago-page-media-bullets__bullet-body">
+                        {%- if block.settings.title != blank -%}
+                          <div class="lago-page-media-bullets__bullet-title">{{ block.settings.title | escape }}</div>
+                        {%- endif -%}
+                        {%- if block.settings.text != blank -%}
+                          <div class="lago-page-media-bullets__bullet-text rte">{{ block.settings.text }}</div>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                {%- endcase -%}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
         </div>
       </div>
     </div>
@@ -224,6 +228,16 @@
       "content": "Column 1"
     },
     {
+      "type": "range",
+      "id": "column_1_text_padding_top",
+      "min": 0,
+      "max": 240,
+      "step": 4,
+      "unit": "px",
+      "label": "Column 1 text padding top",
+      "default": 0
+    },
+    {
       "type": "image_picker",
       "id": "column_1_image",
       "label": "Image"
@@ -243,6 +257,16 @@
     {
       "type": "header",
       "content": "Column 2"
+    },
+    {
+      "type": "range",
+      "id": "column_2_text_padding_top",
+      "min": 0,
+      "max": 240,
+      "step": 4,
+      "unit": "px",
+      "label": "Column 2 text padding top",
+      "default": 0
     },
     {
       "type": "image_picker",
