@@ -110,6 +110,7 @@
       "blocks": {
         "clicky_clickable_banner_7QG4aw": {
           "type": "shopify://apps/clicky-clickable-image-banner/blocks/clickable_banner/2d58f9d3-a5fb-4893-8aac-935f0ebcc5b8",
+          "disabled": true,
           "settings": {
             "cb_desktop_image": "shopify://shop_images/Why_Comparison_a3ca265e-749e-4d79-a8ec-e7264c36939e.png",
             "cb_mobile_image": "shopify://shop_images/Why_Comparison_-_Copy.png",
