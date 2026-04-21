@@ -495,8 +495,12 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
     margin: 0;
+    /* Block-level headings can span the full header width when absolutely positioned; that
+       invisible box sat above the menu/icons (especially with z-index) and swallowed taps. */
+    width: max-content;
+    max-width: calc(100% - 11rem);
+    pointer-events: none;
   }
 
   /* `middle-center` on non-home pages: logo is a direct `.header__heading-link` (no wrapping heading) */
@@ -506,7 +510,6 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
   }
 
   /* Nested link stays in normal flow inside the positioned heading (avoids double-offset) */
@@ -516,5 +519,6 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
     left: auto;
     top: auto;
     transform: none;
+    pointer-events: auto;
   }
 }
