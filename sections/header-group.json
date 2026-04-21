@@ -41,7 +41,7 @@
       "custom_css": [],
       "settings": {
         "logo_position": "middle-left",
-        "mobile_logo_position": "center",
+        "mobile_logo_position": "left",
         "menu": "main-menu",
         "menu_type_desktop": "mega",
         "sticky_header_type": "always",
