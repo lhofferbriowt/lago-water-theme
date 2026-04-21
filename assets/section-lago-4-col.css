@@ -1,0 +1,56 @@
+.lago-4-col__heading {
+  margin: 0 0 3rem;
+  text-align: center;
+}
+
+.lago-4-col__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .lago-4-col__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .lago-4-col__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 3.5rem;
+  }
+}
+
+.lago-4-col__card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.lago-4-col__media {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 0.2rem;
+  background: rgba(var(--color-foreground), 0.04);
+}
+
+.lago-4-col__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lago-4-col__title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.lago-4-col__text {
+  color: rgba(var(--color-foreground), 0.75);
+}
+

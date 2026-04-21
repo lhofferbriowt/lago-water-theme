@@ -146,12 +146,58 @@
         "dealer_cta_label": "Become a Dealer",
         "dealer_cta_link": "shopify://pages/become-a-dealer"
       }
+    },
+    "lago_4_col": {
+      "type": "lago-4-col",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "image": "",
+            "title": "Built for High-Traffic Use",
+            "text": "<p>Advanced patented filtration delivers clean, great-tasting water without slowdown.</p>"
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "image": "",
+            "title": "Precision Dispensing",
+            "text": "<p>Intuitive dispensing paddles make every pour clean and spill-resistant.</p>"
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "image": "",
+            "title": "UV Self-Cleaning",
+            "text": "<p>UV technology disinfects and sanitized for peace of mind.</p>"
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "image": "",
+            "title": "UV Self-Cleaning",
+            "text": "<p>UV technology disinfects and sanitized for peace of mind.</p>"
+          }
+        }
+      },
+      "block_order": ["card_1", "card_2", "card_3", "card_4"],
+      "settings": {
+        "heading": "Hydration solutions packed with innovation",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "lago_page_media_bullets_YTXywG",
     "lago_page_media_bullets_rGU9GP",
-    "lago_dealer_value_prop_rmypNA"
+    "lago_dealer_value_prop_rmypNA",
+    "lago_4_col"
   ]
 }
