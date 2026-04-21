@@ -48,7 +48,7 @@
         "color_scheme": "scheme-2",
         "column_heading_font_size": 32,
         "column_1_intro_margin_top": 60,
-        "column_1_text_padding_top": 0,
+        "column_1_text_padding_top": 20,
         "column_1_title": "Thank You For Your Interest",
         "column_1_text": "",
         "column_2_intro_margin_top": 0,
