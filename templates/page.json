@@ -75,11 +75,31 @@
             "title": "Innovation",
             "text": "<p>Lago creates innovative & intuitively-designed water solutions with you in mind.</p>"
           }
+        },
+        "bullet_hmDJpq": {
+          "type": "bullet",
+          "settings": {
+            "column": "1",
+            "icon": "shopify://shop_images/service_svg.png",
+            "title": "Service",
+            "text": "<p>Lago is a service-first company because our customer’s journey doesn’t stop at purchase.</p>"
+          }
+        },
+        "bullet_XWRXwq": {
+          "type": "bullet",
+          "settings": {
+            "column": "1",
+            "icon": "shopify://shop_images/wellness.png",
+            "title": "Wellness",
+            "text": "<p>We believe our clean water solutions lead to a better you and  a more hopeful tomorrow.</p>"
+          }
         }
       },
       "block_order": [
         "bullet_AeXAD6",
-        "bullet_KFxb76"
+        "bullet_KFxb76",
+        "bullet_hmDJpq",
+        "bullet_XWRXwq"
       ],
       "name": "Lago media bullets",
       "settings": {
