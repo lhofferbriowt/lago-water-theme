@@ -449,3 +449,35 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
     min-height: 100px;
   }
 }
+
+/* Header: phone link to the left of search (compact header / drawer breakpoint) */
+.header__icon--phone-mobile {
+  display: none !important;
+}
+
+@media screen and (max-width: 989px) {
+  .header__icon--phone-mobile {
+    display: flex !important;
+  }
+}
+
+.header__icon--phone {
+  color: #4a71aa;
+}
+
+.header__icon--phone .svg-wrapper .icon-phone {
+  width: 2rem;
+  height: 2rem;
+}
+
+.header__icon--phone .header__icon--phone-img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__icon--phone .header__icon--phone-img-wrap img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
