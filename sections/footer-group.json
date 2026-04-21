@@ -32,7 +32,7 @@
           "type": "link_list",
           "settings": {
             "heading": "Contact Us",
-            "menu": "footer"
+            "menu": "footer-menu-col-3"
           }
         }
       },
