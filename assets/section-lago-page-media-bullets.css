@@ -60,6 +60,13 @@
   color: rgba(var(--color-foreground), 0.75);
 }
 
+/* Text intro block (column_intro): links inherit copy styling without underline */
+.lago-page-media-bullets__group-text.rte a,
+.lago-page-media-bullets__group-text.rte a:hover,
+.lago-page-media-bullets__group-text.rte a:focus {
+  text-decoration: none;
+}
+
 .lago-page-media-bullets__bullet {
   display: grid;
   grid-template-columns: 60px minmax(0, 1fr);
