@@ -47,7 +47,7 @@
         "heading_size": "h1",
         "color_scheme": "",
         "column_1_image": "shopify://shop_images/why_lago_grid_image_3.jpg",
-        "column_1_title": "Column heading",
+        "column_1_title": "",
         "column_1_text": "",
         "column_2_title": "Column heading",
         "column_2_text": "",
@@ -72,7 +72,7 @@
       ],
       "name": "Lago media bullets",
       "settings": {
-        "heading": "Section heading",
+        "heading": "",
         "heading_size": "h1",
         "color_scheme": "",
         "column_1_title": "",
