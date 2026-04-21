@@ -19,19 +19,6 @@
     },
     "lago_page_media_bullets_YTXywG": {
       "type": "lago-page-media-bullets",
-      "blocks": {
-        "column_intro_PDAGmK": {
-          "type": "column_intro",
-          "settings": {
-            "column": "2",
-            "heading": "",
-            "text": "<p>We strive every day to deliver premium filtration that elevates the hydration experience to a whole new level.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "column_intro_PDAGmK"
-      ],
       "name": "Lago media bullets",
       "settings": {
         "heading": "",
@@ -105,11 +92,24 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "lago_dealer_value_prop_rmypNA": {
+      "type": "lago-dealer-value-prop",
+      "name": "Lago dealer value prop",
+      "settings": {
+        "dealer_section_heading": "Join the Lago Dealer Network",
+        "dealer_heading_font_size": 16,
+        "value_row_text_font_size": 16,
+        "value_row_title_font_size": 16,
+        "dealer_cta_label": "Become a Dealer",
+        "dealer_cta_link": ""
+      }
     }
   },
   "order": [
     "main",
     "lago_page_media_bullets_YTXywG",
-    "lago_page_media_bullets_rGU9GP"
+    "lago_page_media_bullets_rGU9GP",
+    "lago_dealer_value_prop_rmypNA"
   ]
 }
