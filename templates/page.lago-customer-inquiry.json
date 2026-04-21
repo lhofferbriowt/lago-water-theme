@@ -35,11 +35,20 @@
             "heading": "Contact Us",
             "text": "<p><a href=\"tel:18555524692837\" title=\"tel:18555524692837\">Ph: 855-LAGOWATER</a></p>"
           }
+        },
+        "column_intro_ji4Yiw": {
+          "type": "column_intro",
+          "settings": {
+            "column": "1",
+            "heading": "",
+            "text": "<p>Email: INFO@LAGOWATER</p>"
+          }
         }
       },
       "block_order": [
         "column_intro_HPmKqA",
-        "column_intro_GBYhM8"
+        "column_intro_GBYhM8",
+        "column_intro_ji4Yiw"
       ],
       "name": "Lago media bullets",
       "settings": {
