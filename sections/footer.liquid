@@ -354,8 +354,16 @@
     </div>
     <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
       <div class="footer__copyright caption">
-       <small class="copyright__content"
-          >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
+        {%- assign copyright_year = 'now' | date: '%Y' -%}
+        <small class="copyright__content">
+          {%- if section.settings.copyright_text != blank -%}
+            {%- assign copyright_line = section.settings.copyright_text | strip | escape -%}
+            {%- assign copyright_line = copyright_line | replace: '{year}', copyright_year -%}
+            {%- assign copyright_line = copyright_line | replace: '{store_name}', shop.name | escape -%}
+            {{- copyright_line -}}
+          {%- else -%}
+            &copy; {{ copyright_year }}, {{ shop.name | link_to: routes.root_url }}
+          {%- endif -%}
         </small>
         {%- if section.settings.show_policy -%}
           <ul class="policies list-unstyled">
@@ -550,6 +558,17 @@
       "default": true,
       "label": "t:sections.footer.settings.show_policy.label",
       "info": "t:sections.footer.settings.show_policy.info"
+    },
+    {
+      "type": "header",
+      "content": "Copyright"
+    },
+    {
+      "type": "textarea",
+      "id": "copyright_text",
+      "label": "Copyright line",
+      "info": "Leave blank for the default (© current year, linked store name). If set, use {year} for the current year and {store_name} for the store name (plain text).",
+      "default": ""
     },
     {
       "type": "header",
