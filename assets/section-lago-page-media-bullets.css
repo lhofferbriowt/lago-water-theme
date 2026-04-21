@@ -62,7 +62,7 @@
 
 .lago-page-media-bullets__bullet {
   display: grid;
-  grid-template-columns: 6rem minmax(0, 1fr);
+  grid-template-columns: 60px minmax(0, 1fr);
   column-gap: 1.4rem;
   align-items: start;
 }
@@ -75,11 +75,11 @@
 }
 
 .lago-page-media-bullets__bullet-icon-img {
-  width: 100% !important;
+  width: 60px !important;
+  height: 60px !important;
   max-width: 60px !important;
-  height: auto !important;
   max-height: 60px !important;
-  aspect-ratio: auto !important;
+  object-fit: contain;
 }
 
 .lago-page-media-bullets__bullet-title {
