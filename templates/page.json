@@ -17,69 +17,77 @@
         "padding_bottom": 28
       }
     },
-    "lago_page_media_bullets": {
+    "lago_page_media_bullets_YTXywG": {
       "type": "lago-page-media-bullets",
-      "blocks": {},
-      "block_order": [],
+      "blocks": {
+        "column_intro_PDAGmK": {
+          "type": "column_intro",
+          "settings": {
+            "column": "2",
+            "heading": "We are passionate about water.",
+            "text": "<p>We strive every day to deliver premium filtration that elevates the hydration experience to a whole new level.</p>"
+          }
+        },
+        "column_intro_wGQfPH": {
+          "type": "column_intro",
+          "settings": {
+            "column": "1",
+            "heading": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_intro_PDAGmK",
+        "column_intro_wGQfPH"
+      ],
+      "name": "Lago media bullets",
       "settings": {
         "heading": "",
         "heading_size": "h1",
-        "color_scheme": "scheme-1",
-        "column_1_image": "",
-        "column_1_title": "",
-        "column_1_text": "<p></p>",
-        "column_2_image": "",
-        "column_2_title": "",
-        "column_2_text": "<p></p>",
+        "color_scheme": "",
+        "column_1_image": "shopify://shop_images/why_lago_grid_image_3.jpg",
+        "column_1_title": "Column heading",
+        "column_1_text": "",
+        "column_2_title": "Column heading",
+        "column_2_text": "",
         "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    "image_with_text_V6ipiU": {
-      "type": "image-with-text",
+    "lago_page_media_bullets_rGU9GP": {
+      "type": "lago-page-media-bullets",
       "blocks": {
-        "heading_Xrq8mT": {
-          "type": "heading",
+        "column_intro_83FCzc": {
+          "type": "column_intro",
           "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
-          }
-        },
-        "text_MQMrKH": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "text_style": "body"
-          }
-        },
-        "button_eRrCJP": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false
+            "column": "1",
+            "heading": "Heading",
+            "text": ""
           }
         }
       },
-      "block_order": ["heading_Xrq8mT", "text_MQMrKH", "button_eRrCJP"],
-      "name": "t:sections.image-with-text.presets.name",
+      "block_order": [
+        "column_intro_83FCzc"
+      ],
+      "name": "Lago media bullets",
       "settings": {
-        "image": "shopify://shop_images/why_lago_grid_image_3.jpg",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "",
+        "heading": "Section heading",
+        "heading_size": "h1",
         "color_scheme": "",
+        "column_1_title": "",
+        "column_1_text": "",
+        "column_2_image": "shopify://shop_images/filtration_grid_image.jpg",
+        "column_2_title": "",
+        "column_2_text": "",
         "padding_top": 36,
         "padding_bottom": 36
       }
     }
   },
-  "order": ["main", "lago_page_media_bullets", "image_with_text_V6ipiU"]
+  "order": [
+    "main",
+    "lago_page_media_bullets_YTXywG",
+    "lago_page_media_bullets_rGU9GP"
+  ]
 }
-
