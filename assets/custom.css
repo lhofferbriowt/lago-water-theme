@@ -494,3 +494,53 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
     padding-right: 0;
   }
 }
+
+/* Third-party app submit control — match homepage `.l15-btn` (Lago hero CTA) */
+.submit-button-wrapper {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0;
+  box-shadow: none !important;
+}
+
+.submit-button-wrapper button,
+.submit-button-wrapper input[type="submit"],
+.submit-button-wrapper input[type="button"],
+.submit-button-wrapper a {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  min-width: 12.5rem;
+  padding: 16px 32px !important;
+  margin: 0 !important;
+  background: #4a71aa !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  cursor: pointer;
+  transform: translateY(1px);
+  transition: opacity 0.2s ease, transform 0.15s ease;
+  font-family: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  box-shadow: none !important;
+}
+
+.submit-button-wrapper button:hover,
+.submit-button-wrapper input[type="submit"]:hover,
+.submit-button-wrapper input[type="button"]:hover,
+.submit-button-wrapper a:hover {
+  opacity: 0.92;
+}
+
+.submit-button-wrapper button:active,
+.submit-button-wrapper input[type="submit"]:active,
+.submit-button-wrapper input[type="button"]:active,
+.submit-button-wrapper a:active {
+  transform: translateY(2px);
+}
