@@ -43,7 +43,8 @@
 /* Contact page: use Lago homepage button styling */
 .contact .button,
 .contact .button:visited,
-.contact button.button {
+.contact button.button,
+.contact button.pc--opt-out-form-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -63,12 +64,14 @@
 }
 
 .contact .button:hover,
-.contact button.button:hover {
+.contact button.button:hover,
+.contact button.pc--opt-out-form-button:hover {
   opacity: 0.92;
 }
 
 .contact .button:active,
-.contact button.button:active {
+.contact button.button:active,
+.contact button.pc--opt-out-form-button:active {
   transform: translateY(2px);
 }
 
