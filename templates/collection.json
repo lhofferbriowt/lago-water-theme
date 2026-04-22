@@ -154,6 +154,14 @@
     "lago_collection_solution_grid_FWKwyz": {
       "type": "lago-collection-solution-grid",
       "blocks": {
+        "lago_csg_card_MzAzLq": {
+          "type": "lago_csg_card",
+          "settings": {
+            "image": "shopify://shop_images/ice_machines_under_counter_2x_7e54d399-df71-432b-8e66-7412f4071f89.png",
+            "title": "Ice Makers",
+            "link": "shopify://collections/ice-makers"
+          }
+        },
         "lago_csg_card_t6QEgD": {
           "type": "lago_csg_card",
           "settings": {
@@ -180,6 +188,7 @@
         }
       },
       "block_order": [
+        "lago_csg_card_MzAzLq",
         "lago_csg_card_t6QEgD",
         "lago_csg_card_8iLt8y",
         "lago_csg_card_WwjQQa"
