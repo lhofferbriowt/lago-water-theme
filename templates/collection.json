@@ -169,11 +169,20 @@
             "title": "Sparkling Dispensers",
             "link": "shopify://collections/sparkling-water-dispensers"
           }
+        },
+        "lago_csg_card_WwjQQa": {
+          "type": "lago_csg_card",
+          "settings": {
+            "image": "shopify://shop_images/10k_standup_2x_5afdd607-ec97-4862-b641-9b92cbb473c0.png",
+            "title": "Stand Up Dispensers",
+            "link": "shopify://collections/stand-up-water-dispensers"
+          }
         }
       },
       "block_order": [
         "lago_csg_card_t6QEgD",
-        "lago_csg_card_8iLt8y"
+        "lago_csg_card_8iLt8y",
+        "lago_csg_card_WwjQQa"
       ],
       "name": "Lago solution grid",
       "settings": {
