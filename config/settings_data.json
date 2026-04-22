@@ -11,6 +11,7 @@
   "current": {
     "logo": "shopify://shop_images/grey_logo_82235082-32ea-4ef2-bd61-39e736cea307.png",
     "logo_width": 60,
+    "favicon": "shopify://shop_images/lago_favicon.png",
     "type_header_font": "arimo_n7",
     "heading_scale": 100,
     "type_body_font": "arimo_n4",
