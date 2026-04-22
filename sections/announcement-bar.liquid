@@ -34,7 +34,7 @@
         aria-label="{{ 'sections.header.announcement' | t }}"
         {{ section.blocks.first.shopify_attributes }}
       >
-        {%- if section.blocks.first.settings.text != blank -%}
+        {%- if section.blocks.first.settings.text != blank or section.blocks.first.settings.mobile_text != blank -%}
           {%- if section.blocks.first.settings.link != blank -%}
             <a
               href="{{ section.blocks.first.settings.link }}"
@@ -101,7 +101,7 @@
                   role="region"
                   aria-label="{{ 'sections.header.announcement' | t }}"
                 >
-                  {%- if block.settings.text != blank -%}
+                  {%- if block.settings.text != blank or block.settings.mobile_text != blank -%}
                     {%- if block.settings.link != blank -%}
                       <a
                         href="{{ block.settings.link }}"
@@ -280,7 +280,7 @@
           "type": "text",
           "id": "mobile_text",
           "label": "Mobile text (optional)",
-          "info": "Shown only on screens 749px and below. If blank, the main announcement text is used on mobile too."
+          "info": "Shown only on screens 749px and below. If blank, the main announcement text is used on mobile too. You can leave the main text blank and use only mobile text."
         },
         {
           "type": "url",
