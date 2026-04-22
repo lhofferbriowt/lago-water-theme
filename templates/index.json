@@ -106,7 +106,7 @@
         "pp8"
       ],
       "settings": {
-        "margin_top": 0,
+        "margin_top": 20,
         "margin_bottom": 0,
         "solutions_heading": "Explore Our Solutions",
         "section_title_font_size": 30,
@@ -169,8 +169,8 @@
         "ss6"
       ],
       "settings": {
-        "margin_top": 0,
-        "margin_bottom": 0,
+        "margin_top": 20,
+        "margin_bottom": 20,
         "settings_heading": "Lago Solutions For Every Setting",
         "settings_title_font_size": 28,
         "settings_strip_caption_font_size": 16
@@ -219,8 +219,8 @@
         "dv4"
       ],
       "settings": {
-        "margin_top": 0,
-        "margin_bottom": 0,
+        "margin_top": 20,
+        "margin_bottom": 20,
         "dealer_section_heading": "Join the Lago Dealer Network",
         "dealer_heading_font_size": 28,
         "value_row_text_font_size": 14,
