@@ -17,7 +17,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "855-LAGOWATER",
+            "text": "",
             "mobile_text": "855-LAGOWATER",
             "link": "tel:1855524692837"
           }
