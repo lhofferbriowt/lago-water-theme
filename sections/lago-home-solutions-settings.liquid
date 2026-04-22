@@ -6,7 +6,7 @@
 
 <div
   class="lago-home-1-5"
-  style="--l15-settings-title-font-size: {{ section.settings.settings_title_font_size }}px; --l15-settings-strip-caption-font-size: {{ section.settings.settings_strip_caption_font_size }}px;"
+  style="padding-top: {{ section.settings.margin_top }}px; padding-bottom: {{ section.settings.margin_bottom }}px; --l15-settings-title-font-size: {{ section.settings.settings_title_font_size }}px; --l15-settings-strip-caption-font-size: {{ section.settings.settings_strip_caption_font_size }}px;"
 >
   <div class="lago-home-1-5__inner">
     <section class="l15-settings" aria-labelledby="l15-settings-heading">
@@ -45,6 +45,26 @@
   "tag": "section",
   "class": "section section-lago-home-solutions-settings",
   "settings": [
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Top spacing",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom spacing",
+      "default": 0
+    },
     {
       "type": "text",
       "id": "settings_heading",
