@@ -507,39 +507,17 @@
   }
 }
 
-/* Footer logo: first column on tablet/desktop; keep legacy bottom bar logo on small screens only */
+/* Footer logo: first column at all breakpoints */
 .footer-block--footer-logo-first {
-  display: none;
-}
-
-@media screen and (min-width: 750px) {
-  .footer-block--footer-logo-first {
-    display: block;
-  }
-
-  .footer-block--footer-logo-first .footer-block__brand-link {
-    display: inline-block;
-    line-height: 0;
-  }
-
-  .footer-block--footer-logo-first .footer-block__footer-logo-img {
-    width: min(100%, var(--footer-logo-width, 180px));
-    max-width: min(100%, var(--footer-logo-width, 180px));
-    height: auto;
-  }
-}
-
-.footer-logo--mobile-only {
   display: block;
 }
 
-@media screen and (min-width: 750px) {
-  .footer-logo--mobile-only {
-    display: none;
-  }
+.footer-block--footer-logo-first .footer-block__brand-link {
+  display: inline-block;
+  line-height: 0;
 }
 
-.footer-logo__img {
+.footer-block--footer-logo-first .footer-block__footer-logo-img {
   width: min(100%, var(--footer-logo-width, 180px));
   max-width: min(100%, var(--footer-logo-width, 180px));
   height: auto;
