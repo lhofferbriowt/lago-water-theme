@@ -161,10 +161,19 @@
             "title": "Countertop Dispensers",
             "link": "shopify://collections/countertop-water-dispensers"
           }
+        },
+        "lago_csg_card_8iLt8y": {
+          "type": "lago_csg_card",
+          "settings": {
+            "image": "shopify://shop_images/sparkling_water_dispenser_2x_e8f3d36b-0e80-4179-ac95-9fa131341ad6.png",
+            "title": "Sparkling Dispensers",
+            "link": "shopify://collections/sparkling-water-dispensers"
+          }
         }
       },
       "block_order": [
-        "lago_csg_card_t6QEgD"
+        "lago_csg_card_t6QEgD",
+        "lago_csg_card_8iLt8y"
       ],
       "name": "Lago solution grid",
       "settings": {
