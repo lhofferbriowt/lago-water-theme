@@ -26,8 +26,8 @@
         "description_cta_JgWC3n": {
           "type": "description_cta",
           "settings": {
-            "label": "Become a Dealer",
-            "link": "shopify://pages/become-a-dealer",
+            "label": "Get An Estimate",
+            "link": "shopify://pages/get-an-estimate",
             "alignment": "left",
             "button_color": "#4a71aa"
           }
