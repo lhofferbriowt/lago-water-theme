@@ -158,13 +158,15 @@
 }
 
 /* Homepage hero: theme-editor controlled spacing + typography */
-.section-lago-home-1-5 .l15-hero__text {
+.section-lago-home-1-5 .l15-hero__text,
+.section-lago-home-hero .l15-hero__text {
   margin-top: var(--l15-hero-heading-mt, 0);
   margin-bottom: var(--l15-hero-heading-mb, 1.25rem);
   font-size: var(--l15-hero-heading-font-size-mobile, 1.5rem);
 }
 
-.section-lago-home-1-5 .l15-hero .l15-btn {
+.section-lago-home-1-5 .l15-hero .l15-btn,
+.section-lago-home-hero .l15-hero .l15-btn {
   margin-top: var(--l15-hero-button-mt, 1.25rem);
   margin-bottom: var(--l15-hero-button-mb, 0);
 }
@@ -486,7 +488,12 @@
     padding: 2.75rem 2rem 3rem;
   }
 
-  .l15-hero__text {
+  /* Theme editor desktop heading size should apply from tablet/desktop up (not only ≥990px) */
+  .section-lago-home-hero .l15-hero .l15-hero__text {
+    font-size: var(--l15-hero-heading-font-size-desktop, 2rem);
+  }
+
+  .lago-home-1-5 .l15-hero .l15-hero__text {
     font-size: 2rem;
     line-height: 1.2;
     max-width: min(100%, 36rem);
@@ -529,7 +536,7 @@
 
 /* Display-sized hero line (theme html uses ~62.5% rem ⇒ 4.8rem ≈ 48px) */
 @media screen and (min-width: 1024px) {
-  .l15-hero__text {
+  .lago-home-1-5 .l15-hero .l15-hero__text {
     font-size: 4.8rem;
     line-height: 1.2;
     max-width: min(100%, 52rem);
@@ -600,7 +607,8 @@
     height: 6.25rem;
   }
 
-  .section-lago-home-1-5 .l15-hero__text {
+  .section-lago-home-1-5 .l15-hero__text,
+  .section-lago-home-hero .l15-hero__text {
     font-size: var(--l15-hero-heading-font-size-desktop, 4.8rem);
   }
 }
