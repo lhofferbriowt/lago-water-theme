@@ -431,6 +431,15 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
   min-height: clamp(23rem, 62vmin, 39rem);
 }
 
+/* Optional: remove reserved bullet strip space for products without bullet content */
+#product-grid.lago-product-grid--collapse-empty-bullets .grid__item--lago-bullets-empty-slot {
+  min-height: calc(clamp(23rem, 62vmin, 39rem) - var(--lago-product-bullets-slot));
+}
+
+#product-grid.lago-product-grid--collapse-empty-bullets .grid__item--lago-bullets-empty-slot .lago-product-bullets--empty {
+  display: none;
+}
+
 #product-grid .grid__item > .card-wrapper {
   width: 100%;
   display: flex;
