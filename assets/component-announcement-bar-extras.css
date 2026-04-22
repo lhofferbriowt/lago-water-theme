@@ -1,0 +1,20 @@
+/* Announcement bar extras (Lago): mobile-only text + typography controls */
+
+.announcement-bar-section .announcement-bar__message {
+  font-size: var(--announcement-text-font-size, inherit);
+  color: var(--announcement-text-color, inherit);
+}
+
+.announcement-bar-section .announcement-bar__text--mobile {
+  display: none;
+}
+
+@media screen and (max-width: 749px) {
+  .announcement-bar-section .announcement-bar__text--desktop {
+    display: none;
+  }
+
+  .announcement-bar-section .announcement-bar__text--mobile {
+    display: inline;
+  }
+}

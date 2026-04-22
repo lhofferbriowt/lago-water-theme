@@ -1,5 +1,6 @@
 {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-announcement-bar-extras.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
   assign social_icons = true
@@ -20,6 +21,7 @@
 
 <div
   class="utility-bar color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator and section.blocks.size > 0 %} utility-bar--bottom-border{% elsif section.settings.show_line_separator and section.settings.show_social and social_icons%} utility-bar--bottom-border-social-only{% endif %}{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header-localization{% endif %}"
+  style="--announcement-text-font-size: {{ section.settings.announcement_text_font_size }}px;{% if section.settings.announcement_text_color != blank %} --announcement-text-color: {{ section.settings.announcement_text_color }};{% endif %}"
 >
   <div class="page-width utility-bar__grid{% if announcement_bar and language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--3-col{% elsif language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--2-col{% endif %}">
     {%- if section.settings.show_social and social_icons -%}
@@ -40,7 +42,14 @@
             >
           {%- endif -%}
           <p class="announcement-bar__message h5">
-            <span>{{ section.blocks.first.settings.text | escape }}</span>
+            {%- if section.blocks.first.settings.mobile_text != blank -%}
+              {%- if section.blocks.first.settings.text != blank -%}
+                <span class="announcement-bar__text--desktop">{{ section.blocks.first.settings.text | escape }}</span>
+              {%- endif -%}
+              <span class="announcement-bar__text--mobile">{{ section.blocks.first.settings.mobile_text | escape }}</span>
+            {%- else -%}
+              <span>{{ section.blocks.first.settings.text | escape }}</span>
+            {%- endif -%}
             {%- if section.blocks.first.settings.link != blank -%}
               {{- 'icon-arrow.svg' | inline_asset_content -}}
             {%- endif -%}
@@ -100,7 +109,14 @@
                       >
                     {%- endif -%}
                     <p class="announcement-bar__message h5">
-                      <span>{{ block.settings.text | escape }}</span>
+                      {%- if block.settings.mobile_text != blank -%}
+                        {%- if block.settings.text != blank -%}
+                          <span class="announcement-bar__text--desktop">{{ block.settings.text | escape }}</span>
+                        {%- endif -%}
+                        <span class="announcement-bar__text--mobile">{{ block.settings.mobile_text | escape }}</span>
+                      {%- else -%}
+                        <span>{{ block.settings.text | escape }}</span>
+                      {%- endif -%}
                       {%- if block.settings.link != blank -%}
                         {{- 'icon-arrow.svg' | inline_asset_content -}}
                       {%- endif -%}
@@ -172,6 +188,26 @@
   },
   "settings": [
     {
+      "type": "header",
+      "content": "Announcement text"
+    },
+    {
+      "type": "range",
+      "id": "announcement_text_font_size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Announcement text font size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "announcement_text_color",
+      "label": "Announcement text color",
+      "default": "#000000"
+    },
+    {
       "type": "checkbox",
       "id": "auto_rotate",
       "label": "t:sections.announcement-bar.settings.auto_rotate.label",
@@ -239,6 +275,12 @@
           "id": "text",
           "default": "t:sections.announcement-bar.blocks.announcement.settings.text.default",
           "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
+        },
+        {
+          "type": "text",
+          "id": "mobile_text",
+          "label": "Mobile text (optional)",
+          "info": "Shown only on screens 749px and below. If blank, the main announcement text is used on mobile too."
         },
         {
           "type": "url",
