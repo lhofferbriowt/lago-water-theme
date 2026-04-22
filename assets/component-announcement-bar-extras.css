@@ -18,3 +18,14 @@
     display: inline;
   }
 }
+
+/* Hide mobile-only announcements on desktop/tablet */
+@media screen and (min-width: 750px) {
+  .announcement-bar-section .announcement-bar--mobile-only {
+    display: none;
+  }
+
+  .announcement-bar-section .announcement-bar-slide--mobile-only {
+    display: none !important;
+  }
+}
