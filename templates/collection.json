@@ -143,6 +143,8 @@
       ],
       "name": "Lago solution grid",
       "settings": {
+        "target_collections": "stand-up-water-dispensers, countertop-water-dispensers, ice-makers, sparkling-water-dispensers",
+        "target_collection": "",
         "solutions_heading": "Explore Our Filtration Systems",
         "section_title_font_size": 30,
         "path_card_label_font_size": 16,
