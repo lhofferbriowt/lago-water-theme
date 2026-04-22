@@ -7,9 +7,21 @@
 
 {%- liquid
   assign should_render = true
-  if section.settings.target_collection != blank and collection != blank
-    if collection.handle != section.settings.target_collection.handle
+  if collection != blank
+    if section.settings.target_collections != blank
+      assign targets = section.settings.target_collections | split: ','
       assign should_render = false
+      for t in targets
+        assign handle = t | strip
+        if handle != blank and collection.handle == handle
+          assign should_render = true
+          break
+        endif
+      endfor
+    elsif section.settings.target_collection != blank
+      if collection.handle != section.settings.target_collection.handle
+        assign should_render = false
+      endif
     endif
   endif
 -%}
@@ -64,10 +76,16 @@
       "content": "Explore solutions"
     },
     {
+      "type": "text",
+      "id": "target_collections",
+      "label": "Only show on collections",
+      "info": "Enter collection handles separated by commas (example: countertop-water-dispensers, ice-makers). Leave blank to show on all collections using this template."
+    },
+    {
       "type": "collection",
       "id": "target_collection",
       "label": "Only show on collection",
-      "info": "If selected, this section will only appear on that collection page. Leave blank to show on all collections using this template."
+      "info": "Legacy single-collection picker. Prefer “Only show on collections” above."
     },
     {
       "type": "text",
