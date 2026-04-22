@@ -488,13 +488,8 @@
     padding: 2.75rem 2rem 3rem;
   }
 
-  /* Theme editor desktop heading size should apply from tablet/desktop up (not only ≥990px) */
-  .section-lago-home-hero .l15-hero .l15-hero__text {
-    font-size: var(--l15-hero-heading-font-size-desktop, 2rem);
-  }
-
   .lago-home-1-5 .l15-hero .l15-hero__text {
-    font-size: 2rem;
+    font-size: var(--l15-hero-heading-font-size-desktop, 2rem);
     line-height: 1.2;
     max-width: min(100%, 36rem);
   }
@@ -537,7 +532,7 @@
 /* Display-sized hero line (theme html uses ~62.5% rem ⇒ 4.8rem ≈ 48px) */
 @media screen and (min-width: 1024px) {
   .lago-home-1-5 .l15-hero .l15-hero__text {
-    font-size: 4.8rem;
+    font-size: var(--l15-hero-heading-font-size-desktop, 4.8rem);
     line-height: 1.2;
     max-width: min(100%, 52rem);
   }
