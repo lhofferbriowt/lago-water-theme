@@ -13,6 +13,16 @@
   if section.blocks.size > 0
     assign announcement_bar = true
   endif
+
+  assign announcement_desktop_slide_count = 0
+  assign announcement_mobile_only_slide_count = 0
+  for block in section.blocks
+    if block.settings.text != blank
+      assign announcement_desktop_slide_count = announcement_desktop_slide_count | plus: 1
+    elsif block.settings.mobile_text != blank
+      assign announcement_mobile_only_slide_count = announcement_mobile_only_slide_count | plus: 1
+    endif
+  endfor
 -%}
 
 {% if social_icons %}
@@ -29,7 +39,7 @@
     {%- endif -%}
     {%- if section.blocks.size == 1 -%}
       <div
-        class="announcement-bar{% if section.settings.show_social %} announcement-bar--one-announcement{% endif %}"
+        class="announcement-bar{% if section.settings.show_social %} announcement-bar--one-announcement{% endif %}{% if section.blocks.first.settings.mobile_text != blank and section.blocks.first.settings.text == blank %} announcement-bar--mobile-only{% endif %}"
         role="region"
         aria-label="{{ 'sections.header.announcement' | t }}"
         {{ section.blocks.first.shopify_attributes }}
@@ -61,7 +71,7 @@
       </div>
     {%- elsif section.blocks.size > 1 -%}
       <slideshow-component
-        class="announcement-bar"
+        class="announcement-bar{% if announcement_desktop_slide_count == 0 and announcement_mobile_only_slide_count > 0 %} announcement-bar--mobile-only{% endif %}"
         role="region"
         aria-roledescription="{{ 'sections.announcements.carousel' | t }}"
         aria-label="{{ 'sections.announcements.announcement_bar' | t }}"
@@ -88,7 +98,7 @@
           >
             {%- for block in section.blocks -%}
               <div
-                class="slideshow__slide slider__slide grid__item grid--1-col"
+                class="slideshow__slide slider__slide grid__item grid--1-col{% if block.settings.mobile_text != blank and block.settings.text == blank %} announcement-bar-slide--mobile-only{% endif %}"
                 id="Slide-{{ section.id }}-{{ forloop.index }}"
                 {{ block.shopify_attributes }}
                 role="group"
