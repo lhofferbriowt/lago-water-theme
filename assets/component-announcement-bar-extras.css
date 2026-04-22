@@ -2,6 +2,7 @@
 
 .announcement-bar-section .announcement-bar__message {
   font-size: var(--announcement-text-font-size, inherit);
+  font-weight: var(--announcement-text-font-weight, inherit);
   color: var(--announcement-text-color, inherit);
 }
 
