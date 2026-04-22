@@ -1,0 +1,136 @@
+{{ 'section-lago-home-1-5.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign product_blocks = section.blocks | where: 'type', 'product_path'
+-%}
+
+<div
+  class="lago-home-1-5"
+  style="--l15-path-label-font-size: {{ section.settings.path_card_label_font_size }}px; --l15-path-label-font-weight: {% if section.settings.path_card_label_bold %}600{% else %}400{% endif %}; --l15-section-title-font-size: {{ section.settings.section_title_font_size }}px;"
+>
+  <div class="lago-home-1-5__inner">
+    <section class="l15-solutions" aria-labelledby="l15-solutions-heading">
+      <h2 id="l15-solutions-heading" class="l15-section-title">{{ section.settings.solutions_heading | escape }}</h2>
+      <div class="l15-path-grid">
+        {%- for block in product_blocks -%}
+          <a class="l15-path-card" href="{{ block.settings.link | default: '#' }}" {{ block.shopify_attributes }}>
+            <div class="l15-path-card__img">
+              {%- if block.settings.image != blank -%}
+                {%- assign l15_path_alt = block.settings.image.alt | default: block.settings.title -%}
+                {{
+                  block.settings.image
+                  | image_url: width: 480
+                  | image_tag:
+                    loading: 'lazy',
+                    sizes: '(max-width: 749px) 45vw, 28vw',
+                    widths: '240, 360, 480',
+                    alt: l15_path_alt
+                }}
+              {%- else -%}
+                <span class="l15-path-card__placeholder" aria-hidden="true"></span>
+              {%- endif -%}
+            </div>
+            <span class="l15-path-card__label">{{ block.settings.title | escape }}</span>
+          </a>
+        {%- endfor -%}
+      </div>
+    </section>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lago home — Explore solutions",
+  "tag": "section",
+  "class": "section section-lago-home-explore-solutions",
+  "settings": [
+    {
+      "type": "text",
+      "id": "solutions_heading",
+      "label": "Heading",
+      "default": "Explore Our Solutions"
+    },
+    {
+      "type": "range",
+      "id": "section_title_font_size",
+      "min": 12,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading font size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "path_card_label_font_size",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Solution card label font size",
+      "default": 12
+    },
+    {
+      "type": "checkbox",
+      "id": "path_card_label_bold",
+      "label": "Bold solution card labels",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_path",
+      "name": "Solution card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Countertop dispensers"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lago home — Explore solutions",
+      "blocks": [
+        {
+          "type": "product_path",
+          "settings": {
+            "title": "Countertop Dispensers"
+          }
+        },
+        {
+          "type": "product_path",
+          "settings": {
+            "title": "Sparkling Dispensers"
+          }
+        },
+        {
+          "type": "product_path",
+          "settings": {
+            "title": "Stand Up Dispensers"
+          }
+        },
+        {
+          "type": "product_path",
+          "settings": {
+            "title": "Ice Makers"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

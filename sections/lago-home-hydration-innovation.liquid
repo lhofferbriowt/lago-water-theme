@@ -1,0 +1,150 @@
+{{ 'section-lago-home-1-5.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign category_blocks = section.blocks | where: 'type', 'dealer_category'
+-%}
+
+<div
+  class="lago-home-1-5"
+  style="--l15-cat-label-font-size: {{ section.settings.cat_label_font_size }}px; --l15-innovation-heading-font-size: {{ section.settings.innovation_heading_font_size }}px; --l15-innovation-lead-font-size: {{ section.settings.innovation_lead_font_size }}px;"
+>
+  <div class="lago-home-1-5__inner">
+    <section class="l15-innovation" aria-labelledby="l15-innovation-heading">
+      <h2 id="l15-innovation-heading" class="l15-innovation__title">{{ section.settings.innovation_heading | escape }}</h2>
+      <p class="l15-innovation__lead">{{ section.settings.innovation_lead | escape }}</p>
+
+      <div class="l15-cat-grid">
+        {%- for block in category_blocks -%}
+          <div class="l15-cat" {{ block.shopify_attributes }}>
+            <div class="l15-cat__img">
+              {%- if block.settings.image != blank -%}
+                {%- assign l15_cat_alt = block.settings.image.alt | default: block.settings.title -%}
+                {{
+                  block.settings.image
+                  | image_url: width: 300
+                  | image_tag: loading: 'lazy', sizes: '120px', widths: '150, 300', alt: l15_cat_alt
+                }}
+              {%- endif -%}
+            </div>
+            <p class="l15-cat__label">{{ block.settings.title | newline_to_br }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      {%- if section.settings.innovation_cta_label != blank -%}
+        <div class="l15-innovation__cta">
+          <a class="l15-btn" href="{{ section.settings.innovation_cta_link | default: '#' }}">
+            {{ section.settings.innovation_cta_label | escape }}
+          </a>
+        </div>
+      {%- endif -%}
+    </section>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lago home — Hydration innovation",
+  "tag": "section",
+  "class": "section section-lago-home-hydration-innovation",
+  "settings": [
+    {
+      "type": "range",
+      "id": "cat_label_font_size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Category label font size",
+      "default": 16
+    },
+    {
+      "type": "text",
+      "id": "innovation_heading",
+      "label": "Heading",
+      "default": "Hydration innovation is what we do."
+    },
+    {
+      "type": "range",
+      "id": "innovation_heading_font_size",
+      "min": 12,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading font size",
+      "default": 16
+    },
+    {
+      "type": "textarea",
+      "id": "innovation_lead",
+      "label": "Supporting text",
+      "default": "We provide our dealers the largest product offering in the industry with the most advanced technology."
+    },
+    {
+      "type": "range",
+      "id": "innovation_lead_font_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Supporting text font size",
+      "default": 16
+    },
+    {
+      "type": "text",
+      "id": "innovation_cta_label",
+      "label": "Button label",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "innovation_cta_link",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "dealer_category",
+      "name": "Category tile",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Title (line breaks allowed)",
+          "default": "POU RO+\nDispensers"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lago home — Hydration innovation",
+      "blocks": [
+        {
+          "type": "dealer_category",
+          "settings": {
+            "title": "POU RO+\nDispensers"
+          }
+        },
+        {
+          "type": "dealer_category",
+          "settings": {
+            "title": "Sparkling Dispensers"
+          }
+        },
+        {
+          "type": "dealer_category",
+          "settings": {
+            "title": "Undersink Systems"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
