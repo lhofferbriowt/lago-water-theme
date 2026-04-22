@@ -150,12 +150,25 @@
         "path_card_label_font_size": 16,
         "path_card_label_bold": false
       }
+    },
+    "lago_collection_solution_grid_FWKwyz": {
+      "type": "lago-collection-solution-grid",
+      "name": "Lago solution grid",
+      "settings": {
+        "target_collections": "under-sink-filtration-systems, pou-reverse-osmosis-dispensers, point-of-entry-filtration-systems, industrial-filtration-systems",
+        "target_collection": "",
+        "solutions_heading": "Explore Our Water Dispensers",
+        "section_title_font_size": 30,
+        "path_card_label_font_size": 16,
+        "path_card_label_bold": false
+      }
     }
   },
   "order": [
     "lago_collection_hero",
     "product-grid",
     "lago_dealer_value_prop",
-    "lago_collection_solution_grid_Kreijf"
+    "lago_collection_solution_grid_Kreijf",
+    "lago_collection_solution_grid_FWKwyz"
   ]
 }
