@@ -65,7 +65,7 @@
           "settings": {
             "image": "shopify://shop_images/poe_filtration_systems_2x_c84af0d4-bf29-4170-aec3-91b3b3eaa0ce.png",
             "title": "Point-of-Entry Filtration Systems",
-            "link": ""
+            "link": "shopify://collections/point-of-entry-filtration-systems"
           }
         },
         "pp8": {
@@ -73,7 +73,7 @@
           "settings": {
             "image": "shopify://shop_images/skid_mounted_ro_water_treatment_solutions_2x_86bfe469-7bef-405e-b2b3-6367cd658574.png",
             "title": "Industrial RO Systems",
-            "link": ""
+            "link": "shopify://collections/industrial-filtration-systems"
           }
         },
         "dv1": {
