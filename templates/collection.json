@@ -154,14 +154,6 @@
     "lago_collection_solution_grid_FWKwyz": {
       "type": "lago-collection-solution-grid",
       "blocks": {
-        "lago_csg_card_MzAzLq": {
-          "type": "lago_csg_card",
-          "settings": {
-            "image": "shopify://shop_images/ice_machines_under_counter_2x_7e54d399-df71-432b-8e66-7412f4071f89.png",
-            "title": "Ice Makers",
-            "link": "shopify://collections/ice-makers"
-          }
-        },
         "lago_csg_card_t6QEgD": {
           "type": "lago_csg_card",
           "settings": {
@@ -185,19 +177,27 @@
             "title": "Stand Up Dispensers",
             "link": "shopify://collections/stand-up-water-dispensers"
           }
+        },
+        "lago_csg_card_MzAzLq": {
+          "type": "lago_csg_card",
+          "settings": {
+            "image": "shopify://shop_images/ice_machines_under_counter_2x_7e54d399-df71-432b-8e66-7412f4071f89.png",
+            "title": "Ice Makers",
+            "link": "shopify://collections/ice-makers"
+          }
         }
       },
       "block_order": [
-        "lago_csg_card_MzAzLq",
         "lago_csg_card_t6QEgD",
         "lago_csg_card_8iLt8y",
-        "lago_csg_card_WwjQQa"
+        "lago_csg_card_WwjQQa",
+        "lago_csg_card_MzAzLq"
       ],
       "name": "Lago solution grid",
       "settings": {
         "target_collections": "under-sink-filtration-systems, pou-reverse-osmosis-dispensers, point-of-entry-filtration-systems, industrial-filtration-systems",
         "target_collection": "",
-        "solutions_heading": "Explore Our Water Dispensers",
+        "solutions_heading": "Explore Our Water & Ice Dispensers",
         "section_title_font_size": 30,
         "path_card_label_font_size": 16,
         "path_card_label_bold": false
