@@ -153,6 +153,19 @@
     },
     "lago_collection_solution_grid_FWKwyz": {
       "type": "lago-collection-solution-grid",
+      "blocks": {
+        "lago_csg_card_t6QEgD": {
+          "type": "lago_csg_card",
+          "settings": {
+            "image": "shopify://shop_images/10k-countertop-dispenser_front_2.jpg",
+            "title": "Countertop Dispensers",
+            "link": "shopify://collections/countertop-water-dispensers"
+          }
+        }
+      },
+      "block_order": [
+        "lago_csg_card_t6QEgD"
+      ],
       "name": "Lago solution grid",
       "settings": {
         "target_collections": "under-sink-filtration-systems, pou-reverse-osmosis-dispensers, point-of-entry-filtration-systems, industrial-filtration-systems",
