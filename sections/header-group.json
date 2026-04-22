@@ -18,7 +18,7 @@
           "type": "announcement",
           "settings": {
             "text": "",
-            "mobile_text": "Call Us: 855-LAGOWATER",
+            "mobile_text": "855-LAGOWATER",
             "link": "tel:1855524692837"
           }
         }
@@ -27,7 +27,8 @@
         "announcement-bar-0"
       ],
       "settings": {
-        "announcement_text_font_size": 14,
+        "announcement_text_font_size": 12,
+        "announcement_text_font_weight": 400,
         "announcement_text_color": "#ffffff",
         "auto_rotate": false,
         "change_slides_speed": 5,
