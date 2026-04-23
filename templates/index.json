@@ -33,7 +33,7 @@
         "pp1": {
           "type": "product_path",
           "settings": {
-            "image": "shopify://shop_images/counter_top_water_dispenser_2x_e98f8a94-f93f-491d-9a73-97cbc4ac69f9.png",
+            "image": "shopify://shop_images/counter_top_4k_water_dispenser_2x_7d3bf183-85b7-428a-b2a1-6a767b927ec5.png",
             "title": "Countertop Dispensers",
             "link": "shopify://collections/countertop-water-dispensers"
           }
@@ -49,7 +49,7 @@
         "pp3": {
           "type": "product_path",
           "settings": {
-            "image": "shopify://shop_images/10k_standup_2x_5afdd607-ec97-4862-b641-9b92cbb473c0.png",
+            "image": "shopify://shop_images/5k_standup_2x_132898d5-6c08-4b18-8464-daf84fe5f9f8.png",
             "title": "Stand Up Dispensers",
             "link": "shopify://collections/stand-up-water-dispensers"
           }
