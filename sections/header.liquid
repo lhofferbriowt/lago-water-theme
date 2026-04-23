@@ -247,6 +247,32 @@
           </localization-form>
         {%- endif -%}
       </div>
+      {%- if section.settings.mobile_phone_show -%}
+        {%- assign phone_raw = section.settings.mobile_phone_number | strip -%}
+        {%- if phone_raw != blank -%}
+          {%- assign phone_tel = phone_raw | downcase | replace: 'tel:', '' | strip -%}
+          {%- assign phone_tel = phone_tel | remove: ' ' | remove: '(' | remove: ')' | remove: '-' | remove: '.' | remove: '–' -%}
+          <a
+            href="tel:{{ phone_tel }}"
+            class="header__icon header__icon--phone header__icon--phone-mobile link focus-inset"
+            aria-label="{{ 'sections.header.mobile_phone_aria' | t: number: phone_raw }}"
+          >
+            {%- if section.settings.mobile_phone_icon != blank -%}
+              <span class="svg-wrapper header__icon--phone-img-wrap">
+                <img
+                  src="{{ section.settings.mobile_phone_icon | image_url: width: 64 }}"
+                  alt=""
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                >
+              </span>
+            {%- else -%}
+              <span class="svg-wrapper">{{ 'icon-phone.svg' | inline_asset_content }}</span>
+            {%- endif -%}
+          </a>
+        {%- endif -%}
+      {%- endif -%}
       {% render 'header-search', input_id: 'Search-In-Modal' %}
 
       {%- if shop.customer_accounts_enabled -%}
@@ -610,6 +636,29 @@
       "default": true,
       "label": "t:sections.header.settings.enable_customer_avatar.label",
       "info": "t:sections.header.settings.enable_customer_avatar.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.header.settings.mobile_phone_header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_phone_show",
+      "default": true,
+      "label": "t:sections.header.settings.mobile_phone_show.label"
+    },
+    {
+      "type": "text",
+      "id": "mobile_phone_number",
+      "default": "1855524692837",
+      "label": "t:sections.header.settings.mobile_phone_number.label",
+      "info": "t:sections.header.settings.mobile_phone_number.info"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_phone_icon",
+      "label": "t:sections.header.settings.mobile_phone_icon.label",
+      "info": "t:sections.header.settings.mobile_phone_icon.info"
     },
     {
       "type": "header",

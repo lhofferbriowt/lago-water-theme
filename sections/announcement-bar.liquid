@@ -1,5 +1,6 @@
 {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-announcement-bar-extras.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
   assign social_icons = true
@@ -12,6 +13,16 @@
   if section.blocks.size > 0
     assign announcement_bar = true
   endif
+
+  assign announcement_desktop_slide_count = 0
+  assign announcement_mobile_only_slide_count = 0
+  for block in section.blocks
+    if block.settings.text != blank
+      assign announcement_desktop_slide_count = announcement_desktop_slide_count | plus: 1
+    elsif block.settings.mobile_text != blank
+      assign announcement_mobile_only_slide_count = announcement_mobile_only_slide_count | plus: 1
+    endif
+  endfor
 -%}
 
 {% if social_icons %}
@@ -20,6 +31,7 @@
 
 <div
   class="utility-bar color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator and section.blocks.size > 0 %} utility-bar--bottom-border{% elsif section.settings.show_line_separator and section.settings.show_social and social_icons%} utility-bar--bottom-border-social-only{% endif %}{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header-localization{% endif %}"
+  style="--announcement-text-font-size: {{ section.settings.announcement_text_font_size }}px; --announcement-text-font-weight: {{ section.settings.announcement_text_font_weight }};{% if section.settings.announcement_text_color != blank %} --announcement-text-color: {{ section.settings.announcement_text_color }};{% endif %}"
 >
   <div class="page-width utility-bar__grid{% if announcement_bar and language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--3-col{% elsif language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--2-col{% endif %}">
     {%- if section.settings.show_social and social_icons -%}
@@ -27,12 +39,12 @@
     {%- endif -%}
     {%- if section.blocks.size == 1 -%}
       <div
-        class="announcement-bar{% if section.settings.show_social %} announcement-bar--one-announcement{% endif %}"
+        class="announcement-bar{% if section.settings.show_social %} announcement-bar--one-announcement{% endif %}{% if section.blocks.first.settings.mobile_text != blank and section.blocks.first.settings.text == blank %} announcement-bar--mobile-only{% endif %}"
         role="region"
         aria-label="{{ 'sections.header.announcement' | t }}"
         {{ section.blocks.first.shopify_attributes }}
       >
-        {%- if section.blocks.first.settings.text != blank -%}
+        {%- if section.blocks.first.settings.text != blank or section.blocks.first.settings.mobile_text != blank -%}
           {%- if section.blocks.first.settings.link != blank -%}
             <a
               href="{{ section.blocks.first.settings.link }}"
@@ -40,7 +52,14 @@
             >
           {%- endif -%}
           <p class="announcement-bar__message h5">
-            <span>{{ section.blocks.first.settings.text | escape }}</span>
+            {%- if section.blocks.first.settings.mobile_text != blank -%}
+              {%- if section.blocks.first.settings.text != blank -%}
+                <span class="announcement-bar__text--desktop">{{ section.blocks.first.settings.text | escape }}</span>
+              {%- endif -%}
+              <span class="announcement-bar__text--mobile">{{ section.blocks.first.settings.mobile_text | escape }}</span>
+            {%- else -%}
+              <span>{{ section.blocks.first.settings.text | escape }}</span>
+            {%- endif -%}
             {%- if section.blocks.first.settings.link != blank -%}
               {{- 'icon-arrow.svg' | inline_asset_content -}}
             {%- endif -%}
@@ -52,7 +71,7 @@
       </div>
     {%- elsif section.blocks.size > 1 -%}
       <slideshow-component
-        class="announcement-bar"
+        class="announcement-bar{% if announcement_desktop_slide_count == 0 and announcement_mobile_only_slide_count > 0 %} announcement-bar--mobile-only{% endif %}"
         role="region"
         aria-roledescription="{{ 'sections.announcements.carousel' | t }}"
         aria-label="{{ 'sections.announcements.announcement_bar' | t }}"
@@ -79,7 +98,7 @@
           >
             {%- for block in section.blocks -%}
               <div
-                class="slideshow__slide slider__slide grid__item grid--1-col"
+                class="slideshow__slide slider__slide grid__item grid--1-col{% if block.settings.mobile_text != blank and block.settings.text == blank %} announcement-bar-slide--mobile-only{% endif %}"
                 id="Slide-{{ section.id }}-{{ forloop.index }}"
                 {{ block.shopify_attributes }}
                 role="group"
@@ -92,7 +111,7 @@
                   role="region"
                   aria-label="{{ 'sections.header.announcement' | t }}"
                 >
-                  {%- if block.settings.text != blank -%}
+                  {%- if block.settings.text != blank or block.settings.mobile_text != blank -%}
                     {%- if block.settings.link != blank -%}
                       <a
                         href="{{ block.settings.link }}"
@@ -100,7 +119,14 @@
                       >
                     {%- endif -%}
                     <p class="announcement-bar__message h5">
-                      <span>{{ block.settings.text | escape }}</span>
+                      {%- if block.settings.mobile_text != blank -%}
+                        {%- if block.settings.text != blank -%}
+                          <span class="announcement-bar__text--desktop">{{ block.settings.text | escape }}</span>
+                        {%- endif -%}
+                        <span class="announcement-bar__text--mobile">{{ block.settings.mobile_text | escape }}</span>
+                      {%- else -%}
+                        <span>{{ block.settings.text | escape }}</span>
+                      {%- endif -%}
                       {%- if block.settings.link != blank -%}
                         {{- 'icon-arrow.svg' | inline_asset_content -}}
                       {%- endif -%}
@@ -172,6 +198,35 @@
   },
   "settings": [
     {
+      "type": "header",
+      "content": "Announcement text"
+    },
+    {
+      "type": "range",
+      "id": "announcement_text_font_size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Announcement text font size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "announcement_text_font_weight",
+      "min": 300,
+      "max": 800,
+      "step": 100,
+      "label": "Announcement text font weight",
+      "default": 400
+    },
+    {
+      "type": "color",
+      "id": "announcement_text_color",
+      "label": "Announcement text color",
+      "default": "#000000"
+    },
+    {
       "type": "checkbox",
       "id": "auto_rotate",
       "label": "t:sections.announcement-bar.settings.auto_rotate.label",
@@ -239,6 +294,12 @@
           "id": "text",
           "default": "t:sections.announcement-bar.blocks.announcement.settings.text.default",
           "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
+        },
+        {
+          "type": "text",
+          "id": "mobile_text",
+          "label": "Mobile text (optional)",
+          "info": "Shown only on screens 749px and below. If blank, the main announcement text is used on mobile too. You can leave the main text blank and use only mobile text."
         },
         {
           "type": "url",

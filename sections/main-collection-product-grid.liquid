@@ -139,6 +139,12 @@
             </div>
           </div>
         {%- else -%}
+          {%- liquid
+            assign lago_collapse_empty_bullets = false
+            if section.settings.show_bullets and section.settings.collapse_empty_bullet_slot
+              assign lago_collapse_empty_bullets = true
+            endif
+          -%}
           <div
             class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
           >
@@ -150,6 +156,7 @@
                 grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
                 grid--{{ section.settings.columns_desktop }}-col-desktop
                 {% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}
+                {% if lago_collapse_empty_bullets %} lago-product-grid--collapse-empty-bullets{% endif %}
               "
             >
               {% assign skip_card_product_styles = false %}
@@ -158,8 +165,42 @@
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
+                {%- liquid
+                  assign lago_has_bullets = false
+                  if section.settings.show_bullets and section.settings.bullets_metafield != blank
+                    assign lago_bullets_ref = section.settings.bullets_metafield | strip
+                    if lago_bullets_ref contains '.'
+                      assign lago_bullets_parts = lago_bullets_ref | split: '.'
+                      assign lago_bullets_ns = lago_bullets_parts | first
+                      assign lago_bullets_key = lago_bullets_parts | last
+                      assign lago_bullets_mf = product.metafields[lago_bullets_ns][lago_bullets_key]
+
+                      if lago_bullets_mf != blank and lago_bullets_mf.value != blank
+                        if lago_bullets_mf.type contains 'list.'
+                          for item in lago_bullets_mf.value limit: section.settings.bullets_max
+                            assign lago_item = item | strip
+                            if lago_item != blank
+                              assign lago_has_bullets = true
+                              break
+                            endif
+                          endfor
+                        else
+                          assign lago_bullets_text = lago_bullets_mf.value | default: '' | replace: '\r\n', '\n' | replace: '\r', '\n'
+                          assign lago_bullets_lines = lago_bullets_text | split: '\n'
+                          for line in lago_bullets_lines limit: section.settings.bullets_max
+                            assign lago_trimmed = line | strip
+                            if lago_trimmed != blank
+                              assign lago_has_bullets = true
+                              break
+                            endif
+                          endfor
+                        endif
+                      endif
+                    endif
+                  endif
+                -%}
                 <li
-                  class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if lago_collapse_empty_bullets and section.settings.show_bullets and lago_has_bullets == false %} grid__item--lago-bullets-empty-slot{% endif %}"
                   {% if settings.animations_reveal_on_scroll %}
                     data-cascade
                     style="--animation-order: {{ forloop.index }};"
@@ -172,6 +213,10 @@
                     show_secondary_image: section.settings.show_secondary_image,
                     show_vendor: section.settings.show_vendor,
                     show_rating: section.settings.show_rating,
+                    show_bullets: section.settings.show_bullets,
+                    bullets_metafield: section.settings.bullets_metafield,
+                    bullets_max: section.settings.bullets_max,
+                    extend_height: true,
                     lazy_load: lazy_load,
                     skip_styles: skip_card_product_styles,
                     quick_add: section.settings.quick_add,
@@ -323,6 +368,39 @@
       "default": false,
       "label": "t:sections.main-collection-product-grid.settings.show_rating.label",
       "info": "t:sections.main-collection-product-grid.settings.show_rating.info"
+    },
+    {
+      "type": "header",
+      "content": "Product tile bullets"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bullets",
+      "default": false,
+      "label": "Show bullet points"
+    },
+    {
+      "type": "text",
+      "id": "bullets_metafield",
+      "label": "Bullets metafield (namespace.key)",
+      "default": "custom.product_bullets",
+      "info": "Create a product metafield that is either a list of single line text (recommended) or a multi-line text field. Example: custom.product_bullets"
+    },
+    {
+      "type": "range",
+      "id": "bullets_max",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "default": 8,
+      "label": "Max bullets to show"
+    },
+    {
+      "type": "checkbox",
+      "id": "collapse_empty_bullet_slot",
+      "default": false,
+      "label": "Collapse empty bullet placeholder",
+      "info": "When enabled, products without bullet metafield content will not reserve the fixed bullet strip height, and the collection tile min-height is reduced accordingly."
     },
     {
       "type": "select",

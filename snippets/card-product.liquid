@@ -16,6 +16,9 @@
   - horizontal_class: {Boolean} Add a card--horizontal class if set to true. Default: false (optional)
   - horizontal_quick_add: {Boolean} Changes the quick add button styles when set to true. Default: false (optional)
   - placeholder_image: {String} The placeholder image to use when no product exists. Default: 'product-apparel-2' (optional)
+  - show_bullets: {Boolean} When true, renders the bullet strip or an empty placeholder for consistent grid height. Default: false (optional)
+  - bullets_metafield: {String} Metafield reference namespace.key (optional)
+  - bullets_max: {Number} Max bullet lines (optional)
 
   Usage:
   {% render 'card-product', show_vendor: section.settings.show_vendor %}
@@ -144,6 +147,30 @@
         </div>
       </div>
       <div class="card__content">
+        {%- liquid
+          assign lago_bullets_render = false
+          assign lago_bullets_ns = ''
+          assign lago_bullets_key = ''
+          assign lago_bullets_mf = blank
+          assign lago_bullets_value = blank
+
+          if show_bullets and bullets_metafield != blank
+            assign lago_bullets_ref = bullets_metafield | strip
+            if lago_bullets_ref contains '.'
+              assign lago_bullets_parts = lago_bullets_ref | split: '.'
+              assign lago_bullets_ns = lago_bullets_parts | first
+              assign lago_bullets_key = lago_bullets_parts | last
+              assign lago_bullets_mf = card_product.metafields[lago_bullets_ns][lago_bullets_key]
+              if lago_bullets_mf != blank
+                assign lago_bullets_value = lago_bullets_mf.value
+                assign lago_bullets_render = true
+              endif
+            endif
+          endif
+        -%}
+
+        {%- comment -%}lago-product-bullets moved below the product title to appear under the heading{%- endcomment -%}
+
         <div class="card__information">
           <h3
             class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
@@ -160,6 +187,34 @@
               {{ card_product.title | escape }}
             </a>
           </h3>
+          {%- if lago_bullets_render -%}
+            <div class="lago-product-bullets" aria-label="Product features">
+              <ul class="lago-product-bullets__list" role="list">
+                {%- if lago_bullets_mf.type contains 'list.' -%}
+                  {%- for item in lago_bullets_value limit: bullets_max -%}
+                    {%- if item != blank -%}
+                      <li class="lago-product-bullets__item">{{ item | escape }}</li>
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- else -%}
+                  {%- assign lago_bullets_text = lago_bullets_value | default: '' -%}
+                  {%- assign lago_bullets_text = lago_bullets_text | replace: '\r\n', '\n' | replace: '\r', '\n' -%}
+                  {%- assign lago_bullets_lines = lago_bullets_text | split: '\n' -%}
+                  {%- for line in lago_bullets_lines limit: bullets_max -%}
+                    {%- assign trimmed = line | strip -%}
+                    {%- if trimmed != blank -%}
+                      <li class="lago-product-bullets__item">{{ trimmed | escape }}</li>
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- endif -%}
+              </ul>
+            </div>
+          {%- elsif show_bullets -%}
+            {%- comment -%}Reserve the same tile height as metafilled bullets so row layout matches peers{%- endcomment -%}
+            <div class="lago-product-bullets lago-product-bullets--empty" aria-hidden="true">
+              <ul class="lago-product-bullets__list" role="presentation"></ul>
+            </div>
+          {%- endif -%}
           <div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>

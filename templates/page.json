@@ -1,14 +1,165 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "lago_page_media_bullets_YTXywG": {
+      "type": "lago-page-media-bullets",
+      "name": "Lago media bullets",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "column_heading_font_size": 30,
+        "column_1_intro_margin_top": 32,
+        "column_1_text_padding_top": 0,
+        "column_1_image": "shopify://shop_images/why_lago_grid_image_3.jpg",
+        "column_1_title": "",
+        "column_1_text": "",
+        "column_2_intro_margin_top": 40,
+        "column_2_text_padding_top": 0,
+        "column_2_title": "We are passionate about water.",
+        "column_2_text": "<p>We strive every day to deliver premium filtration that elevates the hydration experience to a whole new level. </p><p>At Lago, we understand our dealers and their customers, which enables us to provide the best filtration products to fit your needs. Our goal is that with every sip you take, you feel the passion we put into all of our products.<br/><br/></p>",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "lago_page_media_bullets_rGU9GP": {
+      "type": "lago-page-media-bullets",
+      "blocks": {
+        "bullet_AeXAD6": {
+          "type": "bullet",
+          "settings": {
+            "column": "1",
+            "icon": "shopify://shop_images/hydration_svg.png",
+            "title": "Hydration",
+            "text": "<p>The Lago family of products enables customers to effortlessly experience premium hydration.</p>"
+          }
+        },
+        "bullet_KFxb76": {
+          "type": "bullet",
+          "settings": {
+            "column": "1",
+            "icon": "shopify://shop_images/innovation.png",
+            "title": "Innovation",
+            "text": "<p>Lago creates innovative & intuitively-designed water solutions with you in mind.</p>"
+          }
+        },
+        "bullet_hmDJpq": {
+          "type": "bullet",
+          "settings": {
+            "column": "1",
+            "icon": "shopify://shop_images/service_svg.png",
+            "title": "Service",
+            "text": "<p>Lago is a service-first company because our customer’s journey doesn’t stop at purchase.</p>"
+          }
+        },
+        "bullet_XWRXwq": {
+          "type": "bullet",
+          "settings": {
+            "column": "1",
+            "icon": "shopify://shop_images/wellness.png",
+            "title": "Wellness",
+            "text": "<p>We believe our clean water solutions lead to a better you and  a more hopeful tomorrow.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "bullet_AeXAD6",
+        "bullet_KFxb76",
+        "bullet_hmDJpq",
+        "bullet_XWRXwq"
+      ],
+      "name": "Lago media bullets",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "column_heading_font_size": 32,
+        "column_1_intro_margin_top": 32,
+        "column_1_text_padding_top": 0,
+        "column_1_title": "",
+        "column_1_text": "",
+        "column_2_intro_margin_top": 32,
+        "column_2_text_padding_top": 0,
+        "column_2_image": "shopify://shop_images/filtration_grid_image.jpg",
+        "column_2_title": "",
+        "column_2_text": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "lago_dealer_value_prop_rmypNA": {
+      "type": "lago-dealer-value-prop",
+      "blocks": {
+        "lago_dvp_row_VeUeYa": {
+          "type": "lago_dvp_row",
+          "settings": {
+            "icon": "shopify://shop_images/factory_direct_partner_svg.png",
+            "title": "Factory direct partner",
+            "text": "Dealers get access to the largest selection of water dispensers and filtration systems."
+          }
+        },
+        "lago_dvp_row_QQhgHg": {
+          "type": "lago_dvp_row",
+          "settings": {
+            "icon": "shopify://shop_images/Dedicated_partner_2x_4150a315-a7ee-4718-8f1c-249325bb90a5.png",
+            "title": "Dedicated Representative",
+            "text": "Lago customer service representatives are ready to help and act as an extension of your team."
+          }
+        },
+        "lago_dvp_row_FTqREW": {
+          "type": "lago_dvp_row",
+          "settings": {
+            "icon": "shopify://shop_images/Shipping_svg_2x_0f39c0b1-3800-4710-8608-9355ee6e5ed9.png",
+            "title": "Expedited Shipping",
+            "text": "Our streamlined logistics team ensures your products arrive exactly when you need them."
+          }
+        },
+        "lago_dvp_row_aEYWHg": {
+          "type": "lago_dvp_row",
+          "settings": {
+            "icon": "shopify://shop_images/dealer_pricing_2x_8a7f2481-8f5f-4e65-a9f1-fae80287dc3f.png",
+            "title": "Exclusive Dealer Pricing",
+            "text": "Lago dealers get exclusive access to our full catalog of products at the lowest prices."
+          }
+        }
+      },
+      "block_order": [
+        "lago_dvp_row_VeUeYa",
+        "lago_dvp_row_QQhgHg",
+        "lago_dvp_row_FTqREW",
+        "lago_dvp_row_aEYWHg"
+      ],
+      "name": "Lago dealer value prop",
+      "settings": {
+        "dealer_section_heading": "Join the Lago Dealer Network",
+        "dealer_heading_font_size": 24,
+        "value_row_text_font_size": 16,
+        "value_row_title_font_size": 16,
+        "dealer_cta_label": "Become a Dealer",
+        "dealer_cta_link": "shopify://pages/become-a-dealer"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "lago_page_media_bullets_YTXywG",
+    "lago_page_media_bullets_rGU9GP",
+    "lago_dealer_value_prop_rmypNA"
   ]
 }

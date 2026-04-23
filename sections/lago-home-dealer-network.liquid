@@ -1,0 +1,176 @@
+{{ 'section-lago-home-1-5.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign value_blocks = section.blocks | where: 'type', 'dealer_value'
+-%}
+
+<div
+  class="lago-home-1-5"
+  style="padding-top: {{ section.settings.margin_top }}px; padding-bottom: {{ section.settings.margin_bottom }}px; --l15-dealer-heading-font-size: {{ section.settings.dealer_heading_font_size }}px; --l15-value-row-title-font-size: {{ section.settings.value_row_title_font_size }}px; --l15-value-row-text-font-size: {{ section.settings.value_row_text_font_size }}px;"
+>
+  <div class="lago-home-1-5__inner">
+    <section class="l15-dealer-values" aria-labelledby="l15-dealer-heading">
+      <h2 id="l15-dealer-heading" class="l15-dealer-values__title">{{ section.settings.dealer_section_heading | escape }}</h2>
+      <div class="l15-dealer-values__grid">
+        {%- for block in value_blocks -%}
+          <div class="l15-value-row" {{ block.shopify_attributes }}>
+            <div class="l15-value-row__icon">
+              {%- if block.settings.icon != blank -%}
+                {%- assign l15_icon_alt = block.settings.icon.alt | default: block.settings.title -%}
+                {{
+                  block.settings.icon
+                  | image_url: width: 120
+                  | image_tag: loading: 'lazy', widths: '60, 120', alt: l15_icon_alt
+                }}
+              {%- endif -%}
+            </div>
+            <div>
+              <h3 class="l15-value-row__title">{{ block.settings.title | escape }}</h3>
+              <p class="l15-value-row__text">{{ block.settings.text | escape }}</p>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+      {%- if section.settings.dealer_cta_label != blank -%}
+        <div class="l15-dealer-values__cta">
+          <a class="l15-btn" href="{{ section.settings.dealer_cta_link | default: '#' }}">
+            {{ section.settings.dealer_cta_label | escape }}
+          </a>
+        </div>
+      {%- endif -%}
+    </section>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lago Home: Dealer",
+  "tag": "section",
+  "class": "section section-lago-home-dealer-network",
+  "settings": [
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Top spacing",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom spacing",
+      "default": 0
+    },
+    {
+      "type": "text",
+      "id": "dealer_section_heading",
+      "label": "Heading",
+      "default": "Join the Lago Dealer Network"
+    },
+    {
+      "type": "range",
+      "id": "dealer_heading_font_size",
+      "min": 12,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading font size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "value_row_text_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Benefit description font size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "value_row_title_font_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Benefit title font size",
+      "default": 16
+    },
+    {
+      "type": "text",
+      "id": "dealer_cta_label",
+      "label": "Button label",
+      "default": "Become a Dealer"
+    },
+    {
+      "type": "url",
+      "id": "dealer_cta_link",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "dealer_value",
+      "name": "Dealer benefit",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Factory direct partner"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Dealers get access to the largest selection of water dispensers and filtration systems."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lago Home: Dealer",
+      "blocks": [
+        {
+          "type": "dealer_value",
+          "settings": {
+            "title": "Factory Direct Partner"
+          }
+        },
+        {
+          "type": "dealer_value",
+          "settings": {
+            "title": "Dedicated Representative"
+          }
+        },
+        {
+          "type": "dealer_value",
+          "settings": {
+            "title": "Expedited Shipping"
+          }
+        },
+        {
+          "type": "dealer_value",
+          "settings": {
+            "title": "Exclusive Dealer Pricing"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

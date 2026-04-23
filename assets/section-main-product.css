@@ -231,6 +231,52 @@ product-info {
   margin: 2.5rem 0;
 }
 
+.product__description-cta {
+  margin: -1.25rem 0 2.5rem;
+}
+
+.product__description-cta--left {
+  text-align: left;
+}
+
+.product__description-cta--center {
+  text-align: center;
+}
+
+.product__description-cta--right {
+  text-align: right;
+}
+
+/* Match Lago homepage pill button style (.l15-btn) but allow per-block color. */
+.product__description-cta .l15-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 12.5rem;
+  padding: 16px 32px;
+  margin: 1.25rem 0 0;
+  background: var(--pdp-desc-cta-bg, #4a71aa);
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  /* Optical centering: caps can sit high in the box at line-height: 1 */
+  transform: translateY(1px);
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.product__description-cta .l15-btn:hover {
+  opacity: 0.92;
+}
+
+.product__description-cta .l15-btn:active {
+  transform: translateY(2px);
+}
+
 .product__text {
   margin-bottom: 0;
 }

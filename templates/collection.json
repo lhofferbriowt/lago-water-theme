@@ -12,11 +12,17 @@
     "lago_collection_hero": {
       "type": "lago-collection-hero",
       "settings": {
-        "hero_image": "shopify://shop_images/mobile_hero.png",
-        "hero_bg_desktop": "shopify://shop_images/desktop_hero_1440w.png",
+        "hero_image": "shopify://shop_images/countertop_dispensers_hero_mobile.jpg",
+        "hero_bg_desktop": "shopify://shop_images/countertop_dispensers_hero.jpg",
         "hero_heading": "",
+        "hero_heading_font_size_desktop": 48,
+        "hero_heading_font_size_mobile": 24,
+        "hero_heading_margin_top": 0,
+        "hero_heading_margin_bottom": 20,
         "hero_button_label": "Become a Dealer",
-        "hero_button_link": ""
+        "hero_button_link": "shopify://pages/become-a-dealer",
+        "hero_button_margin_top": 20,
+        "hero_button_margin_bottom": 20
       }
     },
     "product-grid": {
@@ -31,6 +37,10 @@
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
+        "show_bullets": true,
+        "bullets_metafield": "custom.product_bullets",
+        "bullets_max": 8,
+        "collapse_empty_bullet_slot": true,
         "quick_add": "none",
         "enable_filtering": true,
         "filter_type": "horizontal",
@@ -38,10 +48,168 @@
         "padding_top": 28,
         "padding_bottom": 36
       }
+    },
+    "lago_dealer_value_prop": {
+      "type": "lago-dealer-value-prop",
+      "blocks": {
+        "dvp1": {
+          "type": "lago_dvp_row",
+          "settings": {
+            "icon": "shopify://shop_images/factory_direct_partner_svg.png",
+            "title": "Factory Direct Partner",
+            "text": "Dealers get access to the largest selection of water dispensers and filtration systems."
+          }
+        },
+        "dvp2": {
+          "type": "lago_dvp_row",
+          "settings": {
+            "icon": "shopify://shop_images/Dedicated_partner_2x_4150a315-a7ee-4718-8f1c-249325bb90a5.png",
+            "title": "Dedicated Representative",
+            "text": "Lago customer service representatives are ready to help and act as an extension of your team."
+          }
+        },
+        "dvp3": {
+          "type": "lago_dvp_row",
+          "settings": {
+            "icon": "shopify://shop_images/Shipping_svg_2x_0f39c0b1-3800-4710-8608-9355ee6e5ed9.png",
+            "title": "Expedited Shipping",
+            "text": "Our streamlined logistics ensures your products arrive exactly when you need them."
+          }
+        },
+        "dvp4": {
+          "type": "lago_dvp_row",
+          "settings": {
+            "icon": "shopify://shop_images/dealer_pricing_2x_8a7f2481-8f5f-4e65-a9f1-fae80287dc3f.png",
+            "title": "Exclusive Dealer Pricing",
+            "text": "Lago dealers get exclusive access to our full catalog of products at the lowest prices."
+          }
+        }
+      },
+      "block_order": [
+        "dvp1",
+        "dvp2",
+        "dvp3",
+        "dvp4"
+      ],
+      "settings": {
+        "dealer_section_heading": "Join the Lago Dealer Network",
+        "dealer_heading_font_size": 28,
+        "value_row_text_font_size": 14,
+        "value_row_title_font_size": 16,
+        "dealer_cta_label": "Become a Dealer",
+        "dealer_cta_link": "shopify://pages/become-a-dealer"
+      }
+    },
+    "lago_collection_solution_grid_Kreijf": {
+      "type": "lago-collection-solution-grid",
+      "blocks": {
+        "lago_csg_card_HBMgPG": {
+          "type": "lago_csg_card",
+          "settings": {
+            "image": "shopify://shop_images/undersink_filtration_systems_2x_c493e92d-83f5-4fa7-bd8c-47bf92a745d0.png",
+            "title": "Undersink Filtration Systems",
+            "link": "shopify://collections/under-sink-filtration-systems"
+          }
+        },
+        "lago_csg_card_nDjfqe": {
+          "type": "lago_csg_card",
+          "settings": {
+            "image": "shopify://shop_images/light_commercial_ro_systems_2x_18e79cd6-93f3-4009-a063-2a2cd38992ad.png",
+            "title": "Light Commercial RO Systems",
+            "link": "shopify://collections/pou-reverse-osmosis-dispensers"
+          }
+        },
+        "lago_csg_card_9CDweE": {
+          "type": "lago_csg_card",
+          "settings": {
+            "image": "shopify://shop_images/poe_filtration_systems_2x_c84af0d4-bf29-4170-aec3-91b3b3eaa0ce.png",
+            "title": "Point of Entry Filtration Systems",
+            "link": "shopify://collections/point-of-entry-filtration-systems"
+          }
+        },
+        "lago_csg_card_7epTHb": {
+          "type": "lago_csg_card",
+          "settings": {
+            "image": "shopify://shop_images/skid_mounted_ro_water_treatment_solutions_2x_86bfe469-7bef-405e-b2b3-6367cd658574.png",
+            "title": "Industrial Filtration Systems",
+            "link": "shopify://collections/industrial-filtration-systems"
+          }
+        }
+      },
+      "block_order": [
+        "lago_csg_card_HBMgPG",
+        "lago_csg_card_nDjfqe",
+        "lago_csg_card_9CDweE",
+        "lago_csg_card_7epTHb"
+      ],
+      "name": "Lago solution grid",
+      "settings": {
+        "target_collections": "stand-up-water-dispensers, countertop-water-dispensers, ice-makers, sparkling-water-dispensers",
+        "target_collection": "",
+        "solutions_heading": "Explore Our Filtration Systems",
+        "section_title_font_size": 30,
+        "path_card_label_font_size": 16,
+        "path_card_label_bold": false
+      }
+    },
+    "lago_collection_solution_grid_FWKwyz": {
+      "type": "lago-collection-solution-grid",
+      "blocks": {
+        "lago_csg_card_t6QEgD": {
+          "type": "lago_csg_card",
+          "settings": {
+            "image": "shopify://shop_images/counter_top_water_dispenser_2x_e98f8a94-f93f-491d-9a73-97cbc4ac69f9.png",
+            "title": "Countertop Dispensers",
+            "link": "shopify://collections/countertop-water-dispensers"
+          }
+        },
+        "lago_csg_card_8iLt8y": {
+          "type": "lago_csg_card",
+          "settings": {
+            "image": "shopify://shop_images/sparkling_water_dispenser_2x_e8f3d36b-0e80-4179-ac95-9fa131341ad6.png",
+            "title": "Sparkling Dispensers",
+            "link": "shopify://collections/sparkling-water-dispensers"
+          }
+        },
+        "lago_csg_card_WwjQQa": {
+          "type": "lago_csg_card",
+          "settings": {
+            "image": "shopify://shop_images/10k_standup_2x_5afdd607-ec97-4862-b641-9b92cbb473c0.png",
+            "title": "Stand Up Dispensers",
+            "link": "shopify://collections/stand-up-water-dispensers"
+          }
+        },
+        "lago_csg_card_MzAzLq": {
+          "type": "lago_csg_card",
+          "settings": {
+            "image": "shopify://shop_images/ice_machines_under_counter_2x_7e54d399-df71-432b-8e66-7412f4071f89.png",
+            "title": "Ice Makers",
+            "link": "shopify://collections/ice-makers"
+          }
+        }
+      },
+      "block_order": [
+        "lago_csg_card_t6QEgD",
+        "lago_csg_card_8iLt8y",
+        "lago_csg_card_WwjQQa",
+        "lago_csg_card_MzAzLq"
+      ],
+      "name": "Lago solution grid",
+      "settings": {
+        "target_collections": "under-sink-filtration-systems, pou-reverse-osmosis-dispensers, point-of-entry-filtration-systems, industrial-filtration-systems",
+        "target_collection": "",
+        "solutions_heading": "Explore Our Water & Ice Dispensers",
+        "section_title_font_size": 30,
+        "path_card_label_font_size": 16,
+        "path_card_label_bold": false
+      }
     }
   },
   "order": [
     "lago_collection_hero",
-    "product-grid"
+    "product-grid",
+    "lago_dealer_value_prop",
+    "lago_collection_solution_grid_Kreijf",
+    "lago_collection_solution_grid_FWKwyz"
   ]
 }

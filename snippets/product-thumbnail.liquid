@@ -45,8 +45,16 @@
   endif
 -%}
 
+{%- comment -%}
+  Lago: on wide viewports, hint ~1000px display width so srcset serves 1000w+ derivatives (needs CSS room + hi-res uploads).
+{%- endcomment -%}
 {%- capture sizes -%}
-  (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | times: media_width | divided_by: desktop_columns | round }}px, (min-width: 990px) calc({{ media_width | times: 100 | divided_by: desktop_columns }}vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw / {{ mobile_columns }} - 4rem)
+  (min-width: 1400px) 1000px,
+  (min-width: 1200px) min(1000px, 72vw),
+  (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | times: media_width | divided_by: desktop_columns | round }}px,
+  (min-width: 990px) calc({{ media_width | times: 100 | divided_by: desktop_columns }}vw - 10rem),
+  (min-width: 750px) calc((100vw - 11.5rem) / 2),
+  calc(100vw / {{ mobile_columns }} - 4rem)
 {%- endcapture -%}
 
 <div
@@ -85,7 +93,7 @@
           class: image_class,
           loading: lazy,
           sizes: sizes,
-          widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
+          widths: '246, 493, 600, 713, 823, 990, 1000, 1100, 1200, 1206, 1346, 1426, 1646, 1946'
       }}
     </div>
     <button
@@ -126,7 +134,7 @@
         | image_tag:
           loading: lazy,
           sizes: sizes,
-          widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
+          widths: '246, 493, 600, 713, 823, 990, 1000, 1100, 1200, 1206, 1346, 1426, 1646, 1946'
       }}
     </button>
     <template>

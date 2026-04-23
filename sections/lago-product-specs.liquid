@@ -1,0 +1,777 @@
+{%- comment -%}
+  Lago product specifications (Brio-inspired layout, Dawn styling).
+
+  Metaobject `lago_specs_dispenser_10_6` (product metafield `custom.lago_specs_dispenser_10_6`):
+  - model, cleaning_system, water_temp, flow_rate, product_dim_wdh, hot_tank_volume,
+    heating_capacity, heating_power, cold_tank_volume, glycol_tank, combined_cooling_system,
+    cooling_capacity, cooling_power  (single line text each)
+  - Optional on same entry: display_title, manual_url (URL), supporting_image (image)
+
+  Metaobject `lago_specs_dispenser_5_4` (product metafield `custom.lago_specs_5_4`):
+  - item_no, model, cleaning_system, water_temp, flow_rate, product_dim_wdh, packing_dim_wdh,
+    net_weight, pallet_qty, container_qty
+  - Optional: display_title, manual_url, supporting_image
+
+  Other families: shared optional fields — display_title, dimensions (pipes), additional_specs (pipes),
+  spec_rows (list of lago_spec_row), materials, manual_url, supporting_image — see case branches.
+
+  Product metafields (namespace custom): lago_specs_dispenser_10_6, lago_specs_5_4 (5-4 line),
+  lago_specs_sparkling_countertop, lago_specs_sparkling_undersink, lago_specs_ice_scoop,
+  lago_specs_ice_modular — each references its definition.
+
+  Sparkling countertop (`lago_specs_sparkling_countertop`): item_no, flow_rate, dimensions_wdh, weight, pallet_qty
+  Sparkling undersink (`lago_specs_sparkling_undersink`): item_no, flow_rate, tap_tower_dimensions_wdh,
+    system_dimensions, tap_tower_system_weight, pallet_qty
+  Ice scoop (`lago_specs_ice_scoop`): item_no, dimensions_lwh, ice_output, ice_shape, bin_capacity, compressor,
+    voltage, power, condenser_unit, refrigerant, net_weight, gross_weight, carton_dimensions_lwh
+  Ice modular (`lago_specs_ice_modular`): item_no_ice_maker_head, item_no_ice_storage_bin, overall_dimensions_lwh,
+    ice_maker_head_lwh, ice_storage_bin_lwh, ice_output, ice_storage_bin_capacity, ice_shape, compressor, voltage_v_hz,
+    power, condenser_unit, refrigerant, ice_maker_head_net_weight, ice_maker_head_gross_weight,
+    ice_storage_bin_net_weight, ice_storage_bin_gross_weight, ice_maker_head_packing_dim, ice_storage_bin_packing_dim,
+    loading_qty  (if packing dim handles in Admin differ, align handles there with Liquid)
+{%- endcomment -%}
+
+{{ 'section-lago-product-specs.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign family = section.settings.product_family
+  assign specs = nil
+
+  case family
+    when 'dispenser_10_6'
+      assign specs = product.metafields.custom.lago_specs_dispenser_10_6.value
+    when 'dispenser_5_4'
+      assign specs = product.metafields.custom.lago_specs_5_4.value
+    when 'sparkling_countertop'
+      assign specs = product.metafields.custom.lago_specs_sparkling_countertop.value
+    when 'sparkling_undersink'
+      assign specs = product.metafields.custom.lago_specs_sparkling_undersink.value
+    when 'ice_scoop'
+      assign specs = product.metafields.custom.lago_specs_ice_scoop.value
+    when 'ice_modular'
+      assign specs = product.metafields.custom.lago_specs_ice_modular.value
+    when 'modular_ice_dispenser'
+      assign specs = product.metafields.custom.lago_specs_modular_ice_dispenser.value
+  endcase
+
+  assign spec_rows_count = 0
+  if specs != blank and specs.spec_rows != blank and specs.spec_rows.value != blank
+    assign spec_rows_count = specs.spec_rows.value.size
+  endif
+
+  assign has_dimensions = false
+  if specs != blank and specs.dimensions != blank
+    assign has_dimensions = true
+  endif
+
+  assign has_additional = false
+  if specs != blank and specs.additional_specs != blank
+    assign has_additional = true
+  endif
+
+  assign has_materials = false
+  if specs != blank and specs.materials != blank
+    assign has_materials = true
+  endif
+
+  assign has_manual = false
+  if specs != blank and specs.manual_url != blank
+    assign has_manual = true
+  endif
+
+  assign has_features_column = false
+  if spec_rows_count > 0 or has_additional or has_materials or has_manual
+    assign has_features_column = true
+  endif
+
+  assign dispenser_10_6_visible = false
+  if family == 'dispenser_10_6' and specs != blank
+    if specs.model != blank or specs.cleaning_system != blank or specs.water_temp != blank or specs.flow_rate != blank or specs.product_dim_wdh != blank or specs.hot_tank_volume != blank or specs.heating_capacity != blank or specs.heating_power != blank or specs.cold_tank_volume != blank or specs.glycol_tank != blank or specs.combined_cooling_system != blank or specs.cooling_capacity != blank or specs.cooling_power != blank or specs.manual_url != blank or specs.supporting_image != blank
+      assign dispenser_10_6_visible = true
+    endif
+  endif
+
+  assign dispenser_5_4_visible = false
+  if family == 'dispenser_5_4' and specs != blank
+    if specs.item_no != blank or specs.model != blank or specs.cleaning_system != blank or specs.water_temp != blank or specs.flow_rate != blank or specs.product_dim_wdh != blank or specs.packing_dim_wdh != blank or specs.net_weight != blank or specs.pallet_qty != blank or specs.container_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
+      assign dispenser_5_4_visible = true
+    endif
+  endif
+
+  assign sparkling_countertop_visible = false
+  if family == 'sparkling_countertop' and specs != blank
+    if specs.item_no != blank or specs.flow_rate != blank or specs.dimensions_wdh != blank or specs.weight != blank or specs.pallet_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
+      assign sparkling_countertop_visible = true
+    endif
+  endif
+
+  assign sparkling_undersink_visible = false
+  if family == 'sparkling_undersink' and specs != blank
+    if specs.item_no != blank or specs.flow_rate != blank or specs.tap_tower_dimensions_wdh != blank or specs.system_dimensions != blank or specs.tap_tower_system_weight != blank or specs.pallet_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
+      assign sparkling_undersink_visible = true
+    endif
+  endif
+
+  assign ice_scoop_visible = false
+  if family == 'ice_scoop' and specs != blank
+    if specs.item_no != blank or specs.dimensions_lwh != blank or specs.ice_output != blank or specs.ice_shape != blank or specs.bin_capacity != blank or specs.compressor != blank or specs.voltage != blank or specs.power != blank or specs.condenser_unit != blank or specs.refrigerant != blank or specs.net_weight != blank or specs.gross_weight != blank or specs.carton_dimensions_lwh != blank or specs.manual_url != blank or specs.supporting_image != blank
+      assign ice_scoop_visible = true
+    endif
+  endif
+
+  assign ice_modular_visible = false
+  if family == 'ice_modular' and specs != blank
+    if specs.item_no_ice_maker_head != blank or specs.item_no_ice_storage_bin != blank or specs.overall_dimensions_lwh != blank or specs.ice_maker_head_lwh != blank or specs.ice_storage_bin_lwh != blank or specs.ice_output != blank or specs.ice_storage_bin_capacity != blank or specs.ice_shape != blank or specs.compressor != blank or specs.voltage_v_hz != blank or specs.power != blank or specs.condenser_unit != blank or specs.refrigerant != blank or specs.ice_maker_head_net_weight != blank or specs.ice_maker_head_gross_weight != blank or specs.ice_storage_bin_net_weight != blank or specs.ice_storage_bin_gross_weight != blank or specs.ice_maker_head_packing_dim != blank or specs.ice_storage_bin_packing_dim != blank or specs.loading_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
+      assign ice_modular_visible = true
+    endif
+  endif
+
+  assign modular_ice_dispenser_visible = false
+  if family == 'modular_ice_dispenser' and specs != blank
+    if specs.item_no_ice_maker_head != blank or specs.item_no_ice_dispenser_bin != blank or specs.overall_dimensions_lwh != blank or specs.ice_maker_head_lwh != blank or specs.ice_output != blank or specs.ice_shape != blank or specs.compressor != blank or specs.voltage != blank or specs.power != blank or specs.condenser_unit != blank or specs.refrigerant != blank or specs.ice_maker_weight_net_gross != blank or specs.ice_maker_packing_dimensions != blank or specs.ice_maker_head_loading_qty != blank or specs.ice_maker_whole_set_load_qty != blank or specs.ice_dispenser_bin_lwh != blank or specs.ice_dispenser_bin_capacity != blank or specs.ice_dispenser_bin_power != blank or specs.ice_dispenser_bin_weight_net_gross != blank or specs.ice_dispenser_bin_packing_dimensions != blank or specs.ice_dispenser_bin_loading_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
+      assign modular_ice_dispenser_visible = true
+    endif
+  endif
+
+  assign show_section = false
+  if family == 'dispenser_10_6'
+    if dispenser_10_6_visible
+      assign show_section = true
+    endif
+  elsif family == 'dispenser_5_4'
+    if dispenser_5_4_visible
+      assign show_section = true
+    endif
+  elsif family == 'sparkling_countertop'
+    if sparkling_countertop_visible
+      assign show_section = true
+    endif
+  elsif family == 'sparkling_undersink'
+    if sparkling_undersink_visible
+      assign show_section = true
+    endif
+  elsif family == 'ice_scoop'
+    if ice_scoop_visible
+      assign show_section = true
+    endif
+  elsif family == 'ice_modular'
+    if ice_modular_visible
+      assign show_section = true
+    endif
+  elsif family == 'modular_ice_dispenser'
+    if modular_ice_dispenser_visible
+      assign show_section = true
+    endif
+  elsif specs != blank
+    if has_dimensions or has_features_column or specs.supporting_image != blank
+      assign show_section = true
+    endif
+  endif
+-%}
+
+{%- if show_section -%}
+  {%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+  {%- endstyle -%}
+
+  <div
+    id="lago-product-specs-{{ section.id }}"
+    class="lago-product-specs color-{{ section.settings.color_scheme }} gradient"
+  >
+    <div class="page-width section-{{ section.id }}-padding">
+      {%- assign heading = section.settings.heading -%}
+      {%- if specs.display_title != blank -%}
+        {%- assign heading = specs.display_title -%}
+      {%- endif -%}
+
+      {%- if heading != blank -%}
+        <h2 class="lago-product-specs__heading {{ section.settings.heading_size }}">{{ heading | escape }}</h2>
+      {%- endif -%}
+
+      {%- if family == 'dispenser_10_6' -%}
+        <div
+          class="
+            lago-product-specs__grid
+            {% if specs.supporting_image != blank %}lago-product-specs__grid--split{% endif %}
+          "
+        >
+          <div>
+            <dl class="lago-product-specs__dl">
+              {%- render 'lago-spec-dl-row', label: 'Model', value: specs.model -%}
+              {%- render 'lago-spec-dl-row', label: 'Cleaning System', value: specs.cleaning_system -%}
+              {%- render 'lago-spec-dl-row', label: 'Water Temp.', value: specs.water_temp -%}
+              {%- render 'lago-spec-dl-row', label: 'Flow Rate', value: specs.flow_rate -%}
+              {%- render 'lago-spec-dl-row', label: 'Product Dim (W x D x H)', value: specs.product_dim_wdh -%}
+              {%- render 'lago-spec-dl-row', label: 'Hot Tank Volume', value: specs.hot_tank_volume -%}
+              {%- render 'lago-spec-dl-row', label: 'Heating Capacity', value: specs.heating_capacity -%}
+              {%- render 'lago-spec-dl-row', label: 'Heating Power', value: specs.heating_power -%}
+              {%- render 'lago-spec-dl-row', label: 'Cold Tank Volume', value: specs.cold_tank_volume -%}
+              {%- render 'lago-spec-dl-row', label: 'Glycol Tank', value: specs.glycol_tank -%}
+              {%- render 'lago-spec-dl-row', label: 'Combined Cooling System', value: specs.combined_cooling_system -%}
+              {%- render 'lago-spec-dl-row', label: 'Cooling Capacity', value: specs.cooling_capacity -%}
+              {%- render 'lago-spec-dl-row', label: 'Cooling Power', value: specs.cooling_power -%}
+            </dl>
+
+            {%- if specs.manual_url != blank -%}
+              <div class="lago-product-specs__manual">
+                <a
+                  href="{{ specs.manual_url }}"
+                  class="button button--secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ section.settings.manual_label | escape }}
+                </a>
+              </div>
+            {%- endif -%}
+          </div>
+
+          {%- if specs.supporting_image != blank -%}
+            <div class="lago-product-specs__image-wrap">
+              <div class="global-media-settings" style="max-width: 900px; width: 100%;">
+                {{
+                  specs.supporting_image
+                  | image_url: width: 900
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '550, 720, 900',
+                    sizes: '(min-width: 990px) 45vw, 100vw',
+                    class: 'lago-product-specs__image'
+                }}
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- elsif family == 'dispenser_5_4' -%}
+        <div
+          class="
+            lago-product-specs__grid
+            {% if specs.supporting_image != blank %}lago-product-specs__grid--split{% endif %}
+          "
+        >
+          <div>
+            <dl class="lago-product-specs__dl">
+              {%- render 'lago-spec-dl-row', label: 'Item No.', value: specs.item_no -%}
+              {%- render 'lago-spec-dl-row', label: 'Model', value: specs.model -%}
+              {%- render 'lago-spec-dl-row', label: 'Cleaning System', value: specs.cleaning_system -%}
+              {%- render 'lago-spec-dl-row', label: 'Water Temp.', value: specs.water_temp -%}
+              {%- render 'lago-spec-dl-row', label: 'Flow Rate', value: specs.flow_rate -%}
+              {%- render 'lago-spec-dl-row', label: 'Product Dim. (WxDxH)', value: specs.product_dim_wdh -%}
+              {%- render 'lago-spec-dl-row', label: 'Packing Dim. (WxDxH)', value: specs.packing_dim_wdh -%}
+              {%- render 'lago-spec-dl-row', label: 'Net Weight', value: specs.net_weight -%}
+              {%- render 'lago-spec-dl-row', label: 'Pallet Qty.', value: specs.pallet_qty -%}
+              {%- render 'lago-spec-dl-row', label: 'Container Qty.', value: specs.container_qty -%}
+            </dl>
+
+            {%- if specs.manual_url != blank -%}
+              <div class="lago-product-specs__manual">
+                <a
+                  href="{{ specs.manual_url }}"
+                  class="button button--secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ section.settings.manual_label | escape }}
+                </a>
+              </div>
+            {%- endif -%}
+          </div>
+
+          {%- if specs.supporting_image != blank -%}
+            <div class="lago-product-specs__image-wrap">
+              <div class="global-media-settings" style="max-width: 900px; width: 100%;">
+                {{
+                  specs.supporting_image
+                  | image_url: width: 900
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '550, 720, 900',
+                    sizes: '(min-width: 990px) 45vw, 100vw',
+                    class: 'lago-product-specs__image'
+                }}
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- elsif family == 'sparkling_countertop' -%}
+        <div
+          class="
+            lago-product-specs__grid
+            {% if specs.supporting_image != blank %}lago-product-specs__grid--split{% endif %}
+          "
+        >
+          <div>
+            <dl class="lago-product-specs__dl">
+              {%- render 'lago-spec-dl-row', label: 'Item No.', value: specs.item_no -%}
+              {%- render 'lago-spec-dl-row', label: 'Flow Rate*', value: specs.flow_rate -%}
+              {%- render 'lago-spec-dl-row', label: 'Dimensions (W x D x H)', value: specs.dimensions_wdh -%}
+              {%- render 'lago-spec-dl-row', label: 'Weight', value: specs.weight -%}
+              {%- render 'lago-spec-dl-row', label: 'Pallet Qty.', value: specs.pallet_qty -%}
+            </dl>
+
+            {%- if specs.manual_url != blank -%}
+              <div class="lago-product-specs__manual">
+                <a
+                  href="{{ specs.manual_url }}"
+                  class="button button--secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ section.settings.manual_label | escape }}
+                </a>
+              </div>
+            {%- endif -%}
+          </div>
+
+          {%- if specs.supporting_image != blank -%}
+            <div class="lago-product-specs__image-wrap">
+              <div class="global-media-settings" style="max-width: 900px; width: 100%;">
+                {{
+                  specs.supporting_image
+                  | image_url: width: 900
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '550, 720, 900',
+                    sizes: '(min-width: 990px) 45vw, 100vw',
+                    class: 'lago-product-specs__image'
+                }}
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- elsif family == 'sparkling_undersink' -%}
+        <div
+          class="
+            lago-product-specs__grid
+            {% if specs.supporting_image != blank %}lago-product-specs__grid--split{% endif %}
+          "
+        >
+          <div>
+            <dl class="lago-product-specs__dl">
+              {%- render 'lago-spec-dl-row', label: 'Item No.', value: specs.item_no -%}
+              {%- render 'lago-spec-dl-row', label: 'Flow Rate*', value: specs.flow_rate -%}
+              {%- render 'lago-spec-dl-row', label: 'Tap Tower Dimensions (W x D x H)', value: specs.tap_tower_dimensions_wdh -%}
+              {%- render 'lago-spec-dl-row', label: 'System Dimensions', value: specs.system_dimensions -%}
+              {%- render 'lago-spec-dl-row', label: 'Tap Tower / System Weight', value: specs.tap_tower_system_weight -%}
+              {%- render 'lago-spec-dl-row', label: 'Pallet Qty.', value: specs.pallet_qty -%}
+            </dl>
+
+            {%- if specs.manual_url != blank -%}
+              <div class="lago-product-specs__manual">
+                <a
+                  href="{{ specs.manual_url }}"
+                  class="button button--secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ section.settings.manual_label | escape }}
+                </a>
+              </div>
+            {%- endif -%}
+          </div>
+
+          {%- if specs.supporting_image != blank -%}
+            <div class="lago-product-specs__image-wrap">
+              <div class="global-media-settings" style="max-width: 900px; width: 100%;">
+                {{
+                  specs.supporting_image
+                  | image_url: width: 900
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '550, 720, 900',
+                    sizes: '(min-width: 990px) 45vw, 100vw',
+                    class: 'lago-product-specs__image'
+                }}
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- elsif family == 'ice_scoop' -%}
+        <div
+          class="
+            lago-product-specs__grid
+            {% if specs.supporting_image != blank %}lago-product-specs__grid--split{% endif %}
+          "
+        >
+          <div>
+            <dl class="lago-product-specs__dl">
+              {%- render 'lago-spec-dl-row', label: 'Item No.', value: specs.item_no -%}
+              {%- render 'lago-spec-dl-row', label: 'Dimensions (L x W x H)', value: specs.dimensions_lwh -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Output', value: specs.ice_output -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Shape', value: specs.ice_shape -%}
+              {%- render 'lago-spec-dl-row', label: 'Bin Capacity', value: specs.bin_capacity -%}
+              {%- render 'lago-spec-dl-row', label: 'Compressor', value: specs.compressor -%}
+              {%- render 'lago-spec-dl-row', label: 'Voltage', value: specs.voltage -%}
+              {%- render 'lago-spec-dl-row', label: 'Power', value: specs.power -%}
+              {%- render 'lago-spec-dl-row', label: 'Condenser Unit', value: specs.condenser_unit -%}
+              {%- render 'lago-spec-dl-row', label: 'Refrigerant', value: specs.refrigerant -%}
+              {%- render 'lago-spec-dl-row', label: 'Net Weight', value: specs.net_weight -%}
+              {%- render 'lago-spec-dl-row', label: 'Gross Weight', value: specs.gross_weight -%}
+              {%- render 'lago-spec-dl-row', label: 'Carton Dimensions (L x W x H)', value: specs.carton_dimensions_lwh -%}
+            </dl>
+
+            {%- if specs.manual_url != blank -%}
+              <div class="lago-product-specs__manual">
+                <a
+                  href="{{ specs.manual_url }}"
+                  class="button button--secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ section.settings.manual_label | escape }}
+                </a>
+              </div>
+            {%- endif -%}
+          </div>
+
+          {%- if specs.supporting_image != blank -%}
+            <div class="lago-product-specs__image-wrap">
+              <div class="global-media-settings" style="max-width: 900px; width: 100%;">
+                {{
+                  specs.supporting_image
+                  | image_url: width: 900
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '550, 720, 900',
+                    sizes: '(min-width: 990px) 45vw, 100vw',
+                    class: 'lago-product-specs__image'
+                }}
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- elsif family == 'ice_modular' -%}
+        <div
+          class="
+            lago-product-specs__grid
+            {% if specs.supporting_image != blank %}lago-product-specs__grid--split{% endif %}
+          "
+        >
+          <div>
+            <dl class="lago-product-specs__dl">
+              {%- render 'lago-spec-dl-row', label: 'Item No. - Ice Maker Head', value: specs.item_no_ice_maker_head -%}
+              {%- render 'lago-spec-dl-row', label: 'Item No. - Ice Storage Bin', value: specs.item_no_ice_storage_bin -%}
+              {%- render 'lago-spec-dl-row', label: 'Overall Dimensions (L x W x H)', value: specs.overall_dimensions_lwh -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Maker Head (L x W x H)', value: specs.ice_maker_head_lwh -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Storage Bin (L x W x H)', value: specs.ice_storage_bin_lwh -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Output', value: specs.ice_output -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Storage Bin Capacity', value: specs.ice_storage_bin_capacity -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Shape', value: specs.ice_shape -%}
+              {%- render 'lago-spec-dl-row', label: 'Compressor', value: specs.compressor -%}
+              {%- render 'lago-spec-dl-row', label: 'Voltage (V/Hz)', value: specs.voltage_v_hz -%}
+              {%- render 'lago-spec-dl-row', label: 'Power', value: specs.power -%}
+              {%- render 'lago-spec-dl-row', label: 'Condenser Unit', value: specs.condenser_unit -%}
+              {%- render 'lago-spec-dl-row', label: 'Refrigerant', value: specs.refrigerant -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Maker Head Net Weight', value: specs.ice_maker_head_net_weight -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Maker Head Gross Weight', value: specs.ice_maker_head_gross_weight -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Storage Bin Net Weight', value: specs.ice_storage_bin_net_weight -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Storage Bin Gross Weight', value: specs.ice_storage_bin_gross_weight -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Maker Head Packing Dim.', value: specs.ice_maker_head_packing_dim -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Storage Bin Packing Dim.', value: specs.ice_storage_bin_packing_dim -%}
+              {%- render 'lago-spec-dl-row', label: 'Loading Qty (20GP/40HQ)', value: specs.loading_qty -%}
+            </dl>
+
+            {%- if specs.manual_url != blank -%}
+              <div class="lago-product-specs__manual">
+                <a
+                  href="{{ specs.manual_url }}"
+                  class="button button--secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ section.settings.manual_label | escape }}
+                </a>
+              </div>
+            {%- endif -%}
+          </div>
+
+          {%- if specs.supporting_image != blank -%}
+            <div class="lago-product-specs__image-wrap">
+              <div class="global-media-settings" style="max-width: 900px; width: 100%;">
+                {{
+                  specs.supporting_image
+                  | image_url: width: 900
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '550, 720, 900',
+                    sizes: '(min-width: 990px) 45vw, 100vw',
+                    class: 'lago-product-specs__image'
+                }}
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- elsif family == 'modular_ice_dispenser' -%}
+        <div
+          class="
+            lago-product-specs__grid
+            {% if specs.supporting_image != blank %}lago-product-specs__grid--split{% endif %}
+          "
+        >
+          <div>
+            <dl class="lago-product-specs__dl">
+              {%- render 'lago-spec-dl-row', label: 'Item No. - Ice Maker Head', value: specs.item_no_ice_maker_head -%}
+              {%- render 'lago-spec-dl-row', label: 'Item No. - Ice Dispenser Bin', value: specs.item_no_ice_dispenser_bin -%}
+              {%- render 'lago-spec-dl-row', label: 'Overall Dimensions (L x W x H)', value: specs.overall_dimensions_lwh -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Maker Head (L x W x H)', value: specs.ice_maker_head_lwh -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Output', value: specs.ice_output -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Shape', value: specs.ice_shape -%}
+              {%- render 'lago-spec-dl-row', label: 'Compressor', value: specs.compressor -%}
+              {%- render 'lago-spec-dl-row', label: 'Voltage (V/Hz)', value: specs.voltage -%}
+              {%- render 'lago-spec-dl-row', label: 'Power', value: specs.power -%}
+              {%- render 'lago-spec-dl-row', label: 'Condenser Unit', value: specs.condenser_unit -%}
+              {%- render 'lago-spec-dl-row', label: 'Refrigerant', value: specs.refrigerant -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Maker Weight, Net / Gross', value: specs.ice_maker_weight_net_gross -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Maker Packing Dimensions', value: specs.ice_maker_packing_dimensions -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Maker Head Loading Qty. (20GP/40HQ)', value: specs.ice_maker_head_loading_qty -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Maker Whole Set Load. Qty (20GP/40HQ)', value: specs.ice_maker_whole_set_load_qty -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Dispenser Bin (L x W x H)', value: specs.ice_dispenser_bin_lwh -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Dispenser Bin Capacity', value: specs.ice_dispenser_bin_capacity -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Dispenser Bin Power', value: specs.ice_dispenser_bin_power -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Dispenser Bin Weight, Net/Gross', value: specs.ice_dispenser_bin_weight_net_gross -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Dispenser Bin Packing Dimensions', value: specs.ice_dispenser_bin_packing_dimensions -%}
+              {%- render 'lago-spec-dl-row', label: 'Ice Dispenser Bin Loading Qty (20GP/40HQ)', value: specs.ice_dispenser_bin_loading_qty -%}
+            </dl>
+
+            {%- if specs.manual_url != blank -%}
+              <div class="lago-product-specs__manual">
+                <a
+                  href="{{ specs.manual_url }}"
+                  class="button button--secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ section.settings.manual_label | escape }}
+                </a>
+              </div>
+            {%- endif -%}
+          </div>
+
+          {%- if specs.supporting_image != blank -%}
+            <div class="lago-product-specs__image-wrap">
+              <div class="global-media-settings" style="max-width: 900px; width: 100%;">
+                {{
+                  specs.supporting_image
+                  | image_url: width: 900
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '550, 720, 900',
+                    sizes: '(min-width: 990px) 45vw, 100vw',
+                    class: 'lago-product-specs__image'
+                }}
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- else -%}
+        <div
+          class="
+            lago-product-specs__grid
+            {% if specs.supporting_image != blank %}lago-product-specs__grid--split{% endif %}
+          "
+        >
+          <div>
+            <div
+              class="
+                lago-product-specs__columns
+                {% if specs.supporting_image == blank and has_dimensions and has_features_column %}lago-product-specs__columns--two{% endif %}
+              "
+            >
+              {%- if has_dimensions -%}
+                <div>
+                  <h3 class="lago-product-specs__group-title">{{ section.settings.dimensions_heading | escape }}</h3>
+                  <dl class="lago-product-specs__dl">
+                    {%- assign property_list = specs.dimensions | split: '|' -%}
+                    {%- for property in property_list -%}
+                      {%- assign property_tuple = property | split: ':' -%}
+                      {%- if property_tuple.first != blank -%}
+                        <div class="lago-product-specs__row">
+                          <dt>{{ property_tuple.first | strip | escape }}</dt>
+                          <dd>{{ property_tuple.last | strip | escape }}</dd>
+                        </div>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </dl>
+                </div>
+              {%- endif -%}
+
+              {%- if has_features_column -%}
+                <div>
+                  <h3 class="lago-product-specs__group-title">{{ section.settings.features_heading | escape }}</h3>
+                  <dl class="lago-product-specs__dl">
+                    {%- if spec_rows_count > 0 -%}
+                      {%- for row in specs.spec_rows.value -%}
+                        {%- if row.label != blank -%}
+                          <div class="lago-product-specs__row">
+                            <dt>{{ row.label | escape }}</dt>
+                            <dd>{{ row.value | escape }}</dd>
+                          </div>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {%- endif -%}
+
+                    {%- if has_additional -%}
+                      {%- assign add_list = specs.additional_specs | split: '|' -%}
+                      {%- for property in add_list -%}
+                        {%- assign property_tuple = property | split: ':' -%}
+                        {%- if property_tuple.first != blank -%}
+                          <div class="lago-product-specs__row">
+                            <dt>{{ property_tuple.first | strip | escape }}</dt>
+                            <dd>{{ property_tuple.last | strip | escape }}</dd>
+                          </div>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {%- endif -%}
+
+                    {%- if has_materials -%}
+                      <div class="lago-product-specs__row">
+                        <dt>{{ section.settings.materials_label | escape }}</dt>
+                        <dd>{{ specs.materials | escape }}</dd>
+                      </div>
+                    {%- endif -%}
+                  </dl>
+
+                  {%- if has_manual -%}
+                    <div class="lago-product-specs__manual">
+                      <a
+                        href="{{ specs.manual_url }}"
+                        class="button button--secondary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {{ section.settings.manual_label | escape }}
+                      </a>
+                    </div>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+
+          {%- if specs.supporting_image != blank -%}
+            <div class="lago-product-specs__image-wrap">
+              <div class="global-media-settings" style="max-width: 900px; width: 100%;">
+                {{
+                  specs.supporting_image
+                  | image_url: width: 900
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '550, 720, 900',
+                    sizes: '(min-width: 990px) 45vw, 100vw',
+                    class: 'lago-product-specs__image'
+                }}
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Product specs",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "product_family",
+      "label": "Specification profile",
+      "options": [
+        { "value": "dispenser_10_6", "label": "10-6 water dispensers" },
+        { "value": "dispenser_5_4", "label": "5-4 water dispensers" },
+        { "value": "sparkling_countertop", "label": "Sparkling countertop dispensers" },
+        { "value": "sparkling_undersink", "label": "Sparkling undersink dispensers" },
+        { "value": "ice_scoop", "label": "Scoop ice machines" },
+        { "value": "ice_modular", "label": "Modular ice machines" },
+        { "value": "modular_ice_dispenser", "label": "Modular ice dispenser" }
+      ],
+      "default": "dispenser_10_6"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Specifications"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "text",
+      "id": "dimensions_heading",
+      "label": "Dimensions column title",
+      "default": "Dimensions"
+    },
+    {
+      "type": "text",
+      "id": "features_heading",
+      "label": "Features column title",
+      "default": "Features"
+    },
+    {
+      "type": "text",
+      "id": "materials_label",
+      "label": "Materials row label",
+      "default": "Materials"
+    },
+    {
+      "type": "text",
+      "id": "manual_label",
+      "label": "Manual button label",
+      "default": "Instruction manual"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product specs"
+    }
+  ]
+}
+{% endschema %}

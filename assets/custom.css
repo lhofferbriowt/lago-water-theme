@@ -99,6 +99,191 @@ a#cart-icon-bubble {
   .header .header__inline-menu > .list-menu.list-menu--inline > li > header-menu > details > summary.header__menu-item {
     font-size: 16px;
   }
+
+  /* Desktop dropdown + top-level nav — Brio reference (hover open via details-disclosure.js) */
+  .header .header__inline-menu > .list-menu > li > a.header__menu-item,
+  .header .header__inline-menu > .list-menu > li > header-menu > details > summary.header__menu-item {
+    position: relative;
+    color: rgba(var(--color-foreground), 0.55);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .header .header__inline-menu > .list-menu > li > a.header__menu-item:hover,
+  .header .header__inline-menu > .list-menu > li > header-menu > details > summary.header__menu-item:hover {
+    color: rgb(var(--color-foreground));
+  }
+
+  /* Accent bar width = label text (not full tap target) */
+  .header .header__inline-menu > .list-menu > li > a.header__menu-item > span:first-of-type,
+  .header .header__inline-menu > .list-menu > li > header-menu > details > summary.header__menu-item > span:first-of-type {
+    position: relative;
+    display: inline-block;
+  }
+
+  .header .header__inline-menu > .list-menu > li > a.header__menu-item > span:first-of-type::after,
+  .header .header__inline-menu > .list-menu > li > header-menu > details > summary.header__menu-item > span:first-of-type::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.35rem;
+    height: 0.25rem;
+    background: rgb(var(--color-button));
+    opacity: 0;
+    transition: opacity var(--duration-default) ease;
+    border-radius: 0.1rem;
+  }
+
+  .header .header__inline-menu > .list-menu > li > a.header__menu-item:hover > span:first-of-type::after,
+  .header .header__inline-menu > .list-menu > li > a.header__menu-item:has(.header__active-menu-item) > span:first-of-type::after,
+  .header .header__inline-menu > .list-menu > li > header-menu > details > summary.header__menu-item:hover > span:first-of-type::after,
+  .header .header__inline-menu > .list-menu > li > header-menu > details[open] > summary.header__menu-item > span:first-of-type::after,
+  .header .header__inline-menu > .list-menu > li > header-menu > details > summary.header__menu-item:has(.header__active-menu-item) > span:first-of-type::after {
+    opacity: 1;
+  }
+
+  .header .header__inline-menu > .list-menu > li > a.header__menu-item:hover span,
+  .header .header__inline-menu > .list-menu > li > header-menu > details > summary.header__menu-item:hover span {
+    text-decoration: none;
+  }
+
+  .header .header__inline-menu > .list-menu > li > a.header__menu-item .header__active-menu-item,
+  .header .header__inline-menu > .list-menu > li > header-menu > details > summary.header__menu-item .header__active-menu-item {
+    color: rgb(var(--color-foreground));
+    text-decoration: none;
+  }
+
+  .header .header__inline-menu > .list-menu > li > header-menu > details[open] > summary.header__menu-item {
+    text-decoration: none;
+    color: rgb(var(--color-foreground));
+  }
+
+  .header .header__inline-menu > .list-menu > li > header-menu > details[open] > summary.header__menu-item > span:first-of-type {
+    font-weight: 600;
+  }
+
+  /* First-level dropdown: align with nav label (matches .header__menu-item horizontal padding) */
+  .header .header__inline-menu header-menu details > ul.header__submenu.list-menu--disclosure {
+    border: none;
+    border-radius: 0 0 0.375rem 0.375rem;
+    box-shadow: 0 0.2rem 0.65rem rgba(var(--color-shadow), 0.14);
+    padding: 0.35rem 0;
+    left: 1.2rem;
+    right: auto;
+    width: auto;
+    min-width: 11.5rem;
+    max-width: 20rem;
+    z-index: 10;
+  }
+
+  .header .header__inline-menu header-menu details > ul.header__submenu > li > a.header__menu-item,
+  .header .header__inline-menu header-menu details > ul.header__submenu > li > details > summary.header__menu-item {
+    padding: 0.95rem 1.5rem;
+    font-size: 14px;
+    color: rgba(var(--color-foreground), 0.58);
+    text-decoration: none;
+    justify-content: flex-start;
+    font-weight: 200;
+  }
+
+  .header .header__inline-menu header-menu details > ul.header__submenu > li > a.header__menu-item:hover,
+  .header .header__inline-menu header-menu details > ul.header__submenu > li > details > summary.header__menu-item:hover {
+    background-color: rgba(var(--color-foreground), 0.06);
+    color: rgba(var(--color-foreground), 0.88);
+    text-decoration: none;
+  }
+
+  .header .header__inline-menu header-menu details > ul.header__submenu > li > a.header__menu-item.list-menu__item--active {
+    color: rgb(var(--color-foreground));
+    text-decoration: none;
+    font-weight: 200;
+    background-color: rgba(var(--color-foreground), 0.06);
+  }
+
+  .header .header__inline-menu .header__submenu .header__menu-item:hover {
+    text-decoration: none;
+  }
+
+  /* Nested flyout under a child with grandchildren */
+  .header .header__inline-menu .header__submenu .header__submenu {
+    border-radius: 0 0.375rem 0.375rem 0.375rem;
+    box-shadow: 0 0.2rem 0.65rem rgba(var(--color-shadow), 0.12);
+    border: none;
+    margin: 0;
+    padding: 0.35rem 0;
+    background-color: rgb(var(--color-background));
+  }
+
+  .header .header__inline-menu .header__submenu .header__submenu .header__menu-item {
+    padding: 0.95rem 1.35rem;
+    font-size: 14px;
+    font-weight: 200;
+  }
+
+  /*
+   * Mega menu with only one level of children (mega-menu__list--condensed):
+   * theme base.css forces a full-width horizontal row — replace with a compact
+   * floating panel like the dropdown / Brio reference (second screenshot).
+   */
+  .header .header__inline-menu header-menu details.mega-menu:has(.mega-menu__list--condensed) {
+    position: relative;
+  }
+
+  .header .header__inline-menu details.mega-menu:has(.mega-menu__list--condensed) .mega-menu__content {
+    left: 1.2rem;
+    right: auto;
+    width: max-content;
+    min-width: 11.5rem;
+    max-width: 22rem;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+    border-radius: 0 0 0.375rem 0.375rem;
+    box-shadow: 0 0.2rem 0.65rem rgba(var(--color-shadow), 0.14);
+    background: rgb(var(--color-background));
+    z-index: 10;
+  }
+
+  .header .header__inline-menu details.mega-menu:has(.mega-menu__list--condensed) ul.mega-menu__list.page-width.mega-menu__list--condensed {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header .header__inline-menu details.mega-menu:has(.mega-menu__list--condensed) .mega-menu__list--condensed > li {
+    width: 100% !important;
+    padding-right: 0 !important;
+  }
+
+  .header .header__inline-menu details.mega-menu:has(.mega-menu__list--condensed) .mega-menu__link {
+    text-align: left !important;
+    padding: 0.95rem 1.5rem;
+    font-size: 14px;
+    font-weight: 200;
+    color: rgba(var(--color-foreground), 0.58);
+  }
+
+  .header .header__inline-menu details.mega-menu:has(.mega-menu__list--condensed) .mega-menu__link--level-2 {
+    font-weight: 200;
+  }
+
+  .header .header__inline-menu details.mega-menu:has(.mega-menu__list--condensed) .mega-menu__link:hover,
+  .header .header__inline-menu details.mega-menu:has(.mega-menu__list--condensed) .mega-menu__link--active {
+    text-decoration: none;
+    background-color: rgba(var(--color-foreground), 0.06);
+    color: rgba(var(--color-foreground), 0.88);
+  }
+
+  .header .header__inline-menu details.mega-menu:has(.mega-menu__list--condensed) .mega-menu__link--active {
+    font-weight: 200;
+  }
 }
 
 /* media query */
@@ -140,4 +325,231 @@ input.footer-newsletter-submit-newsletter_FEc3Rc {
 }
 
 
+}
+
+/* Lago: product card bullet list (collection grid) */
+#product-grid {
+  /* Fixed strip: 8 rows + gaps + padding + extra bottom breathing room */
+  --lago-product-bullets-slot: clamp(15.25rem, 48vw, 18.5rem);
+}
+
+@media screen and (min-width: 750px) {
+  #product-grid {
+    --lago-product-bullets-slot: 18.5rem;
+  }
+}
+
+/* Top-align tiles so unequal card heights don’t vertically center shorter cards */
+#product-grid.grid {
+  align-items: flex-start;
+}
+
+/* One aspect for all collection cards so image bands share height in a row */
+#product-grid .card.card--media > .card__inner.ratio {
+  --ratio-percent: 100% !important;
+}
+
+/* Stop media block from absorbing different amounts of row slack (extends image band unevenly) */
+#product-grid .card.card--extend-height.card--media > .card__inner {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.lago-product-bullets {
+  background: #f5f5f5;
+  box-shadow: 0 6px 16px #00000014;
+  padding: 12px 14px;
+  margin-top: 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  overflow: hidden;
+}
+
+/* Same pixel height for 1 or 8 bullets (collection grid) */
+#product-grid .lago-product-bullets {
+  box-sizing: border-box;
+  height: var(--lago-product-bullets-slot);
+  min-height: var(--lago-product-bullets-slot);
+  max-height: var(--lago-product-bullets-slot);
+  display: flex;
+  flex-direction: column;
+}
+
+#product-grid .lago-product-bullets--empty {
+  background: transparent;
+  box-shadow: none;
+}
+
+#product-grid .lago-product-bullets__list {
+  align-content: start;
+}
+
+#product-grid .card__information > .card__heading + .lago-product-bullets {
+  margin-top: 0.5rem;
+}
+
+/* Light floor for title line box — keep small so titles + bullets align across cards */
+#product-grid .card__information > .card__heading:first-of-type {
+  min-height: 1.5lh;
+}
+
+.lago-product-bullets__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.lago-product-bullets__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 11px;
+  line-height: 1.25;
+  color: #000;
+}
+
+/* Center the 8px dot on the first line (flex center looked optically “high” vs lowercase) */
+.lago-product-bullets__item::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background-color: #4b71aa;
+  border: none;
+  box-sizing: border-box;
+  flex: none;
+  margin-top: calc((1lh - 8px) / 2);
+}
+
+/* Make product grid items flex containers so cards can stretch to equal height */
+#product-grid .grid__item {
+  display: flex;
+  /* clamp(MIN, preferred, MAX): on many desktops 62vmin > MAX, so the used height is 39rem.
+     Chrome then strikes through MIN and preferred in DevTools — that is clamp(), not another rule overriding. */
+  min-height: clamp(23rem, 62vmin, 39rem);
+}
+
+/* Optional: remove reserved bullet strip space for products without bullet content */
+#product-grid.lago-product-grid--collapse-empty-bullets .grid__item--lago-bullets-empty-slot {
+  min-height: calc(clamp(23rem, 62vmin, 39rem) - var(--lago-product-bullets-slot));
+}
+
+#product-grid.lago-product-grid--collapse-empty-bullets .grid__item--lago-bullets-empty-slot .lago-product-bullets--empty {
+  display: none;
+}
+
+#product-grid .grid__item > .card-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure the lower card content stacks (no margin-top:auto on bullets — it broke row alignment) */
+#product-grid .grid__item .card > .card__content:last-child {
+  display: flex;
+  flex-direction: column;
+  min-height: 140px;
+}
+
+@media screen and (max-width: 749px) {
+  #product-grid .grid__item .card > .card__content:last-child {
+    min-height: 100px;
+  }
+}
+
+/* Header: phone link to the left of search (compact header / drawer breakpoint) */
+.header__icon--phone-mobile {
+  display: none !important;
+}
+
+@media screen and (max-width: 989px) {
+  .header__icon--phone-mobile {
+    display: flex !important;
+  }
+}
+
+.header__icon--phone {
+  color: #4a71aa;
+}
+
+.header__icon--phone .svg-wrapper .icon-phone {
+  width: 2rem;
+  height: 2rem;
+}
+
+.header__icon--phone .header__icon--phone-img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__icon--phone .header__icon--phone-img-wrap img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
+/* Header: keep logo visually centered on mobile (even with extra right-side icons) */
+@media screen and (max-width: 989px) {
+  /* Use equal “side” columns with an auto center column so the logo stays centered */
+  .header {
+    grid-template-columns: 1fr auto 1fr;
+  }
+
+  /* Remove extra right padding that can bias visual centering */
+  .header__icons {
+    padding-right: 0;
+  }
+}
+
+/* Third-party app submit control — match homepage `.l15-btn` (Lago hero CTA) */
+.submit-button-wrapper {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0;
+  box-shadow: none !important;
+}
+
+.submit-button-wrapper button,
+.submit-button-wrapper input[type="submit"],
+.submit-button-wrapper input[type="button"],
+.submit-button-wrapper a {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  min-width: 12.5rem;
+  padding: 16px 32px !important;
+  margin: 0 !important;
+  background: #4a71aa !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  cursor: pointer;
+  transform: translateY(1px);
+  transition: opacity 0.2s ease, transform 0.15s ease;
+  font-family: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  box-shadow: none !important;
+}
+
+.submit-button-wrapper button:hover,
+.submit-button-wrapper input[type="submit"]:hover,
+.submit-button-wrapper input[type="button"]:hover,
+.submit-button-wrapper a:hover {
+  opacity: 0.92;
+}
+
+.submit-button-wrapper button:active,
+.submit-button-wrapper input[type="submit"]:active,
+.submit-button-wrapper input[type="button"]:active,
+.submit-button-wrapper a:active {
+  transform: translateY(2px);
 }

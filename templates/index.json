@@ -9,13 +9,31 @@
  */
 {
   "sections": {
-    "lago_home_1_5": {
-      "type": "lago-home-1-5",
+    "lago_home_hero": {
+      "type": "lago-home-hero",
+      "settings": {
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "hero_image": "shopify://shop_images/homepage_alternate_mobile_hero.jpg",
+        "hero_bg_desktop": "shopify://shop_images/homepage_alternate_desktop_hero.jpg",
+        "hero_heading": "Your water solution partner for residential and commercial settings",
+        "hero_heading_font_size_desktop": 34,
+        "hero_heading_font_size_mobile": 20,
+        "hero_heading_margin_top": 0,
+        "hero_heading_margin_bottom": 20,
+        "hero_button_label": "Become a Dealer",
+        "hero_button_link": "shopify://pages/become-a-dealer",
+        "hero_button_margin_top": 20,
+        "hero_button_margin_bottom": 12
+      }
+    },
+    "lago_home_explore_solutions": {
+      "type": "lago-home-explore-solutions",
       "blocks": {
         "pp1": {
           "type": "product_path",
           "settings": {
-            "image": "shopify://shop_images/counter_top_water_dispenser_2x_e98f8a94-f93f-491d-9a73-97cbc4ac69f9.png",
+            "image": "shopify://shop_images/counter_top_4k_water_dispenser_2x_7d3bf183-85b7-428a-b2a1-6a767b927ec5.png",
             "title": "Countertop Dispensers",
             "link": "shopify://collections/countertop-water-dispensers"
           }
@@ -31,7 +49,7 @@
         "pp3": {
           "type": "product_path",
           "settings": {
-            "image": "shopify://shop_images/10k_standup_2x_5afdd607-ec97-4862-b641-9b92cbb473c0.png",
+            "image": "shopify://shop_images/5k_standup_2x_132898d5-6c08-4b18-8464-daf84fe5f9f8.png",
             "title": "Stand Up Dispensers",
             "link": "shopify://collections/stand-up-water-dispensers"
           }
@@ -41,7 +59,7 @@
           "settings": {
             "image": "shopify://shop_images/ice_machines_under_counter_2x_7e54d399-df71-432b-8e66-7412f4071f89.png",
             "title": "Ice Makers",
-            "link": ""
+            "link": "shopify://collections/ice-makers"
           }
         },
         "pp5": {
@@ -49,7 +67,7 @@
           "settings": {
             "image": "shopify://shop_images/undersink_filtration_systems_2x_c493e92d-83f5-4fa7-bd8c-47bf92a745d0.png",
             "title": "Undersink Filtration Systems",
-            "link": ""
+            "link": "shopify://collections/under-sink-filtration-systems"
           }
         },
         "pp6": {
@@ -57,7 +75,7 @@
           "settings": {
             "image": "shopify://shop_images/light_commercial_ro_systems_2x_18e79cd6-93f3-4009-a063-2a2cd38992ad.png",
             "title": "Light Commercial RO Systems",
-            "link": ""
+            "link": "shopify://collections/pou-reverse-osmosis-dispensers"
           }
         },
         "pp7": {
@@ -65,7 +83,7 @@
           "settings": {
             "image": "shopify://shop_images/poe_filtration_systems_2x_c84af0d4-bf29-4170-aec3-91b3b3eaa0ce.png",
             "title": "Point-of-Entry Filtration Systems",
-            "link": ""
+            "link": "shopify://collections/point-of-entry-filtration-systems"
           }
         },
         "pp8": {
@@ -73,9 +91,94 @@
           "settings": {
             "image": "shopify://shop_images/skid_mounted_ro_water_treatment_solutions_2x_86bfe469-7bef-405e-b2b3-6367cd658574.png",
             "title": "Industrial RO Systems",
-            "link": ""
+            "link": "shopify://collections/industrial-filtration-systems"
+          }
+        }
+      },
+      "block_order": [
+        "pp1",
+        "pp2",
+        "pp3",
+        "pp4",
+        "pp5",
+        "pp6",
+        "pp7",
+        "pp8"
+      ],
+      "settings": {
+        "margin_top": 20,
+        "margin_bottom": 0,
+        "solutions_heading": "Explore Our Solutions",
+        "section_title_font_size": 30,
+        "path_card_label_font_size": 16,
+        "path_card_label_bold": false
+      }
+    },
+    "lago_home_solutions_settings": {
+      "type": "lago-home-solutions-settings",
+      "blocks": {
+        "ss1": {
+          "type": "setting_strip",
+          "settings": {
+            "image": "shopify://shop_images/hotels.png",
+            "caption": "Hotels & Apartments"
           }
         },
+        "ss2": {
+          "type": "setting_strip",
+          "settings": {
+            "image": "shopify://shop_images/restaurants_2x_c87b52eb-acfa-4eb1-a0e1-5c7af7e016ea.png",
+            "caption": "Restaurants & Food Services"
+          }
+        },
+        "ss3": {
+          "type": "setting_strip",
+          "settings": {
+            "image": "shopify://shop_images/cafes_2x_ee2cad21-ad6d-4caf-8afe-f40f3eeec520.png",
+            "caption": "Café Coffee Shops"
+          }
+        },
+        "ss4": {
+          "type": "setting_strip",
+          "settings": {
+            "image": "shopify://shop_images/gyms_2x_b868d026-dd19-4e38-9631-1f65f670b9c0.png",
+            "caption": "Fitness Gyms"
+          }
+        },
+        "ss5": {
+          "type": "setting_strip",
+          "settings": {
+            "image": "shopify://shop_images/laundromats_2x_2365202d-7599-4713-90fe-781c9e20dbe1.png",
+            "caption": "Laundromats & Car Washes"
+          }
+        },
+        "ss6": {
+          "type": "setting_strip",
+          "settings": {
+            "image": "shopify://shop_images/spas_2x_3ff00d9a-d0aa-455d-b9c9-17cd9a443ddc.png",
+            "caption": "Spas & Beauty Salons"
+          }
+        }
+      },
+      "block_order": [
+        "ss1",
+        "ss2",
+        "ss3",
+        "ss4",
+        "ss5",
+        "ss6"
+      ],
+      "settings": {
+        "margin_top": 20,
+        "margin_bottom": 20,
+        "settings_heading": "Lago Solutions For Every Setting",
+        "settings_title_font_size": 28,
+        "settings_strip_caption_font_size": 16
+      }
+    },
+    "lago_home_dealer_network": {
+      "type": "lago-home-dealer-network",
+      "blocks": {
         "dv1": {
           "type": "dealer_value",
           "settings": {
@@ -97,7 +200,7 @@
           "settings": {
             "icon": "shopify://shop_images/Shipping_svg_2x_0f39c0b1-3800-4710-8608-9355ee6e5ed9.png",
             "title": "Expedited Shipping",
-            "text": "Our Lago distribution centers are located nationwide."
+            "text": "Our streamlined logistics ensures your products arrive exactly when you need them."
           }
         },
         "dv4": {
@@ -107,7 +210,28 @@
             "title": "Exclusive Dealer Pricing",
             "text": "Lago dealers get exclusive access to our full catalog of products at the lowest prices."
           }
-        },
+        }
+      },
+      "block_order": [
+        "dv1",
+        "dv2",
+        "dv3",
+        "dv4"
+      ],
+      "settings": {
+        "margin_top": 20,
+        "margin_bottom": 20,
+        "dealer_section_heading": "Join the Lago Dealer Network",
+        "dealer_heading_font_size": 28,
+        "value_row_text_font_size": 14,
+        "value_row_title_font_size": 16,
+        "dealer_cta_label": "Become a Dealer",
+        "dealer_cta_link": "shopify://pages/become-a-dealer"
+      }
+    },
+    "lago_home_hydration_innovation": {
+      "type": "lago-home-hydration-innovation",
+      "blocks": {
         "dc1": {
           "type": "dealer_category",
           "settings": {
@@ -152,18 +276,6 @@
         }
       },
       "block_order": [
-        "pp1",
-        "pp2",
-        "pp3",
-        "pp4",
-        "pp5",
-        "pp6",
-        "pp7",
-        "pp8",
-        "dv1",
-        "dv2",
-        "dv3",
-        "dv4",
         "dc1",
         "dc2",
         "dc3",
@@ -172,47 +284,23 @@
         "dc6"
       ],
       "settings": {
-        "hero_image": "shopify://shop_images/mobile_hero.png",
-        "hero_bg_desktop": "shopify://shop_images/desktop_hero_1440w.png",
-        "hero_heading": "Your water solution partner for residential and commercial settings.",
-        "hero_button_label": "Become a Dealer",
-        "hero_button_link": "",
-        "solutions_heading": "Explore Our Solutions",
-        "section_title_font_size": 30,
-        "path_card_label_font_size": 16,
-        "path_card_label_bold": false,
-        "settings_heading": "Lago Solutions For Every Setting",
-        "settings_title_font_size": 28,
-        "settings_strip_caption_font_size": 16,
-        "settings_strip_1": "shopify://shop_images/hotels.png",
-        "settings_strip_2": "shopify://shop_images/restaurants_2x_c87b52eb-acfa-4eb1-a0e1-5c7af7e016ea.png",
-        "settings_strip_3": "shopify://shop_images/cafes_2x_ee2cad21-ad6d-4caf-8afe-f40f3eeec520.png",
-        "settings_strip_4": "shopify://shop_images/gyms_2x_b868d026-dd19-4e38-9631-1f65f670b9c0.png",
-        "settings_strip_5": "shopify://shop_images/laundromats_2x_2365202d-7599-4713-90fe-781c9e20dbe1.png",
-        "settings_strip_6": "shopify://shop_images/spas_2x_3ff00d9a-d0aa-455d-b9c9-17cd9a443ddc.png",
-        "label_hotels": "Hotels & Apartments",
-        "label_cafe": "Café Coffee Shops",
-        "label_restaurants": "Restaurants & Food Services",
-        "label_fitness": "Fitness Gyms",
-        "label_laundromat": "Laundromats & Car Washes",
-        "label_spa": "Spas & Beauty Salons",
-        "dealer_section_heading": "Join the Lago Dealer Network",
-        "dealer_heading_font_size": 28,
-        "value_row_text_font_size": 14,
-        "value_row_title_font_size": 16,
-        "dealer_cta_label": "Become a Dealer",
-        "dealer_cta_link": "",
+        "margin_top": 20,
+        "margin_bottom": 20,
         "cat_label_font_size": 12,
         "innovation_heading": "Hydration innovation is what we do.",
         "innovation_heading_font_size": 28,
         "innovation_lead": "We provide our dealers the largest product offering in the industry with the most advanced technology.",
         "innovation_lead_font_size": 16,
         "innovation_cta_label": "Learn More",
-        "innovation_cta_link": ""
+        "innovation_cta_link": "shopify://pages/why-lago"
       }
     }
   },
   "order": [
-    "lago_home_1_5"
+    "lago_home_hero",
+    "lago_home_explore_solutions",
+    "lago_home_solutions_settings",
+    "lago_home_dealer_network",
+    "lago_home_hydration_innovation"
   ]
 }

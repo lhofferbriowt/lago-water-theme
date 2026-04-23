@@ -10,6 +10,7 @@
   {% endif %}
 >
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+  {{ 'lago-product-gallery.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
@@ -195,6 +196,25 @@
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
                     {{ product.description }}
+                  </div>
+                {%- endif -%}
+              {%- when 'description_cta' -%}
+                {%- if block.settings.label != blank -%}
+                  <div
+                    class="product__description-cta quick-add-hidden product__description-cta--{{ block.settings.alignment }}"
+                    style="--pdp-desc-cta-bg: {{ block.settings.button_color }};"
+                    {{ block.shopify_attributes }}
+                  >
+                    <a
+                      class="l15-btn"
+                      {% if block.settings.link == blank %}
+                        role="link" aria-disabled="true"
+                      {% else %}
+                        href="{{ block.settings.link }}"
+                      {% endif %}
+                    >
+                      {{ block.settings.label | escape }}
+                    </a>
                   </div>
                 {%- endif -%}
               {%- when 'sku' -%}
@@ -918,6 +938,40 @@
       "type": "description",
       "name": "t:sections.main-product.blocks.description.name",
       "limit": 1
+    },
+    {
+      "type": "description_cta",
+      "name": "Description button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Learn more"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "Alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "color",
+          "id": "button_color",
+          "label": "Button color",
+          "default": "#4a71aa"
+        }
+      ]
     },
     {
       "type": "share",

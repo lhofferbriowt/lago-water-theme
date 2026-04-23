@@ -281,10 +281,10 @@
       "announcement": "Announcement",
       "announcement_bar": "Announcement bar"
     },
-
     "header": {
       "announcement": "Announcement",
       "menu": "Menu",
+      "mobile_phone_aria": "Call {{ number }}",
       "cart_count": {
         "one": "{{ count }} item",
         "other": "{{ count }} items"

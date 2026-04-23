@@ -11,6 +11,7 @@
   "current": {
     "logo": "shopify://shop_images/grey_logo_82235082-32ea-4ef2-bd61-39e736cea307.png",
     "logo_width": 60,
+    "favicon": "shopify://shop_images/lago_favicon.png",
     "type_header_font": "arimo_n7",
     "heading_scale": 100,
     "type_body_font": "arimo_n4",
@@ -109,7 +110,7 @@
     "brand_headline": "",
     "brand_description": "<p></p>",
     "brand_image": "shopify://shop_images/Lago_Logo_White_180.png",
-    "brand_image_width": 100,
+    "brand_image_width": 80,
     "social_facebook_link": "",
     "social_instagram_link": "",
     "social_youtube_link": "",
@@ -174,7 +175,7 @@
           "text": "#ffffff",
           "button": "#4b71aa",
           "button_label": "#ffffff",
-          "secondary_button_label": "#121212",
+          "secondary_button_label": "#ffffff",
           "shadow": "#121212"
         }
       },

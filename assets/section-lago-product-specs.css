@@ -1,0 +1,88 @@
+/* Lago product specifications — Dawn tokens */
+.lago-product-specs__heading {
+  margin: 0 0 2.5rem;
+}
+
+.lago-product-specs__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media screen and (min-width: 990px) {
+  .lago-product-specs__grid--split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 3.5rem;
+    align-items: start;
+  }
+}
+
+.lago-product-specs__columns {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .lago-product-specs__columns--two {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem;
+  }
+}
+
+.lago-product-specs__group-title {
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.lago-product-specs__dl {
+  margin: 0;
+}
+
+.lago-product-specs__row {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.2rem 0;
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+}
+
+.lago-product-specs__row dt {
+  margin: 0;
+  flex: 1 1 auto;
+  color: #4a71aa;
+}
+
+.lago-product-specs__row dd {
+  margin: 0;
+  text-align: right;
+  white-space: nowrap;
+  font-weight: 400;
+  color: rgba(var(--color-foreground), 0.85);
+}
+
+.lago-product-specs__manual {
+  margin-top: 0.5rem;
+}
+
+.lago-product-specs__image-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.lago-product-specs__image {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 749px) {
+  .lago-product-specs__row dt,
+  .lago-product-specs__row dd {
+    font-size: 12px;
+  }
+}

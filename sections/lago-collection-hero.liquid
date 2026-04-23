@@ -1,5 +1,11 @@
 {{ 'section-lago-home-1-5.css' | asset_url | stylesheet_tag }}
 
+{% comment %}
+  Per-collection heroes (same template for all collections): collection metafields
+  custom.lago_collection_hero_mobile and custom.lago_collection_hero_desktop (File — image).
+  When unset, falls back to section image pickers, then collection featured image.
+{% endcomment %}
+
 {%- liquid
   assign hero_heading_display = section.settings.hero_heading | strip
   if hero_heading_display == blank
@@ -7,12 +13,16 @@
   endif
 
   assign hero_img_mobile = section.settings.hero_image
-  if hero_img_mobile == blank and collection.image
+  if collection.metafields.custom.lago_collection_hero_mobile != blank
+    assign hero_img_mobile = collection.metafields.custom.lago_collection_hero_mobile.value
+  elsif hero_img_mobile == blank and collection.image
     assign hero_img_mobile = collection.image
   endif
 
   assign hero_img_desktop = section.settings.hero_bg_desktop
-  if hero_img_desktop == blank and collection.image
+  if collection.metafields.custom.lago_collection_hero_desktop != blank
+    assign hero_img_desktop = collection.metafields.custom.lago_collection_hero_desktop.value
+  elsif hero_img_desktop == blank and collection.image
     assign hero_img_desktop = collection.image
   elsif hero_img_desktop == blank
     assign hero_img_desktop = hero_img_mobile
@@ -55,7 +65,17 @@
           {%- endif -%}
         </div>
         <div class="l15-hero__content">
-          <div class="l15-hero__heading-wrap">
+          <div
+            class="l15-hero__heading-wrap"
+            style="
+              --l15-hero-heading-mt: {{ section.settings.hero_heading_margin_top }}px;
+              --l15-hero-heading-mb: {{ section.settings.hero_heading_margin_bottom }}px;
+              --l15-hero-button-mt: {{ section.settings.hero_button_margin_top }}px;
+              --l15-hero-button-mb: {{ section.settings.hero_button_margin_bottom }}px;
+              --l15-hero-heading-font-size-mobile: {{ section.settings.hero_heading_font_size_mobile }}px;
+              --l15-hero-heading-font-size-desktop: {{ section.settings.hero_heading_font_size_desktop }}px;
+            "
+          >
             <h1 id="{{ l15_hero_heading_id }}" class="l15-hero__text">{{ hero_heading_display | escape }}</h1>
             {%- if section.settings.hero_button_label != blank -%}
               <a class="l15-btn" href="{{ section.settings.hero_button_link | default: '#' }}">{{ section.settings.hero_button_label | escape }}</a>
@@ -78,7 +98,7 @@
   "settings": [
     {
       "type": "paragraph",
-      "content": "Leave heading blank to use the collection title. Leave images blank to use the collection’s featured image when set in the admin."
+      "content": "Leave heading blank to use the collection title. Leave section images blank to use the collection’s featured image when set in the admin. For a different hero per collection (recommended), add collection metafields in Shopify Admin: namespace custom, keys lago_collection_hero_mobile and lago_collection_hero_desktop (both File — image). They override the section’s mobile/desktop images on that collection only."
     },
     {
       "type": "header",
@@ -102,6 +122,50 @@
       "info": "Optional. If empty, the collection title is shown."
     },
     {
+      "type": "range",
+      "id": "hero_heading_font_size_desktop",
+      "min": 18,
+      "max": 90,
+      "step": 2,
+      "unit": "px",
+      "label": "Hero heading font size (desktop)",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "hero_heading_font_size_mobile",
+      "min": 14,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "Hero heading font size (mobile)",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Hero spacing"
+    },
+    {
+      "type": "range",
+      "id": "hero_heading_margin_top",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Hero heading margin top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "hero_heading_margin_bottom",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Hero heading margin bottom",
+      "default": 20
+    },
+    {
       "type": "text",
       "id": "hero_button_label",
       "label": "Hero button label",
@@ -111,6 +175,26 @@
       "type": "url",
       "id": "hero_button_link",
       "label": "Hero button link"
+    },
+    {
+      "type": "range",
+      "id": "hero_button_margin_top",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Hero button margin top",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "hero_button_margin_bottom",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Hero button margin bottom",
+      "default": 0
     }
   ],
   "presets": [

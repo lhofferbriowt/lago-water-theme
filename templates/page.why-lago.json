@@ -1,1 +1,579 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"17564939064e4ffa6c":{"type":"apps","blocks":{"clicky_clickable_banner_ypRcp9":{"type":"shopify:\/\/apps\/clicky\/blocks\/clickable_banner\/2d58f9d3-a5fb-4893-8aac-935f0ebcc5b8","settings":{"cb_desktop_image":"shopify:\/\/shop_images\/Why_Header_28f17b2c-0469-42a9-a258-a57f1fad27b7.png","cb_mobile_image":"shopify:\/\/shop_images\/Why-Header-Mobile-V2.jpg","image_size":"adapt","cb_image_link":"","cb_image_link_2":"","cb_mb_image_link":"","link_target":"_self","cb_is_boxed_layout":false,"is_banner_sticky":false,"overlay_text":"","overlay_text_color":"#ffffff","button_text":"","button_text_color":"#ffffff","button_bg_color":"#000000","content_position":"middle-center","content_alignment":"center","cb_custom_css":"","padding_top":0,"padding_bottom":0}}},"block_order":["clicky_clickable_banner_ypRcp9"],"settings":{"include_margins":true}},"image_banner_6PYQHQ":{"type":"image-banner","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/Why_Header_7b2a353c-a8c6-4c51-8446-d25864b1e5e4.png","image_overlay_opacity":0,"image_height":"small","image_behavior":"none","desktop_content_position":"bottom-center","desktop_content_alignment":"center","show_text_box":false,"color_scheme":"","stack_images_on_mobile":false,"mobile_content_alignment":"center","show_text_below":false}},"rich_text_xmhTFA":{"type":"rich-text","blocks":{"heading_xVDdjV":{"type":"heading","settings":{"heading":"Bottled Water vs Bottleless Water Dispenser","heading_size":"h1"}}},"block_order":["heading_xVDdjV"],"custom_css":["h2 {color: #034ea2;}",".isolate .rich-text__blocks {max-width: 100%;}"],"name":"t:sections.rich-text.presets.name","settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-7d3e69d9-fb39-4ad5-bfe7-9f49a8f8cdc6","full_width":true,"padding_top":44,"padding_bottom":44}},"1756507841046ded2a":{"type":"apps","blocks":{"clicky_clickable_banner_7QG4aw":{"type":"shopify:\/\/apps\/clicky\/blocks\/clickable_banner\/2d58f9d3-a5fb-4893-8aac-935f0ebcc5b8","settings":{"cb_desktop_image":"shopify:\/\/shop_images\/Why_Comparison_a3ca265e-749e-4d79-a8ec-e7264c36939e.png","cb_mobile_image":"shopify:\/\/shop_images\/Why_Comparison_-_Copy.png","image_size":"adapt","cb_image_link":"","cb_image_link_2":"","cb_mb_image_link":"","link_target":"_self","cb_is_boxed_layout":false,"is_banner_sticky":false,"overlay_text":"","overlay_text_color":"#ffffff","button_text":"","button_text_color":"#ffffff","button_bg_color":"#000000","content_position":"middle-center","content_alignment":"center","cb_custom_css":"","padding_top":16,"padding_bottom":12}}},"block_order":["clicky_clickable_banner_7QG4aw"],"settings":{"include_margins":true}},"image_banner_CKQkyX":{"type":"image-banner","disabled":true,"name":"t:sections.image-banner.presets.name","settings":{"image":"shopify:\/\/shop_images\/Why_Comparison.png","image_overlay_opacity":0,"image_height":"adapt","image_behavior":"none","desktop_content_position":"middle-center","desktop_content_alignment":"center","show_text_box":true,"color_scheme":"scheme-2fa3b3d9-dd9e-442d-8adb-c170f52e446b","stack_images_on_mobile":true,"mobile_content_alignment":"center","show_text_below":true}},"image_with_text_Db9tr7":{"type":"image-with-text","blocks":{"heading_q6m6DC":{"type":"heading","settings":{"heading":"<strong>We Provide Solutions for Every Hydration Challenge<\/strong>","heading_size":"h1"}},"text_yrM8Qw":{"type":"text","settings":{"text":"<p>Lago is an industry leader that provides innovative clean water solutions.  From businesses, hotels, restaurants and spas, Lago has a solution for every hydration need anywhere around the world.<\/p>","text_style":"body"}},"button_GBV8qJ":{"type":"button","settings":{"button_label":"SCHEDULE NOW","button_link":"https:\/\/lago-water.myshopify.com\/pages\/become-a-dealer","button_style_secondary":false}}},"block_order":["heading_q6m6DC","text_yrM8Qw","button_GBV8qJ"],"custom_css":["h2 {color: #034ea2;}"],"settings":{"image":"shopify:\/\/shop_images\/Why_1_800x800_48860d6e-6a38-4551-a05b-af24a7bc36b5.png","height":"adapt","desktop_image_width":"medium","layout":"image_first","image_behavior":"none","content_layout":"no-overlap","desktop_content_position":"middle","desktop_content_alignment":"left","mobile_content_alignment":"center","section_color_scheme":"scheme-4baf2c69-c18d-4db0-a94f-0cf323a6e438","color_scheme":"scheme-4baf2c69-c18d-4db0-a94f-0cf323a6e438","padding_top":36,"padding_bottom":12}},"rich_text_LAkRQQ":{"type":"rich-text","blocks":{"heading_hkbiwi":{"type":"heading","settings":{"heading":"We carry the<strong> largest product line<\/strong> and offer everything you need for all your hydration solutions:","heading_size":"h1"}}},"block_order":["heading_hkbiwi"],"custom_css":[".rich-text__blocks {max-width: 100%;}"],"name":"t:sections.rich-text.presets.name","settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-7d3e69d9-fb39-4ad5-bfe7-9f49a8f8cdc6","full_width":true,"padding_top":36,"padding_bottom":36}},"multicolumn_LgGTAX":{"type":"multicolumn","blocks":{"column_K4BazG":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/Why_Lago_Products_1.jpg","title":"<strong>BOTTLELESS RO DISPENSERS<\/strong>","text":"<p>• Reverse Osmosis Filtration<\/p><p>• Touch & Touchless Dispense<br\/>• Remineralization Filters<br\/>• High-Capacity<br\/>• IoT Capability<\/p>","link_label":"","link":""}},"column_wKRczw":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/Why_Lago_Products_2_-_Copy.jpg","title":"<strong>SPARKLING DISPENSERS<\/strong>","text":"<p>• Premium Quality<br\/>• Countertop & Undersink<br\/>• Dual & Tri-temp Option<br\/>• High-Capacity<\/p>","link_label":"","link":""}},"column_Lbij8x":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/Why_Lago_Products_3.jpg","title":"<strong>UNDERSINK SYSTEMS<\/strong>","text":"<p>• Filtration & Reverse Osmosis<br\/>• Industry-Leading Technology<br\/>• Easy Filter Replacement<br\/>• Most Advanced Designs<\/p>","link_label":"","link":""}}},"block_order":["column_K4BazG","column_wKRczw","column_Lbij8x"],"custom_css":["h3 {color: #034ea2;}"],"name":"t:sections.multicolumn.presets.name","settings":{"title":"","heading_size":"h1","image_width":"half","image_ratio":"adapt","button_label":"","button_link":"","columns_desktop":3,"column_alignment":"center","background_style":"none","color_scheme":"scheme-9dfc034f-8d21-4f3a-a1d7-e22741224bbe","columns_mobile":"1","swipe_on_mobile":false,"padding_top":32,"padding_bottom":16}},"multicolumn_LXMeKh":{"type":"multicolumn","blocks":{"column_VfdNJV":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/Why_Lago_Products_4.jpg","title":"<strong>INDUSTRIAL RO SYSTEMS<\/strong>","text":"<p>• High-Capacity Reverse Osmosis Filtration<br\/>• Customizable Solutions<br\/>• Premium Quality<br\/>• IoT Capacity<\/p>","link_label":"","link":""}},"column_N3jW4C":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/Why_Lago_Products_5.jpg","title":"<strong>ICE MACHINES & DISPENSERS<\/strong>","text":"<p>• Scoop & Dispense Ice<br\/>• High-, Mid-, Low-Capacity<br\/>• Half & Full Cube Ice<br\/>• Modular Design<\/p>","link_label":"","link":""}}},"block_order":["column_VfdNJV","column_N3jW4C"],"custom_css":["h3 {color: #034ea2;}"],"name":"t:sections.multicolumn.presets.name","settings":{"title":"","heading_size":"h1","image_width":"half","image_ratio":"adapt","button_label":"","button_link":"","columns_desktop":2,"column_alignment":"center","background_style":"none","color_scheme":"scheme-9dfc034f-8d21-4f3a-a1d7-e22741224bbe","columns_mobile":"1","swipe_on_mobile":false,"padding_top":36,"padding_bottom":36}},"rich_text_9GNMLL":{"type":"rich-text","blocks":{"heading_ecMyRj":{"type":"heading","settings":{"heading":"Lago products fit everywhere:","heading_size":"h1"}}},"block_order":["heading_ecMyRj"],"custom_css":["h2 {color: #034ea2;}"],"name":"t:sections.rich-text.presets.name","settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-7d3e69d9-fb39-4ad5-bfe7-9f49a8f8cdc6","full_width":true,"padding_top":36,"padding_bottom":44}},"1756493916ef99b8c1":{"type":"apps","blocks":{"clicky_clickable_banner_GxPndg":{"type":"shopify:\/\/apps\/clicky\/blocks\/clickable_banner\/2d58f9d3-a5fb-4893-8aac-935f0ebcc5b8","settings":{"cb_desktop_image":"shopify:\/\/shop_images\/Why_Lifestyle_def1a173-e774-4522-81e4-0a34e6681ee5.png","cb_mobile_image":"shopify:\/\/shop_images\/Why-Lago-Lifestyle-Mobile.jpg","image_size":"adapt","cb_image_link":"","cb_image_link_2":"","cb_mb_image_link":"","link_target":"_self","cb_is_boxed_layout":false,"is_banner_sticky":false,"overlay_text":"","overlay_text_color":"#ffffff","button_text":"","button_text_color":"#ffffff","button_bg_color":"#e8e8e8","content_position":"middle-center","content_alignment":"center","cb_custom_css":"","padding_top":0,"padding_bottom":0}}},"block_order":["clicky_clickable_banner_GxPndg"],"settings":{"include_margins":true}},"image_banner_EtkqF8":{"type":"image-banner","disabled":true,"name":"t:sections.image-banner.presets.name","settings":{"image":"shopify:\/\/shop_images\/Why_Lifestyle_530bec03-eb24-41ff-84cd-166e56437d20.png","image_overlay_opacity":0,"image_height":"medium","image_behavior":"none","desktop_content_position":"middle-center","desktop_content_alignment":"center","show_text_box":true,"color_scheme":"scheme-2fa3b3d9-dd9e-442d-8adb-c170f52e446b","stack_images_on_mobile":true,"mobile_content_alignment":"center","show_text_below":true}},"multicolumn_HcNLJQ":{"type":"multicolumn","blocks":{"column_HViWCg":{"type":"column","settings":{"title":"","text":"<p>• Restaurants, Cafés & Food Services<br\/>• Vending & Beverage Services<br\/>• Drinking Water & Process Facilities<br\/>• Hotels, Lodges & Rentals<br\/>• Professional Services & Corporations<br\/>• Groceries, Markets & Retailers<\/p>","link_label":"","link":""}},"column_mAALmT":{"type":"column","settings":{"title":"","text":"<p>• Spas & Beauty Salons<br\/>• Education & Healthcare Facilities<br\/>• Manufacturers & Warehouses<br\/>• Laundromats & Car Washes<br\/>• Fitness Gyms & Recreational Centers<br\/>• Entertainment & Professional Teams<\/p>","link_label":"","link":""}}},"block_order":["column_HViWCg","column_mAALmT"],"name":"t:sections.multicolumn.presets.name","settings":{"title":"<strong>COMMERCIAL SETTINGS:<\/strong>","heading_size":"h2","image_width":"full","image_ratio":"adapt","button_label":"","button_link":"","columns_desktop":2,"column_alignment":"left","background_style":"none","color_scheme":"scheme-1","columns_mobile":"1","swipe_on_mobile":false,"padding_top":40,"padding_bottom":28}},"rich_text_VN4Wwd":{"type":"rich-text","blocks":{"heading_6aAyEr":{"type":"heading","settings":{"heading":"<strong>Become a Lago Dealer Today<\/strong>","heading_size":"h1"}},"button_qxtbjz":{"type":"button","settings":{"button_label":"SIGN UP NOW","button_link":"https:\/\/lago-water.myshopify.com\/pages\/become-a-dealer","button_style_secondary":false,"button_label_2":"","button_link_2":"shopify:\/\/pages\/become-a-dealer","button_style_secondary_2":false}}},"block_order":["heading_6aAyEr","button_qxtbjz"],"name":"t:sections.rich-text.presets.name","settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-7d3e69d9-fb39-4ad5-bfe7-9f49a8f8cdc6","full_width":true,"padding_top":44,"padding_bottom":48}}},"order":["main","17564939064e4ffa6c","image_banner_6PYQHQ","rich_text_xmhTFA","1756507841046ded2a","image_banner_CKQkyX","image_with_text_Db9tr7","rich_text_LAkRQQ","multicolumn_LgGTAX","multicolumn_LXMeKh","rich_text_9GNMLL","1756493916ef99b8c1","image_banner_EtkqF8","multicolumn_HcNLJQ","rich_text_VN4Wwd"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "17564939064e4ffa6c": {
+      "type": "apps",
+      "blocks": {
+        "clicky_clickable_banner_ypRcp9": {
+          "type": "shopify://apps/clicky-clickable-image-banner/blocks/clickable_banner/2d58f9d3-a5fb-4893-8aac-935f0ebcc5b8",
+          "disabled": true,
+          "settings": {
+            "cb_desktop_image": "shopify://shop_images/Why_Header_28f17b2c-0469-42a9-a258-a57f1fad27b7.png",
+            "cb_mobile_image": "shopify://shop_images/Why-Header-Mobile-V2.jpg",
+            "image_size": "adapt",
+            "cb_image_link": "",
+            "cb_image_link_2": "",
+            "cb_mb_image_link": "",
+            "link_target": "_self",
+            "cb_is_boxed_layout": false,
+            "is_banner_sticky": false,
+            "set_schedule": false,
+            "start_date": "",
+            "end_date": "",
+            "overlay_text": "",
+            "overlay_text_color": "#ffffff",
+            "button_text": "",
+            "button_text_color": "#ffffff",
+            "button_bg_color": "#000000",
+            "button_margin_top": 0,
+            "button_margin_bottom": 0,
+            "button_margin_left": 0,
+            "button_margin_right": 0,
+            "content_position": "middle-center",
+            "content_alignment": "center",
+            "cb_custom_css": "",
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "clicky_clickable_banner_ypRcp9"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "image_banner_6PYQHQ": {
+      "type": "image-banner",
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/Why_Header_7b2a353c-a8c6-4c51-8446-d25864b1e5e4.png",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "rich_text_xmhTFA": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_xVDdjV": {
+          "type": "heading",
+          "settings": {
+            "heading": "Bottled Water vs Bottleless Water Dispenser",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xVDdjV"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "h2 {color: #034ea2;}",
+        ".isolate .rich-text__blocks {max-width: 100%;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-7d3e69d9-fb39-4ad5-bfe7-9f49a8f8cdc6",
+        "full_width": true,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "1756507841046ded2a": {
+      "type": "apps",
+      "blocks": {
+        "clicky_clickable_banner_7QG4aw": {
+          "type": "shopify://apps/clicky-clickable-image-banner/blocks/clickable_banner/2d58f9d3-a5fb-4893-8aac-935f0ebcc5b8",
+          "disabled": true,
+          "settings": {
+            "cb_desktop_image": "shopify://shop_images/Why_Comparison_a3ca265e-749e-4d79-a8ec-e7264c36939e.png",
+            "cb_mobile_image": "shopify://shop_images/Why_Comparison_-_Copy.png",
+            "image_size": "adapt",
+            "cb_image_link": "",
+            "cb_image_link_2": "",
+            "cb_mb_image_link": "",
+            "link_target": "_self",
+            "cb_is_boxed_layout": false,
+            "is_banner_sticky": false,
+            "set_schedule": false,
+            "start_date": "",
+            "end_date": "",
+            "overlay_text": "",
+            "overlay_text_color": "#ffffff",
+            "button_text": "",
+            "button_text_color": "#ffffff",
+            "button_bg_color": "#000000",
+            "button_margin_top": 0,
+            "button_margin_bottom": 0,
+            "button_margin_left": 0,
+            "button_margin_right": 0,
+            "content_position": "middle-center",
+            "content_alignment": "center",
+            "cb_custom_css": "",
+            "padding_top": 16,
+            "padding_bottom": 12
+          }
+        }
+      },
+      "block_order": [
+        "clicky_clickable_banner_7QG4aw"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "image_banner_CKQkyX": {
+      "type": "image-banner",
+      "disabled": true,
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Why_Comparison.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "scheme-2fa3b3d9-dd9e-442d-8adb-c170f52e446b",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "image_with_text_Db9tr7": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_q6m6DC": {
+          "type": "heading",
+          "settings": {
+            "heading": "We are passionate about water.",
+            "heading_size": "h1"
+          }
+        },
+        "text_yrM8Qw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We strive every day to deliver premium filtration that elevates the hydration experience to a whole new level. At Lago we understand our dealers and their customers which enables us to provide the best filtration products to fit your needs. Our goal is that with every sip you take<br/>you feel the passion we put into all of our products.<br/><br/></p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_q6m6DC",
+        "text_yrM8Qw"
+      ],
+      "custom_css": [
+        "h2 {color: #034ea2;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/why_lago_grid_image_3.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "scheme-4baf2c69-c18d-4db0-a94f-0cf323a6e438",
+        "color_scheme": "scheme-4baf2c69-c18d-4db0-a94f-0cf323a6e438",
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "image_with_text_A47mbk": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_7qPhab": {
+          "type": "heading",
+          "settings": {
+            "heading": "Hydration",
+            "heading_size": "h2"
+          }
+        },
+        "text_p4RGbD": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_7qPhab",
+        "text_p4RGbD"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/filtration_grid_image.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_LAkRQQ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_hkbiwi": {
+          "type": "heading",
+          "settings": {
+            "heading": "We carry the<strong> largest product line</strong> and offer everything you need for all your hydration solutions:",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hkbiwi"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".rich-text__blocks {max-width: 100%;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-7d3e69d9-fb39-4ad5-bfe7-9f49a8f8cdc6",
+        "full_width": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_LgGTAX": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_K4BazG": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Why_Lago_Products_1.jpg",
+            "title": "<strong>BOTTLELESS RO DISPENSERS</strong>",
+            "text": "<p>• Reverse Osmosis Filtration</p><p>• Touch & Touchless Dispense<br/>• Remineralization Filters<br/>• High-Capacity<br/>• IoT Capability</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_wKRczw": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Why_Lago_Products_2_-_Copy.jpg",
+            "title": "<strong>SPARKLING DISPENSERS</strong>",
+            "text": "<p>• Premium Quality<br/>• Countertop & Undersink<br/>• Dual & Tri-temp Option<br/>• High-Capacity</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Lbij8x": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Why_Lago_Products_3.jpg",
+            "title": "<strong>UNDERSINK SYSTEMS</strong>",
+            "text": "<p>• Filtration & Reverse Osmosis<br/>• Industry-Leading Technology<br/>• Easy Filter Replacement<br/>• Most Advanced Designs</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_K4BazG",
+        "column_wKRczw",
+        "column_Lbij8x"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "h3 {color: #034ea2;}"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "scheme-9dfc034f-8d21-4f3a-a1d7-e22741224bbe",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 32,
+        "padding_bottom": 16
+      }
+    },
+    "multicolumn_LXMeKh": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_VfdNJV": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Why_Lago_Products_4.jpg",
+            "title": "<strong>INDUSTRIAL RO SYSTEMS</strong>",
+            "text": "<p>• High-Capacity Reverse Osmosis Filtration<br/>• Customizable Solutions<br/>• Premium Quality<br/>• IoT Capacity</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_N3jW4C": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Why_Lago_Products_5.jpg",
+            "title": "<strong>ICE MACHINES & DISPENSERS</strong>",
+            "text": "<p>• Scoop & Dispense Ice<br/>• High-, Mid-, Low-Capacity<br/>• Half & Full Cube Ice<br/>• Modular Design</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_VfdNJV",
+        "column_N3jW4C"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "h3 {color: #034ea2;}"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "scheme-9dfc034f-8d21-4f3a-a1d7-e22741224bbe",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_9GNMLL": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ecMyRj": {
+          "type": "heading",
+          "settings": {
+            "heading": "Lago products fit everywhere:",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ecMyRj"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "h2 {color: #034ea2;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-7d3e69d9-fb39-4ad5-bfe7-9f49a8f8cdc6",
+        "full_width": true,
+        "padding_top": 36,
+        "padding_bottom": 44
+      }
+    },
+    "1756493916ef99b8c1": {
+      "type": "apps",
+      "blocks": {
+        "clicky_clickable_banner_GxPndg": {
+          "type": "shopify://apps/clicky-clickable-image-banner/blocks/clickable_banner/2d58f9d3-a5fb-4893-8aac-935f0ebcc5b8",
+          "settings": {
+            "cb_desktop_image": "shopify://shop_images/Why_Lifestyle_def1a173-e774-4522-81e4-0a34e6681ee5.png",
+            "cb_mobile_image": "shopify://shop_images/Why-Lago-Lifestyle-Mobile.jpg",
+            "image_size": "adapt",
+            "cb_image_link": "",
+            "cb_image_link_2": "",
+            "cb_mb_image_link": "",
+            "link_target": "_self",
+            "cb_is_boxed_layout": false,
+            "is_banner_sticky": false,
+            "set_schedule": false,
+            "start_date": "",
+            "end_date": "",
+            "overlay_text": "",
+            "overlay_text_color": "#ffffff",
+            "button_text": "",
+            "button_text_color": "#ffffff",
+            "button_bg_color": "#e8e8e8",
+            "button_margin_top": 0,
+            "button_margin_bottom": 0,
+            "button_margin_left": 0,
+            "button_margin_right": 0,
+            "content_position": "middle-center",
+            "content_alignment": "center",
+            "cb_custom_css": "",
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "clicky_clickable_banner_GxPndg"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "image_banner_EtkqF8": {
+      "type": "image-banner",
+      "disabled": true,
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Why_Lifestyle_530bec03-eb24-41ff-84cd-166e56437d20.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "scheme-2fa3b3d9-dd9e-442d-8adb-c170f52e446b",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "multicolumn_HcNLJQ": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_HViWCg": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<p>• Restaurants, Cafés & Food Services<br/>• Vending & Beverage Services<br/>• Drinking Water & Process Facilities<br/>• Hotels, Lodges & Rentals<br/>• Professional Services & Corporations<br/>• Groceries, Markets & Retailers</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_mAALmT": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<p>• Spas & Beauty Salons<br/>• Education & Healthcare Facilities<br/>• Manufacturers & Warehouses<br/>• Laundromats & Car Washes<br/>• Fitness Gyms & Recreational Centers<br/>• Entertainment & Professional Teams</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_HViWCg",
+        "column_mAALmT"
+      ],
+      "disabled": true,
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "<strong>COMMERCIAL SETTINGS:</strong>",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 40,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_VN4Wwd": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6aAyEr": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Become a Lago Dealer Today</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "button_qxtbjz": {
+          "type": "button",
+          "settings": {
+            "button_label": "SIGN UP NOW",
+            "button_link": "https://lago-water.myshopify.com/pages/become-a-dealer",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "shopify://pages/become-a-dealer",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_6aAyEr",
+        "button_qxtbjz"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-7d3e69d9-fb39-4ad5-bfe7-9f49a8f8cdc6",
+        "full_width": true,
+        "padding_top": 44,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "main",
+    "17564939064e4ffa6c",
+    "image_banner_6PYQHQ",
+    "rich_text_xmhTFA",
+    "1756507841046ded2a",
+    "image_banner_CKQkyX",
+    "image_with_text_Db9tr7",
+    "image_with_text_A47mbk",
+    "rich_text_LAkRQQ",
+    "multicolumn_LgGTAX",
+    "multicolumn_LXMeKh",
+    "rich_text_9GNMLL",
+    "1756493916ef99b8c1",
+    "image_banner_EtkqF8",
+    "multicolumn_HcNLJQ",
+    "rich_text_VN4Wwd"
+  ]
+}

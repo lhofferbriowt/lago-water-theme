@@ -1,0 +1,102 @@
+/**
+ * Lago PDP gallery layout (Dawn media-gallery + thumbnails):
+ * - Desktop (990px+): vertical thumbnail rail on the left, main image on the right
+ * - Mobile: main image first, horizontal thumbnails below (Dawn default order)
+ * Requires main-product: gallery_layout "thumbnail", mobile_thumbnails "show", image_zoom "lightbox"
+ * Large screens: aim for ~1000×1000 view box for the active main image (with object-fit: contain inside).
+ */
+
+@media screen and (min-width: 1200px) {
+  /* Dawn constrain-height caps display; raise floor so a 1000px-tall box is achievable on desktop */
+  .product--thumbnail media-gallery.lago-product-gallery .product__media-item.is-active .product-media-container.constrain-height {
+    --constrained-min-height: 1000px;
+    --viewport-offset: 140px;
+  }
+
+  /* Prefer at least ~1000px box for the active slide’s media frame */
+  .product--thumbnail media-gallery.lago-product-gallery .product__media-item.is-active .product-media-container {
+    width: min(100%, 1000px);
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  .product--thumbnail media-gallery.lago-product-gallery .product__media-item.is-active .product__media img {
+    object-fit: contain;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .product--thumbnail media-gallery.lago-product-gallery {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 1.6rem;
+    width: 100%;
+  }
+
+  .product--thumbnail media-gallery.lago-product-gallery > slider-component:first-of-type {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  /* ~30% narrower than 9.6rem to give the main image more horizontal room */
+  .product--thumbnail media-gallery.lago-product-gallery .thumbnail-slider {
+    flex: 0 0 calc(9.6rem * 0.7);
+    max-width: calc(9.6rem * 0.7);
+    width: calc(9.6rem * 0.7);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+  }
+
+  /* Vertical thumb list: override Dawn’s thumbnail grid */
+  .product--thumbnail media-gallery.lago-product-gallery .thumbnail-slider .thumbnail-list.slider {
+    display: flex !important;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    grid-template-columns: unset !important;
+    gap: 0.8rem;
+    max-height: min(72vh, 52rem);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0.4rem 0.2rem;
+    scroll-snap-type: y proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .product--thumbnail media-gallery.lago-product-gallery .thumbnail-list__item.slider__slide {
+    width: 100% !important;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  /* Prev/next assume horizontal scroll in Dawn; use native vertical scroll instead */
+  .product--thumbnail media-gallery.lago-product-gallery .thumbnail-slider > .slider-button {
+    display: none !important;
+  }
+}
+
+/* Mobile / tablet: stronger “selected” cue (underline), closer to Brio reference */
+@media screen and (max-width: 989px) {
+  .product--thumbnail media-gallery.lago-product-gallery .thumbnail[aria-current='true'] {
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: 0.3rem solid rgb(var(--color-foreground));
+  }
+}
+
+/* Lightbox: keep close control pinned to upper-right of the viewport */
+.product-media-modal.media-modal[open] .product-media-modal__toggle {
+  position: fixed;
+  top: 1.6rem;
+  right: 1.6rem;
+  z-index: 102;
+}
+
+@media screen and (min-width: 750px) {
+  .product-media-modal.media-modal[open] .product-media-modal__toggle {
+    top: 2rem;
+    right: 2rem;
+  }
+}

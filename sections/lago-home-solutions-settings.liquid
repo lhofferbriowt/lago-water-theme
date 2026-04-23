@@ -1,0 +1,158 @@
+{{ 'section-lago-home-1-5.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign strip_blocks = section.blocks | where: 'type', 'setting_strip'
+-%}
+
+<div
+  class="lago-home-1-5"
+  style="padding-top: {{ section.settings.margin_top }}px; padding-bottom: {{ section.settings.margin_bottom }}px; --l15-settings-title-font-size: {{ section.settings.settings_title_font_size }}px; --l15-settings-strip-caption-font-size: {{ section.settings.settings_strip_caption_font_size }}px;"
+>
+  <div class="lago-home-1-5__inner">
+    <section class="l15-settings" aria-labelledby="l15-settings-heading">
+      <h2 id="l15-settings-heading" class="l15-settings__title">{{ section.settings.settings_heading | escape }}</h2>
+
+      <div class="l15-settings__strips" role="list">
+        {%- for block in strip_blocks -%}
+          <div class="l15-settings__strip" role="listitem" {{ block.shopify_attributes }}>
+            <div class="l15-settings__strip-visual">
+              {%- if block.settings.image != blank -%}
+                {%- assign l15_strip_alt = block.settings.image.alt | default: block.settings.caption -%}
+                {{
+                  block.settings.image
+                  | image_url: width: 520
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '260, 390, 520',
+                    sizes: '(max-width: 749px) 30vw, (max-width: 989px) 30vw, 220px',
+                    alt: l15_strip_alt
+                }}
+              {%- else -%}
+                <span class="l15-settings__strip-placeholder" aria-hidden="true"></span>
+              {%- endif -%}
+            </div>
+            <span class="l15-settings__strip-caption">{{ block.settings.caption | escape }}</span>
+          </div>
+        {%- endfor -%}
+      </div>
+    </section>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lago Home: Settings",
+  "tag": "section",
+  "class": "section section-lago-home-solutions-settings",
+  "settings": [
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Top spacing",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom spacing",
+      "default": 0
+    },
+    {
+      "type": "text",
+      "id": "settings_heading",
+      "label": "Heading",
+      "default": "Lago Solutions For Every Setting"
+    },
+    {
+      "type": "range",
+      "id": "settings_title_font_size",
+      "min": 12,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading font size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "settings_strip_caption_font_size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Strip label font size",
+      "default": 16
+    }
+  ],
+  "blocks": [
+    {
+      "type": "setting_strip",
+      "name": "Setting tile",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption",
+          "default": "Hotels & Apartments"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lago Home: Settings",
+      "blocks": [
+        {
+          "type": "setting_strip",
+          "settings": {
+            "caption": "Hotels & Apartments"
+          }
+        },
+        {
+          "type": "setting_strip",
+          "settings": {
+            "caption": "Restaurants & Food Services"
+          }
+        },
+        {
+          "type": "setting_strip",
+          "settings": {
+            "caption": "Café Coffee Shops"
+          }
+        },
+        {
+          "type": "setting_strip",
+          "settings": {
+            "caption": "Fitness Gyms"
+          }
+        },
+        {
+          "type": "setting_strip",
+          "settings": {
+            "caption": "Laundromats & Car Washes"
+          }
+        },
+        {
+          "type": "setting_strip",
+          "settings": {
+            "caption": "Spas & Beauty Salons"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

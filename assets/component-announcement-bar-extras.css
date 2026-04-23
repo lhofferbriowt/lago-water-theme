@@ -1,0 +1,32 @@
+/* Announcement bar extras (Lago): mobile-only text + typography controls */
+
+.announcement-bar-section .announcement-bar__message {
+  font-size: var(--announcement-text-font-size, inherit);
+  font-weight: var(--announcement-text-font-weight, inherit);
+  color: var(--announcement-text-color, inherit);
+}
+
+.announcement-bar-section .announcement-bar__text--mobile {
+  display: none;
+}
+
+@media screen and (max-width: 749px) {
+  .announcement-bar-section .announcement-bar__text--desktop {
+    display: none;
+  }
+
+  .announcement-bar-section .announcement-bar__text--mobile {
+    display: inline;
+  }
+}
+
+/* Hide mobile-only announcements on desktop/tablet */
+@media screen and (min-width: 750px) {
+  .announcement-bar-section .announcement-bar--mobile-only {
+    display: none;
+  }
+
+  .announcement-bar-section .announcement-bar-slide--mobile-only {
+    display: none !important;
+  }
+}

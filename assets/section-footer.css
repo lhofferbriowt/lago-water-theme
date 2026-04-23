@@ -506,3 +506,19 @@
     }
   }
 }
+
+/* Footer logo: first column at all breakpoints */
+.footer-block--footer-logo-first {
+  display: block;
+}
+
+.footer-block--footer-logo-first .footer-block__brand-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+.footer-block--footer-logo-first .footer-block__footer-logo-img {
+  width: min(100%, var(--footer-logo-width, 180px));
+  max-width: min(100%, var(--footer-logo-width, 180px));
+  height: auto;
+}

@@ -41,6 +41,23 @@
     if section.blocks.size == 1 and section.blocks[0].type == 'brand_information' and brand_empty and has_social_icons == false and section.settings.newsletter_enable == false and section.settings.enable_follow_on_shop == false
       assign only_empty_brand = true
     endif
+
+    assign footer_logo_image = settings.brand_image
+    if footer_logo_image == blank
+      assign footer_logo_image = settings.logo
+    endif
+
+    assign footer_logo_display_width = 180
+    assign footer_logo_alt = shop.name
+
+    if footer_logo_image != blank
+      assign footer_logo_alt = footer_logo_image.alt | default: shop.name | escape
+      if footer_logo_image == settings.brand_image and settings.brand_image != blank
+        assign footer_logo_display_width = settings.brand_image_width | default: 180
+      elsif footer_logo_image == settings.logo and settings.logo != blank
+        assign footer_logo_display_width = settings.logo_width | default: 200
+      endif
+    endif
   -%}
   {%- if section.blocks.size > 0
     or section.settings.newsletter_enable
@@ -66,6 +83,30 @@
               data-cascade
             {% endif %}
           >
+            {%- if footer_logo_image != blank -%}
+              <div
+                class="footer-block grid__item footer-block--footer-logo-first{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: 0; --footer-logo-width: {{ footer_logo_display_width }}px;"
+                {% else %}
+                  style="--footer-logo-width: {{ footer_logo_display_width }}px;"
+                {% endif %}
+              >
+                <a href="{{ routes.root_url }}" class="footer-block__brand-link focus-inset">
+                  {{
+                    footer_logo_image
+                    | image_url: width: 360
+                    | image_tag:
+                      loading: 'lazy',
+                      class: 'footer-block__footer-logo-img',
+                      widths: '180, 240, 360',
+                      width: footer_logo_display_width,
+                      alt: footer_logo_alt
+                  }}
+                </a>
+              </div>
+            {%- endif -%}
             {%- for block in section.blocks -%}
               <div
                 class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -249,10 +290,6 @@
       </div>
     {%- endunless -%}
   {%- endif -%}
-  <div class="footer-logo">
-  <img src=" https://cdn.shopify.com/s/files/1/0940/1168/7234/files/Lago_Logo_White_180.png?v=1749595255 " alt="Lago White Footer Logo">
-</div>
-
   <div
     class="footer__content-bottom{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     {% if settings.animations_reveal_on_scroll %}
@@ -302,10 +339,19 @@
     </div>
     <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
       <div class="footer__copyright caption">
-       <small class="copyright__content"
-          >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
+        {%- assign copyright_year = 'now' | date: '%Y' -%}
+        <small class="copyright__content">
+          {%- assign copyright_raw = section.settings.copyright_text | strip -%}
+          {%- assign copyright_placeholder_default = '© {year}, {store_name}' -%}
+          {%- if copyright_raw == blank or copyright_raw == copyright_placeholder_default -%}
+            &copy; {{ copyright_year }}, {{ shop.name | link_to: routes.root_url }}
+          {%- else -%}
+            {%- assign copyright_line = copyright_raw | escape -%}
+            {%- assign copyright_line = copyright_line | replace: '{year}', copyright_year -%}
+            {%- assign copyright_line = copyright_line | replace: '{store_name}', shop.name | escape -%}
+            {{- copyright_line -}}
+          {%- endif -%}
         </small>
-        <small class="copyright__content">{{ powered_by_link }}</small>
         {%- if section.settings.show_policy -%}
           <ul class="policies list-unstyled">
             {%- for policy in shop.policies -%}
@@ -499,6 +545,17 @@
       "default": true,
       "label": "t:sections.footer.settings.show_policy.label",
       "info": "t:sections.footer.settings.show_policy.info"
+    },
+    {
+      "type": "header",
+      "content": "Copyright"
+    },
+    {
+      "type": "textarea",
+      "id": "copyright_text",
+      "label": "Copyright line",
+      "info": "Clear this field to use the default (© current year, linked store name). If set, use {year} for the current year and {store_name} for the store name (plain text).",
+      "default": "© {year}, {store_name}"
     },
     {
       "type": "header",
