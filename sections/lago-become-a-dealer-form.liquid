@@ -1,0 +1,233 @@
+{{ 'section-lago-web-to-lead-form.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'lago-dealer-form-countries.js' | asset_url }}" defer></script>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width page-width--narrow section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}">
+        {{ section.settings.heading }}
+      </h2>
+    {%- endif -%}
+
+    <script>
+      window.WEB_TO_LEAD_UTM_SOURCE = window.WEB_TO_LEAD_UTM_SOURCE || '';
+    </script>
+
+    <form
+      id="webToLeadForm-{{ section.id }}"
+      class="web-to-lead-form"
+      action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D5f000006QMSU"
+      method="POST"
+    >
+      <p class="web-to-lead-form__notice"><span class="required">*</span> Required Fields</p>
+
+      <input type="hidden" name="oid" value="00D5f000006QMSU">
+      <input type="hidden" name="retURL" value="{{ section.settings.return_url | escape }}">
+      <input type="hidden" id="campaign_id-{{ section.id }}" name="campaign_id" value="701VU00000uVJ2w">
+      <input type="hidden" id="Campaign_ID-{{ section.id }}" name="Campaign_ID" value="701VU00000uVJ2w">
+      <input type="hidden" name="lead_source" value="Web">
+      <input type="hidden" id="00NVU00000683YL-{{ section.id }}" name="00NVU00000683YL" value="">
+
+      <div class="web-to-lead-form__fields">
+        <div class="form-row">
+          <label for="first_name-{{ section.id }}">First Name <span class="required">*</span></label>
+          <input id="first_name-{{ section.id }}" maxlength="40" name="first_name" size="20" type="text" required>
+        </div>
+
+        <div class="form-row">
+          <label for="last_name-{{ section.id }}">Last Name <span class="required">*</span></label>
+          <input id="last_name-{{ section.id }}" maxlength="80" name="last_name" size="20" type="text" required>
+        </div>
+
+        <div class="form-row">
+          <label for="phone-{{ section.id }}">Phone <span class="required">*</span></label>
+          <input id="phone-{{ section.id }}" maxlength="40" name="phone" size="20" type="tel" required>
+        </div>
+
+        <div class="form-row">
+          <label for="email-{{ section.id }}">Email <span class="required">*</span></label>
+          <input id="email-{{ section.id }}" maxlength="80" name="email" size="20" type="email" required>
+        </div>
+
+        <div class="form-row">
+          <label for="company-{{ section.id }}">Business Name <span class="required">*</span></label>
+          <input id="company-{{ section.id }}" maxlength="40" name="company" size="20" type="text" required>
+        </div>
+
+        <div class="form-row">
+          <label for="city-{{ section.id }}">City <span class="required">*</span></label>
+          <input id="city-{{ section.id }}" maxlength="40" name="city" size="20" type="text" required>
+        </div>
+
+        <div class="form-row">
+          <label for="country_code-{{ section.id }}">Country <span class="required">*</span></label>
+          <select
+            id="country_code-{{ section.id }}"
+            name="country_code"
+            required
+            onchange="LagoDealerForm.updateStates('{{ section.id }}')"
+          >
+            <option value="">--Select Country--</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="state_code-{{ section.id }}">State/Province <span class="required">*</span></label>
+          <select id="state_code-{{ section.id }}" name="state_code" required>
+            <option value="">--Select State/Province--</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="zip-{{ section.id }}">Zip/Postal Code <span class="required">*</span></label>
+          <input id="zip-{{ section.id }}" name="zip" type="text" required>
+        </div>
+
+        <div class="form-row">
+          <label for="00NVU0000068vor-{{ section.id }}"># Of Business Locations <span class="required">*</span></label>
+          <select id="00NVU0000068vor-{{ section.id }}" name="00NVU0000068vor" title="# Of Business Locations" required>
+            <option value="1-5">1-5</option>
+            <option value="6-10">6-10</option>
+            <option value="11+">11+</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="00NVU00000683Wj-{{ section.id }}">Do you currently Rent or Sell any Filtered Water Dispensers?</label>
+          <select id="00NVU00000683Wj-{{ section.id }}" name="00NVU00000683Wj" title="Currently Selling">
+            <option value="" selected disabled>Select Yes or No</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <div class="form-row form-row--full">
+          <label for="description-{{ section.id }}">Comments</label>
+          <textarea id="description-{{ section.id }}" name="description"></textarea>
+        </div>
+
+        <div class="form-row form-row--full web-to-lead-form__submit">
+          <input class="submit-button" type="submit" name="submit" value="{{ section.settings.submit_label | escape }}">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const sectionId = '{{ section.id }}';
+    const form = document.getElementById('webToLeadForm-' + sectionId);
+    if (!form) return;
+
+    if (window.LagoDealerForm) {
+      window.LagoDealerForm.init(sectionId);
+    }
+
+    form.addEventListener('submit', function () {
+      const utmField = document.getElementById('00NVU00000683YL-' + sectionId);
+      if (utmField && window.WEB_TO_LEAD_UTM_SOURCE) {
+        utmField.value = window.WEB_TO_LEAD_UTM_SOURCE;
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Lago Become a Dealer form",
+  "tag": "section",
+  "class": "section section-lago-become-a-dealer-form",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "url",
+      "id": "return_url",
+      "label": "Return URL after submit",
+      "info": "Page visitors are redirected to after a successful submission."
+    },
+    {
+      "type": "text",
+      "id": "submit_label",
+      "label": "Submit button label",
+      "default": "Submit"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lago Become a Dealer form"
+    }
+  ]
+}
+{% endschema %}

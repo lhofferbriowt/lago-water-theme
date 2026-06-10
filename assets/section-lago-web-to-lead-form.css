@@ -1,0 +1,91 @@
+.web-to-lead-form {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.web-to-lead-form__notice {
+  margin-bottom: 1.5rem;
+}
+
+.web-to-lead-form__fields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.web-to-lead-form label,
+.web-to-lead-form .field-label {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-weight: 600;
+}
+
+.web-to-lead-form input[type='text'],
+.web-to-lead-form input[type='email'],
+.web-to-lead-form input[type='tel'],
+.web-to-lead-form select,
+.web-to-lead-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 0.25rem;
+}
+
+.web-to-lead-form textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.web-to-lead-form .checkbox-group label {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-weight: 400;
+}
+
+.web-to-lead-form .required {
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.web-to-lead-form__submit {
+  margin-top: 0.5rem;
+}
+
+.web-to-lead-form .submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 12.5rem;
+  padding: 16px 32px;
+  background: #4a71aa;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transform: translateY(1px);
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.web-to-lead-form .submit-button:hover {
+  opacity: 0.92;
+}
+
+.web-to-lead-form .submit-button:active {
+  transform: translateY(2px);
+}
+
+@media screen and (min-width: 750px) {
+  .web-to-lead-form__fields {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 1rem;
+  }
+
+  .web-to-lead-form .form-row--full {
+    grid-column: 1 / -1;
+  }
+}
