@@ -100,6 +100,7 @@
         "heading_size": "h1",
         "return_url": "",
         "submit_label": "Submit",
+        "recaptcha_site_key": "6LeS0EwtAAAAAL7pm8nq9FpHcumJEhy149MritQ3",
         "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 36
