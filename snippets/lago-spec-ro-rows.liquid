@@ -1,0 +1,66 @@
+{%- comment -%}
+  Spec rows for slim commercial, skid-mounted, and industrial RO metaobjects.
+  Blank fields are skipped. Handles follow Shopify Admin snake_case keys.
+{%- endcomment -%}
+{%- render 'lago-spec-dl-row', label: 'Item No.', value: specs.item_no -%}
+{%- render 'lago-spec-dl-row', label: 'Model', value: specs.model -%}
+{%- render 'lago-spec-dl-row', label: 'Flow Rate', value: specs.flow_rate -%}
+{%- render 'lago-spec-dl-row', label: 'Permeate Flow', value: specs.permeate_flow -%}
+{%- render 'lago-spec-dl-row', label: 'Permeate Flow Rate', value: specs.permeate_flow_rate -%}
+{%- render 'lago-spec-dl-row', label: 'Permeate Flow Rate (GPD)', value: specs.permeate_flow_rate_gpd -%}
+{%- render 'lago-spec-dl-row', label: 'Permeate Flow Rate (GPM)', value: specs.permeate_flow_rate_gpm -%}
+{%- render 'lago-spec-dl-row', label: 'Production Capacity', value: specs.production_capacity -%}
+{%- render 'lago-spec-dl-row', label: 'GPD', value: specs.gpd -%}
+{%- render 'lago-spec-dl-row', label: 'Recovery', value: specs.recovery -%}
+{%- render 'lago-spec-dl-row', label: 'Recovery Rate', value: specs.recovery_rate -%}
+{%- render 'lago-spec-dl-row', label: 'Rejection Rate', value: specs.rejection_rate -%}
+{%- render 'lago-spec-dl-row', label: 'Concentrate Recycle', value: specs.concentrate_recycle -%}
+{%- render 'lago-spec-dl-row', label: 'Feed Water TDS', value: specs.feed_water_tds -%}
+{%- render 'lago-spec-dl-row', label: 'Max Feed TDS', value: specs.max_feed_tds -%}
+{%- render 'lago-spec-dl-row', label: 'Feed Water TDS Max', value: specs.feed_water_tds_max -%}
+{%- render 'lago-spec-dl-row', label: 'Operating Pressure', value: specs.operating_pressure -%}
+{%- render 'lago-spec-dl-row', label: 'Membrane', value: specs.membrane -%}
+{%- render 'lago-spec-dl-row', label: 'Membranes', value: specs.membranes -%}
+{%- render 'lago-spec-dl-row', label: 'Membrane Qty.', value: specs.membrane_qty -%}
+{%- render 'lago-spec-dl-row', label: 'Membrane Quantity', value: specs.membrane_quantity -%}
+{%- render 'lago-spec-dl-row', label: 'Membrane Size', value: specs.membrane_size -%}
+{%- render 'lago-spec-dl-row', label: 'Membrane Vessels', value: specs.membrane_vessels -%}
+{%- render 'lago-spec-dl-row', label: 'Pump', value: specs.pump -%}
+{%- render 'lago-spec-dl-row', label: 'High Pressure Pump', value: specs.high_pressure_pump -%}
+{%- render 'lago-spec-dl-row', label: 'Booster Pump', value: specs.booster_pump -%}
+{%- render 'lago-spec-dl-row', label: 'Prefilter', value: specs.prefilter -%}
+{%- render 'lago-spec-dl-row', label: 'Controller', value: specs.controller -%}
+{%- render 'lago-spec-dl-row', label: 'Voltage', value: specs.voltage -%}
+{%- render 'lago-spec-dl-row', label: 'Voltage (V/Hz)', value: specs.voltage_v_hz -%}
+{%- render 'lago-spec-dl-row', label: 'Frequency', value: specs.frequency -%}
+{%- render 'lago-spec-dl-row', label: 'Power', value: specs.power -%}
+{%- render 'lago-spec-dl-row', label: 'Inlet / Outlet', value: specs.inlet_outlet -%}
+{%- render 'lago-spec-dl-row', label: 'Inlet Connection', value: specs.inlet_connection -%}
+{%- render 'lago-spec-dl-row', label: 'Outlet Connection', value: specs.outlet_connection -%}
+{%- render 'lago-spec-dl-row', label: 'Drain Connection', value: specs.drain_connection -%}
+{%- render 'lago-spec-dl-row', label: 'Tank Capacity', value: specs.tank_capacity -%}
+{%- render 'lago-spec-dl-row', label: 'Width', value: specs.width -%}
+{%- render 'lago-spec-dl-row', label: 'Height', value: specs.height -%}
+{%- render 'lago-spec-dl-row', label: 'Depth', value: specs.depth -%}
+{%- render 'lago-spec-dl-row', label: 'Product Dim. (WxDxH)', value: specs.product_dim_wdh -%}
+{%- render 'lago-spec-dl-row', label: 'Packing Dim. (WxDxH)', value: specs.packing_dim_wdh -%}
+{%- render 'lago-spec-dl-row', label: 'Dimensions (W x D x H)', value: specs.dimensions_wdh -%}
+{%- render 'lago-spec-dl-row', label: 'Dimensions (L x W x H)', value: specs.dimensions_lwh -%}
+{%- render 'lago-spec-dl-row', label: 'Overall Dimensions (L x W x H)', value: specs.overall_dimensions_lwh -%}
+{%- render 'lago-spec-dl-row', label: 'Net Weight', value: specs.net_weight -%}
+{%- render 'lago-spec-dl-row', label: 'Gross Weight', value: specs.gross_weight -%}
+{%- render 'lago-spec-dl-row', label: 'Weight', value: specs.weight -%}
+{%- render 'lago-spec-dl-row', label: 'Pallet Qty.', value: specs.pallet_qty -%}
+{%- render 'lago-spec-dl-row', label: 'Container Qty.', value: specs.container_qty -%}
+{%- render 'lago-spec-dl-row', label: 'Loading Qty (20GP/40HQ)', value: specs.loading_qty -%}
+
+{%- if specs.spec_rows != blank and specs.spec_rows.value != blank -%}
+  {%- for row in specs.spec_rows.value -%}
+    {%- if row.label != blank -%}
+      <div class="lago-product-specs__row">
+        <dt>{{ row.label | escape }}</dt>
+        <dd>{{ row.value | escape }}</dd>
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}

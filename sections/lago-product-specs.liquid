@@ -17,7 +17,8 @@
 
   Product metafields (namespace custom): lago_specs_dispenser_10_6, lago_specs_5_4 (5-4 line),
   lago_specs_sparkling_countertop, lago_specs_sparkling_undersink, lago_specs_ice_scoop,
-  lago_specs_ice_modular — each references its definition.
+  lago_specs_ice_modular, lago_specs_modular_ice_dispenser, lago_specs_slim_commercial_ro_system,
+  lago_specs_skid_mounted_ro_system, lago_specs_industrial_ro_system — each references its definition.
 
   Sparkling countertop (`lago_specs_sparkling_countertop`): item_no, flow_rate, dimensions_wdh, weight, pallet_qty
   Sparkling undersink (`lago_specs_sparkling_undersink`): item_no, flow_rate, tap_tower_dimensions_wdh,
@@ -29,6 +30,8 @@
     power, condenser_unit, refrigerant, ice_maker_head_net_weight, ice_maker_head_gross_weight,
     ice_storage_bin_net_weight, ice_storage_bin_gross_weight, ice_maker_head_packing_dim, ice_storage_bin_packing_dim,
     loading_qty  (if packing dim handles in Admin differ, align handles there with Liquid)
+  Slim commercial / skid-mounted / industrial RO: see snippet `lago-spec-ro-rows` for field handles.
+  Optional on those entries: display_title, manual_url, supporting_image, spec_rows
 {%- endcomment -%}
 
 {{ 'section-lago-product-specs.css' | asset_url | stylesheet_tag }}
@@ -52,6 +55,12 @@
       assign specs = product.metafields.custom.lago_specs_ice_modular.value
     when 'modular_ice_dispenser'
       assign specs = product.metafields.custom.lago_specs_modular_ice_dispenser.value
+    when 'slim_commercial_ro'
+      assign specs = product.metafields.custom.lago_specs_slim_commercial_ro_system.value
+    when 'skid_mounted_ro'
+      assign specs = product.metafields.custom.lago_specs_skid_mounted_ro_system.value
+    when 'industrial_ro'
+      assign specs = product.metafields.custom.lago_specs_industrial_ro_system.value
   endcase
 
   assign spec_rows_count = 0
@@ -133,6 +142,15 @@
     endif
   endif
 
+  assign ro_specs_visible = false
+  if family == 'slim_commercial_ro' or family == 'skid_mounted_ro' or family == 'industrial_ro'
+    if specs != blank
+      if specs.item_no != blank or specs.model != blank or specs.flow_rate != blank or specs.permeate_flow != blank or specs.permeate_flow_rate != blank or specs.permeate_flow_rate_gpd != blank or specs.permeate_flow_rate_gpm != blank or specs.production_capacity != blank or specs.gpd != blank or specs.recovery != blank or specs.recovery_rate != blank or specs.rejection_rate != blank or specs.concentrate_recycle != blank or specs.feed_water_tds != blank or specs.max_feed_tds != blank or specs.feed_water_tds_max != blank or specs.operating_pressure != blank or specs.membrane != blank or specs.membranes != blank or specs.membrane_qty != blank or specs.membrane_quantity != blank or specs.membrane_size != blank or specs.membrane_vessels != blank or specs.pump != blank or specs.high_pressure_pump != blank or specs.booster_pump != blank or specs.prefilter != blank or specs.controller != blank or specs.voltage != blank or specs.voltage_v_hz != blank or specs.frequency != blank or specs.power != blank or specs.inlet_outlet != blank or specs.inlet_connection != blank or specs.outlet_connection != blank or specs.drain_connection != blank or specs.tank_capacity != blank or specs.width != blank or specs.height != blank or specs.depth != blank or specs.product_dim_wdh != blank or specs.packing_dim_wdh != blank or specs.dimensions_wdh != blank or specs.dimensions_lwh != blank or specs.overall_dimensions_lwh != blank or specs.net_weight != blank or specs.gross_weight != blank or specs.weight != blank or specs.pallet_qty != blank or specs.container_qty != blank or specs.loading_qty != blank or specs.manual_url != blank or specs.supporting_image != blank or spec_rows_count > 0 or has_dimensions or has_additional or has_materials
+        assign ro_specs_visible = true
+      endif
+    endif
+  endif
+
   assign show_section = false
   if family == 'dispenser_10_6'
     if dispenser_10_6_visible
@@ -160,6 +178,10 @@
     endif
   elsif family == 'modular_ice_dispenser'
     if modular_ice_dispenser_visible
+      assign show_section = true
+    endif
+  elsif family == 'slim_commercial_ro' or family == 'skid_mounted_ro' or family == 'industrial_ro'
+    if ro_specs_visible
       assign show_section = true
     endif
   elsif specs != blank
@@ -573,6 +595,48 @@
             </div>
           {%- endif -%}
         </div>
+      {%- elsif family == 'slim_commercial_ro' or family == 'skid_mounted_ro' or family == 'industrial_ro' -%}
+        <div
+          class="
+            lago-product-specs__grid
+            {% if specs.supporting_image != blank %}lago-product-specs__grid--split{% endif %}
+          "
+        >
+          <div>
+            <dl class="lago-product-specs__dl">
+              {%- render 'lago-spec-ro-rows', specs: specs -%}
+            </dl>
+
+            {%- if specs.manual_url != blank -%}
+              <div class="lago-product-specs__manual">
+                <a
+                  href="{{ specs.manual_url }}"
+                  class="button button--secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ section.settings.manual_label | escape }}
+                </a>
+              </div>
+            {%- endif -%}
+          </div>
+
+          {%- if specs.supporting_image != blank -%}
+            <div class="lago-product-specs__image-wrap">
+              <div class="global-media-settings" style="max-width: 900px; width: 100%;">
+                {{
+                  specs.supporting_image
+                  | image_url: width: 900
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '550, 720, 900',
+                    sizes: '(min-width: 990px) 45vw, 100vw',
+                    class: 'lago-product-specs__image'
+                }}
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
       {%- else -%}
         <div
           class="
@@ -696,7 +760,10 @@
         { "value": "sparkling_undersink", "label": "Sparkling undersink dispensers" },
         { "value": "ice_scoop", "label": "Scoop ice machines" },
         { "value": "ice_modular", "label": "Modular ice machines" },
-        { "value": "modular_ice_dispenser", "label": "Modular ice dispenser" }
+        { "value": "modular_ice_dispenser", "label": "Modular ice dispenser" },
+        { "value": "slim_commercial_ro", "label": "Slim commercial RO systems" },
+        { "value": "skid_mounted_ro", "label": "Skid-mounted RO systems" },
+        { "value": "industrial_ro", "label": "Industrial RO systems" }
       ],
       "default": "dispenser_10_6"
     },
