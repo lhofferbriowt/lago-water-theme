@@ -30,8 +30,12 @@
     power, condenser_unit, refrigerant, ice_maker_head_net_weight, ice_maker_head_gross_weight,
     ice_storage_bin_net_weight, ice_storage_bin_gross_weight, ice_maker_head_packing_dim, ice_storage_bin_packing_dim,
     loading_qty  (if packing dim handles in Admin differ, align handles there with Liquid)
-  Slim commercial / skid-mounted / industrial RO: see snippet `lago-spec-ro-rows` for field handles.
-  Optional on those entries: display_title, manual_url, supporting_image, spec_rows
+  Slim commercial (`lago_specs_slim_commercial_ro_system`): item_no, power, flow_rate, power_consumption,
+    weight_system_crate, system_dimensions, crate_dimensions, pallet_qty
+  Skid-mounted (`lago_specs_skid_mounted_ro_system`): item_no, ro_flow_rate, electrical_parameters,
+    weight_system_in_crate, system_dimensions, water_tank_dimensions, crate_dimensions
+  Industrial (`lago_specs_industrial_ro_system`): item_no, product_name, daily_capacity, flow_rate,
+    membranes, dimensions_w_x_d_x_h, weight
 {%- endcomment -%}
 
 {{ 'section-lago-product-specs.css' | asset_url | stylesheet_tag }}
@@ -142,12 +146,24 @@
     endif
   endif
 
-  assign ro_specs_visible = false
-  if family == 'slim_commercial_ro' or family == 'skid_mounted_ro' or family == 'industrial_ro'
-    if specs != blank
-      if specs.item_no != blank or specs.model != blank or specs.flow_rate != blank or specs.permeate_flow != blank or specs.permeate_flow_rate != blank or specs.permeate_flow_rate_gpd != blank or specs.permeate_flow_rate_gpm != blank or specs.production_capacity != blank or specs.gpd != blank or specs.recovery != blank or specs.recovery_rate != blank or specs.rejection_rate != blank or specs.concentrate_recycle != blank or specs.feed_water_tds != blank or specs.max_feed_tds != blank or specs.feed_water_tds_max != blank or specs.operating_pressure != blank or specs.membrane != blank or specs.membranes != blank or specs.membrane_qty != blank or specs.membrane_quantity != blank or specs.membrane_size != blank or specs.membrane_vessels != blank or specs.pump != blank or specs.high_pressure_pump != blank or specs.booster_pump != blank or specs.prefilter != blank or specs.controller != blank or specs.voltage != blank or specs.voltage_v_hz != blank or specs.frequency != blank or specs.power != blank or specs.inlet_outlet != blank or specs.inlet_connection != blank or specs.outlet_connection != blank or specs.drain_connection != blank or specs.tank_capacity != blank or specs.width != blank or specs.height != blank or specs.depth != blank or specs.product_dim_wdh != blank or specs.packing_dim_wdh != blank or specs.dimensions_wdh != blank or specs.dimensions_lwh != blank or specs.overall_dimensions_lwh != blank or specs.net_weight != blank or specs.gross_weight != blank or specs.weight != blank or specs.pallet_qty != blank or specs.container_qty != blank or specs.loading_qty != blank or specs.manual_url != blank or specs.supporting_image != blank or spec_rows_count > 0 or has_dimensions or has_additional or has_materials
-        assign ro_specs_visible = true
-      endif
+  assign slim_commercial_ro_visible = false
+  if family == 'slim_commercial_ro' and specs != blank
+    if specs.item_no != blank or specs.power != blank or specs.flow_rate != blank or specs.power_consumption != blank or specs.weight_system_crate != blank or specs.system_dimensions != blank or specs.crate_dimensions != blank or specs.pallet_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
+      assign slim_commercial_ro_visible = true
+    endif
+  endif
+
+  assign skid_mounted_ro_visible = false
+  if family == 'skid_mounted_ro' and specs != blank
+    if specs.item_no != blank or specs.ro_flow_rate != blank or specs.electrical_parameters != blank or specs.weight_system_in_crate != blank or specs.system_dimensions != blank or specs.water_tank_dimensions != blank or specs.crate_dimensions != blank or specs.manual_url != blank or specs.supporting_image != blank
+      assign skid_mounted_ro_visible = true
+    endif
+  endif
+
+  assign industrial_ro_visible = false
+  if family == 'industrial_ro' and specs != blank
+    if specs.item_no != blank or specs.product_name != blank or specs.daily_capacity != blank or specs.flow_rate != blank or specs.membranes != blank or specs.dimensions_w_x_d_x_h != blank or specs.weight != blank or specs.manual_url != blank or specs.supporting_image != blank
+      assign industrial_ro_visible = true
     endif
   endif
 
@@ -180,8 +196,16 @@
     if modular_ice_dispenser_visible
       assign show_section = true
     endif
-  elsif family == 'slim_commercial_ro' or family == 'skid_mounted_ro' or family == 'industrial_ro'
-    if ro_specs_visible
+  elsif family == 'slim_commercial_ro'
+    if slim_commercial_ro_visible
+      assign show_section = true
+    endif
+  elsif family == 'skid_mounted_ro'
+    if skid_mounted_ro_visible
+      assign show_section = true
+    endif
+  elsif family == 'industrial_ro'
+    if industrial_ro_visible
       assign show_section = true
     endif
   elsif specs != blank
@@ -604,7 +628,7 @@
         >
           <div>
             <dl class="lago-product-specs__dl">
-              {%- render 'lago-spec-ro-rows', specs: specs -%}
+              {%- render 'lago-spec-ro-rows', family: family, specs: specs -%}
             </dl>
 
             {%- if specs.manual_url != blank -%}
