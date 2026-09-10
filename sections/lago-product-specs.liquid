@@ -38,16 +38,18 @@
     weight_system_in_crate, system_dimensions, water_tank_dimensions, crate_dimensions
   Industrial (`lago_specs_industrial_ro_system`): item_no, product_name, daily_capacity, flow_rate,
     membranes, dimensions_w_x_d_x_h, weight
-  Undersink chiller/heater (`lago_specs_undersink_chiller_heater`): item_no, power, flow_rate,
-    cooling_capacity, heating_capacity, water_temp, system_dimensions, weight, pallet_qty
-  Undersink RO (`lago_specs_undersink_ro_system`): item_no, flow_rate, daily_capacity, stages,
-    tank_capacity, system_dimensions, weight, pallet_qty
-  UV sterilizers (`lago_specs_uv_sterilizers`): item_no, flow_rate, dimensions, length, diameter,
-    life_expectancy, inlet_outlet, weight
-  Whole house filtration (`lago_specs_whole_house_filtration`): item_no, flow_rate, stages,
-    filter_length, connections, system_dimensions, weight, pallet_qty
-  Water softener / carbon (`lago_specs_water_softener_carbon_system`): item_no, capacity,
-    grain_capacity, flow_rate, tank_dimensions, system_dimensions, weight, pallet_qty
+  Undersink chiller/heater (`lago_specs_undersink_chiller_heater`): item_no, dim_w_x_d_x_h, voltage,
+    cold_tank_size, cooling_capacity, cooling_cycle, hot_water_flow_rate, ambient_water_flow_rate,
+    weight, adjustable_temperature, compressor
+  Undersink RO (`lago_specs_undersink_ro_system`): item_no, stage, daily_capacity, flow_rate,
+    water_pressure, inlet_pressure_psi, dimensions_w_x_d_x_h, weight, pallet_qty
+  UV sterilizers (`lago_specs_uv_sterilizers`): item_no, flow_rate, dimensions, replacement_uv_lamp
+  Whole house filtration (`lago_specs_whole_house_filtration`): item_no, filtration, product_dim,
+    packing_dim, net_weight, pallet_qty
+  Water softener / carbon (`lago_specs_water_softener_carbon_system`): item_no, control_valve,
+    inlet_outlet, drain_brine, riser_tube, raw_water_bypass, hard_water_bypass, valve_dimensions,
+    ceramic_bypass_flow_meter, frp_tank, resin_volume, capacity_15_lbs, flow_rate, frp_tank_size,
+    carbon_volume, brine_tank, capacity, brine_tank_dimensions, pallet_qty
 {%- endcomment -%}
 
 {{ 'section-lago-product-specs.css' | asset_url | stylesheet_tag }}
@@ -191,35 +193,35 @@
 
   assign undersink_chiller_heater_visible = false
   if family == 'undersink_chiller_heater' and specs != blank
-    if specs.item_no != blank or specs.power != blank or specs.flow_rate != blank or specs.cooling_capacity != blank or specs.heating_capacity != blank or specs.water_temp != blank or specs.system_dimensions != blank or specs.weight != blank or specs.pallet_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
+    if specs.item_no != blank or specs.dim_w_x_d_x_h != blank or specs.voltage != blank or specs.cold_tank_size != blank or specs.cooling_capacity != blank or specs.cooling_cycle != blank or specs.hot_water_flow_rate != blank or specs.ambient_water_flow_rate != blank or specs.weight != blank or specs.adjustable_temperature != blank or specs.compressor != blank or specs.manual_url != blank or specs.supporting_image != blank
       assign undersink_chiller_heater_visible = true
     endif
   endif
 
   assign undersink_ro_system_visible = false
   if family == 'undersink_ro_system' and specs != blank
-    if specs.item_no != blank or specs.flow_rate != blank or specs.daily_capacity != blank or specs.stages != blank or specs.tank_capacity != blank or specs.system_dimensions != blank or specs.weight != blank or specs.pallet_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
+    if specs.item_no != blank or specs.stage != blank or specs.daily_capacity != blank or specs.flow_rate != blank or specs.water_pressure != blank or specs.inlet_pressure_psi != blank or specs.dimensions_w_x_d_x_h != blank or specs.weight != blank or specs.pallet_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
       assign undersink_ro_system_visible = true
     endif
   endif
 
   assign uv_sterilizers_visible = false
   if family == 'uv_sterilizers' and specs != blank
-    if specs.item_no != blank or specs.flow_rate != blank or specs.dimensions != blank or specs.length != blank or specs.diameter != blank or specs.life_expectancy != blank or specs.inlet_outlet != blank or specs.weight != blank or specs.manual_url != blank or specs.supporting_image != blank
+    if specs.item_no != blank or specs.flow_rate != blank or specs.dimensions != blank or specs.replacement_uv_lamp != blank or specs.manual_url != blank or specs.supporting_image != blank
       assign uv_sterilizers_visible = true
     endif
   endif
 
   assign whole_house_filtration_visible = false
   if family == 'whole_house_filtration' and specs != blank
-    if specs.item_no != blank or specs.flow_rate != blank or specs.stages != blank or specs.filter_length != blank or specs.connections != blank or specs.system_dimensions != blank or specs.weight != blank or specs.pallet_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
+    if specs.item_no != blank or specs.filtration != blank or specs.product_dim != blank or specs.packing_dim != blank or specs.net_weight != blank or specs.pallet_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
       assign whole_house_filtration_visible = true
     endif
   endif
 
   assign water_softener_carbon_system_visible = false
   if family == 'water_softener_carbon_system' and specs != blank
-    if specs.item_no != blank or specs.capacity != blank or specs.grain_capacity != blank or specs.flow_rate != blank or specs.tank_dimensions != blank or specs.system_dimensions != blank or specs.weight != blank or specs.pallet_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
+    if specs.item_no != blank or specs.control_valve != blank or specs.inlet_outlet != blank or specs.drain_brine != blank or specs.riser_tube != blank or specs.raw_water_bypass != blank or specs.hard_water_bypass != blank or specs.valve_dimensions != blank or specs.ceramic_bypass_flow_meter != blank or specs.frp_tank != blank or specs.resin_volume != blank or specs.capacity_15_lbs != blank or specs.flow_rate != blank or specs.frp_tank_size != blank or specs.carbon_volume != blank or specs.brine_tank != blank or specs.capacity != blank or specs.brine_tank_dimensions != blank or specs.pallet_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
       assign water_softener_carbon_system_visible = true
     endif
   endif
