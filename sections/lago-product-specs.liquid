@@ -18,7 +18,9 @@
   Product metafields (namespace custom): lago_specs_dispenser_10_6, lago_specs_5_4 (5-4 line),
   lago_specs_sparkling_countertop, lago_specs_sparkling_undersink, lago_specs_ice_scoop,
   lago_specs_ice_modular, lago_specs_modular_ice_dispenser, lago_specs_slim_commercial_ro_system,
-  lago_specs_skid_mounted_ro_system, lago_specs_industrial_ro_system — each references its definition.
+  lago_specs_skid_mounted_ro_system, lago_specs_industrial_ro_system,
+  lago_specs_undersink_chiller_heater, lago_specs_undersink_ro_system, lago_specs_uv_sterilizers,
+  lago_specs_whole_house_filtration, lago_specs_water_softener_carbon_system — each references its definition.
 
   Sparkling countertop (`lago_specs_sparkling_countertop`): item_no, flow_rate, dimensions_wdh, weight, pallet_qty
   Sparkling undersink (`lago_specs_sparkling_undersink`): item_no, flow_rate, tap_tower_dimensions_wdh,
@@ -36,6 +38,16 @@
     weight_system_in_crate, system_dimensions, water_tank_dimensions, crate_dimensions
   Industrial (`lago_specs_industrial_ro_system`): item_no, product_name, daily_capacity, flow_rate,
     membranes, dimensions_w_x_d_x_h, weight
+  Undersink chiller/heater (`lago_specs_undersink_chiller_heater`): item_no, power, flow_rate,
+    cooling_capacity, heating_capacity, water_temp, system_dimensions, weight, pallet_qty
+  Undersink RO (`lago_specs_undersink_ro_system`): item_no, flow_rate, daily_capacity, stages,
+    tank_capacity, system_dimensions, weight, pallet_qty
+  UV sterilizers (`lago_specs_uv_sterilizers`): item_no, flow_rate, dimensions, length, diameter,
+    life_expectancy, inlet_outlet, weight
+  Whole house filtration (`lago_specs_whole_house_filtration`): item_no, flow_rate, stages,
+    filter_length, connections, system_dimensions, weight, pallet_qty
+  Water softener / carbon (`lago_specs_water_softener_carbon_system`): item_no, capacity,
+    grain_capacity, flow_rate, tank_dimensions, system_dimensions, weight, pallet_qty
 {%- endcomment -%}
 
 {{ 'section-lago-product-specs.css' | asset_url | stylesheet_tag }}
@@ -65,6 +77,16 @@
       assign specs = product.metafields.custom.lago_specs_skid_mounted_ro_system.value
     when 'industrial_ro'
       assign specs = product.metafields.custom.lago_specs_industrial_ro_system.value
+    when 'undersink_chiller_heater'
+      assign specs = product.metafields.custom.lago_specs_undersink_chiller_heater.value
+    when 'undersink_ro_system'
+      assign specs = product.metafields.custom.lago_specs_undersink_ro_system.value
+    when 'uv_sterilizers'
+      assign specs = product.metafields.custom.lago_specs_uv_sterilizers.value
+    when 'whole_house_filtration'
+      assign specs = product.metafields.custom.lago_specs_whole_house_filtration.value
+    when 'water_softener_carbon_system'
+      assign specs = product.metafields.custom.lago_specs_water_softener_carbon_system.value
   endcase
 
   assign spec_rows_count = 0
@@ -167,6 +189,41 @@
     endif
   endif
 
+  assign undersink_chiller_heater_visible = false
+  if family == 'undersink_chiller_heater' and specs != blank
+    if specs.item_no != blank or specs.power != blank or specs.flow_rate != blank or specs.cooling_capacity != blank or specs.heating_capacity != blank or specs.water_temp != blank or specs.system_dimensions != blank or specs.weight != blank or specs.pallet_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
+      assign undersink_chiller_heater_visible = true
+    endif
+  endif
+
+  assign undersink_ro_system_visible = false
+  if family == 'undersink_ro_system' and specs != blank
+    if specs.item_no != blank or specs.flow_rate != blank or specs.daily_capacity != blank or specs.stages != blank or specs.tank_capacity != blank or specs.system_dimensions != blank or specs.weight != blank or specs.pallet_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
+      assign undersink_ro_system_visible = true
+    endif
+  endif
+
+  assign uv_sterilizers_visible = false
+  if family == 'uv_sterilizers' and specs != blank
+    if specs.item_no != blank or specs.flow_rate != blank or specs.dimensions != blank or specs.length != blank or specs.diameter != blank or specs.life_expectancy != blank or specs.inlet_outlet != blank or specs.weight != blank or specs.manual_url != blank or specs.supporting_image != blank
+      assign uv_sterilizers_visible = true
+    endif
+  endif
+
+  assign whole_house_filtration_visible = false
+  if family == 'whole_house_filtration' and specs != blank
+    if specs.item_no != blank or specs.flow_rate != blank or specs.stages != blank or specs.filter_length != blank or specs.connections != blank or specs.system_dimensions != blank or specs.weight != blank or specs.pallet_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
+      assign whole_house_filtration_visible = true
+    endif
+  endif
+
+  assign water_softener_carbon_system_visible = false
+  if family == 'water_softener_carbon_system' and specs != blank
+    if specs.item_no != blank or specs.capacity != blank or specs.grain_capacity != blank or specs.flow_rate != blank or specs.tank_dimensions != blank or specs.system_dimensions != blank or specs.weight != blank or specs.pallet_qty != blank or specs.manual_url != blank or specs.supporting_image != blank
+      assign water_softener_carbon_system_visible = true
+    endif
+  endif
+
   assign show_section = false
   if family == 'dispenser_10_6'
     if dispenser_10_6_visible
@@ -206,6 +263,26 @@
     endif
   elsif family == 'industrial_ro'
     if industrial_ro_visible
+      assign show_section = true
+    endif
+  elsif family == 'undersink_chiller_heater'
+    if undersink_chiller_heater_visible
+      assign show_section = true
+    endif
+  elsif family == 'undersink_ro_system'
+    if undersink_ro_system_visible
+      assign show_section = true
+    endif
+  elsif family == 'uv_sterilizers'
+    if uv_sterilizers_visible
+      assign show_section = true
+    endif
+  elsif family == 'whole_house_filtration'
+    if whole_house_filtration_visible
+      assign show_section = true
+    endif
+  elsif family == 'water_softener_carbon_system'
+    if water_softener_carbon_system_visible
       assign show_section = true
     endif
   elsif specs != blank
@@ -619,7 +696,15 @@
             </div>
           {%- endif -%}
         </div>
-      {%- elsif family == 'slim_commercial_ro' or family == 'skid_mounted_ro' or family == 'industrial_ro' -%}
+      {%- elsif family == 'slim_commercial_ro'
+        or family == 'skid_mounted_ro'
+        or family == 'industrial_ro'
+        or family == 'undersink_chiller_heater'
+        or family == 'undersink_ro_system'
+        or family == 'uv_sterilizers'
+        or family == 'whole_house_filtration'
+        or family == 'water_softener_carbon_system'
+      -%}
         <div
           class="
             lago-product-specs__grid
@@ -629,6 +714,7 @@
           <div>
             <dl class="lago-product-specs__dl">
               {%- render 'lago-spec-ro-rows', family: family, specs: specs -%}
+              {%- render 'lago-spec-filter-rows', family: family, specs: specs -%}
             </dl>
 
             {%- if specs.manual_url != blank -%}
@@ -787,7 +873,12 @@
         { "value": "modular_ice_dispenser", "label": "Modular ice dispenser" },
         { "value": "slim_commercial_ro", "label": "Slim commercial RO systems" },
         { "value": "skid_mounted_ro", "label": "Skid-mounted RO systems" },
-        { "value": "industrial_ro", "label": "Industrial RO systems" }
+        { "value": "industrial_ro", "label": "Industrial RO systems" },
+        { "value": "undersink_chiller_heater", "label": "Undersink chiller / heater" },
+        { "value": "undersink_ro_system", "label": "Undersink RO systems" },
+        { "value": "uv_sterilizers", "label": "UV sterilizers" },
+        { "value": "whole_house_filtration", "label": "Whole house filtration" },
+        { "value": "water_softener_carbon_system", "label": "Water softener / carbon systems" }
       ],
       "default": "dispenser_10_6"
     },

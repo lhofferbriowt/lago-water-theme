@@ -1,0 +1,52 @@
+{%- comment -%}
+  Spec rows for undersink, UV, whole-house, and softener/carbon metaobjects.
+  Field handles match Shopify Admin keys from field names
+  (lowercase, non-alphanumerics → underscore).
+{%- endcomment -%}
+{%- if family == 'undersink_chiller_heater' -%}
+  {%- render 'lago-spec-dl-row', label: 'Item No.', value: specs.item_no -%}
+  {%- render 'lago-spec-dl-row', label: 'Power', value: specs.power -%}
+  {%- render 'lago-spec-dl-row', label: 'Flow Rate*', value: specs.flow_rate -%}
+  {%- render 'lago-spec-dl-row', label: 'Cooling Capacity', value: specs.cooling_capacity -%}
+  {%- render 'lago-spec-dl-row', label: 'Heating Capacity', value: specs.heating_capacity -%}
+  {%- render 'lago-spec-dl-row', label: 'Water Temp.', value: specs.water_temp -%}
+  {%- render 'lago-spec-dl-row', label: 'System Dimensions', value: specs.system_dimensions -%}
+  {%- render 'lago-spec-dl-row', label: 'Weight', value: specs.weight -%}
+  {%- render 'lago-spec-dl-row', label: 'Pallet Qty.', value: specs.pallet_qty -%}
+{%- elsif family == 'undersink_ro_system' -%}
+  {%- render 'lago-spec-dl-row', label: 'Item No.', value: specs.item_no -%}
+  {%- render 'lago-spec-dl-row', label: 'Flow Rate*', value: specs.flow_rate -%}
+  {%- render 'lago-spec-dl-row', label: 'Daily Capacity*', value: specs.daily_capacity -%}
+  {%- render 'lago-spec-dl-row', label: 'Stages', value: specs.stages -%}
+  {%- render 'lago-spec-dl-row', label: 'Tank Capacity', value: specs.tank_capacity -%}
+  {%- render 'lago-spec-dl-row', label: 'System Dimensions', value: specs.system_dimensions -%}
+  {%- render 'lago-spec-dl-row', label: 'Weight', value: specs.weight -%}
+  {%- render 'lago-spec-dl-row', label: 'Pallet Qty.', value: specs.pallet_qty -%}
+{%- elsif family == 'uv_sterilizers' -%}
+  {%- render 'lago-spec-dl-row', label: 'Item No.', value: specs.item_no -%}
+  {%- render 'lago-spec-dl-row', label: 'Flow Rate*', value: specs.flow_rate -%}
+  {%- render 'lago-spec-dl-row', label: 'Dimensions', value: specs.dimensions -%}
+  {%- render 'lago-spec-dl-row', label: 'Length', value: specs.length -%}
+  {%- render 'lago-spec-dl-row', label: 'Diameter', value: specs.diameter -%}
+  {%- render 'lago-spec-dl-row', label: 'Life Expectancy', value: specs.life_expectancy -%}
+  {%- render 'lago-spec-dl-row', label: 'Inlet / Outlet', value: specs.inlet_outlet -%}
+  {%- render 'lago-spec-dl-row', label: 'Weight', value: specs.weight -%}
+{%- elsif family == 'whole_house_filtration' -%}
+  {%- render 'lago-spec-dl-row', label: 'Item No.', value: specs.item_no -%}
+  {%- render 'lago-spec-dl-row', label: 'Flow Rate*', value: specs.flow_rate -%}
+  {%- render 'lago-spec-dl-row', label: 'Stages', value: specs.stages -%}
+  {%- render 'lago-spec-dl-row', label: 'Filter Length', value: specs.filter_length -%}
+  {%- render 'lago-spec-dl-row', label: 'Connections', value: specs.connections -%}
+  {%- render 'lago-spec-dl-row', label: 'System Dimensions', value: specs.system_dimensions -%}
+  {%- render 'lago-spec-dl-row', label: 'Weight', value: specs.weight -%}
+  {%- render 'lago-spec-dl-row', label: 'Pallet Qty.', value: specs.pallet_qty -%}
+{%- elsif family == 'water_softener_carbon_system' -%}
+  {%- render 'lago-spec-dl-row', label: 'Item No.', value: specs.item_no -%}
+  {%- render 'lago-spec-dl-row', label: 'Capacity', value: specs.capacity -%}
+  {%- render 'lago-spec-dl-row', label: 'Grain Capacity', value: specs.grain_capacity -%}
+  {%- render 'lago-spec-dl-row', label: 'Flow Rate*', value: specs.flow_rate -%}
+  {%- render 'lago-spec-dl-row', label: 'Tank Dimensions', value: specs.tank_dimensions -%}
+  {%- render 'lago-spec-dl-row', label: 'System Dimensions', value: specs.system_dimensions -%}
+  {%- render 'lago-spec-dl-row', label: 'Weight', value: specs.weight -%}
+  {%- render 'lago-spec-dl-row', label: 'Pallet Qty.', value: specs.pallet_qty -%}
+{%- endif -%}
