@@ -114,7 +114,7 @@
           "type": "product_path",
           "settings": {
             "image": "shopify://shop_images/poe_filtration_systems_2x_c84af0d4-bf29-4170-aec3-91b3b3eaa0ce.png",
-            "title": "Point-of-Entry Filtration Systems",
+            "title": "Water Softener Systems",
             "link": "shopify://collections/multi-stage-filtration-systems-copy"
           }
         },
@@ -134,20 +134,20 @@
             "link": "shopify://collections/commercial-ro-systems-copy"
           }
         },
-        "pp8": {
-          "type": "product_path",
-          "settings": {
-            "image": "shopify://shop_images/skid_mounted_ro_water_treatment_solutions_2x_86bfe469-7bef-405e-b2b3-6367cd658574.png",
-            "title": "Skid-Mounted RO Systems",
-            "link": "shopify://collections/skid-mounted-reverse-osmosis-solutions"
-          }
-        },
         "product_path_MNPkCA": {
           "type": "product_path",
           "settings": {
             "image": "shopify://shop_images/ro_systems_homepage.png",
             "title": "Advanced Commercial RO Systems",
             "link": "shopify://collections/commercial-ro-systems-copy-1"
+          }
+        },
+        "pp8": {
+          "type": "product_path",
+          "settings": {
+            "image": "shopify://shop_images/skid_mounted_ro_water_treatment_solutions_2x_86bfe469-7bef-405e-b2b3-6367cd658574.png",
+            "title": "Skid-Mounted RO Systems",
+            "link": "shopify://collections/skid-mounted-reverse-osmosis-solutions"
           }
         },
         "product_path_DPKK7A": {
@@ -173,8 +173,8 @@
         "pp7",
         "product_path_kMYk4J",
         "product_path_DWh4pT",
-        "pp8",
         "product_path_MNPkCA",
+        "pp8",
         "product_path_DPKK7A"
       ],
       "settings": {
