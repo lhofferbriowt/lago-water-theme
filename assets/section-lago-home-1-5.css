@@ -222,6 +222,13 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Mobile: taller label row so 3-line titles are not clipped (desktop keeps 4.5rem) */
+@media screen and (max-width: 749px) {
+  .l15-path-card {
+    grid-template-rows: minmax(0, 1fr) var(--l15-path-label-row-height, 7rem);
+  }
+}
+
 .l15-path-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
